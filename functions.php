@@ -856,3 +856,19 @@ function assignFrontPage_exists() {
 		}
 }
 assignFrontPage_exists();
+
+// Control configuration of Vimeo embeds.
+function modify_wp_vimeo_embeds( $html ) {
+	if ( false !== strpos( $html, 'vimeo' ) ) {
+		preg_match( '/src="([^"]+)"/', $html, $match );
+		$src = $match[1];
+		$html = str_replace( $src, add_query_arg( array(
+			'title'    => 0,
+			'byline'   => 0,
+			'portrait' => 0,
+		), $src ), $html );
+	}
+	return $html;
+}
+add_filter( 'embed_oembed_html', 'modify_wp_vimeo_embeds' );
+add_filter( 'embed_handler_html', 'modify_wp_vimeo_embeds' );

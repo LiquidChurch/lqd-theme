@@ -31,12 +31,12 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        <?php twentysixteen_entry_meta(); ?>
+        <?php liquidchurch_entry_meta(); ?>
         <?php
         edit_post_link(
             sprintf(
             /* translators: %s: Name of current post */
-                __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+                __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'liquidchurch' ),
                 get_the_title()
             ),
             '<span class="edit-link">',
