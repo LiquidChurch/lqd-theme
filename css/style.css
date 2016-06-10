@@ -165,11 +165,12 @@ textarea{ height:140px;}
 .menu_list{margin:0;}
 .menu_list ul{margin:0;}
 .menu_list ul li{display:block; padding:0 0 24px;}
-.menu_list li a{ color:#228dc1; display:block; font-family:"Avenir Next LT Pro Demi",sans-serif; text-transform: capitalize; font-size:16px; line-height:16px;}
+.menu_list li a{ color:#228dc1; display:block; font-family:"Avenir Next LT Pro Demi",sans-serif; font-size:16px; line-height:16px;}
 .menu_list li a:hover, .sectionleft li a:hover{text-decoration:none;}
 
 .entry-content{ padding:15px; font-size:24px; line-height:135%; color:#333;}
-.entry-content p{ font-size:24px; line-height:135%; color:#333; margin-bottom:15px; padding-left:30px; padding-right:30px; text-align:justify;}
+.entry-content p{ font-size:24px; line-height:135%; color:#333; margin-bottom:15px; padding-left:30px; padding-right:30px; 
+/* text-align:justify; */ }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4{padding: 0 30px; display: inline-block;}
 .entry-content .search-form {padding-right:30px;padding-left:30px;}
 .entry-content table {margin-left:30px;}
@@ -287,16 +288,42 @@ textarea{ height:140px;}
 .sectionleftul {margin-left:-41px;}
 .footer_social li:last-child {margin-right:0;}
 .logo {margin-left:-31px !important;}
+.sectionleftul .menu_list li {
+  min-width: 205px;
+}
 
 	
-@media only screen and (min-width:1024px) and (max-width:1279px){
+@media only screen and (min-width:1024px) and (max-width:1200px){
 	.nav>li>a{padding-left:28px;padding-right:28px;}
+.sectionleftul .menu_list li {
+  min-width: 172px;
+}
 }
 @media only screen and (min-width:768px) and (max-width:1023px){
 .selected {margin: 8px 0 0 50px;  width: 40%;}
 .nav>li>a{padding-left:11px;padding-right:12px;}
 
 }
+
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+.sectionleftul .menu_list li {
+  min-width: auto;
+}
+}
+
+
+
+@media only screen and (min-width:992px) and (max-width:1023px){
+.sectionleftul .menu_list li {
+  min-width: 151px;
+}
+.sectionleftul .menu_list ul li:nth-child(2n) {
+  width: 160px !important;
+}
+}
+
 
 @media (max-width:1024px){
 	.social-area.clearfix {
@@ -561,3 +588,115 @@ h3{font-size:20px;}
 }
 
 .menublock li.current-menu-item a, .menublock li a:hover { background-color: #58b4e5 !important;}
+
+.body-text /* For Text Body Content */
+{
+    max-width: 800px !important;
+    margin: auto !important;
+}
+/* Campus Pages */
+/* Times */
+.service-times {
+    background-color:#e6e8e5;
+    text-align:center;
+    text-transform: uppercase;
+    color: #000000;
+    padding: 10px 0 10px 0;
+    margin-bottom:10px;
+}
+.service-times:first-child {
+    font-size: 5rem !important;
+}
+
+.ssat {
+    font-size: 3rem;
+    padding-bottom: .2rem;
+}
+
+.sstime {
+    font-size: 4rem;
+}
+
+/* Campus Address Container */
+.campus-address-box {
+
+}
+/* Google Maps: */
+.campus-map {
+    max-width:60%;
+    float:left;
+    margin-top:1rem;
+}
+/* Campus Addresses */
+.campus-addresses {
+    float:right;
+    max-width:48%;
+    padding-right:5%;
+}
+.campus-addresses h2 {
+    padding-left:0px;
+}
+.campus-addresses p {
+    padding-left:0px;
+}
+/* Campus GPS Address */
+.campus-gps-address {
+    clear: both;
+}
+/* LQD Mailing Address */
+.campus-mailing-address {
+    margin-top:20px;
+}
+/* Get Directions */
+.campus-get-directions input {
+    display: inline;
+    max-width:40%;
+}
+/* Campus Staff Header */
+.campus-staff-header {
+    background-color:#58b4e5;
+    color:#ffffff;
+    text-align:center;
+    font-size:2.5rem;
+    padding: 20px 0 20px 0;
+    clear:both;
+    margin-top:30px;
+}
+/* Campus Staff Box */
+.campus-staff {
+    display: inline-block;
+    width: 100%;
+}
+/* Styling for individual staff box */
+.individual-staff {
+    clear:both;
+    max-width:80%;
+    margin: auto auto 10px auto;
+}
+
+.individual-staff hr {
+    display: inline-block;
+    width:100%;
+    margin: 10px auto 0 auto;
+}
+
+.individual-staff span {
+    font-size:2rem;
+    padding-left:20%;
+}
+
+.individual-staff img {
+    float:left;
+}
+
+/* Pastor Bios Styling */
+.pastors-bio {
+    margin: auto;
+    max-width: 1000px;
+}
+
+
+
+
+
+
