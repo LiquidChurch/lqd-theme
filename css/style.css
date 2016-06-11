@@ -594,6 +594,43 @@ h3{font-size:20px;}
     max-width: 800px !important;
     margin: auto !important;
 }
+
+/* Responsive Videos
+ * Can be removed after Jetpack live
+ */
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height:0;
+    overflow:hidden;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Google Maps */
+.mapWrapper {
+    position: relative;
+    padding-bottom: 90%;
+    height: 0;
+    overflow: hidden;
+}
+
+.mapWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 /* Campus Pages */
 /* Times */
 .service-times {
@@ -617,16 +654,6 @@ h3{font-size:20px;}
     font-size: 4rem;
 }
 
-/* Campus Address Container */
-.campus-address-box {
-
-}
-/* Google Maps: */
-.campus-map {
-    max-width:60%;
-    float:left;
-    margin-top:1rem;
-}
 /* Campus Addresses */
 .campus-addresses {
     float:right;
@@ -647,10 +674,13 @@ h3{font-size:20px;}
 .campus-mailing-address {
     margin-top:20px;
 }
+.campus-get-directions {
+    padding: 0 30px;
+}
 /* Get Directions */
 .campus-get-directions input {
     display: inline;
-    max-width:40%;
+    max-width: 60%;
 }
 /* Campus Staff Header */
 .campus-staff-header {
