@@ -872,3 +872,12 @@ function modify_wp_vimeo_embeds( $html ) {
 }
 add_filter( 'embed_oembed_html', 'modify_wp_vimeo_embeds' );
 add_filter( 'embed_handler_html', 'modify_wp_vimeo_embeds' );
+
+/**
+ * Add theme support for Responsive Videos via Jetpack.
+ * https://jetpack.com/support/responsive-videos/
+ */
+function jetpackme_responsive_videos_setup() {
+	add_theme_support( 'jetpack-responsive-videos' );
+}
+add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
