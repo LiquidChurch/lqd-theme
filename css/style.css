@@ -595,9 +595,7 @@ h3{font-size:20px;}
     margin: auto !important;
 }
 
-/* Responsive Videos
- * Can be removed after Jetpack live
- */
+/* Responsive Videos, when not using FidVid. */
 
 .videoWrapper {
     position: relative;
@@ -613,6 +611,7 @@ h3{font-size:20px;}
     width: 100%;
     height: 100%;
 }
+
 
 /* Responsive Google Maps */
 .mapWrapper {
@@ -724,9 +723,3 @@ h3{font-size:20px;}
     margin: auto;
     max-width: 1000px;
 }
-
-
-
-
-
-
