@@ -226,8 +226,21 @@
 
 .gc-lg-rt-col {
     padding-left: 0;
+    padding-right:30px;
+}
+.gc-sermon-resources-list-item a {
+    font-size:.8em;
+}
+.entry-content .gc-sermon-resources-list-item {
+    margin-bottom: 1px;
 }
 
+.gc-individual-sermon-list .gc-sermons-list  {
+    padding-right:30px;
+    padding-left:0;
+    padding-top: 50px;
+    font-size: 1em;
+}
 @media only screen and (min-width : 1001px) and (max-width: 1200px) {
     .gc-left-col {
         font-size: 18px;
