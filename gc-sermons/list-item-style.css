@@ -210,24 +210,35 @@
     display: block;
     clear: both;
 }
-.gc-speaker {
-    padding-left:30px;
+
+.gc-sermon-title {
+    padding: 0 0 !important;
 }
 
-.gc-speaker span {
-    font-weight:700;
-    font-size:2rem;
-}
-
-.gc-summary {
-    padding-left:30px;
-}
-
-.gc-summary span {
+.gc-left-col {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1em;
+    padding-left:30px;
+}
+.gc-right-col {
+    font-size: 1em;
 }
 
+.gc-lg-rt-col {
+    padding-left: 0;
+}
+
+@media only screen and (min-width : 1001px) and (max-width: 1200px) {
+    .gc-left-col {
+        font-size: 18px;
+        line-height:120%;
+    }
+
+    .gc-right-col {
+        font-size: 18px;
+        line-height:120%;
+    }
+}
 @media only screen and (max-width : 1000px) {
 
     .gc-item h3 {
@@ -237,7 +248,6 @@
     .gc-4-cols .gc-item h3 {
         font-size: 1em;
     }
-
 }
 
 @media only screen and (max-width : 775px) {

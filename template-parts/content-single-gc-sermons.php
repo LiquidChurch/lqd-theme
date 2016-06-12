@@ -40,21 +40,39 @@ $sermon = gc_get_sermon_post();
                     <?php endif; ?>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 gc-lg-rt-col">
                     <header class="entry-header">
                         <?php
-                            the_title( '<h1 class="entry-title">', '</h1>' );
+                            the_title( '<h1 class="gc-sermon-title">', '</h1>' );
                         ?>
                     </header><!-- .entry-header -->
-                    <?php
-                    do_action( 'gc_recent_speaker', array( 'sermon_id' => $sermon->ID ) );
-                    ?>
-                    <div class="gc-summary">
+                        <div id="message-series" class="row">
+                            <div class="col-sm-3 gc-left-col">
+                                <span>Series:</span>
+                            </div>
+                            <div class="col-sm-9 gc-right-col">
+                                <?php
+                                $series = $sermon->get_series();
+                                echo '<a href=\"' . $series->url . '\">' . $series->name . '</a>';
+                                ?>
+                            </div>
+                        </div>
+                    <div id="message-speaker" class="row">
+                        <div class="col-sm-3 gc-left-col">
+                            <span>Speaker:</span>
+                        </div>
+                        <div class="col-sm-9 gc-right-col">
+                            <?php
+                            $speaker = $sermon->get_speaker();
+                            echo $speaker->name;
+                            ?>
+                        </div>
+                    </div>
                     <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 gc-left-col">
                                 <span>Summary:</span>
                             </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-9 gc-right-col">
                             <?php
                             add_filter('the_content', 'gc_sermon_before_after');
                             $content = the_content();
@@ -62,19 +80,12 @@ $sermon = gc_get_sermon_post();
                             ?>
                         </div>
                     </div>
-                    </div>
-                    <div class="message-series">
-                        <?php
-                             $series = $sermon->get_series();
-                        ?>
-                        <p>Part of the <a href="<?php $series->url; ?>"><?php echo $series->name; ?> Series</a></p>
-                    </div>
-                    <div class="message-related-links">
-                        <?php do_action( 'gc_related_links', array( 'sermond_id' => $sermon->ID ) ); ?>
-                    </div>
-
-                    <div class="">
-
+                    <div>
+                        <?php do_action( 'sermon_resources', array(
+                            'resource_type'      => array( 'files', 'urls' ),
+                            'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
+                            'resource_post_id'   => get_the_id(),
+                        ) ); ?>
                     </div>
             </div>
             <div style="margin-top:40px;">
