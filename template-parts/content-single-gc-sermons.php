@@ -12,10 +12,11 @@ $sermon = gc_get_sermon_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="row">
-        <div class="entry-content" style="padding-left:55px;padding-right:15px;">
-            <div class="row">
-                <div class="col-md-7">
+
+	<div class="entry-content" style="padding-left:55px;padding-right:15px;">
+		<div class="row">
+			<div id="top-row-single-sermon" class="row">
+				<div id="single-sermon-player" class="col-md-7">
                     <?php if ( $video_player = gc_get_sermon_video_player( $sermon ) ) : ?>
                         <div class="message-video">
                             <?php echo $video_player; ?>
@@ -38,25 +39,24 @@ $sermon = gc_get_sermon_post();
                     <?php else : ?>
                         <?php liquidchurch_post_thumbnail(); ?>
                     <?php endif; ?>
-
                 </div>
-                <div class="col-md-5 gc-lg-rt-col">
+                <div id="single-sermon-content" class="col-md-5 gc-lg-rt-col">
                     <header class="entry-header">
                         <?php
                             the_title( '<h1 class="gc-sermon-title">', '</h1>' );
                         ?>
                     </header><!-- .entry-header -->
-                        <div id="message-series" class="row">
-                            <div class="col-sm-3 gc-left-col">
+	                <div id="message-series" class="row">
+		                <div class="col-sm-3 gc-left-col">
                                 <span>Series:</span>
                             </div>
-                            <div class="col-sm-9 gc-right-col">
+		                <div class="col-sm-9 gc-right-col">
                                 <?php
                                 $series = $sermon->get_series();
                                 echo '<a href=\"' . $series->url . '\">' . $series->name . '</a>';
                                 ?>
                             </div>
-                        </div>
+	                </div>
                     <div id="message-speaker" class="row">
                         <div class="col-sm-3 gc-left-col">
                             <span>Speaker:</span>
@@ -68,7 +68,7 @@ $sermon = gc_get_sermon_post();
                             ?>
                         </div>
                     </div>
-                    <div class="row">
+                    <div id="message-summary" class="row">
                             <div class="col-sm-3 gc-left-col">
                                 <span>Summary:</span>
                             </div>
@@ -80,29 +80,31 @@ $sermon = gc_get_sermon_post();
                             ?>
                         </div>
                     </div>
-                    <div>
+                    <div id="message-resources">
+                        <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
                         <?php do_action( 'sermon_resources', array(
                             'resource_type'      => array( 'files', 'urls' ),
                             'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
                             'resource_post_id'   => get_the_id(),
                         ) ); ?>
                     </div>
+                </div>
             </div>
-            <div style="margin-top:40px;">
-                <?php
+			<div id="message-others" class="row gc-individual-sermon-list">
+                    <?php
 
-                do_action( 'gc_sermons', array(
-                    'per_page' => 5,
-                    'related_series' => 'this',
-                    //'content' => '',
-                    'thumbnail_size' => 'medium',
-                    'number_columns' => '4',
-                ) );
-                ?>
-            </div>
-        </div>
-    </div><!-- .entry-content -->
-    </div>
+                    do_action( 'gc_sermons', array(
+                        'per_page' => 5,
+                        'related_series' => 'this',
+                        //'content' => '',
+                        'thumbnail_size' => 'medium',
+                        'number_columns' => '4',
+                    ) );
+                    ?>
+			</div>
+		</div>
+	</div><!-- .entry-content -->
+
     <footer class="entry-footer">
         <?php liquidchurch_entry_meta(); ?>
         <?php
