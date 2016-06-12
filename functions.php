@@ -887,7 +887,7 @@ add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
  */
 function gc_sermon_before_after($content)
 {
-	$content = preg_replace('/<p>/', '<span>', $content, 1);
+	$content = preg_replace('/<p>/', '<span class="gc-right-col">', $content, 1);
 	$content = preg_replace('/<\/p>/', '</span>', $content, 1);
 	return $content;
 }
