@@ -53,7 +53,7 @@ $sermon = gc_get_sermon_post();
 		                <div class="col-sm-9 gc-right-col">
                                 <?php
                                 $series = $sermon->get_series();
-                                echo '<a href=\"' . $series->url . '\">' . $series->name . '</a>';
+                                echo '<a href="' . $series->term_link . '">' . $series->name . '</a>';
                                 ?>
                             </div>
 	                </div>
