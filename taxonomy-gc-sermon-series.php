@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archive pages for a single sermon series.
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
@@ -30,6 +30,7 @@ get_header(); ?>
 					'class' => 'gc-single-series-sermons-img',
 				) );
 			}
+			echo '<p style="font-size:2.5rem; text-align:center; padding-bottom:20px;">' . $series->description . '</p>';
 			?>
 			<?php
 			// Start the Loop.

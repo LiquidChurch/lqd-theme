@@ -15,7 +15,7 @@
   background: #fff none repeat scroll 0 0;
   border: 2px solid #337ab7;
   border-radius: 100px;
-  font-family: "Avenir Next Cyr W00 Bold",sans-serif;
+  font-family: "Avenir Next LT Pro",sans-serif;
   height: 27px;
   margin-top: 7px;
   position: relative;
@@ -24,12 +24,13 @@
 .selectric .label {
   color: #00568b;
   display: block;
-  font-size: 16px;
-  font-weight: bold;
-  height: 38px;
-  line-height: 19px;
-  margin: 0 38px 0 10px;
+  font-size:16px;
+  font-weight: bold!important;
+  height:38px;
+  line-height:16px;
+  margin: 0 10px;
   overflow: hidden;
+  padding:4px 0 0;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
@@ -131,7 +132,7 @@
 }
 .selectric-items .selectric-scroll {
   height: 100%;
-  overflow: auto; text-align: center;
+  overflow: auto;
 }
 .selectric-above .selectric-items {
   top: auto;
@@ -149,7 +150,7 @@
   color: #4c9fc7;
   cursor: pointer;
   display: block;
-  font-family: "Avenir Next Cyr W00 Bold",sans-serif;
+  font-family:'Avenir Next LT Pro',sans-serif;
   font-size: 16px;
   font-weight: bold;
   padding: 8px;
