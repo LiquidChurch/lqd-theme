@@ -131,7 +131,7 @@
 }
 .selectric-items .selectric-scroll {
   height: 100%;
-  overflow: auto;
+  overflow: auto; text-align: center;
 }
 .selectric-above .selectric-items {
   top: auto;

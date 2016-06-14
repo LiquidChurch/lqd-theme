@@ -480,7 +480,7 @@ function show_sub_section($attr){
 		 return   $html;
 }
 
-add_shortcode('SHOW_PAGE_SECTION','show_sub_section');
+//add_shortcode('SHOW_PAGE_SECTION','show_sub_section');
 
 
 function show_header_banner_section(){
@@ -517,7 +517,7 @@ function show_header_banner_section(){
 		
 }
 
-add_shortcode('SHOW_HEADER_BANNER_SECTION','show_header_banner_section');
+//add_shortcode('SHOW_HEADER_BANNER_SECTION','show_header_banner_section');
 
 function show_header_slider_section(){
 			$html='';	
@@ -645,7 +645,7 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
 
 function uri_locations($country){
 	$text = $country;
-	$sulg = sanitize_title($text);
+	$slug = sanitize_title($text);
 	return $slug;
 }
 
@@ -656,23 +656,25 @@ function emz_customize_register( $wp_customize ) {
  $wp_customize->add_section( 'lqd_theme', array(
     'title' => 'Liquid Options',
     'description' => 'Settings',
-    'priority' => 1
+    'priority' => 1, 
+    'sanitize_callback' == 'esc_url_raw',
 ) );
 
-   $wp_customize->add_setting( 'm1_logo' ); // Add setting for logo uploader
+   $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' ); // Add setting for logo uploader
          
     // Add control for logo uploader (actual uploader)
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm1_logo', array(
-        'label'    => __( 'Header Logo', 'm1' ),
+        'label'    => __( 'Header Logo', 'liquidchurch' ),
         'section'  => 'lqd_theme',
         'settings' => 'm1_logo',
         'priority' => 1,
+        'sanitize_callback' == 'esc_url_raw',
     ) ) );
 
 
 /* Social Icons*/
 
-    $wp_customize->add_setting( 'facebook_id_theme' ); // Fb
+    $wp_customize->add_setting( 'facebook_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Fb
          
     	$wp_customize->add_control( 'facebook_id', array(
 		'label'    => __( 'Facebook Link', 'liquidchurch' ),
@@ -680,9 +682,10 @@ function emz_customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'settings'  => 'facebook_id_theme',
 		'priority' => 3,
+		'sanitize_callback' == 'esc_url_raw',
 	) );
 
-      $wp_customize->add_setting( 'twitter_id_theme' ); // Twiiter
+      $wp_customize->add_setting( 'twitter_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Twiiter
          
     	$wp_customize->add_control( 'twitter_id', array(
 		'label'    => __( 'Twitter Link', 'liquidchurch' ),
@@ -690,9 +693,10 @@ function emz_customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'settings'  => 'twitter_id_theme',
 		'priority' => 4,
+		'sanitize_callback' == 'esc_url_raw',
 	) );
 
-    $wp_customize->add_setting( 'youtube_id_theme' ); // youtube
+    $wp_customize->add_setting( 'youtube_id_theme','sanitize_callback' == 'esc_url_raw' ); // youtube
          
     	$wp_customize->add_control( 'youtube_id', array(
 		'label'    => __( 'Youtube Link', 'liquidchurch' ),
@@ -700,9 +704,10 @@ function emz_customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'settings'  => 'youtube_id_theme',
 		'priority' => 5,
+		'sanitize_callback' == 'esc_url_raw',
 	) );
 
-    $wp_customize->add_setting( 'instagram_id_theme' ); // nstagram
+    $wp_customize->add_setting( 'instagram_id_theme','sanitize_callback' == 'esc_url_raw' ); // nstagram
          
     	$wp_customize->add_control( 'instagram_id', array(
 		'label'    => __( 'Instagram Link', 'liquidchurch' ),
@@ -710,9 +715,10 @@ function emz_customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'settings'  => 'instagram_id_theme',
 		'priority' => 6,
+		'sanitize_callback' == 'esc_url_raw',
 	) );
 
-       $wp_customize->add_setting( 'vimeo_id_theme' ); // vimeo
+       $wp_customize->add_setting( 'vimeo_id_theme','sanitize_callback' == 'esc_url_raw' ); // vimeo
          
     	$wp_customize->add_control( 'vimeo_id', array(
 		'label'    => __( 'Vimeo Link', 'liquidchurch' ),
@@ -720,6 +726,7 @@ function emz_customize_register( $wp_customize ) {
 		'type'     => 'text',
 		'settings'  => 'vimeo_id_theme',
 		'priority' => 7,
+		'sanitize_callback' == 'esc_url_raw',
 	) ); 	
 
 }
@@ -763,13 +770,13 @@ function createDefaultMenu(){
 
 		// Set up default menu items
 	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Home'),
+	        'menu-item-title' =>  ( 'Home' ),
 	        'menu-item-classes' => 'home',
 	        'menu-item-url' => home_url( '/' ), 
 	        'menu-item-status' => 'publish'));
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Custom Page'),
+	        'menu-item-title' =>  ( 'Custom Page' ),
 	        'menu-item-url' => home_url( '/custom-page/' ), 
 	        'menu-item-status' => 'publish'));
 
@@ -792,18 +799,18 @@ function createDefaultLocationMenu(){
 
 		// Set up default menu items
 	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Locations'),
+	        'menu-item-title' =>  ('Locations'),
 	        'menu-item-classes' => 'locations',
 	        'menu-item-url' => home_url( '/' ), 
 	        'menu-item-status' => 'publish'));
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Locations 1'),
+	        'menu-item-title' =>  ('Locations 1'),
 	        'menu-item-url' => home_url( '/' ), 
 	        'menu-item-status' => 'publish'));
 
 	     wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Locations 2'),
+	        'menu-item-title' =>  ('Locations 2'),
 	        'menu-item-url' => home_url( '/' ), 
 	        'menu-item-status' => 'publish'));
 	}

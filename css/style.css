@@ -738,3 +738,8 @@ textarea{ height:140px;}
 .pastors-bios h3 {
     margin-bottom: 0;
 }
+
+.gc-single-series-sermons-img {
+    display: block;
+    margin: 20px auto;
+}
