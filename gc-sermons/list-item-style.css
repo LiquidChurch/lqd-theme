@@ -242,6 +242,7 @@
     font-size: 1em;
 }
 
+
 @media only screen and (min-width : 1001px) and (max-width: 1200px) {
     .gc-left-col {
         font-size: 18px;
