@@ -22,12 +22,15 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
 				<?php
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				$series_info = gc_get_sermon_series_info();
-				$series_img = $series_info->sermon_series_image;
-				?>
+
+				$series = gc_sermons()->taxonomies->series->get( get_queried_object_id() );
+			if ( $series->image_id ) {
+				echo wp_get_attachment_image( $series->image_id, 'full', false, array(
+					'class' => 'gc-single-series-sermons-img',
+				) );
+			}
+			?>
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
@@ -58,5 +61,4 @@ get_header(); ?>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

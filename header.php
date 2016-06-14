@@ -30,31 +30,31 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-8">
-            <div class="logo">
-                <?php 
-                  if (get_theme_mod( 'm1_logo' )){
-                    ?>
-                        <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a> 
-                  <?php
-                  }else{
-                    ?>
-                  <?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                  <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                  <?php endif;
-
-                  $description = get_bloginfo( 'description', 'display' );
-                  if ( $description || is_customize_preview() ) : ?>
-                    <p class="site-description"><?php echo $description; ?></p>
-                  <?php endif; ?>
-                <?php 
-                       }
-                ?>
-            </div>
+	            <div class="logo"> 
+	                <?php 
+	                  if (get_theme_mod( 'm1_logo' )){
+	                    ?>
+	                        <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a> 
+	                  <?php
+	                  }else{
+	                    ?>
+	                  <?php if ( is_front_page() && is_home() ) : ?>
+	                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	                  <?php else : ?>
+	                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	                  <?php endif;
+	
+	                  $description = get_bloginfo( 'description', 'display' );
+	                  if ( $description || is_customize_preview() ) : ?>
+	                    <p class="site-description"><?php echo $description; ?></p>
+	                  <?php endif; ?>
+	                <?php 
+	                       }
+	                ?>
+	            </div>
                   
                   
-                    <div class="col-sm-4 col-md-4">
+                    <div class="location-block">
                     <?php if ( has_nav_menu( 'locations' ) ) : ?>
                             <?php
                              wp_nav_menu( array(
@@ -75,8 +75,7 @@
                             </form>
                           </div>
                           <?php endif; ?>
-            </div>
-                
+            </div>   
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 posit">
             <div class="social-area clearfix">
