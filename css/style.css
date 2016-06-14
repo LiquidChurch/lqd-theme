@@ -743,3 +743,6 @@ textarea{ height:140px;}
     display: block;
     margin: 20px auto;
 }
+.gc-series-list-sermons-img {
+    max-width: 500px !important;
+}
