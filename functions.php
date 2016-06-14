@@ -898,3 +898,9 @@ function gc_sermon_before_after($content)
 	$content = preg_replace('/<\/p>/', '</span>', $content, 1);
 	return $content;
 }
+function gc_series_before_after($content)
+{
+	$content = preg_replace('/<p>/', '<p style="padding-left:30px; padding-right:30px;">', $content, 1);
+	$content = preg_replace('/<\/p>/', '</p>', $content, 1);
+	return $content;
+}

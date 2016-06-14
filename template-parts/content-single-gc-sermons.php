@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying single posts
+ * The template part for displaying single sermon
  *
  * @package WordPress
  * @subpackage Liquid_Church

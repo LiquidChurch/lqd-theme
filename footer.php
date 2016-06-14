@@ -36,39 +36,32 @@
 	          </div>
 	          <div class="col-md-4">
 	          		<ul class="footer_social">
-	          		<?php if(get_theme_mod( 'facebook_id_theme' ) || get_theme_mod( 'twitter_id_theme' ) || get_theme_mod( 'instagram_id_theme' ) || get_theme_mod( 'youtube_id_theme' ) || get_theme_mod( 'vimeo_id_theme' ))  { ?>
-	          			<li>
-	                   		<a target="_blank" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" class="ffb" title="Facebook"><i class="ffb"></i></a>
-	                   	</li>
-						<li>
-							<a target="_blank" href="<?php echo get_theme_mod( 'twitter_id_theme' )  ;?>" class="ftwitter" title="Twitter"><i class="ftwitter"></i></a>
-						</li>
-						<li>
-							<a target="_blank" href="<?php echo get_theme_mod( 'instagram_id_theme' )  ;?>" class="finsta" title="Instagram"><i class="finsta"></i></a>
-						</li>
-						<li>
-	                   		<a target="_blank" href="<?php echo get_theme_mod( 'youtube_id_theme' )  ;?>" class="fyoutube" title="Youtube"><i class="fyoutube"></i></a>
-	                   	</li>
-	                   	<li>
-	                   		<a target="_blank" href="<?php echo get_theme_mod( 'vimeo_id_theme' );?>" class="fvimeo" title="Vimeo"><i class="fvimeo"></i></a>
-	                   	</li>
-	                   	<?php } else{ ?>
-				                 <li>
-				                   		<a target="_blank" href="<?php echo home_url('wp-admin/customize.php');?>" class="ffb" title="Facebook"><i class="ffb"></i></a>
+	          				<?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
+				          			<li>
+				                   		<a target="_blank" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" class="ffb" title="Facebook"><i class="ffb"></i></a>
 				                   	</li>
+	                   		<?php }?>
+	                   		<?php if( get_theme_mod( 'twitter_id_theme' ) )  { ?>
 									<li>
-										<a target="_blank" href="<?php echo home_url('wp-admin/customize.php');?>" class="ftwitter" title="Twitter"><i class="ftwitter"></i></a>
+										<a target="_blank" href="<?php echo get_theme_mod( 'twitter_id_theme' )  ;?>" class="ftwitter" title="Twitter"><i class="ftwitter"></i></a>
 									</li>
+							<?php }?>		
+							<?php if( get_theme_mod( 'instagram_id_theme' ) )  { ?>
 									<li>
-										<a target="_blank" href="<?php echo home_url('wp-admin/customize.php');?>" class="finsta" title="Instagram"><i class="finsta"></i></a>
+										<a target="_blank" href="<?php echo get_theme_mod( 'instagram_id_theme' )  ;?>" class="finsta" title="Instagram"><i class="finsta"></i></a>
 									</li>
+							<?php }?>
+							<?php if( get_theme_mod( 'youtube_id_theme' ) )  { ?>
 									<li>
-				                   		<a target="_blank" href="<?php echo home_url('wp-admin/customize.php');?>" class="fyoutube" title="Youtube"><i class="fyoutube"></i></a>
+				                   		<a target="_blank" href="<?php echo get_theme_mod( 'youtube_id_theme' )  ;?>" class="fyoutube" title="Youtube"><i class="fyoutube"></i></a>
 				                   	</li>
+				            <?php }?>
+				            <?php if( get_theme_mod( 'vimeo_id_theme' ) )  { ?>
 				                   	<li>
-				                   		<a target="_blank" href="<?php echo home_url('wp-admin/customize.php');?>" class="fvimeo" title="Vimeo"><i class="fvimeo"></i></a>
+				                   		<a target="_blank" href="<?php echo get_theme_mod( 'vimeo_id_theme' );?>" class="fvimeo" title="Vimeo"><i class="fvimeo"></i></a>
 				                   	</li>
-	                   		<?php } ?>
+				            <?php }?>
+				                   
 	                </ul>
 	          </div>
 	          <div class="clear"></div>
@@ -187,5 +180,4 @@ jQuery(function ($) {
 </body>
 </html>
   <!-- Footer Area start -->
-
 

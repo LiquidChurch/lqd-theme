@@ -31,7 +31,8 @@
 				</header><!-- .entry-header -->
 				<?php
 				$speaker = $sermon->get_speaker();
-				echo $speaker->name;
+				echo '<span style="padding-left:30px;">' . $speaker->name . '</span><br />';
+
 				//$speakers = gc_sermons()->taxonomies->speakers->get( get_queried_object_id() );
 				//echo $speakers->name;
 				//$speakers = $sermon->get_speaker();
@@ -42,6 +43,11 @@
 					echo $name;
 
 				} */
+				?>
+				<?php
+				add_filter('the_content', 'gc_series_before_after');
+				$content = the_content();
+				echo  $content;
 				?>
 			</div>
 		</div>

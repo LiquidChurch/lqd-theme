@@ -132,7 +132,7 @@ textarea{ height:140px;}
 .menublock .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     background: none; color: none;}
 .menublock ul li {border-left: 1px solid #ffffff;  box-sizing: border-box;  color: #ffffff;  float:left;  margin:auto; text-align:center;}
-.menublock li a { color: #ffffff !important;display: block; font-size: 1.5rem;font-weight: bold; padding: 15px 40px; text-transform: uppercase;}
+.menublock li a { color: #ffffff !important;display: block; font-size: 1.5rem;font-family:'Avenir Next Cyr W00 Bold'; padding: 15px 40px; text-transform: uppercase;}
 .menublock li.current-menu-item a, .menublock li a:hover{ background-color:#58b4e5!important;}
 .menublock nav { margin:0px;}
 .menublock ul li:first-child {border: medium none;}
@@ -182,7 +182,7 @@ textarea{ height:140px;}
 .entry-content .img_left{ float:left; margin-right:20px; margin-bottom:10px;}
 .entry-content .img_right{ float:right; margin-left:20px; margin-bottom:10px;}
 .entry-content ul{padding:0 30px;}
-.entry-content ul li { color: #333333; font-size:24px; line-height:26px; margin-bottom:10px;}
+.entry-content ul li { color: #333333; font-size:20px; line-height:26px; margin-bottom:10px;}
 .entry-content hr{ clear:both; display:block;}
 
 .one_box{ display:block; clear:both; padding-top:10px;}
@@ -554,10 +554,11 @@ textarea{ height:140px;}
 
     .esg-grid.esg-layout-even.esg-container {margin: 10px 0;  padding: 0 !important;}
     .filterall.eg-liquid-front-page-wrapper.tp-esg-item.itemtoshow.isvisiblenow { width: 100% !important;}
-{
-    float: none!important;
-    margin-left: 0!important;
-    width: auto!important;
+    
+    .location-block {
+  float: none!important;
+  margin-left: 0!important;
+  width: auto!important;
 }
 
 
@@ -728,9 +729,9 @@ textarea{ height:140px;}
 }
 .location-block {
     float: left;
-    margin-left:200px;   width: 32%;
+    margin-left:177px; width: 32%;
 }
-
+.location-block .selectric .label{font-family:'Avenir Next LT Pro',sans-serif!important;}
 /* Pastor Bios Styling */
 .pastors-bios h2 {
     margin-bottom: 0;
@@ -743,6 +744,8 @@ textarea{ height:140px;}
     display: block;
     margin: 20px auto;
 }
+
 .gc-series-list-sermons-img {
     max-width: 500px !important;
+    overflow: hidden;
 }
