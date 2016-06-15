@@ -182,7 +182,7 @@ textarea{ height:140px;}
 .entry-content .img_left{ float:left; margin-right:20px; margin-bottom:10px;}
 .entry-content .img_right{ float:right; margin-left:20px; margin-bottom:10px;}
 .entry-content ul{padding:0 30px;}
-.entry-content ul li { color: #333333; font-size:20px; line-height:26px; margin-bottom:10px;}
+.entry-content ul li { color: #333333; font-size:20px; line-height:26px; margin-bottom:10px; list-style:inside; }
 .entry-content hr{ clear:both; display:block;}
 
 .one_box{ display:block; clear:both; padding-top:10px;}
