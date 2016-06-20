@@ -219,7 +219,11 @@ textarea{ height:140px;}
 .sbSelector:link, .sbSelector:visited, .sbSelector:hover { outline: medium none; text-decoration: none;}
 .sbSelector { color: #00568b; display: block; height: 24px; line-height:24px; left: 6%; outline: medium none; overflow: hidden; position: absolute; text-align: center; top: 0; width: 85%; z-index: 122;}
 .sbHolder:hover .sbSelector{ color:#58b4e5}
-.sbOptions { border-colors: none; background-color: #ffffff; border-color:-moz-use-text-color #00568b #00568b; border-image:none; border-radius:0 0 17px 17px; border-style:none solid solid; border-width:0 2px 2px; box-sizing:border-box; color:#228dc1; left: -2px; list-style: outside none none; margin: -10px 0 0; opacity: 0.9; overflow-y: auto; padding: 16px 0; position: absolute; width:200px; z-index: 2; top:28px;}
+.sbOptions { border-colors: none; background-color: #ffffff;
+    border-image:none; border-radius:0 0 17px 17px;
+    border: 2px solid #00568b;
+    border-top: 0 none -moz-use-text-color;
+    box-sizing:border-box; color:#228dc1; left: -2px; list-style: outside none none; margin: -10px 0 0; opacity: 0.9; overflow-y: auto; padding: 16px 0; position: absolute; width:200px; z-index: 2; top:28px;}
 .sbOptions li { color: #228dc1; padding: 0 7px;}
 .sbOptions li:first-child { display: none;}
 .sbOptions a { color: #4c9fc7; display: block; outline: medium none; padding: 7px 0 7px 3px; line-height:16px;}
@@ -471,10 +475,8 @@ textarea{ height:140px;}
 
 
     .three_box .tb_list li:first-child {
-        border-top:5px solid #ffffff !important;
-        border-bottom:10px solid #ffffff !important;
-        border-left:10px solid #ffffff !important;
-        border-right:10px solid #ffffff !important;
+        border: 10px solid #ffffff !important;
+        border-top-width: 5px;
         margin-bottom:0px;
         display: inline-block !important;
     }
