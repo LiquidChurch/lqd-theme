@@ -75,7 +75,7 @@
         	<div class="row">
             		<div class="futr_menublock">
                     	<div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
           
                               	  <?php
 										if(is_active_sidebar('footer-about-us')){
