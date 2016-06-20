@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
 			                  <?php
 									if(is_active_sidebar('footer-life-events')){
 									dynamic_sidebar('footer-life-events');
@@ -101,7 +101,7 @@
                             </div>
                         </div>
                          <div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
 		                	<?php
 									if(is_active_sidebar('footer-messages')){
 									dynamic_sidebar('footer-messages');
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                  <div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
 			        			<?php
 									if(is_active_sidebar('footer-media')){
 									dynamic_sidebar('footer-media');
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                          <div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
 							<?php
 									if(is_active_sidebar('footer-give')){
 									dynamic_sidebar('footer-give');
@@ -139,7 +139,7 @@
                             </div>
                         </div>
                        <div class="col-md-2 col-xs-6 col-sm-6">
-                        	<div class="iner_block">
+                        	<div class="inner_block">
 				          		<?php
 										if(is_active_sidebar('footer-help')){
 										dynamic_sidebar('footer-help');

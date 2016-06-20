@@ -17,6 +17,10 @@
 
 <!-- .entry-content -->
 	<div class="entry-content">
+		<?php if ( isset( $_GET['sermon_search'] ) ) : ?>
+			<p><a href="/messages/">Return to Messages Home</a></p>
+		<?php endif; ?>
+
 		<?php the_content(); ?>
 
 		<?php if ( ! isset( $_GET['sermon-search'] ) ) : ?>
