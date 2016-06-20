@@ -1,7 +1,7 @@
 /*
 	blue_btn  	=	for blue Button
 	orange_btn 	=	for orange Button
-					span inside bule btn class the content will be bigger
+					span inside blue btn class the content will be bigger
 	
 	img_left	=	images goes left
 	img_right	=	images goes right
@@ -163,8 +163,8 @@ textarea{ height:140px;}
 
 .footer_container{background-color:#dcddde; padding:15px 0;}
 .futr_menublock{margin: 0 -32px 0 -30px;}
-.iner_block{margin:0;}
-.iner_block h2 {border-bottom: 1px solid #fff; color:#00568b; font-family:"Avenir Next LT Pro Demi",sans-serif; font-weight:bold; font-size:18px;  margin-bottom:20px; margin-top:20px; padding-bottom:12px; text-transform:uppercase;}
+.inner_block {margin:0;}
+.inner_block h2 {border-bottom: 1px solid #fff; color:#00568b; font-family:"Avenir Next LT Pro Demi",sans-serif; font-weight:bold; font-size:18px;  margin-bottom:20px; margin-top:20px; padding-bottom:12px; text-transform:uppercase;}
 .menu_list{margin:0;}
 .menu_list ul{margin:0;}
 .menu_list ul li{display:block; padding:0 0 24px;}
@@ -172,8 +172,7 @@ textarea{ height:140px;}
 .menu_list li a:hover, .sectionleft li a:hover{text-decoration:none;}
 
 .entry-content{ padding:15px; font-size:24px; line-height:135%; color:#333;}
-.entry-content p{ font-size:24px; line-height:135%; color:#333; margin-bottom:15px; padding-left:30px; padding-right:30px;
-    /* text-align:justify; */ }
+.entry-content p{ font-size:24px; line-height:135%; color:#333; margin-bottom:15px; padding-left:30px; padding-right:30px; }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4{padding: 0 30px; display: inline-block;}
 .entry-content .search-form {padding-right:30px;padding-left:30px;}
 .entry-content table {margin-left:30px;}
@@ -281,15 +280,6 @@ textarea{ height:140px;}
 
 .footer_menu_widget_else a {  color: #00568b;  text-decoration: none;}
 
-
-/* 9/6/2016 */
-
-/*#menu-item-4802 > a {  color: #fff;  font-size: 16px;  line-height: 10px;  margin-top: 10px;}
-
-#menu-item-4803 > a {  color: #fff;  font-size: 16px;  line-height: 10px;  margin-left: 15px;  margin-top: 10px;}
-
-#menu-item-4804 > a {  color: #fff;  font-size: 16px;  line-height: 10px;  margin-left: 15px;  margin-top: 10px;}*/
-
 .sectionleftul li ul li a { color:#FFF; margin:7px 0 0 11px; font-size:20px;}
 .sectionleftul .menu_list ul li{padding:0;}
 .sectionleftul {margin-left:-41px;}
@@ -311,7 +301,12 @@ textarea{ height:140px;}
     .nav>li>a{padding-left:11px;padding-right:12px;}
 
 }
-
+/* Below added by DM 6/20/16 to fix issues between 768px and 814px where menu would create second line */
+@media only screen and (min-width:768px) and (max-width:814px) {
+    .menublock li a {
+        font-size: 1.34rem;
+    }
+}
 
 @media only screen and (min-width:768px) and (max-width:991px){
 
@@ -319,8 +314,6 @@ textarea{ height:140px;}
         min-width: auto;
     }
 }
-
-
 
 @media only screen and (min-width:992px) and (max-width:1023px){
     .sectionleftul .menu_list li {
@@ -330,7 +323,6 @@ textarea{ height:140px;}
         width: 160px !important;
     }
 }
-
 
 @media (max-width:1024px){
     .social-area.clearfix {
@@ -403,7 +395,7 @@ textarea{ height:140px;}
     .navbar-toggle{border-radius:0; float:left; margin-left:10px;}
     .navbar-default .navbar-toggle .icon-bar {background-color: #fff;}
     .menu_list li a{font-size:1.2em}
-    .iner_block h2{font-size:1.2em}
+    .inner_block h2{font-size:1.2em}
     .login{color:#fff;}
     .login:hover{color:#228dc1; text-decoration:none;}
     .social-area {color: #fff;  float: none;  margin-top:17px;  position: absolute;  text-align: center;}
@@ -622,7 +614,6 @@ textarea{ height:140px;}
     height: 100%;
 }
 
-
 /* Responsive Google Maps */
 .mapWrapper {
     position: relative;
@@ -638,7 +629,6 @@ textarea{ height:140px;}
     width: 100%;
     height: 100%;
 }
-
 
 /* Campus Pages */
 /* Times */
@@ -679,7 +669,7 @@ textarea{ height:140px;}
 .campus-gps-address {
     clear: both;
 }
-/* LQD Mailing Address */
+/* Mailing Address */
 .campus-mailing-address {
     margin-top:20px;
 }
