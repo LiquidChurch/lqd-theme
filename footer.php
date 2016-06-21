@@ -158,26 +158,19 @@
   
 </div>
 <script>
- jQuery(function($){
-      // bind change event to select
-      $('#country_id').on('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    });
-</script>
-<script>
 jQuery(function ($) {
-	/*	jQuery("#country_id").selectbox();*/
-		$("#country_id").selectric({disableOnMobile: false});
-
+	$("#country_id").selectric({disableOnMobile: false});
+		 // bind change event to select
+	      $('#country_id').on('change', function () {
+	          var url = $(this).val(); // get selected value
+	          if (url) { // require a URL
+	              window.location = url; // redirect
+	          }
+	          return false;
+	      });
 	});
-	</script>
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>
   <!-- Footer Area start -->
-
