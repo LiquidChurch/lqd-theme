@@ -3,8 +3,6 @@
 	orange_btn 	=	for orange Button
 					span inside blue btn class the content will be bigger
 
-	img_left	=	images goes left
-	img_right	=	images goes right
 */
 @font-face {
     font-family: 'Avenir Next LT Pro'; src: url('../fonts/AvenirNextLTPro-Regular.eot'); src: url('../fonts/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/AvenirNextLTPro-Regular.woff2') format('woff2'), url('../fonts/AvenirNextLTPro-Regular.woff') format('woff'), url('../fonts/AvenirNextLTPro-Regular.ttf') format('truetype'), url('../fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg'); font-weight: normal; font-style: normal;}
@@ -287,22 +285,25 @@ textarea {
 }
 
 .social-icon li a {
-    background: rgba(0, 0, 0, 0) url("../image/sprite.png") no-repeat scroll 0 0;
     display: inline-block;
     height: 23px;
     width: 23px;
 }
 .social-icon li a.hyoutube {
-    background-position: -3px -96px;
+    background: #fff url("../image/LRG_Icon_YouTube01.png") no-repeat scroll center center / 100% auto; border: 1px solid #fff;
+    border-radius: 50px;
 }
 .social-icon li .hfb {
-    background-position: -3px 0;
+    background: #fff url("../image/LRG_Icon_Facebook.png") no-repeat scroll center center / 100% auto; border: 1px solid #fff;
+    border-radius: 50px;
 }
 .social-icon li .htwitter {
-    background-position: -3px -32px;
+    background: #fff url("../image/LRG_Icon_twitter.png") no-repeat scroll center center / 100% auto; border: 1px solid #fff;
+    border-radius: 50px;
 }
 .social-icon li .hinsta {
-    background-position: -3px -64px;
+    background: #fff url("../image/LRG_Icon_Instagram.png") no-repeat scroll center center / 100% auto; border: 1px solid #fff;
+    border-radius: 50px;
 }
 .login {
     color: #14a7e0;
@@ -380,7 +381,7 @@ textarea {
     cursor:pointer;
 }
 .slider_section {
-    margin:0;
+    margin:0
 }
 .img-slide {
     margin:0;
@@ -434,35 +435,36 @@ textarea {
     margin-right:10px;
 }
 .footer_social li i.ffb {
-    background:rgba(0, 0, 0, 0) url(../image/fb-icon.png) no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
     height:30px;
     width:30px;
     display:inline-block;
 }
 .footer_social li i.ftwitter {
-    background: rgba(0, 0, 0, 0) url(../image/twitter-icon.png) no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_twitter.png") no-repeat scroll center center / 100% auto;
     height:30px;
     width:30px;
     display:inline-block;
 }
 .footer_social li i.finsta {
-    background: rgba(0, 0, 0, 0) url(../image/instagram-icon.png) no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
     height:30px;
     width:30px;
     display:inline-block;
 }
 .footer_social li i.fyoutube {
-    background: rgba(0, 0, 0, 0) url(../image/youtube-icon.png) no-repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
     height:30px;
     width:30px;
     display:inline-block;
 }
+/*
 .footer_social li i.fvimeo {
     background: rgba(0, 0, 0, 0) url(../image/vimeo-icon.png) no-repeat scroll 0 0;
     height:30px;
     width:30px;
     display:inline-block;
-}
+}*/
 
 .footer_container {
     background-color:#dcddde;
@@ -538,16 +540,6 @@ textarea {
     margin-left:30px;
 }
 
-.entry-content .img_left {
-    float:left;
-    margin-right:20px;
-    margin-bottom:10px;
-}
-.entry-content .img_right {
-    float:right;
-    margin-left:20px;
-    margin-bottom:10px;
-}
 .entry-content ul {
     padding:0 30px;
 }
@@ -573,47 +565,6 @@ textarea {
     display:block;
 }
 
-#formsel {
-    display: inline-block;
-    padding: 0px 30px 0;
-}
-#formsel .locations {
-    float: left;
-    width: 200px;
-}
-#formsel .no-display {
-    display:none;
-    font-size:1.5rem;
-}
-
-.header-box {
-    padding:0;
-    margin: 0px -15px 15px;
-    position:relative;
-}
-.header-box img {
-    width:100%;
-    height:auto;
-}
-.hb_item_content {
-    position:absolute;
-    bottom:40px;
-    text-align:center;
-    color:#fff;
-    width:100%;
-}
-.hb_item_content .header-text {
-    font-size:66px;
-    font-family:"Avenir Next LT Pro",sans-serif;
-    font-weight:bold;
-    line-height:normal;
-}
-.hb_item_content .sub-text {
-    font-size:26px;
-    font-family:"Avenir Next LT Pro Demi",sans-serif;
-    line-height:33px;
-    margin-left:13px;
-}
 
 .three {
     margin-right: 10px;
@@ -712,10 +663,7 @@ textarea {
     .logo {
         margin-left: auto;
     }
-    #formsel {
-        display: inline-block;
-        padding: 0 0 0 20px;
-    }
+  
     .footer_social {
         margin: 0 auto;
     }
@@ -725,12 +673,6 @@ textarea {
     }
     .sectionleftul {
         margin-left: auto;
-    }
-    .hb_item_content .header-text{
-        font-size:54px;}
-    .hb_item_content .sub-text{
-        margin-left:auto;
-        font-size:20px;
     }
     .futr_menublock{margin:0px;}
 }
@@ -835,35 +777,7 @@ textarea {
         padding-left:20px;
         padding-right:20px;
     }
-    .entry-content .img_left {
-        float:none;
-        margin-right:0;
-        margin-bottom:10px;
-    }
-    .entry-content .img_right {
-        float:none;
-        margin-left:0;
-        margin-bottom:10px;
-    }
-    .hb_item_content .sub-text {
-        font-family: "Avenir Next LT Pro Demi",sans-serif;
-        font-size: 12px;
-        line-height: 20px;
-        margin-left: 13px;
-    }
-    .hb_item_content .header-text {
-        font-family: "Avenir Next LT Pro",sans-serif;
-        font-size: 26px;
-        font-weight: bold;
-        line-height: normal;
-    }
-    .hb_item_content {
-        bottom: 17px;
-        color: #fff;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-    }
+       
     .footer_container {
         background-color: #dcddde;
         padding: 0px 27px 0 18px;
@@ -895,17 +809,8 @@ textarea {
         margin-right: 10px;
         float: none;
     }
-    #formsel {
-        display: inline-block;
-        padding: 0px;
-        width:100%;
-    }
 
-    #formsel .locations {
-        float: none;
-        margin: 0 auto;
-        width: 200px;
-    }
+
 
     .flex-control-nav {
         bottom:0px !important;
@@ -1017,15 +922,7 @@ textarea {
     .login {
         margin-left:11px;
     }
-    .header-box img {
-        height: 125px;
-    }
-    .hb_item_content .header-text {
-        font-size: 24px;
-    }
-    .hb_item_content .sub-text {
-        font-size: 11px;
-    }
+    
     .flex-control-nav {
         bottom: 0 !important;
         height: 18px;
@@ -1146,7 +1043,7 @@ textarea {
     font-size:2.5rem;
     padding: 20px 0 20px 0;
     clear:both;
-    margin-top:30px;
+    margin: 30px 0;
 }
 /* Campus Staff Box */
 .campus-staff {
