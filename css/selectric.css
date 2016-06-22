@@ -22,7 +22,7 @@
   z-index: 1;
 }
 .selectric .label {
-  color: #00568b;
+  color: #14a7e0;
   display: block;
   font-size:16px;
   font-weight: bold!important;
@@ -47,7 +47,7 @@
   border-color: #337ab7;
 }
 .selectric-hover .selectric .button {
-  color: #228dc1;
+  color: #0074c8;
 }
 .selectric-hover .selectric .button:after {
   border-top-color: #4c9fc7;
@@ -57,7 +57,7 @@
   z-index: 9999;
 }
 .selectric-open .selectric {
-  border-color: #00568b;
+  border-color: #14a7e0;
 }
 .selectric-open .selectric-items {
   display: block;
@@ -116,7 +116,7 @@
   background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-color: -moz-use-text-color #00568b #00568b;
+  border-color: -moz-use-text-color #14a7e0 #14a7e0;
   border-image: none;
   border-style: none solid solid;
   border-width: medium 2px 2px;
@@ -161,7 +161,7 @@
   display:none;
 }
 .selectric-items li:hover {
-  color: #00568b;
+  color: #14a7e0;
 }
 .selectric-items .disabled {
   filter: alpha(opacity=50);
