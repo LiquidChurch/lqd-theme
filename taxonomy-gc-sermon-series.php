@@ -30,8 +30,10 @@ get_header(); ?>
 					'class' => 'gc-single-series-sermons-img',
 				) );
 			}
-			echo '<p style="font-size:2.5rem; text-align:center; padding-bottom:20px;">' . $series->description . '</p>';
 			?>
+			<div class="entry-content">
+				<p><?php echo $series->description ?></p>
+			</div>
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
