@@ -17,10 +17,11 @@
   border-radius: 100px;
   font-family: "Avenir Next LT Pro",sans-serif;
   height: 27px;
-  margin-top: 7px;
+  margin-top: 6px;
   position: relative;
   z-index: 1;
 }
+/*
 .selectric .label {
   color: #14a7e0;
   display: block;
@@ -31,6 +32,22 @@
   margin: 0 10px;
   overflow: hidden;
   padding:4px 0 0;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+*/
+
+.selectric .label {
+  color: #14a7e0;
+  display: block;
+  font-size: 16px;
+  font-weight: bold !important;
+  height: 38px;
+  line-height: 16px;
+  margin: 0 10px;
+  overflow: hidden;
+  padding: 3px 0 0;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
