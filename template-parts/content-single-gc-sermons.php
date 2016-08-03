@@ -13,10 +13,10 @@ $sermon = gc_get_sermon_post();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content" style="padding-left:55px;padding-right:15px;">
+	<div class="entry-content" style="padding-left:55px;padding-right:55px;">
 		<div class="row">
 			<div id="top-row-single-sermon" class="row">
-				<div id="single-sermon-player" class="col-md-7">
+				<div id="single-sermon-player" class="col-sm-12">
                     <?php if ( $video_player = gc_get_sermon_video_player( $sermon ) ) : ?>
                         <div class="message-video">
                             <?php echo $video_player; ?>
@@ -40,7 +40,8 @@ $sermon = gc_get_sermon_post();
                         <?php liquidchurch_post_thumbnail(); ?>
                     <?php endif; ?>
                 </div>
-                <div id="single-sermon-content" class="col-md-5 gc-lg-rt-col">
+                <div class="row" style="padding-left:55px;padding-right:55px;">
+                <div id="single-sermon-content" class="col-md-12 gc-lg-rt-col">
                     <header class="entry-header">
                         <?php
                             the_title( '<h1 class="gc-sermon-title">', '</h1>' );
@@ -65,6 +66,9 @@ $sermon = gc_get_sermon_post();
                             <?php
                             $speaker = $sermon->get_speaker();
                             echo $speaker->name;
+                            $speaker_url = $sermon->get_speaker();
+                            /* TODO: Link the name of the speaker.
+                            echo $speaker_url->slug; */
                             ?>
                         </div>
                     </div>
@@ -80,14 +84,16 @@ $sermon = gc_get_sermon_post();
                             ?>
                         </div>
                     </div>
-                    <div id="message-resources">
+                   <!-- <div id="message-resources">
                         <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
-                        <?php do_action( 'sermon_resources', array(
+                        <?php /* do_action( 'sermon_resources', array(
                             'resource_type'      => array( 'files', 'urls' ),
                             'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
                             'resource_post_id'   => get_the_id(),
-                        ) ); ?>
+                        ) ); */?>
                     </div>
+                    -->
+                </div>
                 </div>
             </div>
 			<div id="message-others" class="row gc-individual-sermon-list">
