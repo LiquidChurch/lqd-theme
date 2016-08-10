@@ -14,30 +14,13 @@
 .selectric {
   background: #fff none repeat scroll 0 0;
   border: 2px solid #337ab7;
-  border-radius: 100px;
+  border-radius: 15px !important;
   font-family: "Avenir Next LT Pro",sans-serif;
-  height: 27px;
-  margin-top: 6px;
+  height: 28px !important;
+  margin-top: 6px !important;
   position: relative;
   z-index: 1;
 }
-/*
-.selectric .label {
-  color: #14a7e0;
-  display: block;
-  font-size:16px;
-  font-weight: bold!important;
-  height:38px;
-  line-height:16px;
-  margin: 0 10px;
-  overflow: hidden;
-  padding:4px 0 0;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-*/
-
 .selectric .label {
   color: #14a7e0;
   display: block;
