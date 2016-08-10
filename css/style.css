@@ -280,8 +280,7 @@ textarea {
 }
 .social-icon li {
     float: left;
-    padding-top:0.5px;
-    margin: 6px 3px 0;
+    margin: 8px 3px 0;
 }
 
 .social-icon li a {
@@ -310,7 +309,7 @@ textarea {
     display:inline-block;
     font-size:1.2em;
     margin-left:20px;
-    margin-top:15px;
+    margin-top:18px;
     text-transform:uppercase;
     font-weight:bold;
 }
