@@ -17,24 +17,29 @@
 
 <!-- .entry-content -->
 	<div class="entry-content">
-		<?php if ( isset( $_GET['sermon_search'] ) ) : ?>
-			<p><a href="/messages/">Return to Messages Home</a></p>
-		<?php endif; ?>
-
+        <?php if (isset($_GET['sermon-search'])) : ?>
+            <a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
+        <?php else: ?>
 		<?php the_content(); ?>
+        <?php endif; ?>
 
 		<?php if ( ! isset( $_GET['sermon-search'] ) ) : ?>
 		<hr />
 		<h1>Most Recent Messages</h1>
-		<p><?php do_action( 'gc_sermons', array( per_page => '4', remove_pagination => true, content => 'excerpt', thumbnail_size => 'medium', number_columns => 4 ) ); ?></p>
+            <p><?php do_action('gc_sermons', array('per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4)); ?></p>
 		<?php endif; ?>
 		<hr />
 		<h1>Search for Series and Sermons</h1>
-		<p><?php do_action( 'gc_sermons_search' ); ?></p>
+        <p><?php do_action('gc_sermons_search', array('separate_results' => false)); ?></p>
+
 		<?php if ( ! isset( $_GET['sermon-search'] ) ) : ?>
 		<hr />
 		<h1>Browse Message Archive</h1>
-		<p><?php do_action( 'gc_series' ); ?></p>
+            <p><?php do_action('gc_series', array(
+                    'paging_by' => "per_year",
+                    'paging_init_year' => "2016,2015"
+                )); ?>
+            </p>
 		<?php endif; ?>
 
 		<?php wp_link_pages( array(
