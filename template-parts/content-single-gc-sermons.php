@@ -8,12 +8,13 @@
  */
 
 // Get Sermon object
+global $sermon;
 $sermon = gc_get_sermon_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="entry-content" style="padding-left:55px;padding-right:55px;">
+    <div class="entry-content" style="">
 		<div class="row">
 			<div id="top-row-single-sermon" class="row">
 				<div id="single-sermon-player" class="col-sm-12">
@@ -41,49 +42,111 @@ $sermon = gc_get_sermon_post();
                     <?php endif; ?>
                 </div>
                 <div class="row" style="padding-left:55px;padding-right:55px;">
-                <div id="single-sermon-content" class="col-md-12 gc-lg-rt-col">
-                    <header class="entry-header">
+
+                    <?php
+                    $message_field_to_display = array();
+                    $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
+                    if (!empty($plugin_option))
+                        $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
+                    //                    p($message_field_to_display, 0);
+                    ?>
+
+                    <div id="single-sermon-content" class="col-md-12">
+
+                        <?php
+                        if (in_array('title', $message_field_to_display)) {
+                            ?>
+                            <div class="row single-sermon-title">
+                                <header class="entry-header col-sm-7" style="margin-top: 20px;">
+
                         <?php
                             the_title( '<h1 class="gc-sermon-title">', '</h1>' );
                         ?>
                     </header><!-- .entry-header -->
-	                <div id="message-series" class="row">
-		                <div class="col-sm-3 gc-left-col">
-                                <span>Series:</span>
-                            </div>
-		                <div class="col-sm-9 gc-right-col">
+
                                 <?php
-                                $series = $sermon->get_series();
-                                echo '<a href="' . $series->term_link . '">' . $series->name . '</a>';
+                                if (in_array('sermon_image', $message_field_to_display)) {
                                 ?>
+                                    <div class="col-sm-5 gc-right-col">
+                                        <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
+                                            'class' => 'gc-series-list-sermons-img',
+                                            'style' => 'width:100%;',
+                                        )); ?>
                             </div>
-	                </div>
-                    <div id="message-speaker" class="row">
-                        <div class="col-sm-3 gc-left-col">
-                            <span>Speaker:</span>
-                        </div>
-                        <div class="col-sm-9 gc-right-col">
                             <?php
-                            $speaker = $sermon->get_speaker();
-                            echo $speaker->name;
-                            $speaker_url = $sermon->get_speaker();
-                            /* TODO: Link the name of the speaker.
-                            echo $speaker_url->slug; */
+                                }
                             ?>
                         </div>
-                    </div>
-                    <div id="message-summary" class="row">
-                            <div class="col-sm-3 gc-left-col">
-                                <span>Summary:</span>
-                            </div>
-                        <div class="col-sm-9 gc-right-col">
                             <?php
-                            add_filter('the_content', 'gc_sermon_before_after');
-                            $content = the_content();
-                            echo  $content;
+                        }
                             ?>
-                        </div>
-                    </div>
+
+                        <?php
+                        if (in_array('series', $message_field_to_display)) {
+                            //series list template part
+                            get_template_part('template-parts/part/sermons/list', 'series');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('speakers', $message_field_to_display)) {
+                            //speaker list template part
+                            get_template_part('template-parts/part/sermons/list', 'speaker');
+                        }
+                        ?>
+
+                        <?php
+                        $exclude_msg = $sermon->get_meta('gc_exclude_msg');
+                        if (in_array('part_of_series', $message_field_to_display)
+                            && ($exclude_msg != 'on')
+                        ) {
+                            //series part list template part
+                            get_template_part('template-parts/part/sermons/list', 'series-part');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('scripture_reference', $message_field_to_display)) {
+                            //scripture list template part
+                            get_template_part('template-parts/part/sermons/list', 'scripture');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('topics', $message_field_to_display)) {
+                            //topics list template part
+                            get_template_part('template-parts/part/sermons/list', 'topics');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('tags', $message_field_to_display)) {
+                            //tags list template part
+                            get_template_part('template-parts/part/sermons/list', 'tags');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('description', $message_field_to_display)) {
+                            //summary list template part
+                            get_template_part('template-parts/part/sermons/list', 'summary');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('date', $message_field_to_display)) {
+                            //summary list template part
+                            get_template_part('template-parts/part/sermons/list', 'date');
+                        }
+                        ?>
+
+                        <?php
+                        if (in_array('additional_resource', $message_field_to_display)) {
+                            //addtnl-resource list template part
+                            get_template_part('template-parts/part/sermons/list', 'addtnl-resource');
+                        }
+                        ?>
+
                    <!-- <div id="message-resources">
                         <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
                         <?php /* do_action( 'sermon_resources', array(
@@ -91,23 +154,33 @@ $sermon = gc_get_sermon_post();
                             'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
                             'resource_post_id'   => get_the_id(),
                         ) ); */?>
-                    </div>
-                    -->
-                </div>
-                </div>
-            </div>
-			<div id="message-others" class="row gc-individual-sermon-list">
-                    <?php
+                        </div>-->
 
-                    do_action( 'gc_sermons', array(
-                        'per_page' => 5,
-                        'related_series' => 'this',
-                        //'content' => '',
-                        'thumbnail_size' => 'medium',
-                        'number_columns' => '4',
-                    ) );
+                        <?php
+                        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
+                        if ($social_share_enable == 'yes') {
+                            echo '<div class="addthis_sharing_toolbox"></div>';
+                        }
+                        ?>
+
+                    </div>
+                </div>
+                </div>
+            <?php
+            $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
+            if (!empty($other_msg)) {
+                ?>
+			<div id="message-others" class="row gc-individual-sermon-list">
+                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
+                        This
+                        Series</h1>
+                    <?php
+                    echo $other_msg;
                     ?>
 			</div>
+                <?php
+            }
+            ?>
 		</div>
 	</div><!-- .entry-content -->
 
