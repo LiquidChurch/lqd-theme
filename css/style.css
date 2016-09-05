@@ -1200,7 +1200,6 @@ a.home-btn {
 .entry-content ul.lc-container li.gc-sermon-resources-list-item {
     display: list-item !important;
     list-style-type: disc !important;
-    padding-left: 15px;
 }
 
 .entry-content ul.gc-sermon-resources-list .lc-head {
@@ -1244,7 +1243,6 @@ h1.gc-sermon-title {
     padding-top: 5px;
     display: table;
     margin: 0 auto;
-	padding-right: 0;
 }
 
 .entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(1):nth-last-child(1) {
@@ -1253,11 +1251,6 @@ h1.gc-sermon-title {
 
 .entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(1):nth-last-child(2),
 .entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(2):nth-last-child(1)  {
-    width: inherit !important;
-}
-.entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(1):nth-last-child(3),
-.entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(2):nth-last-child(2),
-.entry-content .gc-individual-sermon-list .gc-sermons-list li:nth-child(3):nth-last-child(1)  {
     width: inherit !important;
 }
 

@@ -96,10 +96,7 @@ $sermon = gc_get_sermon_post();
                         ?>
 
                         <?php
-                        $exclude_msg = $sermon->get_meta('gc_exclude_msg');
-                        if (in_array('part_of_series', $message_field_to_display)
-                            && ($exclude_msg != 'on')
-                        ) {
+                        if (in_array('part_of_series', $message_field_to_display)) {
                             //series part list template part
                             get_template_part('template-parts/part/sermons/list', 'series-part');
                         }
@@ -166,21 +163,21 @@ $sermon = gc_get_sermon_post();
                     </div>
                 </div>
                 </div>
-            <?php
-            $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
-            if (!empty($other_msg)) {
-                ?>
 			<div id="message-others" class="row gc-individual-sermon-list">
                     <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
                         This
                         Series</h1>
                     <?php
-                    echo $other_msg;
+
+                do_action('gc_sermons', array(
+                    'per_page' => 5,
+                    'related_series' => 'this',
+                    //'content' => '',
+                    'thumbnail_size' => 'medium',
+                    'number_columns' => '4',
+                ));
                     ?>
 			</div>
-                <?php
-            }
-            ?>
 		</div>
 	</div><!-- .entry-content -->
 
