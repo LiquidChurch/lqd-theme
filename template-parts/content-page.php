@@ -3,7 +3,7 @@
  * The template used for displaying page content
  *
  * @package WordPress
- * @subpackage Liquid_Churchn
+ * @subpackage Liquid_Church
  * @since Liquid Church 1.0
  */
 ?>
