@@ -58,10 +58,7 @@
 				?>
 
                 <?php
-                $exclude_msg = $sermon->get_meta('gc_exclude_msg');
-                if (in_array('part_of_series', $message_field_to_display)
-                    && ($exclude_msg != 'on')
-                ) {
+                if(in_array('part_of_series', $message_field_to_display)) {
                     //series part list template part
                     get_template_part('template-parts/part/sermons/list', 'series-part');
                 }
