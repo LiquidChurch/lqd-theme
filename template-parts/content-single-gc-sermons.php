@@ -15,10 +15,10 @@ $sermon = gc_get_sermon_post();
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="entry-content" style="">
-		<div class="row">
-			<div id="top-row-single-sermon" class="row">
-				<div id="single-sermon-player" class="col-sm-12">
-                    <?php if ( $video_player = gc_get_sermon_video_player( $sermon ) ) : ?>
+        <div class="row">
+            <div id="top-row-single-sermon" class="row">
+                <div id="single-sermon-player" class="col-sm-12">
+                    <?php if ($video_player = gc_get_sermon_video_player($sermon)) : ?>
                         <div class="message-video">
                             <?php echo $video_player; ?>
                         </div>
@@ -27,14 +27,14 @@ $sermon = gc_get_sermon_post();
                     wp_enqueue_script(
                         'fitvids',
                         GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
-                        array( 'jquery' ),
+                        array('jquery'),
                         '1.1',
                         true
                     );
                     ?>
                         <script type="text/javascript">
-                            jQuery( function( $ ) {
-                                jQuery( '.message-video' ).fitVids();
+                            jQuery(function ($) {
+                                jQuery('.message-video').fitVids();
                             });
                         </script>
                     <?php else : ?>
@@ -59,27 +59,29 @@ $sermon = gc_get_sermon_post();
                             <div class="row single-sermon-title">
                                 <header class="entry-header col-sm-7" style="margin-top: 20px;">
 
-                        <?php
-                            the_title( '<h1 class="gc-sermon-title">', '</h1>' );
-                        ?>
-                    </header><!-- .entry-header -->
+                                    <?php
+                                    the_title('<h1 class="gc-sermon-title">', '</h1>');
+                                    ?>
+
+                                </header><!-- .entry-header -->
 
                                 <?php
                                 if (in_array('sermon_image', $message_field_to_display)) {
-                                ?>
+                                    ?>
                                     <div class="col-sm-5 gc-right-col">
                                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
                                             'class' => 'gc-series-list-sermons-img',
                                             'style' => 'width:100%;',
                                         )); ?>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+
                             </div>
                             <?php
-                                }
-                            ?>
-                        </div>
-                            <?php
                         }
-                            ?>
+                        ?>
 
                         <?php
                         if (in_array('series', $message_field_to_display)) {
@@ -96,7 +98,10 @@ $sermon = gc_get_sermon_post();
                         ?>
 
                         <?php
-                        if (in_array('part_of_series', $message_field_to_display)) {
+                        $exclude_msg = $sermon->get_meta('gc_exclude_msg');
+                        if (in_array('part_of_series', $message_field_to_display)
+                            && ($exclude_msg != 'on')
+                        ) {
                             //series part list template part
                             get_template_part('template-parts/part/sermons/list', 'series-part');
                         }
@@ -144,13 +149,13 @@ $sermon = gc_get_sermon_post();
                         }
                         ?>
 
-                   <!-- <div id="message-resources">
-                        <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
-                        <?php /* do_action( 'sermon_resources', array(
-                            'resource_type'      => array( 'files', 'urls' ),
-                            'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
-                            'resource_post_id'   => get_the_id(),
-                        ) ); */?>
+                        <!--<div id="message-resources">
+                            <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
+                            <?php /*do_action('sermon_resources', array(
+                                'resource_type' => array('files', 'urls'),
+                                'resource_file_type' => array('image', 'video', 'audio', 'pdf', 'zip', 'other'),
+                                'resource_post_id' => get_the_id(),
+                            )); */ ?>
                         </div>-->
 
                         <?php
@@ -162,24 +167,24 @@ $sermon = gc_get_sermon_post();
 
                     </div>
                 </div>
-                </div>
-			<div id="message-others" class="row gc-individual-sermon-list">
+            </div>
+            <?php
+            $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
+            if (!empty($other_msg)) {
+                ?>
+                <div id="message-others" class="row gc-individual-sermon-list">
                     <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
                         This
                         Series</h1>
                     <?php
-
-                do_action('gc_sermons', array(
-                    'per_page' => 5,
-                    'related_series' => 'this',
-                    //'content' => '',
-                    'thumbnail_size' => 'medium',
-                    'number_columns' => '4',
-                ));
+                    echo $other_msg;
                     ?>
-			</div>
-		</div>
-	</div><!-- .entry-content -->
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div><!-- .entry-content -->
 
     <footer class="entry-footer">
         <?php liquidchurch_entry_meta(); ?>
@@ -187,7 +192,7 @@ $sermon = gc_get_sermon_post();
         edit_post_link(
             sprintf(
             /* translators: %s: Name of current post */
-                __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'liquidchurch' ),
+                __('Edit<span class="screen-reader-text"> "%s"</span>', 'liquidchurch'),
                 get_the_title()
             ),
             '<span class="edit-link">',

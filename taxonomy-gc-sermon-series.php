@@ -19,24 +19,24 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
-				<?php
+        <?php if (have_posts()) : ?>
+            <?php
 
-				$series = gc_sermons()->taxonomies->series->get( get_queried_object_id() );
+            $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
-			if ( $series->image_id ) {
-				echo wp_get_attachment_image( $series->image_id, 'full', false, array(
-					'class' => 'gc-single-series-sermons-img',
-				) );
-			}
-			?>
+            if ($series->image_id) {
+                echo wp_get_attachment_image($series->image_id, 'full', false, array(
+                    'class' => 'gc-single-series-sermons-img',
+                ));
+            }
+            ?>
             <div class="entry-content sermon-series-desc">
-				<p><?php echo $series->description ?></p>
-			</div>
-			<?php
+                <p><?php echo $series->description ?></p>
+            </div>
+            <?php
 
             /**
              * for video messages
@@ -59,7 +59,7 @@ get_header(); ?>
             // The Query
             $the_query = new WP_Query($video_query_args);
 
-			// Start the Loop.
+            // Start the Loop.
             while ($the_query->have_posts()) : $the_query->the_post();
                 $post__not_in[] = get_the_ID();
                 $pos = get_post_meta(get_the_ID(), 'gc_video_msg_pos', true);
@@ -68,15 +68,15 @@ get_header(); ?>
                     continue;
                 }
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content-taxonomy-series', get_post_format() );
+                /*
+                 * Include the Post-Format-specific template for the content.
+                 * If you want to override this in a child theme, then include a file
+                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                 */
+                get_template_part('template-parts/content-taxonomy-series', get_post_format());
 
-				// End the loop.
-			endwhile;
+                // End the loop.
+            endwhile;
 
             /* Restore original Post Data */
             wp_reset_postdata();
@@ -110,12 +110,12 @@ get_header(); ?>
             /* Restore original Post Data */
             wp_reset_postdata();
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'liquidchurch' ),
-				'next_text'          => __( 'Next page', 'liquidchurch' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
-			) );
+            // Previous/next page navigation.
+            the_posts_pagination(array(
+                'prev_text' => __('Previous page', 'liquidchurch'),
+                'next_text' => __('Next page', 'liquidchurch'),
+                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'liquidchurch') . ' </span>',
+            ));
 
             if(!empty($bottom_count)) {
                 // The Query
@@ -164,14 +164,14 @@ get_header(); ?>
                 <?php
             endif;
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+        // If no content, include the "No posts found" template.
+        else :
+            get_template_part('template-parts/content', 'none');
 
-		endif;
-		?>
+        endif;
+        ?>
 
-	</main><!-- .site-main -->
+    </main><!-- .site-main -->
 </div><!-- .content-area -->
 
 <?php get_footer(); ?>
