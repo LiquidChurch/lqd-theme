@@ -25,8 +25,6 @@ get_header(); ?>
 				<?php
 
 				$series = gc_sermons()->taxonomies->series->get( get_queried_object_id() );
-            $post__not_in = array();
-
 			if ( $series->image_id ) {
 				echo wp_get_attachment_image( $series->image_id, 'full', false, array(
 					'class' => 'gc-single-series-sermons-img',
@@ -38,58 +36,11 @@ get_header(); ?>
 			</div>
 			<?php
 
-            /**
-             * for video messages
-             */
-            global $wp_query;
-            $video_query_args = array_merge($wp_query->query_vars, array(
-                'posts_per_page' => '99',
-                'meta_key' => 'gc_display_order',
-                'orderby' => 'meta_value_num',
-                'order' => 'ASC',
-                'meta_query' => array(
-                    array(
-                        'key' => 'gc_exclude_msg',
-                        'value' => 'on',
-                    )
-                ),
-            ));
-            $bottom_count = 0;
-
-            // The Query
-            $the_query = new WP_Query($video_query_args);
-
-			// Start the Loop.
-            while ($the_query->have_posts()) : $the_query->the_post();
-                $post__not_in[] = get_the_ID();
-                $pos = get_post_meta(get_the_ID(), 'gc_video_msg_pos', true);
-                if($pos == 'bottom') {
-                    $bottom_count++;
-                    continue;
-                }
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content-taxonomy-series', get_post_format() );
-
-				// End the loop.
-			endwhile;
-
-            /* Restore original Post Data */
-            wp_reset_postdata();
-
-            /**
-             * for normal messages
-             */
             global $wp_query;
             $query_args = array_merge($wp_query->query_vars, array(
                 'meta_key' => 'gc_display_order',
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
-                'post__not_in' => $post__not_in,
             ));
 
             // The Query
@@ -117,33 +68,16 @@ get_header(); ?>
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
 			) );
 
-            if(!empty($bottom_count)) {
-                // The Query
-                $the_query = new WP_Query($video_query_args);
+        // If no content, include the "No posts found" template.
+        else :
+            get_template_part('template-parts/content', 'none');
 
-                // Start the Loop.
-                while ($the_query->have_posts()) : $the_query->the_post();
-                    $pos = get_post_meta(get_the_ID(), 'gc_video_msg_pos', true);
-                    if ($pos != 'bottom') {
-                        continue;
-                    }
+        endif;
+        ?>
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part('template-parts/content-taxonomy-series', get_post_format());
-
-                    // End the loop.
-                endwhile;
-
-                /* Restore original Post Data */
-                wp_reset_postdata();
-            }
-
+        <?php
             $sermon_resources = do_shortcode('[sermon_resources data_type="series" resource_type="files,urls" resource_file_type="image,video,audio,pdf,zip,other" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
-            if (!preg_match('<!-- no resources found -->', $sermon_resources)):
+        if (!preg_match('<!-- no resources found -->', $sermon_resources)) {
                 ?>
                 <article>
                     <div class="entry-content sermon-series-resource">
@@ -162,13 +96,7 @@ get_header(); ?>
                     </div>
                 </article>
                 <?php
-            endif;
-
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+        }
 		?>
 
 	</main><!-- .site-main -->
