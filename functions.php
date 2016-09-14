@@ -121,6 +121,9 @@ function liquidchurch_setup() {
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Enable Job Manager Theme Support
+    // add_theme_support( 'job-manager-templates' );
 }
 endif; // liquidchurch_setup
 add_action( 'after_setup_theme', 'liquidchurch_setup' );
@@ -262,6 +265,15 @@ function liquidchurch_scripts() {
 	
 
 	wp_enqueue_script( 'selectric', get_template_directory_uri() . '/js/jquery.selectric.js', array( 'jquery' ), '20160412', true );
+
+	wp_enqueue_style( 'wp-datatable-style', 'https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css' );
+
+	wp_enqueue_script( 'wp-datatable-script', 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' );
+	wp_enqueue_script('wp-datatable-bootstrap-script', 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js');
+
+	wp_enqueue_style( 'wp-dt-responsive-style', 'https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css' );
+	wp_enqueue_script( 'wp-dt-responsive-script', 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js' );
+	wp_enqueue_script( 'wp-dt-bt-responsive-script', 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js' );
 
 	wp_localize_script( 'liquidchurch-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'liquidchurch' ),
@@ -906,3 +918,6 @@ function gc_series_before_after($content)
 	$content = preg_replace('/<\/p>/', '</p>', $content);
 	return $content;
 }
+
+// Disable JPEG compression
+add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
