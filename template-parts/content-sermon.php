@@ -60,13 +60,13 @@ $sermon = gc_get_sermon_post();
 
 		<div class="entry-content-right">
 			<div class="message-series">
-				<?php do_action( 'gc_recent_series', array( 'sermond_id' => $sermon->ID, 'thumbnail_size' => 'medium' ) ); ?>
+				<?php do_action( 'gc_recent_series', array( 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium',  'remove_thumbnail' => 'false' ) ); ?>
 			</div>
 			<div class="message-speaker">
-				<?php do_action( 'gc_recent_speaker', array( 'sermond_id' => $sermon->ID, 'thumbnail_size' => 'medium' ) ); ?>
+				<?php do_action( 'gc_recent_speaker', array( 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium' ) ); ?>
 			</div>
 			<div class="message-related-links">
-				<?php do_action( 'gc_related_links', array( 'sermond_id' => $sermon->ID ) ); ?>
+				<?php do_action( 'gc_related_links', array( 'sermon_id' => $sermon->ID ) ); ?>
 			</div>
 		</div>
 
