@@ -10,11 +10,7 @@ if (empty($content))
     </div>
     <div class="col-sm-9">
         <?php
-        if (function_exists('gc_sermon_before_after')) {
-            echo gc_sermon_before_after($content);
-        } else {
-            echo $content;
-        }
+        the_content();
         ?>
     </div>
 </div>

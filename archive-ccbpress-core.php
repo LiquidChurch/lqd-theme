@@ -5,7 +5,7 @@ get_header();
 ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div style="max-width:80%; margin:auto;">
+		<div style="max-width:90%; margin:auto;">
 			<header class="page-header">
 				<h1 class="page-title">Find a Group</h1>
 				<div class="taxonomy-description"></div>
@@ -115,16 +115,11 @@ get_header();
 					</table>
 				</div>
 				<script type="text/javascript">
-					// This works.
 					jQuery(document).ready( function () {
 						jQuery('#groups').DataTable({
-							paging: false,
 							responsive: true,
-							fixedHeader: {
-								header: true,
-								footer: false
-							},
-							scrollY: false
+							paging: false,
+							scrollX: false
 						});
 						// Use json encoded object.
 					} );

@@ -20,9 +20,9 @@ $plugin_option = $this->get('plugin_option');
 		?>
 
 		<?php
-		if(!empty($plugin_option['title_over_series_featured_img']) && ($plugin_option['title_over_series_featured_img'] == 'yes')) {
+		if(!empty($plugin_option['title_over_series_featured_img']) && ($plugin_option['title_over_series_featured_img'] == 'yes' || $plugin_option['title_over_series_featured_img'] == 'always_show')) {
 			?>
-			<div class="gc-sermons-table-wrapper">
+			<div class="gc-sermons-table-wrapper <?php echo ($plugin_option['title_over_series_featured_img'] == 'always_show') ? 'always-show-title' : '' ?>">
 				<table>
 					<tbody>
 					<tr>

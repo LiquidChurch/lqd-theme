@@ -906,6 +906,7 @@ add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
  */
 function gc_sermon_before_after($content)
 {
+	$content = strip_tags($content);
 	$content = str_replace("\xc2\xa0", ' ', $content);
 	$content = preg_replace('/<p>/', '<span class="gc-right-col">', $content);
 	$content = preg_replace('/<\/p>/', '</span>', $content);
@@ -913,6 +914,7 @@ function gc_sermon_before_after($content)
 }
 function gc_series_before_after($content)
 {
+	$content = strip_tags($content);
 	$content = str_replace("\xc2\xa0", ' ', $content);
 	$content = preg_replace('/<p>/', '<p style="padding-left:30px; padding-right:30px;">', $content);
 	$content = preg_replace('/<\/p>/', '</p>', $content);
