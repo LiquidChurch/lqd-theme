@@ -49,7 +49,7 @@ add_theme_support( 'job-manager-templates' );
 
 	</main><!-- .site-main -->
 
-	<?php get_sidebar( 'content-bottom' ); ?>
+	<?php //get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
 
