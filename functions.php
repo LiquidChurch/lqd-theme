@@ -121,9 +121,6 @@ function liquidchurch_setup() {
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
-    // Enable Job Manager Theme Support
-    // add_theme_support( 'job-manager-templates' );
 }
 endif; // liquidchurch_setup
 add_action( 'after_setup_theme', 'liquidchurch_setup' );
@@ -923,3 +920,15 @@ function gc_series_before_after($content)
 
 // Disable JPEG compression
 add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+
+// Disable comments on media
+function filter_media_comment_status( $open, $post_id ) {
+    $post = get_post( $post_id );
+    if( $post->post_type == 'attachment' ) {
+        return false;
+    }
+    return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
