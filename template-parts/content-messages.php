@@ -38,7 +38,8 @@
             <h1>Browse Message Archive</h1>
             <p><?php do_action('gc_series', array(
                     'paging_by' => "per_year",
-                    'paging_init_year' => "2016,2015"
+                    'show_num_years_first_page' => 2,
+                    'paging_init_year' => date('Y', time()) . ",2016,2015"
                 )); ?>
             </p>
         <?php endif; ?>
