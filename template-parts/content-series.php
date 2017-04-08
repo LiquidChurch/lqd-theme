@@ -24,14 +24,18 @@
         <?php the_content(); ?>
 
         <hr/>
-        <p><?php echo do_shortcode('[gc_series paging_by="per_year" paging_init_year="2016,2015" per_page="12" remove_dates=false remove_thumbnail=false thumbnail_size="medium" number_columns="3" list_offset="1" wrap_classes="other-series" remove_pagination=false]'); ?></p>
+        <p><?php echo do_shortcode('[gc_series paging_by="per_year" show_num_years_first_page="2" paging_init_year=' .
+                                   date('Y', time()) .
+                                   '",2016,2015" per_page="12" remove_dates=false remove_thumbnail=false thumbnail_size="medium" number_columns="3" list_offset="1" wrap_classes="other-series" remove_pagination=false]'); ?></p>
 
         <?php wp_link_pages(array(
-            'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'liquidchurch') . '</span>',
+            'before'      => '<div class="page-links"><span class="page-links-title">' .
+                             __('Pages:', 'liquidchurch') . '</span>',
             'after' => '</div>',
             'link_before' => '<span>',
             'link_after' => '</span>',
-            'pagelink' => '<span class="screen-reader-text">' . __('Page', 'liquidchurch') . ' </span>%',
+            'pagelink'    => '<span class="screen-reader-text">' . __('Page', 'liquidchurch') .
+                             ' </span>%',
             'separator' => '<span class="screen-reader-text">, </span>',
         )); ?>
     </div><!-- .entry-content -->
