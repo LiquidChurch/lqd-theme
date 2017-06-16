@@ -213,65 +213,53 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
 function liquidchurch_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
-
+    // Bootstrap
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
-
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );	
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', array() );	
-
-
+	// Font Awesome
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
+    wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5' );
+    if ( is_page( 'text2give' ) ) {
+        wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
+    }
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
-
 	// Theme stylesheet.
-	wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
-
+    wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
 	// Load the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'liquidchurch-ie', get_template_directory_uri() . '/css/ie.css', array( 'liquidchurch-style' ), '20160412' );
 	wp_style_add_data( 'liquidchurch-ie', 'conditional', 'lt IE 10' );
-
 	// Load the Internet Explorer 8 specific stylesheet.
 	wp_enqueue_style( 'liquidchurch-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'liquidchurch-style' ), '20160412' );
 	wp_style_add_data( 'liquidchurch-ie8', 'conditional', 'lt IE 9' );
-
 	// Load the Internet Explorer 7 specific stylesheet.
 	wp_enqueue_style( 'liquidchurch-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'liquidchurch-style' ), '20160412' );
-
+	// Load the Selectric stylesheet.
 	wp_enqueue_style( 'selectric-css', get_template_directory_uri() . '/css/selectric.css', array( 'liquidchurch-style' ), '20160412' );
-
-
 	wp_style_add_data( 'liquidchurch-ie7', 'conditional', 'lt IE 8' );
-
 	// Load the html5 shiv.
 	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'liquidchurch-html5', 'conditional', 'lt IE 9' );
-
+    // Load JS
 	wp_enqueue_script( 'liquidchurch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
-
+	// If Single Page with Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
+	// If Single Page Where Attachment Is Image
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'liquidchurch-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
-
-	wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
-
+    // Add script for landing page for text2give
+    if ( is_page( 'text2give') ) {
+        wp_enqueue_script( 'text2give-js', get_template_directory_uri() . '/js/text2give-js.js', array( 'jquery' ), '20170614', false  );
+    }
+    // Main Liquid Church JavaScript
+    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
+	// Bootstrap JavaScript
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20160412', true );
-	
-
+	// Selectric JavaScript
 	wp_enqueue_script( 'selectric', get_template_directory_uri() . '/js/jquery.selectric.js', array( 'jquery' ), '20160412', true );
-
-	wp_enqueue_style( 'wp-datatable-style', 'https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css' );
-
-	wp_enqueue_script( 'wp-datatable-script', 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' );
-	wp_enqueue_script('wp-datatable-bootstrap-script', 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js');
-
-	wp_enqueue_style( 'wp-dt-responsive-style', 'https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css' );
-	wp_enqueue_script( 'wp-dt-responsive-script', 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js' );
-	wp_enqueue_script( 'wp-dt-bt-responsive-script', 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js' );
-
+    // Localization
 	wp_localize_script( 'liquidchurch-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'liquidchurch' ),
 		'collapse' => __( 'collapse child menu', 'liquidchurch' ),
