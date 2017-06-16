@@ -21,8 +21,8 @@
         <?php wp_head(); ?>
     </head>
     <!-- End Header -->
-    <div class="content">
     <body <?php body_class(); ?> >
+    <div class="content">
     <div class="page">
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
