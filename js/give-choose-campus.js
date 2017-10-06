@@ -6,13 +6,12 @@
 
 jQuery( function( $ ) {
     "use strict";
-
-    // bind change event to select
+    var url;
     $('#setup-gift-dropdown').on('change', function () {
-        var url = $(this).val();
-        if (url) {
-            window.location = url; // redirect
-        }
-        return false;
-    } )
-} );
+        url = $(this).val();
+    });
+    $('#go-to-campus').click(function () {
+        window.location  = url;
+    });
+    return false;
+});

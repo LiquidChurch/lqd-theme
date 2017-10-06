@@ -1275,6 +1275,7 @@ textarea {
     display: inline-block;
     width: 100%;
     margin: 10px auto 0 auto;
+    padding: auto 10px auto 10px;
 }
 
 .individual-staff span {
@@ -1294,6 +1295,10 @@ textarea {
 
 .location-block .selectric .label {
     font-family: 'Avenir Next LT Pro', sans-serif !important;
+}
+
+.lqd-blog /* For Text Body Content */
+{
 }
 
 /* Pastor Bios Styling */

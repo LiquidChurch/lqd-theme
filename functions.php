@@ -251,11 +251,11 @@ function liquidchurch_scripts() {
 		wp_enqueue_script( 'liquidchurch-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
     // Add script for landing page for text2give
-    if ( is_page( 'text2give') ) {
-        wp_enqueue_script( 'text2give-js', get_template_directory_uri() . '/js/text2give.js', array( 'jquery' ), '2017061701', false  );
-    }
-    if ( is_page( array ('pushpay-giving-main-page', 'set-new-recurring-gift', 'cancel-old-recurring-gift' ) ) ) {
-	    wp_enqueue_script( 'give-choose-campus-js', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', true );
+    // if ( is_page( 'text2give') ) {
+    //    wp_enqueue_script( 'text2give-js', get_template_directory_uri() . '/js/text2give.js', array( 'jquery' ), '2017061701', false  );
+    // }
+    if ( is_page( array ('give', 'set-new-recurring-gift', 'cancel-old-recurring-gift', 'text2give' ) ) ) {
+	    wp_enqueue_script( 'give-choose-campus-js', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', false );
     }
     // Main Liquid Church JavaScript
     wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );

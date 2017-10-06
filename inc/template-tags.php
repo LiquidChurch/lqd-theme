@@ -65,7 +65,7 @@ function liquidchurch_entry_date() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<br /><time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -75,7 +75,7 @@ function liquidchurch_entry_date() {
 		get_the_modified_date()
 	);
 
-	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span><br />',
 		_x( 'Posted on', 'Used before publish date.', 'liquidchurch' ),
 		esc_url( get_permalink() ),
 		$time_string

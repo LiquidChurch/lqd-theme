@@ -10,15 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<?php liquidchurch_excerpt(); ?>
-
+    <div style="margin:auto; text-align:center; padding-top:10px;">
 	<?php liquidchurch_post_thumbnail(); ?>
+    </div>
 
-	<div class="entry-content">
+    <header class="entry-header" style="margin:auto; max-width:1000px;">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    </header><!-- .entry-header -->
+
+	<div class="entry-content" style="margin:auto; max-width:1000px;">
 		<?php
 			the_content();
 
@@ -30,15 +31,10 @@
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
-
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
-			}
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php liquidchurch_entry_meta(); ?>
+	<footer class="entry-footer" style="max-width:800px;margin:auto;">
 		<?php
 			edit_post_link(
 				sprintf(
