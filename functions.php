@@ -927,3 +927,31 @@ function filter_media_comment_status( $open, $post_id ) {
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+// This says any URL that has app-view should have an added add_rewrite_endpoint
+// https://wordpress.stackexchange.com/questions/290938/how-can-i-have-two-different-urls-for-the-same-page-that-load-two-different-temp
+function wpd_app_view_rewrite_endpoint() {
+    add_rewrite_endpoint( 'app-view', EP_ALL );
+}
+add_action( 'init', 'wpd_app_view_rewrite_endpoint' );
+
+// Now we detect when app-view is present and load a different template.
+function wpd_app_view_page_template( $template ) {
+    global $wp_query;
+    if( isset( $wp_query->query_vars['app-view'] ) ) {
+        $template = locate_template( array( 'template-messages-app-view.php' ) );
+    }
+    return $template;
+}
+add_filter( 'page_template', 'wpd_app_view_page_template');
+
+// Now we modify all links to include app-view on a page where app-view is set.
+// https://wordpress.stackexchange.com/questions/291243/how-can-i-have-a-url-changed-based-on-the-originating-url
+function wpd_page_link( $link, $post_id ) {
+    global $wp_query;
+    if( isset( $wp_query->query_vars['app-view'] ) ) {
+        return $link . 'app-view/';
+    }
+    return $link;
+}
+add_filter( 'page_link', 'wpd_page_link', 100, 2 );
