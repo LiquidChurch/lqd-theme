@@ -928,30 +928,59 @@ add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-// This says any URL that has app-view should have an added add_rewrite_endpoint
-// https://wordpress.stackexchange.com/questions/290938/how-can-i-have-two-different-urls-for-the-same-page-that-load-two-different-temp
-function wpd_app_view_rewrite_endpoint() {
-    add_rewrite_endpoint( 'app-view', EP_ALL );
+// Add app-view as rewrite endpoint
+function lqd_app_view_rewrite_endpoint() {
+	add_rewrite_endpoint( 'app-view', EP_ALL);
 }
-add_action( 'init', 'wpd_app_view_rewrite_endpoint' );
+add_action( 'init', 'lqd_app_view_rewrite_endpoint' );
 
-// Now we detect when app-view is present and load a different template.
-function wpd_app_view_page_template( $template ) {
-    global $wp_query;
-    if( isset( $wp_query->query_vars['app-view'] ) ) {
-        $template = locate_template( array( 'template-messages-app-view.php' ) );
-    }
-    return $template;
-}
-add_filter( 'page_template', 'wpd_app_view_page_template');
+// When app-view is present, load the app view template.
 
-// Now we modify all links to include app-view on a page where app-view is set.
-// https://wordpress.stackexchange.com/questions/291243/how-can-i-have-a-url-changed-based-on-the-originating-url
-function wpd_page_link( $link, $post_id ) {
-    global $wp_query;
-    if( isset( $wp_query->query_vars['app-view'] ) ) {
-        return $link . 'app-view/';
-    }
-    return $link;
+// For pages.
+function lqd_app_view_message_page_template( $template ) {
+	global $wp_query;
+	if( isset( $wp_query->query_vars['app-view'] ) && ( $wp_query->query_vars['pagename'] == 'messages' ) ) {
+		$template = locate_template( array( 'template-messages-app-view.php' ) );
+	}
+	return $template;
 }
-add_filter( 'page_link', 'wpd_page_link', 100, 2 );
+add_filter( 'page_template', 'lqd_app_view_message_page_template' );
+
+// For taxonomies.
+function lqd_app_view_taxonomy_series_template( $template ) {
+	global $wp_query;
+	if( isset( $wp_query->query_vars['app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
+		$template = locate_template( array( 'taxonomy-gc-sermon-series-app-view.php' ) );
+	}
+	return $template;
+}
+add_filter( 'taxonomy_template', 'lqd_app_view_taxonomy_series_template' );
+
+// For individual messages.
+function lqd_app_view_message_template( $template ) {
+	global $wp_query;
+	if( isset( $wp_query->query_vars['app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
+		$template = locate_template( array( 'single-gc-sermons-app-view.php' ) );
+	}
+	return $template;
+}
+add_filter( 'single_template', 'lqd_app_view_message_template' );
+
+// When app-view is present, modify links to add app-view to permalink.
+function lqd_page_link( $link, $post_id ) {
+	global $wp_query;
+	if( isset( $wp_query->query_vars['app-view'] ) ) {
+		return $link = home_url(add_query_arg(array(),$wp->request)) . 'app-view/';
+	}
+	return $link;
+}
+add_filter( 'page_link', 'lqd_page_link', 100, 2 );
+
+// Now for Series
+function lqd_series_link( $term_id, $taxonomy ) {
+	if ( $taxonomy == 'gc-sermon-series' && isset( $wp_query->query_vars['app-view'] ) ) {
+		return $link; // = $link . add_query_arg(array(),$wp->request);
+	}
+	return $link;
+}
+//add_filter( 'term_link', 'lqd_series_link' );
