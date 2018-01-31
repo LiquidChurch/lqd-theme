@@ -114,7 +114,7 @@ function liquidchurch_setup() {
 	) );
 
 	/*
-	 * This theme styles the visual editor to resemble the theme style,
+	 * This theme DOESN'T style the visual editor to resemble the theme style, but it should,
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style( array( 'css/editor-style.css', liquidchurch_fonts_url() ) );
@@ -147,10 +147,7 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  * @since Liquid Church 1.0
  */
 
-
  require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
-
- //echo get_stylesheet_directory() . '/theme-functions/theme-widget.php' ;
 
 if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
 /**
@@ -217,7 +214,9 @@ function liquidchurch_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
-    wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5' );
+	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5' );
+	// Add Liquid Messages (GC-Sermons) CSS
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '20180131' );
     // Only used on text2give page
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
@@ -928,9 +927,10 @@ add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-// Add app-view as rewrite endpoint
+// Add messages-app-view as rewrite endpoint
 function lqd_app_view_rewrite_endpoint() {
-	add_rewrite_endpoint( 'app-view', EP_ALL);
+	add_rewrite_endpoint( 'messages-app-view', EP_ALL);
+	add_rewrite_rule('^messages/messages-app-view/page/?([0-9]{1,})/?$', 'index.php?pagename=messages&messages-app-view&paged=$matches[1]', 'top');
 }
 add_action( 'init', 'lqd_app_view_rewrite_endpoint' );
 
@@ -939,7 +939,7 @@ add_action( 'init', 'lqd_app_view_rewrite_endpoint' );
 // For pages.
 function lqd_app_view_message_page_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['app-view'] ) && ( $wp_query->query_vars['pagename'] == 'messages' ) ) {
+	if( isset( $wp_query->query_vars['messages-app-view'] ) ) {
 		$template = locate_template( array( 'template-messages-app-view.php' ) );
 	}
 	return $template;
@@ -949,7 +949,7 @@ add_filter( 'page_template', 'lqd_app_view_message_page_template' );
 // For taxonomies.
 function lqd_app_view_taxonomy_series_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
+	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
 		$template = locate_template( array( 'taxonomy-gc-sermon-series-app-view.php' ) );
 	}
 	return $template;
@@ -959,7 +959,7 @@ add_filter( 'taxonomy_template', 'lqd_app_view_taxonomy_series_template' );
 // For individual messages.
 function lqd_app_view_message_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
+	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
 		$template = locate_template( array( 'single-gc-sermons-app-view.php' ) );
 	}
 	return $template;
@@ -969,18 +969,29 @@ add_filter( 'single_template', 'lqd_app_view_message_template' );
 // When app-view is present, modify links to add app-view to permalink.
 function lqd_page_link( $link, $post_id ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['app-view'] ) ) {
-		return $link = home_url(add_query_arg(array(),$wp->request)) . 'app-view/';
+	if( isset( $wp_query->query_vars['messages-app-view'] ) ) {
+		return $link . 'messages-app-view/';
 	}
 	return $link;
 }
 add_filter( 'page_link', 'lqd_page_link', 100, 2 );
 
 // Now for Series
-function lqd_series_link( $term_id, $taxonomy ) {
-	if ( $taxonomy == 'gc-sermon-series' && isset( $wp_query->query_vars['app-view'] ) ) {
-		return $link; // = $link . add_query_arg(array(),$wp->request);
+function lqd_series_link( $url, $term, $taxonomy ) {
+	global $wp_query;
+	if ( $taxonomy == 'gc-sermon-series' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
+		return $url . 'messages-app-view/';
 	}
-	return $link;
+	return $url;
 }
-//add_filter( 'term_link', 'lqd_series_link' );
+add_filter( 'term_link', 'lqd_series_link', 10, 3 );
+
+// Now for individual Messages
+function lqd_message_link( $url, $post ) {
+	global $wp_query;
+	if ( get_post_type( $post ) == 'gc-sermons' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
+		return $url . 'messages-app-view/';
+	}
+	return $url;
+}
+add_filter( 'post_type_link', 'lqd_message_link', 10, 2);
