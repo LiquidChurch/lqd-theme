@@ -49,6 +49,9 @@
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+    <?php 
+    $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+    echo "<a href='$url' style='font-size:2rem; padding-left: 10px;'>Go Back</a>"; ?>
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
