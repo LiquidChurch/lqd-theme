@@ -52,7 +52,9 @@
 <div class="content">
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
+    <?php 
+    $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+    echo "<a href='$url' style='font-size:2rem; padding-left: 10px;'>Go Back</a>"; ?>
         <?php if (have_posts()) : ?>
             <?php
 
