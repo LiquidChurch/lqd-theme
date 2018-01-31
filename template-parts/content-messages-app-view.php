@@ -9,12 +9,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header ">
-        <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </header><!-- .entry-header -->
-
     <!-- .entry-content -->
-    <div class="entry-content">
+    <div class="entry-content" ID="mav-entry">
         <?php if (isset($_GET['sermon-search'])) : ?>
             <a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
         <?php else: ?>
