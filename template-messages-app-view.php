@@ -39,18 +39,8 @@
 	<!-- faveicon -->
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class( 'mav-body' ); ?> >
 <div class="page">
-<!-- Header start -->
-  <div class="pagetop">
-    <div class="header_top">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Header end -->
 <div class="content">
 
 <div id="primary" class="content-area">
