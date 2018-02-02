@@ -182,9 +182,31 @@ h1.gc-sermon-title {
     text-decoration: underline;
     font-size: 24px;
 }
-#mav-body {
+
+#mav-entry .gc-2-cols h4 {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    text-decoration: none;
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-bottom:5px;
+}
+
+#mav-entry li.gc-item.gc-thumb {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.page.mav-body {
+    box-shadow: 0 0 0;
+}
+
+#mav-entry {
     padding: 0px;
 }
+
 @media screen and (max-width: 800px) {
     .entry-content ul.gc-sermon-resources-list li.lc-list {
         width: 100%;
