@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying all single posts and attachments
+ * Template Name: Fast Blog
+ * Template Post Type: post
  *
  * @package WordPress
  * @subpackage Liquid_Church
