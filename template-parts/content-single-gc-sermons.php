@@ -51,6 +51,15 @@ $sermon = gc_get_sermon_post();
                     //                    p($message_field_to_display, 0);
                     ?>
 
+                    <div class="col-md-12">
+                        <?php
+                            $series = $sermon->get_series();
+                            if (!empty($series)) {
+                                echo '<center><a href="' . $series->term_link . '" class="blue_btn">Go Back To ' . $series->name . ' Series</a></center>';
+                            }
+                        ?>
+                    </div>
+
                     <div id="single-sermon-content" class="col-md-12">
 
                         <?php
