@@ -52,9 +52,6 @@
 <div class="content">
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-    <?php 
-    $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-    echo "<a href='$url' style='font-size:2rem; padding-left: 10px;'>Go Back</a>"; ?>
         <?php if (have_posts()) : ?>
             <?php
 
@@ -67,6 +64,17 @@
                 ));
             }
             ?>
+            <?php
+            // If we just came from the series archive (/messages/), return us to the exact page we came from (e.g. /messages/page/4/).
+            // If we came from elsewhere, return us to the main series archive page (/messages).
+            $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+            if (!strpos($url, '-series')) {
+                echo "<center><a href='$url' class='blue_btn'>Go Back To Series Archives</a></center>";
+            }
+            else
+            {
+                echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Series Archives</a></center>";
+            } ?>
             <div class="entry-content sermon-series-desc">
                 <p><?php echo $series->description ?></p>
             </div>
