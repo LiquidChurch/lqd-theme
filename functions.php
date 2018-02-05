@@ -894,6 +894,7 @@ add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
  * Filtering for sermons the_content.
  *
  * @param $content
+ * @return string $content
  */
 function gc_sermon_before_after($content)
 {
@@ -903,6 +904,7 @@ function gc_sermon_before_after($content)
 	$content = preg_replace('/<\/p>/', '</span>', $content);
 	return $content;
 }
+
 function gc_series_before_after($content)
 {
 	$content = strip_tags($content);
@@ -915,7 +917,13 @@ function gc_series_before_after($content)
 // Disable JPEG compression
 add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
 
-// Disable comments on media
+/**
+ * Disable comments on media.
+ *
+ * @param $open
+ * @param $post_id
+ * @return bool
+ */
 function filter_media_comment_status( $open, $post_id ) {
     $post = get_post( $post_id );
     if( $post->post_type == 'attachment' ) {
@@ -927,16 +935,21 @@ add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-// Add messages-app-view as rewrite endpoint
+/**
+ * Add messages-app-view as rewrite endpoint
+ */
 function lqd_app_view_rewrite_endpoint() {
 	add_rewrite_endpoint( 'messages-app-view', EP_ALL);
 	add_rewrite_rule('^messages/messages-app-view/page/?([0-9]{1,})/?$', 'index.php?pagename=messages&messages-app-view&paged=$matches[1]', 'top');
 }
 add_action( 'init', 'lqd_app_view_rewrite_endpoint' );
 
-// When app-view is present, load the app view template.
-
-// For pages.
+/**
+ * When messages-app-view is present, load the messages-app-view template for pages.
+ *
+ * @param $template
+ * @return mixed
+ */
 function lqd_app_view_message_page_template( $template ) {
 	global $wp_query;
 	if( isset( $wp_query->query_vars['messages-app-view'] ) ) {
@@ -946,7 +959,12 @@ function lqd_app_view_message_page_template( $template ) {
 }
 add_filter( 'page_template', 'lqd_app_view_message_page_template' );
 
-// For taxonomies.
+/**
+ * When messages-app-view is present, load the messages-app-view template for series taxonomy.
+ *
+ * @param $template
+ * @return mixed
+ */
 function lqd_app_view_taxonomy_series_template( $template ) {
 	global $wp_query;
 	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
@@ -956,7 +974,12 @@ function lqd_app_view_taxonomy_series_template( $template ) {
 }
 add_filter( 'taxonomy_template', 'lqd_app_view_taxonomy_series_template' );
 
-// For individual messages.
+/**
+ * When messages-app-view is present, load the messages-app-view template for individual messages.
+ *
+ * @param $template
+ * @return mixed
+ */
 function lqd_app_view_message_template( $template ) {
 	global $wp_query;
 	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
@@ -966,7 +989,13 @@ function lqd_app_view_message_template( $template ) {
 }
 add_filter( 'single_template', 'lqd_app_view_message_template' );
 
-// When app-view is present, modify links to add app-view to permalink.
+/**
+ * When messages-app-view is present, modify links to add messages-app-view to permalink on pages.
+ *
+ * @param $link
+ * @param $post_id
+ * @return string
+ */
 function lqd_page_link( $link, $post_id ) {
 	global $wp_query;
 	if( isset( $wp_query->query_vars['messages-app-view'] ) ) {
@@ -974,19 +1003,32 @@ function lqd_page_link( $link, $post_id ) {
 	}
 	return $link;
 }
-add_filter( 'page_link', 'lqd_page_link', 100, 2 );
+add_filter( 'page_link', 'lqd_page_link', 1000, 2 );
 
-// Now for Series
+/**
+ * When messages-app-view is present, modify links to add messages-app-view to permalink on sermon series taxonomy.
+ *
+ * @param $url
+ * @param $term
+ * @param $taxonomy
+ * @return string
+ */
 function lqd_series_link( $url, $term, $taxonomy ) {
 	global $wp_query;
 	if ( $taxonomy == 'gc-sermon-series' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
-		return $url . 'messages-app-view/';
+		return $url . '/messages-app-view/';
 	}
 	return $url;
 }
-add_filter( 'term_link', 'lqd_series_link', 10, 3 );
+add_filter( 'term_link', 'lqd_series_link', 1000, 3 );
 
-// Now for individual Messages
+/**
+ * When messages-app-view is present, modify links to add messages-app-view to permalink on individual messages.
+ *
+ * @param $url
+ * @param $post
+ * @return string
+ */
 function lqd_message_link( $url, $post ) {
 	global $wp_query;
 	if ( get_post_type( $post ) == 'gc-sermons' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
@@ -994,6 +1036,7 @@ function lqd_message_link( $url, $post ) {
 	}
 	return $url;
 }
-add_filter( 'post_type_link', 'lqd_message_link', 10, 2);
+add_filter( 'post_type_link', 'lqd_message_link', 1000, 2);
 
+// Force permalink manager pro not to force lowercase urls.
 add_filter('permalink-manager-force-lowercase-uris', '__return_false');
