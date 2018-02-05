@@ -75,7 +75,7 @@
             {
                 echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Series Archives</a></center>";
             } ?>
-            <div class="entry-content sermon-series-desc">
+            <div class="entry-content sermon-series-desc mav-series">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -115,7 +115,7 @@
                  * If you want to override this in a child theme, then include a file
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
-                get_template_part('template-parts/content-taxonomy-series', get_post_format());
+                get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                 // End the loop.
             endwhile;
@@ -144,7 +144,7 @@
                  * If you want to override this in a child theme, then include a file
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
-                get_template_part('template-parts/content-taxonomy-series', get_post_format());
+                get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                 // End the loop.
             endwhile;
@@ -175,7 +175,7 @@
                      * If you want to override this in a child theme, then include a file
                      * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                      */
-                    get_template_part('template-parts/content-taxonomy-series', get_post_format());
+                    get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                     // End the loop.
                 endwhile;

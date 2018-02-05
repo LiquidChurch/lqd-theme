@@ -205,6 +205,23 @@ h1.gc-sermon-title {
 
 #mav-entry {
     padding: 0px;
+    font-size: 1.5em;
+}
+
+.mav-series {
+    padding-top:5px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+}
+
+.entry-content.sermon-series-desc.mav-series > p {
+    font-size: 1em !important;
+}
+
+.entry-content.sermon-series-message.mav-series {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 @media screen and (max-width: 800px) {
