@@ -73,7 +73,7 @@
             }
             else
             {
-                echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Series Archives</a></center>";
+                echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Message Archives</a></center>";
             } ?>
             <div class="entry-content sermon-series-desc mav-series">
                 <p><?php echo $series->description ?></p>
