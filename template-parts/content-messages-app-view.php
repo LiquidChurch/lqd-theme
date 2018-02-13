@@ -3,11 +3,11 @@
  * The template used for displaying page content
  *
  * @package WordPress
- * @subpackage Liquid_Churchn
+ * @subpackage Liquid_Church
  * @since Liquid Church 1.0
  */
 ?>
-
+<?php echo do_shortcode("[rev_slider alias=\"messages-header\"]"); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <!-- .entry-content -->
     <div class="entry-content" ID="mav-entry">

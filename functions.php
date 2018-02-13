@@ -214,10 +214,10 @@ function liquidchurch_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
-	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5' );
+	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5.1' );
 	// Add Liquid Messages (GC-Sermons) CSS
-	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.1.8' );
-    // Only used on text2give page
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.1.9' );
+    // Only used on text2give page1
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
     }

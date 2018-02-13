@@ -182,9 +182,7 @@ $sermon = gc_get_sermon_post();
             if (!empty($other_msg)) {
                 ?>
                 <div id="message-others" class="row gc-individual-sermon-list">
-                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
-                        This
-                        Series</h1>
+                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in This Series</h1>
                     <?php
                     echo $other_msg;
                     ?>
