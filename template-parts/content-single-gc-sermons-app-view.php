@@ -137,17 +137,17 @@ $sermon = gc_get_sermon_post();
                         }
                         ?>
 
+	                    <?php
+	                    if (in_array('date', $message_field_to_display)) {
+		                    //summary list template part
+		                    get_template_part('template-parts/part/sermons/list', 'date');
+	                    }
+	                    ?>
+
                         <?php
                         if (in_array('description', $message_field_to_display)) {
                             //summary list template part
                             get_template_part('template-parts/part/sermons/list', 'summary');
-                        }
-                        ?>
-
-                        <?php
-                        if (in_array('date', $message_field_to_display)) {
-                            //summary list template part
-                            get_template_part('template-parts/part/sermons/list', 'date');
                         }
                         ?>
 
