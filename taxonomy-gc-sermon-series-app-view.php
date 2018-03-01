@@ -11,20 +11,7 @@
  */
 
  ?>
-
-<?php
-/**
- * The template for displaying the header
- *
- * Displays all of the head element and everything up until the "site-content" div.
- *
- * @package WordPress
- * @subpackage Liquid_Church
- * @since Liquid Church 1.0
- */
-
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -34,7 +21,6 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-	<!-- faveicon -->
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
