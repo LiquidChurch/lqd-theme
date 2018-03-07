@@ -216,7 +216,7 @@ function liquidchurch_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5.1' );
 	// Add Liquid Messages (GC-Sermons) CSS
-	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.2.9' );
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.3.4' );
     // Only used on text2give page1
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
@@ -374,9 +374,10 @@ add_filter( 'wp_calculate_image_sizes', 'liquidchurch_content_image_sizes_attr',
  * @since Liquid Church 1.0
  *
  * @param array $attr Attributes for the image markup.
- * @param int   $attachment Image attachment ID.
+ * @param int $attachment Image attachment ID.
  * @param array $size Registered image size or flat array of height and width dimensions.
- * @return string A source size value for use in a post thumbnail 'sizes' attribute.
+ *
+ * @return array A source size value for use in a post thumbnail 'sizes' attribute.
  */
 function liquidchurch_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {

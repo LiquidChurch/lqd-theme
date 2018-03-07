@@ -2,7 +2,6 @@
 .search-field {
     width: 60%;
     background: #e2e2e2;
-    border: none;
     box-shadow: none;
     height: 60px;
     padding-left: 20px;
@@ -209,10 +208,7 @@ h1.gc-sermon-title {
 }
 
 .mav-series {
-    padding-top:5px;
-    padding-left:5px;
-    padding-right:5px;
-    padding-bottom:5px;
+    padding: 5px;
 }
 
 .mav-series {
@@ -230,7 +226,7 @@ h1.gc-sermon-title {
 
 #mav-single .entry-content {
     font-size: 1.3em;
-    line-height: 120%;
+    line-height: 110%;
 }
 
 #mav-single .col-md-12 {
@@ -247,6 +243,7 @@ h1.gc-sermon-title {
 #mav-single #message-date,
 #mav-single #message-summary {
     padding-bottom: 0px;
+    margin-bottom: 2px;
 }
 
 #mav-single #message-series > div:first-of-type,
@@ -258,7 +255,7 @@ h1.gc-sermon-title {
 #mav-single #message-date > div:first-of-type
 {
     float: left;
-    width:30%;
+    /*width:30%;*/
 }
 
 .entry-content.sermon-series-desc.mav-series > p {
