@@ -89,4 +89,4 @@ function liquidchurch_widgets_init() {
 }
 add_action( 'widgets_init', 'liquidchurch_widgets_init' );
 
-?>
+
