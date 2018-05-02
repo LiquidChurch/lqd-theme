@@ -216,7 +216,7 @@ function liquidchurch_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.5.1' );
 	// Add Liquid Messages (GC-Sermons) CSS
-	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.3.4' );
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.5.2' );
     // Only used on text2give page1
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
@@ -1041,3 +1041,6 @@ add_filter( 'post_type_link', 'lqd_message_link', 1000, 2);
 
 // Force permalink manager pro not to force lowercase urls.
 add_filter('permalink-manager-force-lowercase-uris', '__return_false');
+
+// Disable submit button on Campus Groups Serve page.
+add_filter( 'gform_submit_button_17', '__return_false' );
