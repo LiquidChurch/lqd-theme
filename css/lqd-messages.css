@@ -243,7 +243,7 @@ h1.gc-sermon-title {
 #mav-single #message-date,
 #mav-single #message-summary {
     padding-bottom: 0px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 #mav-single #message-series > div:first-of-type,
@@ -252,10 +252,59 @@ h1.gc-sermon-title {
 #mav-single #message-scripture > div:first-of-type,
 #mav-single #message-topics > div:first-of-type,
 #mav-single #message-tags > div:first-of-type,
-#mav-single #message-date > div:first-of-type
+#mav-single #message-date > div:first-of-type,
+#mav-single #message-summary > div:first-of-type
 {
     float: left;
+    padding-right:5px;
     /*width:30%;*/
+}
+
+#mav-single div.row.single-sermon-title {
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    padding-top:0px;
+    margin-top:0px;
+}
+
+#mav-single #message-resource div.col-sm-3 {
+    font-size:1.5em;
+    padding-bottom:5px;
+}
+
+#mav-single #message-others {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#mav-single #message-resource div.col-sm-9 {
+    padding-left:25px;
+}
+
+#mav-single #message-summary {
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+
+#mav-single #message-others h1 {
+    margin-top:0px;
+}
+
+#mav-single li.lc-head {
+    margin-bottom:0px;
+}
+
+#mav-single li.lc-list {
+    margin-bottom:0px;
+}
+
+#mav-single .gc-sermon-resources-list-item {
+    line-height:.9em;
+}
+
+#mav-single .gc-item.gc-thumb {
+    padding:0px;
+    margin-bottom:0px;
 }
 
 .entry-content.sermon-series-desc.mav-series > p {

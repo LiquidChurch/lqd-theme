@@ -10,7 +10,7 @@ if (empty($post->post_date))
     </div>
     <div class="col-sm-9">
         <?php
-        echo date('M d Y', strtotime($post->post_date));
+        echo date('M d, Y', strtotime($post->post_date));
         ?>
     </div>
 </div>

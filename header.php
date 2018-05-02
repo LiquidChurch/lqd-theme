@@ -96,7 +96,7 @@
 	             <?php }?>
               </ul>
 
-              <a target="_self" href="https://liquidchurch.ccbchurch.com/" class="login">Log In</a> 
+              <!--<a target="_self" href="https://liquidchurch.ccbchurch.com/" class="login">Log In</a> -->
               
             </div>
           </div>
