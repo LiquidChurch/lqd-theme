@@ -405,18 +405,12 @@ function liquidchurch_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'liquidchurch_widget_tag_cloud_args' );
 
-/**
- * @param $obj
- */
 function pr($obj){
    echo '<pre>';
     print_r($obj);
    echo '</pre>';
 }
 
-/**
- * @return mixed|void
- */
 function theme_options(){
 
     $data= get_option('option_tree');
@@ -424,11 +418,6 @@ function theme_options(){
 }
 
 $theme_options= theme_options();
-/**
- * @param $attr
- *
- * @return string
- */
 function show_sub_section($attr){
 	$atts = shortcode_atts( array(
 		'width' => 300,
@@ -532,9 +521,6 @@ function show_header_banner_section(){
 
 //add_shortcode('SHOW_HEADER_BANNER_SECTION','show_header_banner_section');
 
-/**
- * @return string
- */
 function show_header_slider_section(){
 			$html='';	
 		 	$html.='<div class="flexslider">';
@@ -561,11 +547,6 @@ function show_header_slider_section(){
 		 return   $html;
 }
 
-/**
- * @param $args
- *
- * @return array
- */
 function myplugin_custom_walker( $args ) {
 
 /*$defaults = array( 'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
@@ -595,11 +576,6 @@ add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
 
 
 add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
-/**
- * @param $in
- *
- * @return mixed
- */
 function myformatTinyMCE( $in ) {
 
 $in['wordpress_adv_hidden'] = FALSE;
@@ -608,11 +584,6 @@ return $in;
 }
 
 
-/**
- * @param $init
- *
- * @return mixed
- */
 function my_mce4_options($init) {
   $default_colours = '"000000", "Black",
                       "993300", "Burnt orange",
@@ -674,11 +645,6 @@ function my_mce4_options($init) {
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
 
-/**
- * @param $country
- *
- * @return string
- */
 function uri_locations($country){
 	$text = $country;
 	$slug = sanitize_title($text);
@@ -688,9 +654,6 @@ function uri_locations($country){
 
 /*Add Theme Customizer Settings*/
 
-/**
- * @param $wp_customize
- */
 function emz_customize_register( $wp_customize ) {
  $wp_customize->add_section( 'lqd_theme', array(
     'title' => 'Liquid Options',
@@ -772,24 +735,10 @@ function emz_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'emz_customize_register' );
 
 
-/**
- * Class Walker_Nav_Menu_Dropdown
- */
 class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
-	/**
-	 * @param string $output
-	 * @param int $depth
-	 * @param array $args
-	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ){
 		$indent = str_repeat("\t", $depth); // don't output children opening tag (`<ul>`)
 	}
-
-	/**
-	 * @param string $output
-	 * @param int $depth
-	 * @param array $args
-	 */
 	function end_lvl( &$output, $depth = 0, $args = array() ){
 		$indent = str_repeat("\t", $depth); // don't output children closing tag
 	}
@@ -806,14 +755,7 @@ class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
  		$url = '#' !== $item->url ? $item->url : '';
  		$output .= '<option value="' . $url . '">' . $item->title;
-	}
-
-	/**
-	 * @param string $output
-	 * @param WP_Post $item
-	 * @param int $depth
-	 * @param array $args
-	 */
+	}	
 	function end_el( &$output, $item, $depth = 0, $args = array() ){
 		$output .= "</option>\n"; // replace closing </li> with the option tag
 	}
@@ -901,11 +843,6 @@ function createSamplePage(){
 }
 
 createSamplePage();
-/**
- * @param $post_name
- *
- * @return bool
- */
 function the_slug_exists($post_name) {
     global $wpdb;
 
@@ -930,13 +867,7 @@ function assignFrontPage_exists() {
 }
 assignFrontPage_exists();
 
-/**
- * Control configuration of Vimeo embeds.
- *
- * @param $html
- *
- * @return mixed
- */
+// Control configuration of Vimeo embeds.
 function modify_wp_vimeo_embeds( $html ) {
 	if ( false !== strpos( $html, 'vimeo' ) ) {
 		preg_match( '/src="([^"]+)"/', $html, $match );
@@ -976,11 +907,6 @@ function gc_sermon_before_after($content)
 	return $content;
 }
 
-/**
- * @param $content
- *
- * @return mixed|null|string|string[]
- */
 function gc_series_before_after($content)
 {
 	$content = strip_tags($content);

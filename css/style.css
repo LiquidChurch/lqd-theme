@@ -1132,3 +1132,7 @@ textarea {
 .pastors-bios h3 {
     margin-bottom: 0;
 }
+.searchandfilter ul li
+{
+    float:left;
+}
