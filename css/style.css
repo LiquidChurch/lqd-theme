@@ -1136,3 +1136,10 @@ textarea {
 {
     float:left;
 }
+.job_description ul
+{
+    padding-left:40px;
+}
+.lqd-no-bullets li {
+    list-style: none;
+}
