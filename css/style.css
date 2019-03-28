@@ -1143,3 +1143,27 @@ textarea {
 .lqd-no-bullets li {
     list-style: none;
 }
+/* Group Guide styling */
+.group-guides h1.entry-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: "arial";
+    padding-left: 0px;
+    text-transform:capitalize;
+}
+.group-guides-template-default h1  {
+    padding-left: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: "arial";
+}
+.group-guides p {
+    padding-left:0px;
+    font-size: 18px;
+}
+.group-guides ul li {
+    font-size: 18px;}
+.group-guides ol li {
+    font-size: 18px;}
