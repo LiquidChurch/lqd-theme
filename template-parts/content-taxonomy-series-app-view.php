@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying content
+ * The template part for displaying the series view in LQD mobile app
  *
  * @package WordPress
  * @subpackage Liquid_Churchn
