@@ -420,8 +420,8 @@ function show_sub_section($attr){
 		'width' => 300,
 		'height' => 200,
 		'size_type' =>'px'
-	), $attr);	
- 	$postid = get_the_ID(); 
+	), $attr);
+ 	$postid = get_the_ID();
 	$html='';
 		 if( have_rows('sub_page_section') ){
 		 	$no_row = get_field('sub_page_section');
@@ -455,9 +455,9 @@ function show_sub_section($attr){
 
 				}
 		 	$html.='<div class="'.$divClass.'">';
-		 	$html.='<ul class="tb_list">';	
-		 	while( have_rows('sub_page_section') ){ 
-		 				the_row(); 
+		 	$html.='<ul class="tb_list">';
+		 	while( have_rows('sub_page_section') ){
+		 				the_row();
 					$image = get_sub_field('image');
 					$title = get_sub_field('title');
 					$link = get_sub_field('site_link');
@@ -469,7 +469,7 @@ function show_sub_section($attr){
 								   if( $link ):
 								     endif;
 								     $html.= '<a class="tb_item_content" href="'. $link.'"><span>'.$title.'</span></a>';
-							    
+
 
 				    $html.=' </li>';
 				}
@@ -491,14 +491,14 @@ function show_header_banner_section(){
 			$html='';
 			$html.='<div class="header-box">';
 
-		 	while( have_rows('page_custom_banners') ){ 
- 				the_row(); 
+		 	while( have_rows('page_custom_banners') ){
+ 				the_row();
 				$image = get_sub_field('image');
 
 				$urllink = get_sub_field('link');
 				$headertext = get_sub_field('header_text');
 				$headersubtext = get_sub_field('header_sub_text');
-	
+
 				$html.='<img src="'.$image['sizes']['large'].'" alt="'. $image['alt'].'" />';
 
 			   if( $urllink ):
@@ -506,31 +506,31 @@ function show_header_banner_section(){
 			     $html.= '<div class="hb_item_content"><div class="header-text">'.strip_tags($headertext).'</div><div class="sub-text">'.strip_tags($headersubtext).'</div></div>';
 			}
 			 $html.='</div>';
-		  
+
 		}else{
-			
+
 			$html = show_header_slider_section();
 		 }
 		 return   $html;
 		}
-		
+
 }
 
 //add_shortcode('SHOW_HEADER_BANNER_SECTION','show_header_banner_section');
 
 function show_header_slider_section(){
-			$html='';	
+			$html='';
 		 	$html.='<div class="flexslider">';
 		 	$html.='<ul class="slides">';
 
-		 	while( have_rows('page_custom_banners') ){ 
-		 			the_row(); 
+		 	while( have_rows('page_custom_banners') ){
+		 			the_row();
 					$image = get_sub_field('image');
 
 					$urllink = get_sub_field('link');
 					$headertext = get_sub_field('header_text');
 					$headersubtext = get_sub_field('header_sub_text');
-		
+
 					$html.='<li>
 							<a href="'. $urllink.'"><img src="'.$image['sizes']['post-thumbnail'].'" alt="'. $image['alt'].'" /></a>';
 
@@ -538,7 +538,7 @@ function show_header_slider_section(){
 
 				     endif;
 				    $html.=' </li>';
-				}		
+				}
 			 $html.= '</ul>';
 			 $html.='</div>';
 		 return   $html;
@@ -554,14 +554,14 @@ function myplugin_custom_walker( $args ) {
 		  {
 
 		    return array_merge( $args, array(
-		    
+
 		        'container_class'=>"menu_list",
 		        'menu_class'=>'',
 		    ) );
 		}else
 		{
 		    return array_merge( $args, array(
-		    
+
 		        'theme_location' => 'primary',
 				'menu_class'     => 'nav navbar-nav',
 		    ) );
@@ -655,12 +655,12 @@ function emz_customize_register( $wp_customize ) {
  $wp_customize->add_section( 'lqd_theme', array(
     'title' => 'Liquid Options',
     'description' => 'Settings',
-    'priority' => 1, 
+    'priority' => 1,
     'sanitize_callback' == 'esc_url_raw',
 ) );
 
    $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' ); // Add setting for logo uploader
-         
+
     // Add control for logo uploader (actual uploader)
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm1_logo', array(
         'label'    => __( 'Header Logo', 'liquidchurch' ),
@@ -674,7 +674,7 @@ function emz_customize_register( $wp_customize ) {
 /* Social Icons*/
 
     $wp_customize->add_setting( 'facebook_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Fb
-         
+
     	$wp_customize->add_control( 'facebook_id', array(
 		'label'    => __( 'Facebook Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -685,7 +685,7 @@ function emz_customize_register( $wp_customize ) {
 	) );
 
       $wp_customize->add_setting( 'twitter_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Twiiter
-         
+
     	$wp_customize->add_control( 'twitter_id', array(
 		'label'    => __( 'Twitter Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -696,7 +696,7 @@ function emz_customize_register( $wp_customize ) {
 	) );
 
     $wp_customize->add_setting( 'youtube_id_theme','sanitize_callback' == 'esc_url_raw' ); // youtube
-         
+
     	$wp_customize->add_control( 'youtube_id', array(
 		'label'    => __( 'Youtube Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -707,7 +707,7 @@ function emz_customize_register( $wp_customize ) {
 	) );
 
     $wp_customize->add_setting( 'instagram_id_theme','sanitize_callback' == 'esc_url_raw' ); // nstagram
-         
+
     	$wp_customize->add_control( 'instagram_id', array(
 		'label'    => __( 'Instagram Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -718,7 +718,7 @@ function emz_customize_register( $wp_customize ) {
 	) );
 
        $wp_customize->add_setting( 'vimeo_id_theme','sanitize_callback' == 'esc_url_raw' ); // vimeo
-         
+
     	$wp_customize->add_control( 'vimeo_id', array(
 		'label'    => __( 'Vimeo Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -726,7 +726,7 @@ function emz_customize_register( $wp_customize ) {
 		'settings'  => 'vimeo_id_theme',
 		'priority' => 7,
 		'sanitize_callback' == 'esc_url_raw',
-	) ); 	
+	) );
 
 }
 add_action( 'customize_register', 'emz_customize_register' );
@@ -752,7 +752,7 @@ class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
  		$url = '#' !== $item->url ? $item->url : '';
  		$output .= '<option value="' . $url . '">' . $item->title;
-	}	
+	}
 	function end_el( &$output, $item, $depth = 0, $args = array() ){
 		$output .= "</option>\n"; // replace closing </li> with the option tag
 	}
@@ -772,12 +772,12 @@ function createDefaultMenu(){
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  ( 'Home' ),
 	        'menu-item-classes' => 'home',
-	        'menu-item-url' => home_url( '/' ), 
+	        'menu-item-url' => home_url( '/' ),
 	        'menu-item-status' => 'publish'));
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  ( 'Custom Page' ),
-	        'menu-item-url' => home_url( '/custom-page/' ), 
+	        'menu-item-url' => home_url( '/custom-page/' ),
 	        'menu-item-status' => 'publish'));
 
 	}
@@ -801,17 +801,17 @@ function createDefaultLocationMenu(){
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  ('Locations'),
 	        'menu-item-classes' => 'locations',
-	        'menu-item-url' => home_url( '/' ), 
+	        'menu-item-url' => home_url( '/' ),
 	        'menu-item-status' => 'publish'));
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  ('Locations 1'),
-	        'menu-item-url' => home_url( '/' ), 
+	        'menu-item-url' => home_url( '/' ),
 	        'menu-item-status' => 'publish'));
 
 	     wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  ('Locations 2'),
-	        'menu-item-url' => home_url( '/' ), 
+	        'menu-item-url' => home_url( '/' ),
 	        'menu-item-status' => 'publish'));
 	}
 }
@@ -819,7 +819,7 @@ function createDefaultLocationMenu(){
 createDefaultLocationMenu();
 
 function createSamplePage(){
-	
+
 
 	if(the_slug_exists('custom-page')==false)
 	{
@@ -853,7 +853,7 @@ function the_slug_exists($post_name) {
 function assignFrontPage_exists() {
     global $wpdb;
 		$post_name="Home";
-  
+
     	$homepage = get_page_by_title( $post_name );
 
 		if ( $homepage )
@@ -913,8 +913,13 @@ function gc_series_before_after($content)
 	return $content;
 }
 
+
 // Disable JPEG compression
-add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+add_filter( 'jpeg_quality', 'return_100' );
+function return_100() {
+	return 100;
+}
+//add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
 
 /**
  * Disable comments on media.
