@@ -29,7 +29,7 @@
     <div class="header_top">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 col-md-8">
+          <div class="col-sm-12 col-md-4">
 	          <div class="logo">
 		          <?php
 	                  if (get_theme_mod( 'm1_logo' )){
@@ -52,7 +52,8 @@
 	                       }
 	              ?>
 	          </div>
-
+          </div>
+            <div class="col-sm-12 col-md-4">
 	          <div class="location-block">
                     <?php if ( has_nav_menu( 'locations' ) ) : ?>
                             <?php
@@ -75,8 +76,8 @@
                           </div>
                     <?php endif; ?>
             </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 col-md-4">
+            </div>
+          <div class="col-sm-12 col-md-4">
 	          <div class="church-online">
 	              <a href="https://live.liquidchurch.com/" class="church-online-link">Church Online</a>
 	          </div>
