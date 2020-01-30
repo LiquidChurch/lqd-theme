@@ -23,8 +23,8 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header style="padding-left: 20px; padding-right: 20px; padding-botton: 0px; padding-top: 20px;">
-				<?php				
+			<header style="padding: 20px 20px 0px;">
+				<?php
 				// removed class "page-header from header GC 10/12/2018 <header class="page-header" style="padding-left: 10px; padding-right: 10px; padding-botton: 1px;">
 				//  Next 2 lines commented out 10/11/2018 to use blog slider - GC
 				//	the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -32,7 +32,7 @@ get_header(); ?>
 				//  Div below this section added to insert text for header area for blog  10/11/2018 GC
 				echo do_shortcode('[rev_slider alias="elixir-blog"]');
 				?>
-				<div class="entry-content"><i><p>Thanks for checking out our blog! 
+				<div class="entry-content"><i><p>Thanks for checking out our blog!
 				We welcome you to click on the articles below to stay up-to-date on what's happening right here at Liquid, catch up on summaries of our latest messages, and get a sneak-peak of what's coming up in Small Groups this week!</p></i></div>
 			</header><!-- .page-header -->
             <div class="lqd-blog">
