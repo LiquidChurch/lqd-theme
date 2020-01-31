@@ -1090,6 +1090,10 @@ textarea {
     font-family: 'Avenir Next LT Pro', sans-serif !important;
 }
 
+.selectric .label {
+    margin: 3px 0 0 !important;
+}
+
 /* Pastor Bios Styling */
 .pastors-bios h2 {
     margin-bottom: 0;
