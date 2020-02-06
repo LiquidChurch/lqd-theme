@@ -23,7 +23,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header style="padding: 20px 20px 0px;">
+			<header style="padding: 20px 20px 0px 20px;">
 				<?php
 				// removed class "page-header from header GC 10/12/2018 <header class="page-header" style="padding-left: 10px; padding-right: 10px; padding-botton: 1px;">
 				//  Next 2 lines commented out 10/11/2018 to use blog slider - GC

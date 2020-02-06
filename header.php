@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header
  *
- * Displays all of the head element and everything up until the "site-content" div.
+ * Displays all of the <head> element and everything up until the "site-content" div.
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -53,7 +53,7 @@
 	              ?>
 	          </div>
           </div>
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-6 col-md-3 col-md-offset-1">
 	          <div class="location-block">
                     <?php if ( has_nav_menu( 'locations' ) ) : ?>
                             <?php
@@ -77,7 +77,7 @@
                     <?php endif; ?>
             </div>
             </div>
-          <div class="col-sm-12 col-md-4">
+          <div class="col-sm-6 col-md-3 col-md-offset-1">
 	          <div class="church-online">
 	              <a href="https://live.liquidchurch.com/" class="church-online-link">Church Online</a>
 	          </div>
