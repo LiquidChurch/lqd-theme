@@ -25,7 +25,7 @@ $sermon = gc_get_sermon_post();
 		// Enqueue fitvids for responsive video.
 		wp_enqueue_script(
 			'fitvids',
-			GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+			Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
 			array( 'jquery' ),
 			'1.1',
 			true
