@@ -329,7 +329,7 @@ textarea {
 
 /* Forms */
 .form-group .form-controlinput {
-    background: #dcddde;
+    /* background: #dcddde; // Made form inputs gray, disabled. */
     border: medium none;
     border-radius: 20px;
     box-sizing: border-box;
@@ -1083,9 +1083,6 @@ textarea {
 }
 
 /* Location Dropdown */
-.location-block {
-}
-
 .location-block .selectric .label { /* TODO: Remove? */
     font-family: 'Avenir Next LT Pro', sans-serif !important;
 }
