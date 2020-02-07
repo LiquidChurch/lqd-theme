@@ -16,10 +16,10 @@ $sermon = lqdm_get_sermon_post();
 
     <div class="entry-content" style="">
         <div class="row">
-            <div id="top-row-single-sermon" class="row">
-                <div id="single-sermon-player" class="col-sm-12">
+            <div id="lqdm-top-row-single-sermon" class="row">
+                <div id="lqdm-single-sermon-player" class="col-sm-12">
                     <?php if ($video_player = lqdm_get_sermon_video_player($sermon)) : ?>
-                        <div class="message-video">
+                        <div class="lqdm-video">
                             <?php echo $video_player; ?>
                         </div>
                     <?php
@@ -27,14 +27,14 @@ $sermon = lqdm_get_sermon_post();
                     wp_enqueue_script(
                         'fitvids',
 	                    Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
-                        array('jquery'),
+                        [ 'jquery' ],
                         '1.1',
                         true
                     );
                     ?>
                         <script type="text/javascript">
                             jQuery(function ($) {
-                                jQuery('.message-video').fitVids();
+                                jQuery('.lqdm-video').fitVids();
                             });
                         </script>
                     <?php else : ?>
@@ -44,11 +44,10 @@ $sermon = lqdm_get_sermon_post();
                 <div class="row" style="padding-left:30px;padding-right:30px;">
 
                     <?php
-                    $message_field_to_display = array();
+                    $message_field_to_display = [];
                     $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_message_view');
                     if (!empty($plugin_option))
-                        $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
-                    //                    p($message_field_to_display, 0);
+                        $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : [];
                     ?>
 
                     <div class="col-md-12">
@@ -60,12 +59,12 @@ $sermon = lqdm_get_sermon_post();
                         ?>
                     </div>
 
-                    <div id="single-sermon-content" class="col-md-12">
+                    <div id="lqdm-single-sermon-content" class="col-md-12">
 
                         <?php
                         if (in_array('title', $message_field_to_display)) {
                             ?>
-                            <div class="row single-sermon-title">
+                            <div class="row lqdm-single-sermon-title">
                                 <header class="entry-header col-sm-7" style="margin-top: 20px;">
 
                                     <?php
@@ -78,10 +77,10 @@ $sermon = lqdm_get_sermon_post();
                                 if (in_array('sermon_image', $message_field_to_display)) {
                                     ?>
                                     <div class="col-sm-5 lqdm-right-col">
-                                        <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
+                                        <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, [
                                             'class' => 'lqdm-series-list-sermons-img',
                                             'style' => 'width:100%;',
-                                        )); ?>
+                                        ] ); ?>
                                     </div>
                                     <?php
                                 }
@@ -107,7 +106,7 @@ $sermon = lqdm_get_sermon_post();
                         ?>
 
                         <?php
-                        $exclude_msg = $sermon->get_meta('gc_exclude_msg');
+                        $exclude_msg = $sermon->get_meta('lqdm_exclude_msg');
                         if (in_array('part_of_series', $message_field_to_display)
                             && ($exclude_msg != 'on')
                         ) {
@@ -158,20 +157,11 @@ $sermon = lqdm_get_sermon_post();
                         }
                         ?>
 
-                        <!--<div id="message-resources">
-                            <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
-                            <?php /*do_action('sermon_resources', array(
-                                'resource_type' => array('files', 'urls'),
-                                'resource_file_type' => array('image', 'video', 'audio', 'pdf', 'zip', 'other'),
-                                'resource_post_id' => get_the_id(),
-                            )); */ ?>
-                        </div>-->
-
                     </div>
                 </div>
             </div>
             <?php
-            $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
+            $other_msg = do_shortcode('[lqd_messages per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
             if (!empty($other_msg)) {
                 ?>
                 <div id="lqdm-message-others" class="row lqdm-individual-sermon-list">

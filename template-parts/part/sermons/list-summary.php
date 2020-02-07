@@ -4,7 +4,7 @@ $content = strip_tags(get_the_content());
 if (empty($content))
     return false;
 ?>
-<div id="message-summary" class="row">
+<div id="lqdm-summary" class="row">
     <div class="col-sm-3">
         <b>Summary:</b>
     </div>

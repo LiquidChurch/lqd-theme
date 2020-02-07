@@ -4,13 +4,13 @@ $speakers = $sermon->get_speakers();
 if (empty($speakers))
     return false;
 ?>
-<div id="message-speaker" class="row">
+<div id="lqdm-speaker" class="row">
     <div class="col-sm-3">
         <b>Speaker:</b>
     </div>
     <div class="col-sm-9">
         <?php
-        $speaker = array();
+        $speaker = [];
         foreach ($speakers as $key => $val) {
             $speaker[] = $val->name;
         }

@@ -9,13 +9,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header ">
-        <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </header><!-- .entry-header -->
 
     <?php lqdm_post_thumbnail(); ?>
 
-    <!-- .entry-content -->
     <div class="entry-content">
         <p><a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a></p>
 
@@ -23,27 +19,27 @@
 
         <hr/>
         <h1>Search for Series and Sermons</h1>
-        <p><?php do_action('gc_sermons_search', array('separate_results' => false)); ?></p>
+        <p><?php do_action('lqdm_search', [ 'separate_results' => false ] ); ?></p>
 
-        <?php if (!isset($_GET['sermon-search'])) : ?>
+        <?php if (!isset($_GET['lqdm-search'])) : ?>
             <hr/>
             <h1>Browse Message Archive</h1>
-            <p><?php do_action('gc_series', array(
+            <p><?php do_action('lqdm_series', [
                     'paging_by' => "per_year",
                     'show_num_years_first_page' => 2,
-                    'paging_init_year' => date('Y', time()) . ",2016,2015"
-                )); ?>
+                    'paging_init_year' => date('Y', time()) . ",2016,2015" // TODO: What is this?
+                ] ); ?>
             </p>
         <?php endif; ?>
 
-        <?php wp_link_pages(array(
+        <?php wp_link_pages( [
             'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'liquidchurch') . '</span>',
             'after' => '</div>',
             'link_before' => '<span>',
             'link_after' => '</span>',
             'pagelink' => '<span class="screen-reader-text">' . __('Page', 'liquidchurch') . ' </span>%',
             'separator' => '<span class="screen-reader-text">, </span>',
-        )); ?>
+        ] ); ?>
     </div><!-- .entry-content -->
 
     <?php
