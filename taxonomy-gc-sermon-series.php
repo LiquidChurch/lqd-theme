@@ -24,13 +24,13 @@ get_header(); ?>
         <?php if (have_posts()) : ?>
             <?php
 
-            $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
+            $series = lqd_messages()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
             if ($series->image_id) {
-                echo wp_get_attachment_image($series->image_id, 'full', false, array(
-                    'class' => 'gc-single-series-sermons-img',
-                ));
+                echo wp_get_attachment_image($series->image_id, 'full', false, [
+                    'class' => 'lqdm-single-series-sermons-img',
+                ]);
             }
             ?>
             <div class="entry-content sermon-series-desc">

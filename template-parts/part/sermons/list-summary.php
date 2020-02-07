@@ -1,5 +1,5 @@
 <?php
-add_filter('the_content', 'gc_sermon_before_after');
+add_filter('the_content', 'lqdm_sermon_before_after');
 $content = strip_tags(get_the_content());
 if (empty($content))
     return false;

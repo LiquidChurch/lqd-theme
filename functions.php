@@ -218,7 +218,7 @@ function liquidchurch_scripts() {
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqdcss );
-	// Add Liquid Messages (GC-Sermons) CSS
+	// Add Liquid Messages CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.5.2' );
     // Only used on text2give page1
     if ( is_page( 'text2give' ) ) {
@@ -897,16 +897,16 @@ add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
  * @param $content
  * @return string $content
  */
-function gc_sermon_before_after($content)
+function lqdm_sermon_before_after($content)
 {
 	$content = strip_tags($content);
 	$content = str_replace("\xc2\xa0", ' ', $content);
-	$content = preg_replace('/<p>/', '<span class="gc-right-col">', $content);
+	$content = preg_replace('/<p>/', '<span class="lqdm-right-col">', $content);
 	$content = preg_replace('/<\/p>/', '</span>', $content);
 	return $content;
 }
 
-function gc_series_before_after($content)
+function lqdm_series_before_after($content)
 {
 	$content = strip_tags($content);
 	$content = str_replace("\xc2\xa0", ' ', $content);
@@ -968,8 +968,8 @@ add_filter( 'page_template', 'lqd_app_view_message_page_template' );
  */
 function lqd_app_view_taxonomy_series_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
-		$template = locate_template( array( 'taxonomy-gc-sermon-series-app-view.php' ) );
+	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['lqdm-series'] ) ) {
+		$template = locate_template( array( 'taxonomy-lqd-messages-series-app-view.php' ) );
 	}
 	return $template;
 }
@@ -983,8 +983,8 @@ add_filter( 'taxonomy_template', 'lqd_app_view_taxonomy_series_template' );
  */
 function lqd_app_view_message_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
-		$template = locate_template( array( 'single-gc-sermons-app-view.php' ) );
+	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['lqd-messages'] ) ) {
+		$template = locate_template( array( 'single-lqd-messages-app-view.php' ) );
 	}
 	return $template;
 }
@@ -1016,7 +1016,7 @@ add_filter( 'page_link', 'lqd_page_link', 1000, 2 );
  */
 function lqd_series_link( $url, $term, $taxonomy ) {
 	global $wp_query;
-	if ( $taxonomy == 'gc-sermon-series' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
+	if ( $taxonomy == 'lqdm-series' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
 		return $url . '/messages-app-view/';
 	}
 	return $url;
@@ -1032,7 +1032,7 @@ add_filter( 'term_link', 'lqd_series_link', 1000, 3 );
  */
 function lqd_message_link( $url, $post ) {
 	global $wp_query;
-	if ( get_post_type( $post ) == 'gc-sermons' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
+	if ( get_post_type( $post ) == 'lqd-messages' && isset( $wp_query->query_vars['messages-app-view'] ) ) {
 		return $url . 'messages-app-view/';
 	}
 	return $url;
