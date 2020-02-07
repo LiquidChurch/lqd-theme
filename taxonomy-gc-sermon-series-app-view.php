@@ -41,13 +41,13 @@
         <?php if (have_posts()) : ?>
             <?php
 
-            $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
+            $series = lqd_messages()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
             if ($series->image_id) {
-                echo wp_get_attachment_image($series->image_id, 'full', false, array(
-                    'class' => 'gc-single-series-sermons-img',
-                ));
+                echo wp_get_attachment_image($series->image_id, 'full', false, [
+                    'class' => 'lqdm-single-series-sermons-img',
+                ]);
             }
             ?>
             <?php
@@ -72,12 +72,12 @@
             global $wp_query;
             $video_query_args = array_merge($wp_query->query_vars, array(
                 'posts_per_page' => '99',
-                'meta_key' => 'gc_display_order',
+                'meta_key' => 'lqdm_display_order',
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
                 'meta_query' => array(
                     array(
-                        'key' => 'gc_exclude_msg',
+                        'key' => 'lqdm_exclude_msg',
                         'value' => 'on',
                     )
                 ),
@@ -90,7 +90,7 @@
             // Start the Loop.
             while ($the_query->have_posts()) : $the_query->the_post();
                 $post__not_in[] = get_the_ID();
-                $pos = get_post_meta(get_the_ID(), 'gc_video_msg_pos', true);
+                $pos = get_post_meta(get_the_ID(), 'lqdm_video_msg_pos', true);
                 if($pos == 'bottom') {
                     $bottom_count++;
                     continue;
@@ -113,12 +113,12 @@
              * for normal messages
              */
             global $wp_query;
-            $query_args = array_merge($wp_query->query_vars, array(
-                'meta_key' => 'gc_display_order',
+            $query_args = array_merge($wp_query->query_vars, [
+                'meta_key' => 'lqdm_display_order',
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
                 'post__not_in' => $post__not_in,
-            ));
+            ]);
 
             // The Query
             $the_query = new WP_Query($query_args);
@@ -151,7 +151,7 @@
 
                 // Start the Loop.
                 while ($the_query->have_posts()) : $the_query->the_post();
-                    $pos = get_post_meta(get_the_ID(), 'gc_video_msg_pos', true);
+                    $pos = get_post_meta(get_the_ID(), 'lqdm_video_msg_pos', true);
                     if ($pos != 'bottom') {
                         continue;
                     }

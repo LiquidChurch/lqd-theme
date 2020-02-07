@@ -9,7 +9,7 @@
 
 // Get Sermon object
 global $sermon;
-$sermon = gc_get_sermon_post();
+$sermon = lqdm_get_sermon_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -18,7 +18,7 @@ $sermon = gc_get_sermon_post();
         <div class="row">
             <div id="top-row-single-sermon" class="row">
                 <div id="single-sermon-player" class="col-sm-12">
-                    <?php if ($video_player = gc_get_sermon_video_player($sermon)) : ?>
+                    <?php if ($video_player = lqdm_get_sermon_video_player($sermon)) : ?>
                         <div class="message-video">
                             <?php echo $video_player; ?>
                         </div>
@@ -26,7 +26,7 @@ $sermon = gc_get_sermon_post();
                     // Enqueue fitvids for responsive video.
                     wp_enqueue_script(
                         'fitvids',
-                        GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+                        Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
                         array('jquery'),
                         '1.1',
                         true
@@ -38,14 +38,14 @@ $sermon = gc_get_sermon_post();
                             });
                         </script>
                     <?php else : ?>
-                        <?php liquidchurch_post_thumbnail(); ?>
+                        <?php lqdm_post_thumbnail(); ?>
                     <?php endif; ?>
                 </div>
                 <div class="row" style="padding-left:55px;padding-right:55px;">
 
                     <?php
                     $message_field_to_display = array();
-                    $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
+                    $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_message_view');
                     if (!empty($plugin_option))
                         $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
                     //                    p($message_field_to_display, 0);
@@ -60,7 +60,7 @@ $sermon = gc_get_sermon_post();
                                 <header class="entry-header col-sm-7" style="margin-top: 20px;">
 
                                     <?php
-                                    the_title('<h1 class="gc-sermon-title">', '</h1>');
+                                    the_title( '<h1 class="lqdm-message-title">', '</h1>');
                                     ?>
 
                                 </header><!-- .entry-header -->
@@ -68,9 +68,9 @@ $sermon = gc_get_sermon_post();
                                 <?php
                                 if (in_array('sermon_image', $message_field_to_display)) {
                                     ?>
-                                    <div class="col-sm-5 gc-right-col">
+                                    <div class="col-sm-5 lqdm-right-col">
                                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                                            'class' => 'gc-series-list-sermons-img',
+                                            'class' => 'lqdm-series-list-sermons-img',
                                             'style' => 'width:100%;',
                                         )); ?>
                                     </div>
@@ -98,7 +98,7 @@ $sermon = gc_get_sermon_post();
                         ?>
 
                         <?php
-                        $exclude_msg = $sermon->get_meta('gc_exclude_msg');
+                        $exclude_msg = $sermon->get_meta('lqdm_exclude_msg');
                         if (in_array('part_of_series', $message_field_to_display)
                             && ($exclude_msg != 'on')
                         ) {
@@ -159,7 +159,7 @@ $sermon = gc_get_sermon_post();
                         </div>-->
 
                         <?php
-                        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
+                        $social_share_enable = Lqd_Messages_Plugin::get_plugin_settings_options('social_option', 'social_share');
                         if ($social_share_enable == 'yes') {
                             echo '<div class="addthis_sharing_toolbox"></div>';
                         }
@@ -169,11 +169,11 @@ $sermon = gc_get_sermon_post();
                 </div>
             </div>
             <?php
-            $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
+            $other_msg = do_shortcode('[lqdm_messages per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
             if (!empty($other_msg)) {
                 ?>
-                <div id="message-others" class="row gc-individual-sermon-list">
-                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
+                <div id="message-others" class="row lqdm-individual-sermon-list">
+                    <h1 class="lqdm-message-title lqdm-other-msg-title" style="padding-left: 8px !important;">Other Messages in
                         This
                         Series</h1>
                     <?php

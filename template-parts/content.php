@@ -19,7 +19,7 @@
 
 	<?php liquidchurch_excerpt(); ?>
 
-	<?php liquidchurch_post_thumbnail(); ?>
+	<?php lqdm_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

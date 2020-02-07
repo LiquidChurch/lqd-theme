@@ -17,7 +17,7 @@
         <?php endif; ?>
 
         <?php if (!isset($_GET['sermon-search'])) : ?>
-            <p><?php do_action('gc_series', array(
+            <p><?php do_action('lqdm_series', array(
                     'paging_by' => "per_year",
                     'show_num_years_first_page' => 2,
                     'paging_init_year' => date('Y', time()) . ",2016,2015"

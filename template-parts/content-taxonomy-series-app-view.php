@@ -17,10 +17,10 @@
     <div class="entry-content sermon-series-message mav-series">
         <?php
         global $sermon;
-        $sermon = gc_get_sermon_post(get_the_ID());
+        $sermon = lqdm_get_sermon_post(get_the_ID());
 
         $message_field_to_display = array();
-        $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_series_view');
+        $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_series_view');
         if (!empty($plugin_option))
             $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
         ?>
@@ -33,7 +33,7 @@
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                            'class' => 'gc-series-list-sermons-img',)); ?>
+                            'class' => 'lqdm-series-list-sermons-img',)); ?>
                     </a>
                 </div>
                 <?php
@@ -59,7 +59,7 @@
                 ?>
 
                 <?php
-                $exclude_msg = $sermon->get_meta('gc_exclude_msg');
+                $exclude_msg = $sermon->get_meta('lqdm_exclude_msg');
                 if (in_array('part_of_series', $message_field_to_display)
                     && ($exclude_msg != 'on')
                 ) {

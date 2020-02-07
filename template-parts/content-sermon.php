@@ -9,7 +9,7 @@
  */
 
 // Get Sermon object
-$sermon = gc_get_sermon_post();
+$sermon = lqdm_get_sermon_post();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -17,7 +17,7 @@ $sermon = gc_get_sermon_post();
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( $video_player = gc_get_sermon_video_player( $sermon ) ) : ?>
+	<?php if ( $video_player = lqdm_get_sermon_video_player( $sermon ) ) : ?>
 		<div class="message-video">
 			<?php echo $video_player; ?>
 		</div>
@@ -25,7 +25,7 @@ $sermon = gc_get_sermon_post();
 		// Enqueue fitvids for responsive video.
 		wp_enqueue_script(
 			'fitvids',
-			GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+			Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
 			array( 'jquery' ),
 			'1.1',
 			true
@@ -37,10 +37,10 @@ $sermon = gc_get_sermon_post();
 			});
 		</script>
 	<?php else : ?>
-		<?php liquidchurch_post_thumbnail(); ?>
+		<?php lqdm_post_thumbnail(); ?>
 	<?php endif; ?>
 
-	<?php if ( $audio_player = gc_get_sermon_audio_player( $sermon ) ) : ?>
+	<?php if ( $audio_player = lqdm_get_sermon_audio_player( $sermon ) ) : ?>
 		<div class="message-audio">
 			<?php echo $audio_player; ?>
 		</div>
@@ -75,15 +75,15 @@ $sermon = gc_get_sermon_post();
 	<footer class="entry-footer">
 
 		<div class="message-topics">
-			<?php the_terms( $sermon->ID, 'gcs-topic', 'Topics: ', ' / ' ); ?>
+			<?php the_terms( $sermon->ID, 'lqdm-topic', 'Topics: ', ' / ' ); ?>
 		</div>
 
 		<div class="message-tags">
-			<?php the_terms( $sermon->ID, 'gcs-tag', 'Tags: ', ' / ' ); ?>
+			<?php the_terms( $sermon->ID, 'lqdm-tag', 'Tags: ', ' / ' ); ?>
 		</div>
 
 		<div class="message-scripture">
-			<?php the_terms( $sermon->ID, 'gcs-scripture', 'Scriptures referenced: ', ' / ' ); ?>
+			<?php the_terms( $sermon->ID, 'lqdm-scripture', 'Scriptures referenced: ', ' / ' ); ?>
 		</div>
 
 		<div class="message-other-in-series">
