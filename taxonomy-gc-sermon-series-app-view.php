@@ -61,7 +61,7 @@
             {
                 echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Message Archives</a></center>";
             } ?>
-            <div class="entry-content sermon-series-desc mav-series">
+            <div class="entry-content lqdm-series-desc mav-series">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -170,11 +170,11 @@
                 wp_reset_postdata();
             }
 
-            $sermon_resources = do_shortcode('[sermon_resources data_type="series" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
+            $sermon_resources = do_shortcode('[lqdm_resources data_type="series" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content sermon-series-resource">
+                    <div class="entry-content lqdm-series-resource">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

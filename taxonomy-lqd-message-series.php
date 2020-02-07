@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages for a single sermon series.
+ * The template for displaying archive pages for a single message series.
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
@@ -33,7 +33,7 @@ get_header(); ?>
                 ]);
             }
             ?>
-            <div class="entry-content sermon-series-desc">
+            <div class="entry-content lqdm-series-desc">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -142,11 +142,11 @@ get_header(); ?>
                 wp_reset_postdata();
             }
 
-            $sermon_resources = do_shortcode('[sermon_resources data_type="series" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
+            $sermon_resources = do_shortcode('[lqdm_resources data_type="series" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content sermon-series-resource">
+                    <div class="entry-content lqdm-series-resource">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

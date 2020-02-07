@@ -18,7 +18,7 @@
         <?php the_content(); ?>
 
         <hr/>
-        <h1>Search for Series and Sermons</h1>
+        <h1>Search for Individual Messages and Entire Series</h1>
         <p><?php do_action('lqdm_search', [ 'separate_results' => false ] ); ?></p>
 
         <?php if (!isset($_GET['lqdm-search'])) : ?>

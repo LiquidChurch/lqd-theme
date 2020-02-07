@@ -23,11 +23,11 @@
         <?php if (!isset($_GET['lqdm-search'])) : ?>
             <hr/>
             <h1>Most Recent Messages</h1>
-            <p><?php do_action('lqd_messages', [ 'per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4 ] ); ?></p>
+            <p><?php do_action('lqdm_messages', [ 'per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4 ] ); ?></p>
         <?php endif; ?>
 
         <hr/>
-        <h1>Search for Series and Sermons</h1>
+        <h1>Search for Individual Messages and Entire Series</h1>
         <p><?php do_action('lqdm_search', [ 'separate_results' => false ] ); ?></p>
 
         <?php if (!isset($_GET['lqdm-search'])) : ?>
