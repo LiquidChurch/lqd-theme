@@ -50,11 +50,11 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
+				wp_list_comments( [
 					'style'       => 'ol',
 					'short_ping'  => true,
 					'avatar_size' => 42,
-				) );
+                ] );
 			?>
 		</ol><!-- .comment-list -->
 
@@ -70,10 +70,10 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php
-		comment_form( array(
+		comment_form( [
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
-		) );
+        ] );
 	?>
 
 </div><!-- .comments-area -->

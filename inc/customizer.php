@@ -30,9 +30,9 @@ function liquidchurch_custom_header_and_background() {
 	 *     @type string $default-color Default color of the background.
 	 * }
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'liquidchurch_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'liquidchurch_custom_background_args', [
 		'default-color' => $default_background_color,
-	) ) );
+    ] ) );
 
 	/**
 	 * Filter the arguments used when adding 'custom-header' support in Liquid Church.
@@ -50,13 +50,13 @@ function liquidchurch_custom_header_and_background() {
 	 *                                      displayed on the blog.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'liquidchurch_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'liquidchurch_custom_header_args', [
 		'default-text-color'     => $default_text_color,
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'liquidchurch_header_style',
-	) ) );
+    ] ) );
 }
 add_action( 'after_setup_theme', 'liquidchurch_custom_header_and_background' );
 
@@ -107,83 +107,83 @@ function liquidchurch_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		$wp_customize->selective_refresh->add_partial( 'blogname', [
 			'selector' => '.site-title a',
 			'container_inclusive' => false,
 			'render_callback' => 'liquidchurch_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+        ] );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', [
 			'selector' => '.site-description',
 			'container_inclusive' => false,
 			'render_callback' => 'liquidchurch_customize_partial_blogdescription',
-		) );
+        ] );
 	}
 
 	// Add color scheme setting and control.
-	$wp_customize->add_setting( 'color_scheme', array(
+	$wp_customize->add_setting( 'color_scheme', [
 		'default'           => 'default',
 		'sanitize_callback' => 'liquidchurch_sanitize_color_scheme',
 		'transport'         => 'postMessage',
-	) );
+    ] );
 
-	$wp_customize->add_control( 'color_scheme', array(
+	$wp_customize->add_control( 'color_scheme', [
 		'label'    => __( 'Base Color Scheme', 'liquidchurch' ),
 		'section'  => 'colors',
 		'type'     => 'select',
 		'choices'  => liquidchurch_get_color_scheme_choices(),
 		'priority' => 1,
-	) );
+    ] );
 
 	// Add page background color setting and control.
-	$wp_customize->add_setting( 'page_background_color', array(
+	$wp_customize->add_setting( 'page_background_color', [
 		'default'           => $color_scheme[1],
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
-	) );
+    ] );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_background_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_background_color', [
 		'label'       => __( 'Page Background Color', 'liquidchurch' ),
 		'section'     => 'colors',
-	) ) );
+    ] ) );
 
 	// Remove the core header textcolor control, as it shares the main text color.
 	$wp_customize->remove_control( 'header_textcolor' );
 
 	// Add link color setting and control.
-	$wp_customize->add_setting( 'link_color', array(
+	$wp_customize->add_setting( 'link_color', [
 		'default'           => $color_scheme[2],
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
-	) );
+    ] );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', [
 		'label'       => __( 'Link Color', 'liquidchurch' ),
 		'section'     => 'colors',
-	) ) );
+    ] ) );
 
 	// Add main text color setting and control.
-	$wp_customize->add_setting( 'main_text_color', array(
+	$wp_customize->add_setting( 'main_text_color', [
 		'default'           => $color_scheme[3],
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
-	) );
+    ] );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_text_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_text_color', [
 		'label'       => __( 'Main Text Color', 'liquidchurch' ),
 		'section'     => 'colors',
-	) ) );
+    ] ) );
 
 	// Add secondary text color setting and control.
-	$wp_customize->add_setting( 'secondary_text_color', array(
+	$wp_customize->add_setting( 'secondary_text_color', [
 		'default'           => $color_scheme[4],
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
-	) );
+    ] );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_text_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_text_color', [
 		'label'       => __( 'Secondary Text Color', 'liquidchurch' ),
 		'section'     => 'colors',
-	) ) );
+    ] ) );
 }
 add_action( 'customize_register', 'liquidchurch_customize_register', 11 );
 
@@ -248,58 +248,58 @@ function liquidchurch_get_color_schemes() {
 	 *     }
 	 * }
 	 */
-	return apply_filters( 'liquidchurch_color_schemes', array(
-		'default' => array(
+	return apply_filters( 'liquidchurch_color_schemes', [
+		'default' => [
 			'label'  => __( 'Default', 'liquidchurch' ),
-			'colors' => array(
+			'colors' => [
 				'#1a1a1a',
 				'#ffffff',
 				'#007acc',
 				'#1a1a1a',
 				'#686868',
-			),
-		),
-		'dark' => array(
+            ],
+        ],
+		'dark' => [
 			'label'  => __( 'Dark', 'liquidchurch' ),
-			'colors' => array(
+			'colors' => [
 				'#262626',
 				'#1a1a1a',
 				'#9adffd',
 				'#e5e5e5',
 				'#c1c1c1',
-			),
-		),
-		'gray' => array(
+            ],
+        ],
+		'gray' => [
 			'label'  => __( 'Gray', 'liquidchurch' ),
-			'colors' => array(
+			'colors' => [
 				'#616a73',
 				'#4d545c',
 				'#c7c7c7',
 				'#f2f2f2',
 				'#f2f2f2',
-			),
-		),
-		'red' => array(
+            ],
+        ],
+		'red' => [
 			'label'  => __( 'Red', 'liquidchurch' ),
-			'colors' => array(
+			'colors' => [
 				'#ffffff',
 				'#ff675f',
 				'#640c1f',
 				'#402b30',
 				'#402b30',
-			),
-		),
-		'yellow' => array(
+            ],
+        ],
+		'yellow' => [
 			'label'  => __( 'Yellow', 'liquidchurch' ),
-			'colors' => array(
+			'colors' => [
 				'#3b3721',
 				'#ffef8e',
 				'#774e24',
 				'#3b3721',
 				'#5b4d3e',
-			),
-		),
-	) );
+            ],
+        ],
+    ] );
 }
 
 if ( ! function_exists( 'liquidchurch_get_color_scheme' ) ) :
@@ -312,7 +312,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme' ) ) :
  *
  * @return array An associative array of either the current or default color scheme HEX values.
  */
-function liquidchurch_get_color_scheme() {
+    function liquidchurch_get_color_scheme() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
 	$color_schemes       = liquidchurch_get_color_schemes();
 
@@ -337,7 +337,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme_choices' ) ) :
  */
 function liquidchurch_get_color_scheme_choices() {
 	$color_schemes                = liquidchurch_get_color_schemes();
-	$color_scheme_control_options = array();
+	$color_scheme_control_options = [];
 
 	foreach ( $color_schemes as $color_scheme => $value ) {
 		$color_scheme_control_options[ $color_scheme ] = $value['label'];
@@ -397,7 +397,7 @@ function liquidchurch_color_scheme_css() {
 	}
 
 	// If we get this far, we have a custom color scheme.
-	$colors = array(
+	$colors = [
 		'background_color'      => $color_scheme[0],
 		'page_background_color' => $color_scheme[1],
 		'link_color'            => $color_scheme[2],
@@ -405,7 +405,7 @@ function liquidchurch_color_scheme_css() {
 		'secondary_text_color'  => $color_scheme[4],
 		'border_color'          => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $color_textcolor_rgb ),
 
-	);
+    ];
 
 	$color_scheme_css = liquidchurch_get_color_scheme_css( $colors );
 
@@ -421,7 +421,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_color_scheme_css' );
  * @since Liquid Church 1.0
  */
 function liquidchurch_customize_control_js() {
-	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160412', true );
+	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', [ 'customize-controls', 'iris', 'underscore', 'wp-util' ], '20160412', true );
 	wp_localize_script( 'color-scheme-control', 'colorScheme', liquidchurch_get_color_schemes() );
 }
 add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_control_js' );
@@ -432,7 +432,7 @@ add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_contro
  * @since Liquid Church 1.0
  */
 function liquidchurch_customize_preview_js() {
-	wp_enqueue_script( 'liquidchurch-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160412', true );
+	wp_enqueue_script( 'liquidchurch-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', [ 'customize-preview' ], '20160412', true );
 }
 add_action( 'customize_preview_init', 'liquidchurch_customize_preview_js' );
 
@@ -445,14 +445,14 @@ add_action( 'customize_preview_init', 'liquidchurch_customize_preview_js' );
  * @return string Color scheme CSS.
  */
 function liquidchurch_get_color_scheme_css( $colors ) {
-	$colors = wp_parse_args( $colors, array(
+	$colors = wp_parse_args( $colors, [
 		'background_color'      => '',
 		'page_background_color' => '',
 		'link_color'            => '',
 		'main_text_color'       => '',
 		'secondary_text_color'  => '',
 		'border_color'          => '',
-	) );
+    ] );
 
 	return <<<CSS
 	/* Color Scheme */
@@ -758,14 +758,14 @@ CSS;
  * @since Liquid Church 1.0
  */
 function liquidchurch_color_scheme_css_template() {
-	$colors = array(
+	$colors = [
 		'background_color'      => '{{ data.background_color }}',
 		'page_background_color' => '{{ data.page_background_color }}',
 		'link_color'            => '{{ data.link_color }}',
 		'main_text_color'       => '{{ data.main_text_color }}',
 		'secondary_text_color'  => '{{ data.secondary_text_color }}',
 		'border_color'          => '{{ data.border_color }}',
-	);
+    ];
 	?>
 	<script type="text/html" id="tmpl-liquidchurch-color-scheme">
 		<?php echo liquidchurch_get_color_scheme_css( $colors ); ?>

@@ -38,7 +38,7 @@ get_header(); ?>
             <div class="lqd-blog">
 			<?php
 			// Start the Loop.
-            $my_post_array = array();
+            $my_post_array = [];
             while ( have_posts() ) : the_post();
                 $my_post_array[] = $post->ID;
 			// End the loop.
@@ -46,11 +46,11 @@ get_header(); ?>
 
 			echo do_shortcode('[ess_grid alias="blog_post_grid" posts='.implode(',', $my_post_array). ']' );
 			// Previous/next page navigation.
-			the_posts_pagination( array(
+			the_posts_pagination( [
 				'prev_text'          => __( 'Previous page', 'liquidchurch' ),
 				'next_text'          => __( 'Next page', 'liquidchurch' ),
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
-			) );
+            ] );
 
 				//'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
 		// If no content, include the "No posts found" template.

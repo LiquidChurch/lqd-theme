@@ -28,19 +28,19 @@ add_theme_support( 'job-manager-templates' );
 
 			if ( is_singular( 'attachment' ) ) {
 				// Parent post navigation.
-				the_post_navigation( array(
+				the_post_navigation( [
 					'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
-				) );
+                ] );
 			} elseif ( is_singular( 'post' ) ) {
 				// Previous/next post navigation.
-				the_post_navigation( array(
+				the_post_navigation( [
 					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'liquidchurch' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Next post:', 'liquidchurch' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
 					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'liquidchurch' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'liquidchurch' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
-				) );
+                ] );
 			}
 
 			// End of the loop.

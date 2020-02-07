@@ -65,9 +65,9 @@
             if ( is_singular( 'attachment' ) ) {
 
                 // Parent post navigation.
-                the_post_navigation( array(
+                the_post_navigation( [
                     'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
-                ) );
+                ] );
             } elseif ( is_singular( 'post' ) ) {
             }
             // End of the loop.

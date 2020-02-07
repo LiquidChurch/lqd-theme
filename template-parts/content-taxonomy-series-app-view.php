@@ -14,15 +14,15 @@
     <?php
     ?>
 
-    <div class="entry-content sermon-series-message mav-series">
+    <div class="entry-content lqdm-sermon-series-message mav-series">
         <?php
         global $sermon;
         $sermon = lqdm_get_sermon_post(get_the_ID());
 
-        $message_field_to_display = array();
+        $message_field_to_display = [];
         $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_series_view');
         if (!empty($plugin_option))
-            $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
+            $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : [];
         ?>
         <div class="row">
             <?php
@@ -32,8 +32,9 @@
                 ?>
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
-                        <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                            'class' => 'lqdm-series-list-sermons-img',)); ?>
+                        <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, [
+                            'class' => 'lqdm-series-list-sermons-img',
+                        ] ); ?>
                     </a>
                 </div>
                 <?php

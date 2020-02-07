@@ -25,7 +25,7 @@ get_header(); ?>
             <?php
 
             $series = lqd_messages()->taxonomies->series->get(get_queried_object_id());
-            $post__not_in = array();
+            $post__not_in = [];
 
             if ($series->image_id) {
                 echo wp_get_attachment_image($series->image_id, 'full', false, [
@@ -42,18 +42,18 @@ get_header(); ?>
              * for video messages
              */
             global $wp_query;
-            $video_query_args = array_merge($wp_query->query_vars, array(
+            $video_query_args = array_merge($wp_query->query_vars, [
                 'posts_per_page' => '99',
                 'meta_key' => 'gc_display_order',
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
-                'meta_query' => array(
-                    array(
+                'meta_query' => [
+                    [
                         'key' => 'gc_exclude_msg',
                         'value' => 'on',
-                    )
-                ),
-            ));
+                    ]
+                ],
+            ] );
             $bottom_count = 0;
 
             // The Query
@@ -85,12 +85,12 @@ get_header(); ?>
              * for normal messages
              */
             global $wp_query;
-            $query_args = array_merge($wp_query->query_vars, array(
+            $query_args = array_merge($wp_query->query_vars, [
                 'meta_key' => 'gc_display_order',
                 'orderby' => 'meta_value_num',
                 'order' => 'ASC',
                 'post__not_in' => $post__not_in,
-            ));
+            ] );
 
             // The Query
             $the_query = new WP_Query($query_args);
@@ -111,11 +111,11 @@ get_header(); ?>
             wp_reset_postdata();
 
             // Previous/next page navigation.
-            the_posts_pagination(array(
+            the_posts_pagination( [
                 'prev_text' => __('Previous page', 'liquidchurch'),
                 'next_text' => __('Next page', 'liquidchurch'),
                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'liquidchurch') . ' </span>',
-            ));
+            ] );
 
             if(!empty($bottom_count)) {
                 // The Query

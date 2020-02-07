@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying single posts
+ * The template part for displaying single messages
  *
  *
  * @package WordPress
@@ -26,14 +26,14 @@ $sermon = lqdm_get_sermon_post();
 		wp_enqueue_script(
 			'fitvids',
 			Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
-			array( 'jquery' ),
+			[ 'jquery' ],
 			'1.1',
 			true
 		);
 		?>
 		<script type="text/javascript">
 			jQuery( function( $ ) {
-				jQuery( '.message-video' ).fitVids();
+				jQuery( '.lqdm-video' ).fitVids();
 			});
 		</script>
 	<?php else : ?>
@@ -41,7 +41,7 @@ $sermon = lqdm_get_sermon_post();
 	<?php endif; ?>
 
 	<?php if ( $audio_player = lqdm_get_sermon_audio_player( $sermon ) ) : ?>
-		<div class="message-audio">
+		<div class="lqdm-audio">
 			<?php echo $audio_player; ?>
 		</div>
 	<?php endif; ?>
@@ -50,8 +50,8 @@ $sermon = lqdm_get_sermon_post();
 		<div class="entry-content-left">
 			<?php the_content(); ?>
 
-			<?php if ( $notes = apply_filters( 'the_content', $sermon->get_meta( 'gc_sermon_notes' ) ) ) : ?>
-				<div class="message-notes">
+			<?php if ( $notes = apply_filters( 'the_content', $sermon->get_meta( 'lqdm_notes' ) ) ) : ?>
+				<div class="lqdm-notes">
 					<?php echo $notes; ?>
 				</div>
 			<?php endif; ?>
@@ -59,14 +59,11 @@ $sermon = lqdm_get_sermon_post();
 		</div>
 
 		<div class="entry-content-right">
-			<div class="message-series">
-				<?php do_action( 'gc_recent_series', array( 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium',  'remove_thumbnail' => 'false' ) ); ?>
+			<div class="lqdm-series">
+				<?php do_action( 'lqdm_recent_series', [ 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium', 'remove_thumbnail' => 'false' ] ); ?>
 			</div>
-			<div class="message-speaker">
-				<?php do_action( 'gc_recent_speaker', array( 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium' ) ); ?>
-			</div>
-			<div class="message-related-links">
-				<?php do_action( 'gc_related_links', array( 'sermon_id' => $sermon->ID ) ); ?>
+			<div class="lqdm-speaker">
+				<?php do_action( 'lqdm_recent_speaker', [ 'sermon_id' => $sermon->ID, 'thumbnail_size' => 'medium' ] ); ?>
 			</div>
 		</div>
 
@@ -74,36 +71,36 @@ $sermon = lqdm_get_sermon_post();
 
 	<footer class="entry-footer">
 
-		<div class="message-topics">
+		<div class="lqdm-topics">
 			<?php the_terms( $sermon->ID, 'lqdm-topic', 'Topics: ', ' / ' ); ?>
 		</div>
 
-		<div class="message-tags">
+		<div class="lqdm-tags">
 			<?php the_terms( $sermon->ID, 'lqdm-tag', 'Tags: ', ' / ' ); ?>
 		</div>
 
-		<div class="message-scripture">
+		<div class="lqdm-scripture">
 			<?php the_terms( $sermon->ID, 'lqdm-scripture', 'Scriptures referenced: ', ' / ' ); ?>
 		</div>
 
-		<div class="message-other-in-series">
+		<div class="lqdm-message-other-in-series">
 			<h3>Others in Series</h3>
-			<?php do_action( 'gc_sermons', array(
+			<?php do_action( 'lqd_messages', [
 				'per_page'       => 8,
 				'related_series' => 'this',
 				'content'        => '',
 				'thumbnail_size' => 'medium',
 				'number_columns' => 4,
-			) ); ?>
+            ] ); ?>
 		</div>
 
-		<div class="message-other-in-series">
+		<div class="lqdm-message-other-in-series">
 			<h3>Resources</h3>
-			<?php do_action( 'sermon_resources', array(
-				'resource_type'      => array( 'files', 'urls' ),
-				'resource_file_type' => array( 'image', 'video', 'audio', 'pdf', 'zip', 'other' ),
+			<?php do_action( 'lqdm_resources', [
+				'resource_type'      => [ 'files', 'urls' ],
+				'resource_file_type' => [ 'image', 'video', 'audio', 'pdf', 'zip', 'other' ],
 				'resource_post_id'   => $sermon->ID,
-			) ); ?>
+            ] ); ?>
 		</div>
 
 		<?php
