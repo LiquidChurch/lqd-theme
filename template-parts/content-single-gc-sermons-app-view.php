@@ -26,7 +26,7 @@ $sermon = gc_get_sermon_post();
                     // Enqueue fitvids for responsive video.
                     wp_enqueue_script(
                         'fitvids',
-                        GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+                        Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
                         array('jquery'),
                         '1.1',
                         true
@@ -45,7 +45,7 @@ $sermon = gc_get_sermon_post();
 
                     <?php
                     $message_field_to_display = array();
-                    $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
+                    $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_message_view');
                     if (!empty($plugin_option))
                         $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
                     //                    p($message_field_to_display, 0);
@@ -168,7 +168,7 @@ $sermon = gc_get_sermon_post();
                         </div>-->
 
                         <?php
-                        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
+                        $social_share_enable = Lqd_Messages_Plugin::get_plugin_settings_options('social_option', 'social_share');
                         if ($social_share_enable == 'yes') {
                             echo '<div class="addthis_sharing_toolbox"></div>';
                         }
