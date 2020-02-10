@@ -39,6 +39,7 @@ img {
     outline: none;
 }
 
+/* Clearfixes */
 .clearfix:after, .clearfix:before {
     display: table;
     content: "";
@@ -231,6 +232,7 @@ textarea {
     height: 140px;
 }
 
+/* Overall Page Structure */
 .pagetop {
     margin: 0;
 }
@@ -252,7 +254,7 @@ textarea {
 
 .selected {
     float: left;
-    margin: 0px;
+    margin: 0;
     width: 27%;
 }
 
@@ -311,7 +313,7 @@ textarea {
 }
 
 .menublock nav {
-    margin: 0px;
+    margin: 0;
 }
 
 .menublock ul li:first-child {
@@ -495,7 +497,7 @@ textarea {
 }
 
 .entry-content .body-text p {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 { /* TODO: Combine? */
@@ -634,7 +636,7 @@ textarea {
 
 @media (max-width: 1024px) {
     .social-area.clearfix {
-        margin-right: 0px !important;
+        margin-right: 0 !important;
 
     }
 
@@ -655,7 +657,7 @@ textarea {
     }
 
     .futr_menublock { /* TODO: Remove? */
-        margin: 0px;
+        margin: 0;
     }
 }
 
@@ -700,11 +702,11 @@ textarea {
     .logo {
         text-align: center;
         float: none;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .selected {
-        margin: 0px;
+        margin: 0;
         width: 92%;
         text-align: center;
         float: none;
@@ -778,7 +780,7 @@ textarea {
 
     .footer_container {
         background-color: #dcddde;
-        padding: 0px 27px 0 18px;
+        padding: 0 27px 0 18px;
     }
 
     .social-area.clearfix {
@@ -795,7 +797,7 @@ textarea {
 
     .sectionleftul li {
         float: none;
-        padding-right: 0px;
+        padding-right: 0;
     }
 
     .footer_social {
@@ -821,8 +823,8 @@ textarea {
     }
 
     .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 { /* TODO: Duplicate? */
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     h1 {
@@ -838,19 +840,19 @@ textarea {
     }
 
     .entry-content p {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
         font-size: 18px;
 
     }
 
     .page-content .search-form {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .entry-content table {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .search-form .screen-reader-text {
@@ -998,11 +1000,14 @@ textarea {
     font-size: 5rem !important;
 }
 
+/* Campus Pages */
+/* Sunday Services At Formatting */
 .ssat {
     font-size: 3rem;
     padding-bottom: .2rem;
 }
 
+/* Sunday Services Time Formatting */
 .sstime {
     font-size: 4rem;
 }
@@ -1014,12 +1019,13 @@ textarea {
     padding-right: 5%;
 }
 
+/* Remove left padding for campus addresses */
 .campus-addresses h2 {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 .campus-addresses p {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 /* Campus GPS Address */
@@ -1122,21 +1128,21 @@ textarea {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-    font-family: "arial";
-    padding-left: 0px;
+    font-family: "arial", sans-serif;
+    padding-left: 0;
     text-transform:capitalize;
 }
 
 .group-guides-template-default h1  {
-    padding-left: 0px;
+    padding-left: 0;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
-    font-family: "arial";
+    font-family: "arial", sans-serif;
 }
 
 .group-guides p {
-    padding-left:0px;
+    padding-left:0;
     font-size: 18px;
 }
 
