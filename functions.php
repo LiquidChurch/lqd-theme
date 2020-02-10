@@ -412,8 +412,8 @@ function pr($obj){
 
 function theme_options(){
 
-    //$data= get_option('option_tree');
-     //return $data;
+    $data= get_option('option_tree');
+    return $data;
 }
 
 $theme_options= theme_options();
