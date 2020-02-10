@@ -5,7 +5,7 @@
  */
 
 jQuery( function( $ ) {
-    "use strict";
+    'use strict';
 
     // bind change event to select
     $('#text2give').on('change', function () {
@@ -14,5 +14,5 @@ jQuery( function( $ ) {
             window.location = url; // redirect
         }
         return false;
-    } )
+    } );
 } );

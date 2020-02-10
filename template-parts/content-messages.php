@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content
+ * The template used for displaying message content
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -9,49 +9,46 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header ">
-        <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </header><!-- .entry-header -->
 
-    <?php liquidchurch_post_thumbnail(); ?>
+    <?php lqdm_post_thumbnail(); ?>
 
     <!-- .entry-content -->
     <div class="entry-content">
-        <?php if (isset($_GET['sermon-search'])) : ?>
+        <?php if (isset($_GET['lqdm-search'])) : ?>
             <a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
         <?php else: ?>
         <?php the_content(); ?>
         <?php endif; ?>
 
-        <?php if (!isset($_GET['sermon-search'])) : ?>
+        <?php if (!isset($_GET['lqdm-search'])) : ?>
             <hr/>
             <h1>Most Recent Messages</h1>
-            <p><?php do_action('gc_sermons', array('per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4)); ?></p>
+            <p><?php do_action('lqdm_messages', [ 'per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4 ] ); ?></p>
         <?php endif; ?>
 
         <hr/>
-        <h1>Search for Series and Sermons</h1>
-        <p><?php do_action('gc_sermons_search', array('separate_results' => false)); ?></p>
+        <h1>Search for Individual Messages and Entire Series</h1>
+        <p><?php do_action('lqdm_search', [ 'separate_results' => false ] ); ?></p>
 
-        <?php if (!isset($_GET['sermon-search'])) : ?>
+        <?php if (!isset($_GET['lqdm-search'])) : ?>
             <hr/>
             <h1>Browse Message Archive</h1>
-            <p><?php do_action('gc_series', array(
+            <p><?php do_action('lqdm_series', [
                     'paging_by' => "per_year",
                     'show_num_years_first_page' => 2,
-                    'paging_init_year' => date('Y', time()) . ",2016,2015"
-                )); ?>
+                    'paging_init_year' => date('Y', time()) . ",2016,2015" // TODO: What is this?
+                ] ); ?>
             </p>
         <?php endif; ?>
 
-        <?php wp_link_pages(array(
+        <?php wp_link_pages( [
             'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'liquidchurch') . '</span>',
             'after' => '</div>',
             'link_before' => '<span>',
             'link_after' => '</span>',
             'pagelink' => '<span class="screen-reader-text">' . __('Page', 'liquidchurch') . ' </span>%',
             'separator' => '<span class="screen-reader-text">, </span>',
-        )); ?>
+        ] ); ?>
     </div><!-- .entry-content -->
 
     <?php

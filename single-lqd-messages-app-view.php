@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying single sermons
+ * The template for displaying single messages
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -55,7 +55,7 @@
         while ( have_posts() ) : the_post();
 
             // Include the single post content template.
-            get_template_part( 'template-parts/content', 'single-gc-sermons-app-view' );
+            get_template_part( 'template-parts/content', 'single-lqd-messages-app-view' );
 
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
@@ -65,9 +65,9 @@
             if ( is_singular( 'attachment' ) ) {
 
                 // Parent post navigation.
-                the_post_navigation( array(
+                the_post_navigation( [
                     'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
-                ) );
+                ] );
             } elseif ( is_singular( 'post' ) ) {
             }
             // End of the loop.

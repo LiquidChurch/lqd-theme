@@ -50,9 +50,9 @@ function liquidchurch_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function liquidchurch_customize() {
-	wp_die( sprintf( __( 'Liquid Church requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'liquidchurch' ), $GLOBALS['wp_version'] ), '', array(
+	wp_die( sprintf( __( 'Liquid Church requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'liquidchurch' ), $GLOBALS['wp_version'] ), '', [
 		'back_link' => true,
-	) );
+    ] );
 }
 add_action( 'load-customize.php', 'liquidchurch_customize' );
 

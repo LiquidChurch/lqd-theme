@@ -14,21 +14,21 @@
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 
-		<?php liquidchurch_post_thumbnail(); ?>
+		<?php lqdm_post_thumbnail(); ?>
 <!-- .entry-content -->
 		<div class="entry-content">
 			<?php
 			the_content();
 
 
-			wp_link_pages( array(
+			wp_link_pages( [
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'liquidchurch' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+            ] );
 			?>
 		</div><!-- .entry-content -->
 

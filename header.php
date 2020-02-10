@@ -57,12 +57,12 @@
 	          <div class="location-block">
                     <?php if ( has_nav_menu( 'locations' ) ) : ?>
                             <?php
-                             wp_nav_menu( array(
+                             wp_nav_menu( [
                                    'theme_location' => 'locations',
                                   'menu'           => 'Locations Menu',
                                   'walker'         => new Walker_Nav_Menu_Dropdown(),
                                   'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-                                ) );
+                             ] );
                         else :
 
                           ?>
@@ -97,22 +97,22 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <?php if ( has_nav_menu( 'primary' ) ) : ?>
             	<?php
-	                wp_nav_menu( array(
+	                wp_nav_menu( [
 	                	'theme_location' => 'primary',
 		                'menu_class'     => 'nav navbar-nav',
-	                ) );
+                    ] );
                   else :
-                    wp_nav_menu( array(
+                    wp_nav_menu( [
                         'theme_location' => 'default',
                         'menu'  =>  'Default Menu',
                         'menu_class'     => 'nav navbar-nav',
-                   ) );
+                    ] );
                   ?>
               <?php endif; ?>
 
         <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
           <div class="form-group form-group_new">
-            <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
+            <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value===&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value===this.defaultValue)this.value=&#39;&#39;;" >
             <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
           </div>
         </form>
