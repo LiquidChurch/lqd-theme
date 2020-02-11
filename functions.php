@@ -1,8 +1,8 @@
 <?php
 /**
- * Liquid church functions and definitions
+ * Liquid Church Functions and Definitions
  *
- * Set up the theme and provides some helper functions, which are used in the
+ * Sets up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
  * hooks in WordPress to change core functionality.
  *
@@ -11,14 +11,8 @@
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
- *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
- *
- * For more information on hooks, actions, and filters,
- * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -26,7 +20,7 @@
  */
 
 /**
- * Liquid Church only works in WordPress 4.4 or later.
+ * Only works in WordPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -51,30 +45,10 @@ function liquidchurch_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	//Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Liquid Church 1.2
-	 */
-	/*add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-	) );*/
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
@@ -84,10 +58,10 @@ function liquidchurch_setup() {
 		'locations'  => __( 'Locations Menu', 'liquidchurch' ),
     ] );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+	// Add WP Bootstrap Navwalker
+    require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
+
+    // Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', [
 		'search-form',
 		'comment-form',
@@ -96,11 +70,7 @@ function liquidchurch_setup() {
 		'caption',
     ] );
 
-	/*
-	 * Enable support for Post Formats.
-	 *
-	 * See: https://codex.wordpress.org/Post_Formats
-	 */
+	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', [
 		'aside',
 		'image',
@@ -113,10 +83,7 @@ function liquidchurch_setup() {
 		'chat',
     ] );
 
-	/*
-	 * This theme DOESN'T style the visual editor to resemble the theme style, but it should,
-	 * specifically font, colors, icons, and column width.
-	 */
+	// TODO: This theme DOESN'T style the visual editor to resemble the theme style
 	add_editor_style( [ 'css/editor-style.css', liquidchurch_fonts_url() ] );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
@@ -146,14 +113,15 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  *
  * @since Liquid Church 1.0
  */
-
- require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
+require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
 
 if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
 /**
  * Register Google fonts for Liquid Church.
  *
  * Create your own liquidchurch_fonts_url() function to override in a child theme.
+ *
+ * TODO: Do we need this?
  *
  * @since Liquid Church 1.0
  *
@@ -220,22 +188,12 @@ function liquidchurch_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', [], $lqdcss );
 	// Add Liquid Messages CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', [], '0.2.5.2' );
-    // Only used on text2give page1
+    // Only used on text2give page
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', [], '1.5' );
     }
-	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/inc/genericons/genericons.css', [], '3.4.1' );
-	// Theme stylesheet.
+	// Main Theme Stylesheet.
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie', get_template_directory_uri() . '/css/ie.css', [ 'liquidchurch-style' ], '20160412' );
-	wp_style_add_data( 'liquidchurch-ie', 'conditional', 'lt IE 10' );
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie8', get_template_directory_uri() . '/css/ie8.css', [ 'liquidchurch-style' ], '20160412' );
-	wp_style_add_data( 'liquidchurch-ie8', 'conditional', 'lt IE 9' );
-	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie7', get_template_directory_uri() . '/css/ie7.css', [ 'liquidchurch-style' ], '20160412' );
 	// Load the Selectric stylesheet.
 	wp_enqueue_style( 'selectric-css', get_template_directory_uri() . '/css/selectric.css', [ 'liquidchurch-style' ], '20160412' );
 	wp_style_add_data( 'liquidchurch-ie7', 'conditional', 'lt IE 8' );
@@ -279,7 +237,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_scripts' );
  * @return array (Maybe) filtered body classes.
  */
 function liquidchurch_body_classes( $classes ) {
-	// Adds a class of custom-background-image to sites with a custom background image.
+	// Add custom background image class.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
 	}
@@ -405,6 +363,8 @@ function liquidchurch_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'liquidchurch_widget_tag_cloud_args' );
 
 /**
+ * Adds preformatted tags around $obj.
+ *
  * @param $obj
  */
 function pr($obj){
@@ -413,6 +373,11 @@ function pr($obj){
    echo '</pre>';
 }
 
+/**
+ * Theme Options
+ *
+ * @return mixed|void
+ */
 function theme_options(){
 
     $data= get_option('option_tree');
@@ -420,7 +385,12 @@ function theme_options(){
 }
 
 $theme_options= theme_options();
+
 /**
+ * Show Sub Section
+ *
+ * TODO: Can be removed?
+ *
  * @param $attr
  *
  * @return string
@@ -493,6 +463,10 @@ function show_sub_section($attr){
 
 
 /**
+ * Show Header Banner Section
+ *
+ * TODO: Can be removed?
+ *
  * @return string
  */
 function show_header_banner_section(){
@@ -532,6 +506,10 @@ function show_header_banner_section(){
 //add_shortcode('SHOW_HEADER_BANNER_SECTION','show_header_banner_section');
 
 /**
+ * Show Header Slider Section
+ *
+ * TODO: Can be removed?
+ *
  * @return string
  */
 function show_header_slider_section(){
@@ -561,6 +539,8 @@ function show_header_slider_section(){
 }
 
 /**
+ * My Plugin Custom Walker
+ *
  * @param $args
  *
  * @return array
@@ -595,6 +575,10 @@ add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
 
 add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
 /**
+ * myformat TinyMCE
+ *
+ * TODO: Remove?
+ *
  * @param $in
  *
  * @return mixed
@@ -608,6 +592,10 @@ return $in;
 
 
 /**
+ * My MCE4 Options
+ *
+ * TODO: Remove?
+ *
  * @param $init
  *
  * @return mixed
@@ -663,10 +651,10 @@ function my_mce4_options($init) {
                       "00AAE7", "Color 7 Name",
                       "282828", "Color 8 Name"';
 
-  // build colour grid default+custom colors
+  // build color grid default+custom colors
   $init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']';
 
-  // enable 6th row for custom colours in grid
+  // enable 6th row for custom colors in grid
   $init['textcolor_rows'] = 6;
 
   return $init;
@@ -674,6 +662,8 @@ function my_mce4_options($init) {
 add_filter('tiny_mce_before_init', 'my_mce4_options');
 
 /**
+ * URI Locations
+ *
  * @param $country
  *
  * @return string
@@ -688,17 +678,19 @@ function uri_locations($country){
 /*Add Theme Customizer Settings*/
 
 /**
+ * Emz Customize Register
+ *
  * @param $wp_customize
  */
 function emz_customize_register( $wp_customize ) {
- $wp_customize->add_section( 'lqd_theme', [
-    'title' => 'Liquid Options',
-    'description' => 'Settings',
-    'priority' => 1,
-    'sanitize_callback' == 'esc_url_raw',
- ] );
+    $wp_customize->add_section( 'lqd_theme', [
+        'title' => 'Liquid Options',
+        'description' => 'Settings',
+        'priority' => 1,
+        'sanitize_callback' == 'esc_url_raw',
+        ] );
 
-   $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' ); // Add setting for logo uploader
+    $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' ); // Add setting for logo uploader
 
     // Add control for logo uploader (actual uploader)
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm1_logo', [
@@ -709,9 +701,7 @@ function emz_customize_register( $wp_customize ) {
         'sanitize_callback' == 'esc_url_raw',
     ] ) );
 
-
-/* Social Icons*/
-
+    /* Social Icons*/
     $wp_customize->add_setting( 'facebook_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Fb
 
     	$wp_customize->add_control( 'facebook_id', [
@@ -792,6 +782,7 @@ class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
     function end_lvl( &$output, $depth = 0, $args = [] ){
 		$indent = str_repeat("\t", $depth); // don't output children closing tag
 	}
+
 	/**
 	* Start the element output.
 	*
@@ -846,9 +837,6 @@ function createDefaultMenu(){
 }
 
 createDefaultMenu();
-
-
-
 
 function createDefaultLocationMenu(){
 	// Check if the menu exists
@@ -975,6 +963,8 @@ function lqdm_sermon_before_after($content)
 }
 
 /**
+ * Series Before and After
+ *
  * @param $content
  *
  * @return string|string[]|null
@@ -1118,18 +1108,17 @@ add_filter('permalink-manager-force-lowercase-uris', '__return_false');
 // Disable submit button on Campus Groups Serve page.
 add_filter( 'gform_submit_button_17', '__return_false' );
 
-/*
-* Yoast SEO Disable Automatic Redirects for
-* Posts And Pages
-* Credit: Yoast Development Team
-* Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
-*/
+/**
+ * Yoast SEO Disable Automatic Redirects for Posts And Pages
+ * Credit: Yoast Development Team
+ * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
+ */
 add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 
-/*
-* Yoast SEO Disable Automatic Redirects for
-* Taxonomies (Category, Tags, Etc)
-* Credit: Yoast Development Team
-* Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
-*/
+/**
+ * Yoast SEO Disable Automatic Redirects for
+ * Taxonomies (Category, Tags, Etc)
+ * Credit: Yoast Development Team
+ * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
+ */
 add_filter('wpseo_premium_term_redirect_slug_change', '__return_true' );
