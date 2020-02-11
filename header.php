@@ -87,20 +87,35 @@
     </div>
   </div>
   <div class="menublock">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <button type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <?php if ( has_nav_menu( 'primary' ) ) : ?>
             	<?php
-	                wp_nav_menu( [
+	                /*wp_nav_menu( [
 	                	'theme_location' => 'primary',
 		                'menu_class'     => 'nav navbar-nav',
-                    ] );
+                    ] );*/
+	                wp_nav_menu( [
+	                   'theme_location'     => 'primary',
+                       'container'          => 'div',
+                       'container_class'    => 'collapse navbar-collapse',
+                       'menu_class'         => 'nav navbar-nav',
+                       'fallback_cb'        => 'WP_Bootstrap_Navwalker::fallback',
+                       'walker'             => new WP_Bootstrap_Navwalker(),
+                    ]);
                   else :
                     wp_nav_menu( [
                         'theme_location' => 'default',
