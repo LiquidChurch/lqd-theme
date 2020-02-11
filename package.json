@@ -1,0 +1,26 @@
+{
+  "name": "liquidchurch",
+  "version": "1.0.0",
+  "description": "Liquid Church official WordPress theme.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dave_liquid@bitbucket.org/liquidchurch/liquid-church-theme.git"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "Liquid Church",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/liquidchurch/liquid-church-theme#readme",
+  "devDependencies": {
+    "backstopjs": "^4.4.2"
+  }
+}
