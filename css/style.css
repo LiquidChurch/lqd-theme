@@ -668,7 +668,7 @@ textarea {
     }
 
     .navbar-form.navbar-right {
-        margin-right: 25px;
+        margin-right: 40px;
         padding-left: 11px;
         padding-right: 11px;
     }
@@ -887,7 +887,14 @@ textarea {
         width: 100% !important;
     }
 
+    /** Ensures that the Location and Church block stay the same size */
     .location-block {
+        float: none !important;
+        margin-left: 0 !important;
+        width: auto !important;
+    }
+
+    .church-online {
         float: none !important;
         margin-left: 0 !important;
         width: auto !important;
@@ -1094,7 +1101,7 @@ textarea {
 }
 
 .selectric .label {
-    margin: 3px 0 0 !important;
+   /* margin: 3px 0 0 !important; */
 }
 
 /* Pastor Bios Styling */
@@ -1173,9 +1180,10 @@ a.church-online-link {
   margin-inline-end: 10px;
   margin-inline-start:10px;
   margin: 0 10px;
-  padding: 6px 0 0;
+  padding: 3px 0 0;
   text-align:center;
   text-overflow: ellipsis;
   text-transform:uppercase;
   white-space: nowrap; /* Keeps Online from moving to a new line. */
+
 }
