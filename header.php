@@ -24,11 +24,10 @@
 </head>
 <body <?php body_class(); ?> >
 <div class="page">
-<!-- Header start -->
+    <!-- Header start -->
     <!-- Logo, Locations Dropdown, Church Online Button -->
     <div class="pagetop">
         <div class="header_top">
-            <div class="container">
                 <div class="row">
                     <!-- Logo -->
                     <div class="col-sm-12 col-md-4">
@@ -55,21 +54,22 @@
                     </div>
                     <!-- End Logo -->
                     <!-- Location Block -->
-                    <div class="col-sm-6 col-md-3 col-md-offset-1">
+                    <div class="col-sm-6 col-md-3">
                         <div class="location-block" style="width:75%">
                             <?php if ( has_nav_menu( 'locations' ) ) :
-                             wp_nav_menu( [
-                                   'theme_location' => 'locations',
-                                  'menu'           => 'Locations Menu',
-                                  'walker'         => new Walker_Nav_Menu_Dropdown(),
-                                  'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-                             ] );
+                                wp_nav_menu( [
+                                'theme_location' => 'locations',
+                                'menu'           => 'Locations Menu',
+                                'walker'         => new Walker_Nav_Menu_Dropdown(),
+                                'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="campus_id" id="campus_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
+                                    ] );
                             else :
                             ?>
-                            <div class="locations">
-                                <form>
-                                    <select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">
-                                        <option value="">Location</option>
+                                <div class="locations">
+                                    <form>
+                                        <select style="display: none;" name="campus_id" id="campus_id" tabindex="1"
+                                                onchange="if (this.value) window.location.href=this.value">
+                                            <option value="">Location</option>
                                         <option value="<?php echo home_url('wp-admin/nav-menus.php'); ?> ">Add Location Menus</option>
                                     </select>
                                 </form>
@@ -79,21 +79,21 @@
                     </div>
                     <!-- End of Location Block -->
                     <!-- Church Online Block -->
-                    <div class="col-sm-6 col-md-3 col-md-offset-1">
-                        <div class="church-online" style="width:75%; float:right;">
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-6 col-md-2 col-md-offset-1">
+                        <div class="church-online">
                             <a href="https://live.liquidchurch.com/" class="church-online-link">Church Online</a>
                         </div>
                     </div>
+                    <div class="col-md-1"></div>
                     <!-- End of Church Online Block -->
                 </div>
-            </div>
         </div>
     </div>
     <!-- End Logo, Locations Dropdown, Church Online Button -->
     <!-- Liquid Navigation Menu -->
     <div class="menublock">
     <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target=".lqd-collapse" aria-expanded="false">
@@ -103,7 +103,9 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse lqd-collapse">
+        <div class="collapse navbar-collapse lqd-collapse">
+        <div class="row">
+            <div class="col-md-9">
                 <?php
                 if ( has_nav_menu( 'primary' ) ) :
                     wp_nav_menu( [
@@ -112,15 +114,17 @@
                         'menu_class'         => 'nav navbar-nav',
                         'fallback_cb'        => 'WP_Bootstrap_Navwalker::fallback',
                         'walker'             => new WP_Bootstrap_Navwalker(),
-            ]);
+                    ]);
                 else :
                     wp_nav_menu( [
                         'theme_location' => 'default',
                         'menu'  =>  'Default Menu',
                         'menu_class'     => 'nav navbar-nav',
-                        ] );
+                    ] );
                 endif;
                 ?>
+            </div>
+            <div class="col-md-2">
                 <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right"
                       role="search">
                     <div class="form-group form-group_new">
@@ -131,6 +135,12 @@
                     </div>
                 </form>
             </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+
+
+
         </div>
     </nav>
     </div>

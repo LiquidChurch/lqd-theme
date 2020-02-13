@@ -178,6 +178,7 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
 function liquidchurch_scripts() {
 	// Ensure version of CSS styles is updated on every file update.
 	$lqdcss = filemtime( get_template_directory() . '/css/style.css' );
+	$lqdbtncss = filemtime( get_template_directory() . '/css/style-buttons.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', [], '0.1');
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), [], null );
@@ -186,6 +187,7 @@ function liquidchurch_scripts() {
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', [] );
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', [], $lqdcss );
+	wp_enqueue_style( 'style-btn', get_template_directory_uri() . '/css/style-buttons.css', [], $lqdbtncss );
 	// Add Liquid Messages CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', [], '0.2.5.2' );
     // Only used on text2give page
@@ -572,8 +574,6 @@ function myplugin_custom_walker( $args ) {
 }
 add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
 
-
-add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
 /**
  * myformat TinyMCE
  *
@@ -589,6 +589,7 @@ $in['wordpress_adv_hidden'] = FALSE;
 
 return $in;
 }
+add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
 
 
 /**
@@ -917,8 +918,9 @@ function assignFrontPage_exists() {
 }
 assignFrontPage_exists();
 
-// Control configuration of Vimeo embeds.
 /**
+ * Control configuration of Vimeo embeds.
+ *
  * @param $html
  *
  * @return string|string[]
@@ -997,6 +999,9 @@ function filter_media_comment_status( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
+/**
+ * Gravity Forms
+ */
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 /**

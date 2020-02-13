@@ -162,7 +162,7 @@ textarea {
 }
 
 .logo {
-    float: left;
+    margin-left:30px;
 }
 
 .selected {
@@ -580,10 +580,10 @@ textarea {
         padding-right: 0;
     }
 
-    .navbar-form.navbar-right {
-        margin-right: 4.5%;
+    #search-form.navbar-form.navbar-right {
+        margin-right: 0;
         padding-left: 11px;
-        padding-right: 11px;
+        padding-right: 0;
     }
 
     h1 {
@@ -1051,6 +1051,7 @@ div.church-online {
   height:28px;
   margin-top:6px;
   position:relative;
+  overflow: hidden;
 }
 
 a.church-online-link {

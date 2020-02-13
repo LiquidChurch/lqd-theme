@@ -45,7 +45,7 @@
 									<li>
 										<a target="_blank" href="<?php echo get_theme_mod( 'twitter_id_theme' )  ;?>" class="ftwitter" title="Twitter"><i class="ftwitter"></i></a>
 									</li>
-							<?php }?>		
+							<?php }?>
 							<?php if( get_theme_mod( 'instagram_id_theme' ) )  { ?>
 									<li>
 										<a target="_blank" href="<?php echo get_theme_mod( 'instagram_id_theme' )  ;?>" class="finsta" title="Instagram"><i class="finsta"></i></a>
@@ -61,7 +61,7 @@
 				                   		<a target="_blank" href="<?php echo get_theme_mod( 'vimeo_id_theme' );?>" class="fvimeo" title="Vimeo"><i class="fvimeo"></i></a>
 				                   	</li>
 				            <?php }?>
-				                   
+
 	                </ul>
 	          </div>
 	          <div class="clear"></div>
@@ -69,14 +69,14 @@
 	      </div>
 	    </div>
   	</div>
-  
+
 	<div class="footer_container">
  		<div class="container">
         	<div class="row">
             		<div class="futr_menublock">
                     	<div class="col-md-2 col-xs-6 col-sm-6">
                         	<div class="inner_block">
-          
+
                               	  <?php
 										if(is_active_sidebar('footer-about-us')){
 												dynamic_sidebar('footer-about-us');
@@ -155,13 +155,13 @@
             </div>
         </div>
  	</div>
-  
+
 </div>
 <script>
 jQuery(function ($) {
-	$("#country_id").selectric({disableOnMobile: false});
+	$("#campus_id").selectric({disableOnMobile: false});
 		 // bind change event to select
-	      $('#country_id').on('change', function () {
+	      $('#campus_id').on('change', function () {
 	          var url = $(this).val(); // get selected value
 	          if (url) { // require a URL
 	              window.location = url; // redirect
