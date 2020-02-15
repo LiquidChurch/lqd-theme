@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3205562-1b21-4f3b-bd71-93308a9a976a" name="Default Changelist" comment="- Update code comments.&#10;- Add">
+      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/PageHeader.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-group-guides.php" beforeDir="false" afterPath="$PROJECT_DIR$/archive-group-guides.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-love-week.php" beforeDir="false" afterPath="$PROJECT_DIR$/category-love-week.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/04d2f223-2786-40c9-8481-be9dd47d8e7f.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/04d2f223-2786-40c9-8481-be9dd47d8e7f.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/174d458a-81e0-4174-9473-35e3bf0a613c.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/174d458a-81e0-4174-9473-35e3bf0a613c.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/276b3566-1c3b-4bc1-8915-15314f091f29.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/276b3566-1c3b-4bc1-8915-15314f091f29.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/4ab86b35-c0c2-42b5-98ad-4b6eba66b197.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/4ab86b35-c0c2-42b5-98ad-4b6eba66b197.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/4c04fb14-abdb-4f93-82bb-734d1b84307b.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/4c04fb14-abdb-4f93-82bb-734d1b84307b.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/57a79aa3-9b06-4ba7-a9a4-2b766d826ecf.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/57a79aa3-9b06-4ba7-a9a4-2b766d826ecf.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/594135c6-6c4f-4880-a0d2-ba923b5ef38e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/594135c6-6c4f-4880-a0d2-ba923b5ef38e.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/5d02f5f4-46e7-453a-aef9-3e7106d7bb68.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/5d02f5f4-46e7-453a-aef9-3e7106d7bb68.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/5db267f9-3612-485c-ae18-5698d2692816.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/5db267f9-3612-485c-ae18-5698d2692816.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/68f0375d-f66f-4f88-822a-5a0b61d2efc0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/68f0375d-f66f-4f88-822a-5a0b61d2efc0.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/733cb7bd-50e1-4dee-893a-0b40ef382b02.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/733cb7bd-50e1-4dee-893a-0b40ef382b02.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/7db1f672-3a8f-4d19-9c49-7f61aed450b5.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/7db1f672-3a8f-4d19-9c49-7f61aed450b5.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Cn.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Demi.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/AvenirNextLTPro-Regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/b0b84e4d-2164-45c7-a674-1662f19f3ba6.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/b0b84e4d-2164-45c7-a674-1662f19f3ba6.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/bce3274e-f498-48ae-b269-a6930df496e7.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/bce3274e-f498-48ae-b269-a6930df496e7.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/c6970a14-8b0f-4629-9072-71c7e123908f.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/c6970a14-8b0f-4629-9072-71c7e123908f.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/e536e1c2-92a4-4db4-8a41-1c55354d11b7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/e536e1c2-92a4-4db4-8a41-1c55354d11b7.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/e91d1bbf-3fea-45e2-b003-a22b12ce6e5f.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/e91d1bbf-3fea-45e2-b003-a22b12ce6e5f.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ead8b64b-1abd-4d5b-a642-a21dfe2f463b.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/ead8b64b-1abd-4d5b-a642-a21dfe2f463b.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/flexslider-icon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/flexslider-icon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/flexslider-icon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/flexslider-icon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/COPYING.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/Genericons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/Genericons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/Genericons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/Genericons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genericons/genericons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.php" beforeDir="false" afterPath="$PROJECT_DIR$/image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/404-page-not-found.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/404-page-not-found.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRG_Icon_Facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRG_Icon_Facebook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRG_Icon_Instagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRG_Icon_Instagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRG_Icon_YouTube01.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRG_Icon_YouTube01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRG_Icon_twitter.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRG_Icon_twitter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRGwhite_Icon_Facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRGwhite_Icon_Facebook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRGwhite_Icon_Instagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRGwhite_Icon_Instagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRGwhite_Icon_YouTube01.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRGwhite_Icon_YouTube01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/LRGwhite_Icon_twitter.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/LRGwhite_Icon_twitter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/dropdown-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/dropdown-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/back-compat.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/back-compat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/customizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/customizer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/template-tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/template-tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_manager/job-application.php" beforeDir="false" afterPath="$PROJECT_DIR$/job_manager/job-application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/color-scheme-control.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/color-scheme-control.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/customize-preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/customize-preview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/html5.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/html5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-2.2.4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.accordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.easing.1.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.easing.1.3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.easydropdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.easydropdown.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.selectric.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery.selectric.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/keyboard-image-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/keyboard-image-navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/skip-link-focus-fix.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/skip-link-focus-fix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/liquidchurch.pot" beforeDir="false" afterPath="$PROJECT_DIR$/languages/liquidchurch.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/liquid_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/liquid_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchform.php" beforeDir="false" afterPath="$PROJECT_DIR$/searchform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar-content-bottom.php" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar-content-bottom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-gc-sermons.php" beforeDir="false" afterPath="$PROJECT_DIR$/single-gc-sermons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-job_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/single-job_listing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taxonomy-gc-sermon-series.php" beforeDir="false" afterPath="$PROJECT_DIR$/taxonomy-gc-sermon-series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-jobs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/biography.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/biography.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-blank.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-blank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-none.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-none.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-search-messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-search-messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-search.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-series.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-sermon.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-sermon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-single-gc-sermons-app-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-single-gc-sermons-app-view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-single-gc-sermons.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-single-gc-sermons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-single.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-taxonomy-series-app-view.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-taxonomy-series-app-view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-taxonomy-series.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-taxonomy-series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-addtnl-resource.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-addtnl-resource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-date.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-date.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-scripture.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-scripture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-series-part.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-series-part.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-series.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-speaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-speaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-summary.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-summary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/part/sermons/list-topics.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/part/sermons/list-topics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-search-messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-search-messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-series.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theme-functions/theme-widget.php" beforeDir="false" afterPath="$PROJECT_DIR$/theme-functions/theme-widget.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable path="/usr/bin/composer" />
+    </execution>
+  </component>
+  <component name="DrupalConfiguration">
+    <drupalPath />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Dave Mackey &lt;dave@davemackey.net&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="JoomlaConfiguration">
+    <joomlaConfigPath />
+    <joomlaPath />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="VVV" />
+  <component name="ProjectId" id="1WU0yrEyxQD5VS03KH1KbA6liFD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../plugins/lqd-messages/includes/shortcodes/class-shortcodes-recent-admin-base.php" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../../plugins/lqd-messages/includes/shortcodes/class-shortcodes-recent-admin-base.php" />
+    <property name="two.files.diff.last.used.folder" value="$USER_HOME$/Downloads/pristine/liquidchurch" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="one.wordpress.test">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="one.wordpress.test">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3205562-1b21-4f3b-bd71-93308a9a976a" name="Default Changelist" comment="" />
+      <created>1579189123812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579189123812</updated>
+      <workItem from="1579189124965" duration="5000" />
+      <workItem from="1580413767053" duration="5973000" />
+      <workItem from="1580481704714" duration="3950000" />
+      <workItem from="1580497317482" duration="8854000" />
+      <workItem from="1580579522642" duration="1119000" />
+      <workItem from="1580583297778" duration="3873000" />
+      <workItem from="1580589306815" duration="459000" />
+    </task>
+    <task id="LOCAL-00001" summary="- Update code comments.&#10;- Remove float, margin-left, and width from .location-block.&#10;- Remove float from .church-online.&#10;- Remove legacy theme_options function.&#10;- Changed header to use three equally sized bootstraps.&#10;- Adds basic .editorconfig, .gitattributes, and .gitignore files.">
+      <created>1580419632740</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580419632740</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- Minor fixes for locations drop-down.">
+      <created>1580487631026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580487631026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Update code comments.&#10;- Remove float, margin-left, and width from .location-block.&#10;- Remove float from .church-online.&#10;- Remove legacy theme_options function.&#10;- Changed header to use three equally sized bootstraps.&#10;- Adds basic .editorconfig, .gitattributes, and .gitignore files." />
+    <MESSAGE value="- Minor fixes for locations drop-down." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Minor fixes for locations drop-down." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="215" width="999" height="684" key="#Deployment" timestamp="1580483013702">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="215" width="999" height="684" key="#Deployment/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580483013702" />
+    <state x="2475" y="201" width="800" height="738" key="#Intentions" timestamp="1580585995720">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="201" width="800" height="738" key="#Intentions/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580585995720" />
+    <state x="2463" y="198" width="1295" height="691" key="#Servers" timestamp="1580589669180">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2463" y="198" width="1295" height="691" key="#Servers/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589669180" />
+    <state x="2338" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580587015166">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2338" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580587015166" />
+    <state x="417" y="149" width="1128" height="834" key="CommitChangelistDialog2" timestamp="1580500863368">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="417" y="149" width="1128" height="834" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580500863368" />
+    <state x="417" y="149" width="1126" height="816" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1580419632575" />
+    <state x="417" y="149" width="1127" height="834" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580487630862" />
+    <state x="100" y="127" width="1720" height="853" key="DiffContextDialog" timestamp="1580584200244">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="127" width="1720" height="853" key="DiffContextDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580584200244" />
+    <state x="100" y="127" width="1720" height="853" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580484101319" />
+    <state x="100" y="127" width="1720" height="853" key="DirDiffDialog" timestamp="1580487436793">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="127" width="1720" height="853" key="DirDiffDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580487436793" />
+    <state x="2663" y="279" width="424" height="491" key="FileChooserDialogImpl" timestamp="1580589687386">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="743" y="299" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580505086089" />
+    <state x="2663" y="279" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589687386" />
+    <state x="743" y="299" width="424" height="521" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1580415123387" />
+    <state x="743" y="299" width="424" height="491" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580484100836" />
+    <state width="1874" height="351" key="GridCell.Tab.0.bottom" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.0.center" timestamp="1580589766224">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766224" />
+    <state width="1874" height="351" key="GridCell.Tab.0.left" timestamp="1580589766224">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766224" />
+    <state width="1874" height="351" key="GridCell.Tab.0.right" timestamp="1580589766224">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766224" />
+    <state width="1874" height="351" key="GridCell.Tab.1.bottom" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.1.center" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.1.left" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.1.right" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.2.bottom" timestamp="1580589766226">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.2.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766226" />
+    <state width="1874" height="351" key="GridCell.Tab.2.center" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.2.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.2.left" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.2.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state width="1874" height="351" key="GridCell.Tab.2.right" timestamp="1580589766225">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.2.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589766225" />
+    <state x="2616" y="312" width="517" height="462" key="PhpMappingAdvancedResolveDialog" timestamp="1580587126299">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2616" y="312" width="517" height="462" key="PhpMappingAdvancedResolveDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580587126299" />
+    <state x="2369" y="165" width="1022" height="737" key="SettingsEditor" timestamp="1580589734002">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="449" y="188" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580583259605" />
+    <state x="2369" y="165" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589734002" />
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1580415163015" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1580487634282">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1580419721289" />
+    <state x="555" y="289" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580487634282" />
+    <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580508547331">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580508547331" />
+    <state x="2540" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1580589308164">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="620" y="367" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580583298563" />
+    <state x="2540" y="349" key="com.intellij.ide.util.TipDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589308164" />
+    <state x="620" y="367" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580481985401" />
+    <state x="272" y="27" width="1394" height="1036" key="dock-window-1" timestamp="1580589316927">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1941" y="0" width="1404" height="1009" key="dock-window-1/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580501609513" />
+    <state x="272" y="27" width="1394" height="1036" key="dock-window-1/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580589316927" />
+    <state x="2401" y="0" width="1404" height="1009" key="dock-window-2" timestamp="1580505646504">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2401" y="0" width="1404" height="1009" key="dock-window-2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580505646504" />
+    <state x="2267" y="0" width="1404" height="1009" key="dock-window-3" timestamp="1580505710294">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2267" y="0" width="1404" height="1009" key="dock-window-3/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580505710294" />
+    <state x="2055" y="73" width="1404" height="1009" key="dock-window-4" timestamp="1580506894194">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2055" y="73" width="1404" height="1009" key="dock-window-4/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580506894194" />
+    <state x="1993" y="0" width="1404" height="1009" key="dock-window-5" timestamp="1580583655240">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1993" y="0" width="1404" height="1009" key="dock-window-5/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580583655240" />
+    <state x="608" y="280" width="1161" height="546" key="find.popup" timestamp="1580584695317">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="608" y="280" width="1161" height="546" key="find.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580584695317" />
+    <state x="608" y="280" width="874" height="546" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1580416328555" />
+    <state x="608" y="280" width="874" height="546" key="find.popup/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580484365627" />
+    <state x="856" y="290" width="198" height="540" key="ftp.server.browser" timestamp="1580483011707">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="856" y="290" width="198" height="540" key="ftp.server.browser/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580483011707" />
+    <state x="1014" y="345" width="841" height="424" key="git4idea.merge.GitPullDialog" timestamp="1580413892508">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="1014" y="345" width="841" height="424" key="git4idea.merge.GitPullDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580413892508" />
+    <state x="2285" y="221" width="672" height="678" key="search.everywhere.popup" timestamp="1580507089823">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2285" y="221" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580507089823" />
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>$PROJECT_DIR$/../../..</wordpressPath>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../../plugins/lqd-messages/includes/shortcodes/shortcodes-resources/class-run.php</url>
+          <line>83</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
