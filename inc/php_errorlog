@@ -1,0 +1,12 @@
+[04-Dec-2018 14:06:55 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/customizer.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/customizer.php on line 61
+[06-Dec-2018 14:13:30 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/customizer.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/customizer.php on line 61
+[14-Dec-2018 00:47:10 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function is_admin() in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/template-tags.php:169
+Stack trace:
+#0 {main}
+  thrown in /home/liquidc4/public_html/wp-content/themes/liquidchurch/inc/template-tags.php on line 169
