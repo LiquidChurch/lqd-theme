@@ -1167,3 +1167,29 @@ textarea {
     font-size: 18px;}
 .group-guides ol li {
     font-size: 18px;}
+
+/* Grid for Header */
+.header-container {
+    display: grid;
+    grid-template-columns: .25fr repeat(10, 1fr) .25fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top:10px;
+}
+
+.header-logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.header-locations-menu {
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+.header-church-online-btn {
+    grid-column-start: 10;
+    grid-column-end: 12;
+}
+
+.header-church-online-btn-style {
+    border-width: 2px;
+}
