@@ -127,27 +127,6 @@
                           <?php endif; ?>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4 posit">
-            <div class="social-area clearfix">
-             <ul class="social-icon clearfix">
-                <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
-                <li><a title="Facebook" class="hfb" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" target="_blank"></a></li>
-                <?php }?>
-                <?php if( get_theme_mod( 'twitter_id_theme' ) )  { ?>
-                <li><a title="Twitter" class="htwitter" href="<?php echo get_theme_mod( 'twitter_id_theme' ) ;?>" target="_blank"></a></li>
-                <?php }?>
-                <?php if( get_theme_mod( 'instagram_id_theme' ) )  { ?>
-                <li><a title="Instagram" class="hinsta " href="<?php echo get_theme_mod( 'instagram_id_theme' ) ;?>" target="_blank"></a></li>
-                <?php }?>
-	             <?php if( get_theme_mod( 'youtube_id_theme' ) )  { ?>
-		             <li><a title="Youtube" class="hyoutube" href="<?php echo get_theme_mod( 'youtube_id_theme' ) ;?>" target="_blank"></a></li>
-	             <?php }?>
-              </ul>
-
-              <!--<a target="_self" href="https://liquidchurch.ccbchurch.com/" class="login">Log In</a> -->
-
-            </div>
-          </div>
         </div>
       </div>
     </div>
