@@ -80,7 +80,7 @@ img {
     text-align: initial;
 }
 
-.sprite { /* TODO: No use in code? */
+.sprite {
     display: inline-block;
     vertical-align: middle;
 }
@@ -602,6 +602,7 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
     .sectionleftul .menu_list li {
         width: auto;
     }
@@ -720,6 +721,12 @@ textarea {
 
     .inner_block h2 {
         font-size: 1.2em
+    }
+
+    .posit {
+        margin-bottom: -42px;
+        position: relative;
+        z-index: 1;
     }
 
     .menublock {
@@ -842,6 +849,7 @@ textarea {
 }
 
 @media (max-width: 479px) {
+
     .sectionleft li a {
         padding-right: 15px;
         margin-bottom: 15px;
@@ -1027,14 +1035,16 @@ textarea {
 
 /* Location Dropdown */
 .location-block {
-    /*float: left; */
-    /*margin-left: 177px; */
-    /*width: 32%; */
+    float: left;
+    margin-left: 177px;
+    width: 32%;
 }
 
+/* This doesn't actually do anything - DM, 2/15/20.
 .location-block .selectric .label {
     font-family: 'Avenir Next LT Pro', sans-serif !important;
 }
+*/
 
 /* Pastor Bios Styling */
 .pastors-bios h2 {
@@ -1080,49 +1090,35 @@ textarea {
 .group-guides ol li {
     font-size: 18px;}
 
+/* Grid for Header */
+.header-container {
+    display: grid;
+    grid-template-columns: .25fr repeat(9, 1fr) .4fr .25fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top:10px;
+}
+
+.header-logo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.header-locations-menu {
+    grid-column-start: 6;
+    grid-column-end: 8;
+}
+
+.header-church-online-btn {
+    grid-column-start: 10;
+    grid-column-end: 12;
+}
+
 .header-church-online-btn-style {
-    font-size: 1.25rem;
-    line-height: 16px;
+    border-width: 2px;
     height: 28px;
     margin-top: 6px;
     padding-top: 4px;
     color: #14a7e0;
     overflow: hidden;
     white-space: nowrap;
-    border: 2px solid #337ab7;
-    display:block;
-    font-weight: bold;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    border-radius: 42px;
-}
-
-.header-top-row {
-    padding: 36px 0 25px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    margin: 0;
-    max-width: 1280px;
-}
-
-/**
- * Bootstrap has a max width of 1170px, but this theme was built on 1280px.
- * To make it work we need to increase the max size of the container (to 1280px) and also make the row wider
- * at larger screen resolutions.
- */
-@media (min-width: 1170px) {
-    .container {
-        min-width:1280px;
-        max-width:1280px;
-    }
-    .lqd-header .row {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
-
-    .lqd-header-menu {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
+    text-overflow: ellipsis;
 }

@@ -21,6 +21,7 @@
   position: relative;
   z-index: 1;
 }
+
 .selectric .label {
   color: #14a7e0;
   display: block;
@@ -30,7 +31,7 @@
   line-height:16px;
   margin: 0 10px;
   overflow: hidden;
-  padding:3px 0 0;
+  padding:4px 0 0;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
@@ -53,12 +54,17 @@
   border-top-color: #4c9fc7;
 }
 
+/* Set z-index */
 .selectric-open {
   z-index: 9999;
 }
+
+/* Sets border color */
 .selectric-open .selectric {
   border-color: #14a7e0;
 }
+
+/* Ensures we are displaying as block */
 .selectric-open .selectric-items {
   display: block;
 }
@@ -73,12 +79,15 @@
           user-select: none;
 }
 
+/* Hide */
 .selectric-hide-select {
   position: relative;
   overflow: hidden;
   width: 0;
   height: 0;
 }
+
+/* Hide Some More */
 .selectric-hide-select select {
   position: absolute;
   left: -100%;
@@ -191,19 +200,4 @@
 }
 .selectric-items .selectric-group li {
   padding-left: 25px;
-}
-
-/* 2/6/2016 */
-.social-area.clearfix {
-  margin-right: -20px;
-  margin-top: 0px !important;
-}
-
-/* 3/6/2016 */
-@media(max-width:813px) /* Was 767px */
-{
-.social-area.clearfix {
-  margin-right: -20px;
-  margin-top: 23px !important;
-}	
 }
