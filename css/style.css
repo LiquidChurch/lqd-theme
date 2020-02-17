@@ -873,24 +873,6 @@ textarea {
     }
 }
 
-@media (max-width: 319px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .entry-content p {
-        font-size: 14px;
-    }
-}
-
 /* For Text Body Content */
 .body-text
 {
