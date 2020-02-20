@@ -71,7 +71,7 @@
         <?php endif; ?>
     </div>
     <div class="header-church-online-btn">
-        <a href="https://live.liquidchurch.com/" class="blue_btn header-church-online-btn-style">Church Online</a>
+        <a href="https://live.liquidchurch.com/" class="blue_btn lqd-header-church-online-btn-style">Church Online</a>
     </div>
 </div>
 <!-- Header start -->

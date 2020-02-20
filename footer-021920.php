@@ -10,24 +10,29 @@
  */
 
 ?>
-</div><!-- End content container. -->
 </div>
-<div class="lqd-footer container">
-    <div class="lqd-footer-top row">
-        <div class="lqd-footer-top-left col-xs-12 col-sm-12 col-md-8">
+  </div>
+<div class="container">
+    <!-- Top (Blue) Footer -->
+    <div class="row lqd-footer-top">
+        <div class="col-md-8 lqd-footer-top-left">
             <ul>
+                <!-- <li><a href="<?php echo get_permalink( get_page_by_path( 'contact-us' ) ) ?>">Contact Us</a></li> -->
+
+
                 <?php
-                if (is_active_sidebar( 'footer-contact-us' ) ) {
+                if(is_active_sidebar('footer-contact-us')){
                     echo '<li>';
-                    dynamic_sidebar( 'footer-contact-us' );
+                    dynamic_sidebar('footer-contact-us');
                     echo '</li>';
-                } else {
-                    echo '<li><a href="' . home_url('wp-admin/customize.php' ) . '">Add Contact Number</a>a></li>';
+                }else{
+
+                    echo ' <li><a href="'.home_url('wp-admin/customize.php').'">Add Contact Number</a></li>';
                 }
                 ?>
             </ul>
         </div>
-        <div class="lqd-footer-top-right col-xs-12 col-sm-12 col-md-4">
+        <div class="col-md-4 lqd-footer-top-right">
             <ul class="lqd-footer-social">
                 <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
                     <li>
@@ -57,80 +62,86 @@
             </ul>
         </div>
     </div>
-    <div class="lqd-footer-bottom row">
-        <div class="lqd-footer-about col-xs-12 col-sm-6 col-md-2">
+    <div class="row lqd-footer-bottom">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-about-us')){
                 dynamic_sidebar('footer-about-us');
             }else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add About Us Menu </a></h2></div>';
             }
             ?>
         </div>
-        <div class="lqd-footer-events col-xs-12 col-sm-6 col-md-2">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-life-events')){
                 dynamic_sidebar('footer-life-events');
             }else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Life Event Menu</a></h2></div>';
             }
             ?>
         </div>
-        <div class="lqd-footer-messages col-xs-12 col-sm-6 col-md-2">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-messages')){
                 dynamic_sidebar('footer-messages');
             }else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Message Menu</a></h2></div>';
             }
             ?>
         </div>
-        <div class="lqd-footer-media col-xs-12 col-sm-6 col-md-2">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-media')){
                 dynamic_sidebar('footer-media');
             }
             else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Media Menu</a></h2></div>';
             }
             ?>
         </div>
-        <div class="lqd-footer-give col-xs-12 col-sm-6 col-md-2">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-give')){
                 dynamic_sidebar('footer-give');
             }
             else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Give Menu</a></h2></div>';
             }
             ?>
         </div>
-        <div class="lqd-footer-help col-xs-12 col-sm-6 col-md-2">
+        <div class="col-xs-12 col-sm-6 col-md-2">
             <?php
             if(is_active_sidebar('footer-help')){
                 dynamic_sidebar('footer-help');
             }
             else{
+
                 echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Help Menu</a></h2></div>';
             }
             ?>
         </div>
     </div>
 </div>
-</div>
 <script>
-    jQuery(function ($) {
-        $("#campus_id").selectric({disableOnMobile: false});
-        // bind change event to select
-        $('#campus_id').on('change', function () {
-            var url = $(this).val(); // get selected value
-            if (url) { // require a URL
-                window.location = url; // redirect
-            }
-            return false;
-        });
-    });
+jQuery(function ($) {
+	$("#campus_id").selectric({disableOnMobile: false});
+		 // bind change event to select
+	      $('#campus_id').on('change', function () {
+	          var url = $(this).val(); // get selected value
+	          if (url) { // require a URL
+	              window.location = url; // redirect
+	          }
+	          return false;
+	      });
+	});
 </script>
 <?php wp_footer(); ?>
 </body>
 </html>
+  <!-- Footer Area start -->

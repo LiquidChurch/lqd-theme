@@ -14,34 +14,18 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+    <main id="main" class="site-main" role="main">
+        <?php
+            while ( have_posts() ) : the_post();
+                get_template_part( 'template-parts/content', 'page' );
 
-			// Include the page content template.
-			get_template_part( 'template-parts/content', 'page' );
-
-			 //If comments are open or we have at least one comment, load up the comment template.
-		if (! is_front_page() ) {	
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
-		}
-
-			// End of the loop.
-		endwhile;
-		?>
-
-	</main><!-- .site-main -->
-<?php if (! is_front_page() ) { ?>
-	<?php //get_sidebar( 'content-bottom' ); ?>
-<?php } ?>
-
-
-</div><!-- .content-area -->
-
-<?php if (! is_front_page() ) { ?>
-<?php //get_sidebar(); ?>
-<?php } ?>
+                if (! is_front_page() ) {
+                    if ( comments_open() || get_comments_number() ) {
+                        comments_template();
+                    }
+                }
+            endwhile;
+        ?>
+    </main>
+</div>
 <?php get_footer(); ?>

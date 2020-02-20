@@ -1,9 +1,3 @@
-/*
-	blue_btn  	=	for blue Button
-	orange_btn 	=	for orange Button
-					span inside blue btn class the content will be bigger
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -54,12 +48,6 @@ img {
     clear: both;
 }
 
-.clearfix:before {
-    display: table;
-    content: "";
-    clear: both;
-}
-
 .clear {
     clear: both;
 }
@@ -80,11 +68,12 @@ img {
     text-align: initial;
 }
 
-.sprite {
+.sprite { /* TODO: No use in code? */
     display: inline-block;
     vertical-align: middle;
 }
 
+/** Headers **/
 h1, h2, h3, h4, h5, h6 {
     font-family: "Avenir Next LT Pro Demi", sans-serif;
     color: #14a7e0;
@@ -93,7 +82,21 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.2rem 0 1.5rem;
 }
 
-.blue_btn {
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+/** Blue & Orange Buttons **/
+/* Put a span inside blue btn class the content will be bigger */
+.blue_btn, .orange_btn {
     color: #0074c8;
     font-size: 16px;
     line-height: 16px;
@@ -116,12 +119,21 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.blue_btn > span {
+.orange_btn {
+    color: #f08a41;
+    border-color: #f08a41;
+}
+
+.blue_btn > span, .orange_btn > span {
     display: block;
     font-size: 40px;
     line-height: 40px;
     color: #f08a41;
     font-family: "Avenir Next LT Pro Demi", sans-serif;
+}
+
+.orange_btn > span {
+    color: rgb(0, 86, 139);
 }
 
 .blue_btn:hover, .blue_btn:focus {
@@ -131,41 +143,6 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
 }
 
-.blue_btn:hover span, .blue_btn:focus span {
-    color: rgb(0, 86, 139);
-}
-
-.orange_btn {
-    color: #f08a41;
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: bold;
-    font-variant: normal;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    padding: 10px 20px;
-    margin: 10px 0 0 0;
-    border: 4px solid #f08a41;
-    -webkit-border-radius: 42px;
-    -moz-border-radius: 42px;
-    border-radius: 42px;
-    display: inline-block;
-    top: auto;
-    background: #fff;
-    position: relative;
-}
-
-.orange_btn > span {
-    display: block;
-    font-size: 40px;
-    line-height: 40px;
-    color: rgb(0, 86, 139);
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
-}
-
 .orange_btn:hover, .orange_btn:focus {
     color: rgb(0, 86, 139);
     border-color: rgb(0, 86, 139);
@@ -173,22 +150,15 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
 }
 
+.blue_btn:hover span, .blue_btn:focus span {
+    color: rgb(0, 86, 139);
+}
+
 .orange_btn:hover span, .orange_btn:focus span {
     color: #f08a41;
 }
 
-h1 {
-    font-size: 50px;
-}
-
-h2 {
-    font-size: 40px;
-}
-
-h3 {
-    font-size: 30px;
-}
-
+/** Forms **/
 input[type="text"], select, textarea {
     display: block;
     width: 100%;
@@ -231,59 +201,75 @@ textarea {
     height: 140px;
 }
 
-.pagetop {
-    margin: 0;
-}
-
-.header_top {
-    padding: 36px 0 25px;
-}
-
+/* Only Definition of .page */
 .page {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     margin: auto;
     max-width: 1280px;
 }
 
-.logo {
-    float: left;
-    margin-left: -22px;
+/* Entire Header */
+
+/** Page Header **/
+.lqd-header-top {
+    padding: 36px 0 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    max-width: 1280px;
+    margin: 0 -70px 0 -70px;
 }
 
+/* Location Dropdown */
+.location-block .selectric .label {
+    font-family: 'Avenir Next LT Pro', sans-serif !important;
+}
+
+/* Selectric Styling for Location Dropdown */
 .selected {
     float: left;
-    margin: 0px;
+    margin: 0;
     width: 27%;
 }
 
-.selected .custom-select {
-    background: #fff;
-    border: 2px solid #14a7e0;
-    border-radius: 20px;
+/* Church Online Header Button */
+.lqd-header-church-online-btn-style {
+    font-size: 1.5rem;
+    line-height: 16px;
+    height: 28px;
+    margin-top: 6px;
+    padding-top: 4px;
     color: #14a7e0;
-    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid #337ab7;
+    display:block;
     font-weight: bold;
-    text-align: center;
     text-transform: uppercase;
-    width: 100%;
+    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+    border-radius: 42px;
 }
 
-.menublock {
-    margin: 0;
-    background-color: #14a7e0
+/** Main Menu **/
+.lqd-header-menu {
+    margin: 0 -70px 0 -70px;
 }
 
-.menublock .navbar-default {
+.lqd-header-menu .navbar {
     background-color: #14a7e0;
-    border: none;
+    border:none;
+    margin: 0 -55px 0 -55px;
 }
 
-.menublock .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+.lqd-header-menu .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     background: none;
     color: initial;
 }
 
-.menublock ul li {
+/* Menu Items
+ * Solid Vertical Border;
+ */
+.lqd-header-menu ul li {
     border-left: 1px solid #ffffff;
     box-sizing: border-box;
     color: #ffffff;
@@ -292,8 +278,9 @@ textarea {
     text-align: center;
 }
 
-.menublock li a {
-    color: #ffffff !important;
+/* Menu Item Link */
+.lqd-header-menu li a {
+    color: #ffffff !important; /* This will be gray per Bootstrap if !important is removed. */
     display: block;
     font-size: 1.5rem;
     font-family: 'Avenir Next Cyr W00 Bold', sans-serif;
@@ -301,41 +288,37 @@ textarea {
     text-transform: uppercase;
 }
 
-.menublock li.current-menu-item a, .menublock li a:hover {
-    background-color: #14a7e0 !important;
+.lqd-header-menu nav { /* Not sure this is necessary */
+    margin: 0;
 }
 
-.menublock nav {
-    margin: 0px;
-}
-
-.menublock ul li:first-child {
+/* First and Last Menu Items on Header Menu */
+.lqd-header-menu ul li:first-child {
     border: medium none;
 }
 
-.menublock ul li:last-child {
+.lqd-header-menu ul li:last-child {
     border-right: 1px solid #fff;
 }
 
-.form-group .lqd-search-input {
-    background: #dcddde;
+/* Header Menu Search */
+.form-group .lqd-header-search-input {
     border: medium none;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 6px 5px;
     text-indent: 6px;
     height: 28px;
+    margin-top:5px;
 }
 
-.form-group .paddings {
-    margin-top: 5px;
-}
-
-.form-group_new {
+/* Positioning of Search Icon, top of search field. */
+.lqd-header-search {
     position: relative;
     margin-top: -2px;
 }
 
+/* Actual icon for search. */
 .fa-searchicon {
     position: absolute;
     right: 10px;
@@ -344,99 +327,112 @@ textarea {
     cursor: pointer;
 }
 
-.footer_section {
+/** Footer **/
+/* Top (Blue) Portion of Footer */
+.lqd-footer-top {
     background: #14a7e0;
     padding: 18px 0;
+    margin-left: -70px;
+    margin-right: -70px;
 }
 
-.sectionleftul {
-    float: left;
-    margin-left: -22px;
+/* Ensures social media icons don't stack on each other. */
+.lqd-footer-top ul li {
+    display:inline;
 }
 
-.sectionleftul li {
-    float: left;
-    padding-right: 35px;
-}
-
-.sectionleftul li a {
+/* Top Footer Links Should Be White */
+.lqd-footer-top .menu_list li a {
     color: white;
-    display: inline-block;
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
     font-size: 20px;
     line-height: 28px;
-    padding-top: 2px;
-    font-weight: normal;
 }
 
-.footer_social {
-    float: right;
-    margin: 0 -32px;
-    padding: 0;
+/* Separates the Contact Us, etc. links in top footer from one another. */
+.lqd-footer-top-left .menu_list ul li {
+    padding-right:80px;
 }
 
-.footer_social:after {
-    clear: both;
-    display: block;
-    content: '';
+.lqd-footer-top-left li ul li a {
+    color: #FFF;
+    margin: 7px 0 0 11px;
+    font-size: 20px;
 }
 
-.footer_social li {
-    float: left;
+.lqd-footer-top-left {
+    margin-left: -5px;
+}
+
+.lqd-footer-top-left .menu_list li {
+    min-width: 205px;
+}
+
+/* Positions Social Icons to Right on Footer */
+.lqd-footer-social {
+    float:right;
+}
+
+/* Spaces out the social icons in top footer. */
+.lqd-footer-social li {
     margin-right: 10px;
 }
 
-.footer_social li i.ffb {
+/* Styling of Individual Social Media Icons */
+/* Could be consolidated, except for background */
+.lqd-footer-social li i.ffb {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
 }
 
-.footer_social li i.ftwitter {
+.lqd-footer-social li i.ftwitter {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_twitter.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
 }
 
-.footer_social li i.finsta {
+.lqd-footer-social li i.finsta {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
 }
 
-.footer_social li i.fyoutube {
+.lqd-footer-social li i.fyoutube {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
 }
 
-.footer_container {
+/* Contains All of the Footer Bottom Menus */
+.lqd-footer-bottom { /* was .footer_container */
     background-color: #dcddde;
-    padding: 15px 0;
+    padding-top: 6px;
+    margin: 0 -70px 0 -70px;
 }
 
-.futr_menublock {
-    margin: 0 -32px 0 -30px;
-}
-
-.inner_block {
-    margin: 0;
-}
-
-.inner_block h2 {
+/* Set the Header for Footer Menu items */
+.lqd-footer-bottom h2 { /* was inner_block h2 */
     border-bottom: 1px solid #fff;
     color: #14a7e0;
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
-    font-weight: bold;
     font-size: 18px;
-    margin-bottom: 20px;
-    margin-top: 20px;
     padding-bottom: 12px;
     text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* Navigation Menus */
+/* Ensures that top left footer Contact Us, etc. doesn't stack. */
+.lqd-footer-top .menu_list ul li {
+    display:inline !important;
+}
+
+/* Also ensures top left footer Contact Us, etc. doesn't stack. */
+.lqd-footer-top .menu_list ul li a {
+    display:inline;
 }
 
 .menu_list {
@@ -447,6 +443,7 @@ textarea {
     margin: 0;
 }
 
+/* Spacing for Menu Items in Footer */
 .menu_list ul li {
     display: block;
     padding: 0 0 24px;
@@ -460,8 +457,16 @@ textarea {
     line-height: 16px;
 }
 
-.menu_list li a:hover, .sectionleft li a:hover {
+/* If no menu has been selected for footer widgets */
+.lqd-footer-menu-not-selected a {
+    color: #14a7e0;
     text-decoration: none;
+}
+
+/** Entry Content **/
+.lqd-content {
+    margin-left: -70px;
+    margin-right: -70px;
 }
 
 .entry-content {
@@ -481,16 +486,13 @@ textarea {
 }
 
 .entry-content .body-text p {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
-    padding: 0 30px;
-    display: inline-block;
-}
-
+/* Headers for Main Page Content */
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
     padding: 0 0;
+    display: inline-block;
 }
 
 .entry-content .search-form {
@@ -541,48 +543,20 @@ textarea {
     margin-top: 15px;
 }
 
-.footer_menu_widget_else a {
-    color: #14a7e0;
-    text-decoration: none;
-}
-
-.sectionleftul li ul li a {
-    color: #FFF;
-    margin: 7px 0 0 11px;
-    font-size: 20px;
-}
-
-.sectionleftul .menu_list ul li {
-    padding: 0;
-}
-
-.sectionleftul {
-    margin-left: -41px;
-}
-
-.footer_social li:last-child {
-    margin-right: 0;
-}
-
-.logo {
-    margin-left: -31px !important;
-}
-
-.sectionleftul .menu_list li {
-    min-width: 205px;
-}
-
+/** Media Queries **/
+/* 1024px - 1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
     .nav > li > a {
         padding-left: 28px;
         padding-right: 28px;
     }
 
-    .sectionleftul .menu_list li {
+    .lqd-footer-top-left .menu_list li {
         min-width: 172px;
     }
 }
 
+/* 768px - 1023px */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .selected {
         margin: 8px 0 0 50px;
@@ -595,51 +569,32 @@ textarea {
     }
 }
 
+/* 768px - 814px Only Affects Header */
 @media only screen and (min-width: 768px) and (max-width: 814px) {
-    .menublock li a {
+    .lqd-header-menu li a {
         font-size: 1.34rem;
     }
 }
 
+/* 768px - 991px Only Affects Footer */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .sectionleftul .menu_list li {
+    .lqd-footer-top-left .menu_list li {
         width: auto;
     }
 }
 
+/* 992px - 1023px Only Affects Footer */
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
-    .sectionleftul .menu_list li {
+    .lqd-footer-top-left .menu_list li {
         min-width: 151px;
     }
 
-    .sectionleftul .menu_list ul li:nth-child(2n) {
+    .lqd-footer-top-left .menu_list ul li:nth-child(2n) {
         width: 160px !important;
     }
 }
 
-@media (max-width: 1024px) {
-    .logo {
-        margin-left: auto;
-    }
-
-    .footer_social {
-        margin: 0 auto;
-    }
-
-    .footer_social > li:last-child {
-        margin-right: 0 !important;
-    }
-
-    .sectionleftul {
-        margin-left: auto;
-    }
-
-    .futr_menublock {
-        margin: 0px;
-    }
-}
-
+/* >= 768px */
 @media (min-width: 768px) {
     .navbar-collapse {
         padding-left: 0;
@@ -647,7 +602,7 @@ textarea {
     }
 
     .navbar-form.navbar-right {
-        margin-right: 25px;
+        margin-right: 5px;
         padding-left: 11px;
         padding-right: 11px;
     }
@@ -661,47 +616,23 @@ textarea {
     }
 }
 
+/* <= 767px Extensive */
 @media (max-width: 767px) {
-    .sectionleftul .menu_list ul li {
-        padding-bottom: 24px;
-    }
-
-    .header_top {
-        padding: 15px 0 7px;
-    }
-
-    .mid_innerleft {
-        margin-bottom: 10px;
-    }
-
+    /* Header */
     .logo {
         text-align: center;
         float: none;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .selected {
-        margin: 0px;
+        margin: 0;
         width: 92%;
         text-align: center;
         float: none;
     }
 
-    .selected .custom-select {
-        width: 80%;
-    }
-
-    .menublock ul li {
-        width: 100%;
-        border: none;
-        text-align: left;
-    }
-
-    .menublock .navbar-form {
-        box-shadow: none;
-    }
-
-    .form-group .lqd-search-input {
+    .form-group .lqd-header-search-input {
         width: 100%;
     }
 
@@ -719,43 +650,34 @@ textarea {
         font-size: 1.2em
     }
 
-    .inner_block h2 {
-        font-size: 1.2em
-    }
-
-    .posit {
-        margin-bottom: -42px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .menublock {
-        margin: 10px 0 0;
-    }
-
     .nav > li > a {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    .footer_container {
-        background-color: #dcddde;
-        padding: 0px 27px 0 18px;
+    /* Footer */
+    .lqd-footer-top-left .menu_list ul li {
+        padding-bottom: 24px;
     }
 
-    .sectionleftul {
+    .lqd-footer-container {
+        background-color: #dcddde;
+        padding: 0 27px 0 18px;
+    }
+
+    .lqd-footer-top-left {
         text-align: center;
         float: none;
         margin-left: 0;
         width: 100%;
     }
 
-    .sectionleftul li {
+    .lqd-footer-top-left li {
         float: none;
-        padding-right: 0px;
+        padding-right: 0;
     }
 
-    .footer_social {
+    .lqd-footer-social {
         display: block;
         float: none;
         margin: 0 auto;
@@ -763,25 +685,30 @@ textarea {
         text-align: center;
     }
 
-    .footer_social li {
+    .lqd-footer-social li {
         display: inline;
         margin-right: 10px;
         float: none;
     }
 
-    .footer_container .futr_menublock .col-xs-6 {
-        width: 100%;
-    }
-
-    .footer_container .futr_menublock {
-        text-align: center;
-    }
-
+    /* Main Content */
     .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
-        padding-left: 0px;
-        padding-right: 0PX;
+        padding-left: 0;
+        padding-right: 0;
     }
 
+    .entry-content p {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 18px;
+
+    }
+
+    .entry-content table {
+        margin-left: 0;
+    }
+
+    /* Headers */
     h1 {
         font-size: 32px;
     }
@@ -794,20 +721,11 @@ textarea {
         font-size: 24px;
     }
 
-    .entry-content p {
-        padding-left: 0px;
-        padding-right: 0PX;
-        font-size: 18px;
 
-    }
-
+    /* Search Form */
     .page-content .search-form {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .entry-content table {
-        margin-left: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .search-form .screen-reader-text {
@@ -832,6 +750,7 @@ textarea {
         text-align: center !important;
     }
 
+    /* Essential Grid */
     .esg-grid.esg-layout-even.esg-container {
         margin: 10px 0;
         padding: 0 !important;
@@ -840,68 +759,56 @@ textarea {
     .filterall.eg-liquid-front-page-wrapper.tp-esg-item.itemtoshow.isvisiblenow {
         width: 100% !important;
     }
-
-    .location-block {
-        float: none !important;
-        margin-left: 0 !important;
-        width: auto !important;
-    }
 }
 
+/* <= 479px / Only Affects Footer */
 @media (max-width: 479px) {
-
-    .sectionleft li a {
+    .lqd-footer-top-left li a {
         padding-right: 15px;
         margin-bottom: 15px;
     }
 
-    .sectionleft .sectionleftul {
+    .lqd-footer-top-left {
         padding: 0;
     }
 
-    .sectionleft {
+    .lqd-footer-top-left {
         width: 55%;
     }
 
-    .sectionleftul li:last-child a {
+    .lqd-footer-top-left li:last-child a {
         margin: 0;
     }
+}
 
-    .sectionright {
-        margin-top: 5px;
+/**
+ * Bootstrap has a max width of 1170px, but this theme was built on 1280px.
+ * To make it work we need to increase the max size of the container (to 1280px) and also make the row wider
+ * at larger screen resolutions.
+ */
+@media (min-width: 1000px) {
+    .container {
+        width:1280px !important;
+    }
+    .container.lqd-header, .container.lqd-footer, .container.lqd-content {
+        min-width:1000px;
+        max-width:1280px;
+    }
+
+    .lqd-header-menu {
+        margin-left: -15px;
+        margin-right: -15px;
     }
 }
 
-@media (max-width: 319px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .entry-content p {
-        font-size: 14px;
-    }
-}
-
-.menublock li.current-menu-item a, .menublock li a:hover {
-    background-color: #14a7e0 !important;
-}
-
-.body-text /* For Text Body Content */
+/* For Text Body Content */
+.body-text
 {
     max-width: 800px !important;
     margin: auto !important;
 }
 
 /* Responsive Videos, when not using FitVid. */
-
 .videoWrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -934,7 +841,7 @@ textarea {
     height: 100%;
 }
 
-/* Campus Pages */
+/** Campus Pages **/
 /* Times */
 .service-times {
     background-color: #e6e8e5;
@@ -1033,19 +940,6 @@ textarea {
     float: left;
 }
 
-/* Location Dropdown */
-.location-block {
-    float: left;
-    margin-left: 177px;
-    width: 32%;
-}
-
-/* This doesn't actually do anything - DM, 2/15/20.
-.location-block .selectric .label {
-    font-family: 'Avenir Next LT Pro', sans-serif !important;
-}
-*/
-
 /* Pastor Bios Styling */
 .pastors-bios h2 {
     margin-bottom: 0;
@@ -1054,26 +948,34 @@ textarea {
 .pastors-bios h3 {
     margin-bottom: 0;
 }
+
+/* Search and Filter */
 .searchandfilter ul li
 {
     float:left;
 }
+
+/* Job Description */
 .job_description ul
 {
     padding-left:40px;
 }
+
+/* List Items without Bullets */
 .lqd-no-bullets li {
     list-style: none;
 }
+
 /* Group Guide styling */
 .group-guides h1.entry-title {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
     font-family: "arial";
-    padding-left: 0px;
+    padding-left: 0;
     text-transform:capitalize;
 }
+
 .group-guides-template-default h1  {
     padding-left: 0px;
     font-size: 20px;
@@ -1081,44 +983,16 @@ textarea {
     margin-bottom: 5px;
     font-family: "arial";
 }
+
 .group-guides p {
     padding-left:0px;
     font-size: 18px;
 }
+
 .group-guides ul li {
-    font-size: 18px;}
+    font-size: 18px;
+}
+
 .group-guides ol li {
-    font-size: 18px;}
-
-/* Grid for Header */
-.header-container {
-    display: grid;
-    grid-template-columns: .25fr repeat(9, 1fr) .4fr .25fr;
-    grid-template-rows: 1fr 1fr;
-    padding-top:10px;
-}
-
-.header-logo {
-    grid-column-start: 2;
-    grid-column-end: 4;
-}
-.header-locations-menu {
-    grid-column-start: 6;
-    grid-column-end: 8;
-}
-
-.header-church-online-btn {
-    grid-column-start: 10;
-    grid-column-end: 12;
-}
-
-.header-church-online-btn-style {
-    border-width: 2px;
-    height: 28px;
-    margin-top: 6px;
-    padding-top: 4px;
-    color: #14a7e0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    font-size: 18px;
 }

@@ -83,7 +83,7 @@
               <div class="col-md-2"></div>
               <div class="col-xs-12 col-sm-2 col-md-2 col-md-offset-1">
                   <div class="church-online">
-                      <a href="https://live.liquidchurch.com/" class="blue_btn header-church-online-btn-style">Church Online</a>
+                      <a href="https://live.liquidchurch.com/" class="blue_btn lqd-header-church-online-btn-style">Church Online</a>
                   </div>
               </div>
           </div>

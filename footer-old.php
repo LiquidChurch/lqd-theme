@@ -14,7 +14,7 @@
   <!-- Footer Area start -->
   	<div class="footer_section">
 	    <div class="container lqd-footer">
-	      <div class="row lqd-footer-row">
+	      <div class="row">
 	        <div class="footer_sectionmid">
 	          <div class="col-md-8">
 	             <ul class="sectionleftul">
@@ -35,7 +35,7 @@
 	             </ul>
 	          </div>
 	          <div class="col-md-4">
-	          		<ul class="footer_social">
+	          		<ul class="lqd-footer-social">
 	          				<?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
 				          			<li>
 				                   		<a target="_blank" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" class="ffb" title="Facebook"><i class="ffb"></i></a>
@@ -70,7 +70,7 @@
 	    </div>
   	</div>
 
-	<div class="footer_container">
+	<div class="lqd-footer-container">
  		<div class="container">
         	<div class="row">
             		<div class="futr_menublock">
@@ -82,7 +82,7 @@
 												dynamic_sidebar('footer-about-us');
 										}else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add About Us Menu </a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add About Us Menu </a></h2></div>';
 										}
 									?>
 
@@ -95,7 +95,7 @@
 									dynamic_sidebar('footer-life-events');
 									}else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Life Event Menu</a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Life Event Menu</a></h2></div>';
 										}
 								?>
                             </div>
@@ -107,7 +107,7 @@
 									dynamic_sidebar('footer-messages');
 								}else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Message Menu</a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Message Menu</a></h2></div>';
 										}
 								?>
                             </div>
@@ -120,7 +120,7 @@
 									}
 									else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Media Menu</a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Media Menu</a></h2></div>';
 										}
 								?>
                             </div>
@@ -133,7 +133,7 @@
 									}
 									else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Give Menu</a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Give Menu</a></h2></div>';
 										}
 								?>
                             </div>
@@ -146,7 +146,7 @@
 										}
 										else{
 
-											echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Help Menu</a></h2></div>';
+											echo '<div class="lqd-footer-menu-not-selected"><h2><a href="' .home_url('wp-admin/widgets.php').'">Add Help Menu</a></h2></div>';
 										}
 									?>
                             </div>
