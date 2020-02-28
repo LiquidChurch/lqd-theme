@@ -268,32 +268,6 @@ textarea {
     width: 100%;
 }
 
-.row.display-flex {
- display: flex;
-    flex-wrap: wrap;
-}
-
-.row.display-flex > [class*='col-'] {
-    display: flex;
-    flex-direction: column;
-}
-
-.lqd-header-church-online-btn {
-    border-color: #337ab7; /* Match Locations Border */
-    margin-top: 6px; /* Match height of Locations */
-    line-height: 1.3rem; /* Center our text in the button */
-    font-size: 1.6rem; /* Match Locations */
-    border-width: 2px; /* Match Locations */
-    white-space: nowrap; /* Don't allow text to wrap onto second line */
-    height: 28px; /* Match Locations */
-    color: #14a7e0;
-    border-radius: 42px;
-    font-family: 'Avenir Next LT Pro', sans-serif;
-    font-weight:700;
-    text-transform: uppercase;
-    margin-right:-35px;
-}
-
 .menublock {
     margin: 0;
     background-color: #14a7e0
@@ -619,6 +593,10 @@ textarea {
         padding-left: 11px;
         padding-right: 12px;
     }
+
+    .lqd-header-church-online-btn {
+        width:100%;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 814px) {
@@ -645,7 +623,6 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-
     .logo {
         margin-left: auto;
     }
@@ -665,25 +642,6 @@ textarea {
     .futr_menublock {
         margin: 0px;
     }
-
-    .lqd-header-logo {
-        text-align: center;
-        margin-bottom:10px;
-    }
-
-    .lqd-header-church-online-btn {
-        margin-right:auto;
-        width:100%;
-        font-size: 1.3rem;
-    }
-
-    .lqd-header-church-online-btn:hover {
-        color: #14a7e0;
-    }
-
-    .location-block .selectric .label {
-        font-size:1.3rem;
-    }
 }
 
 @media (min-width: 768px) {
@@ -693,7 +651,7 @@ textarea {
     }
 
     .navbar-form.navbar-right {
-        margin-right: 25px;
+        margin-right: 50px;
         padding-left: 11px;
         padding-right: 11px;
     }
@@ -705,10 +663,13 @@ textarea {
     .entry-content p {
         font-size: 20px;
     }
-
 }
 
 @media (max-width: 767px) {
+    .lqd-header-church-online-btn { /* Force Button to Take Up Entire Container Element */
+        width:100%;
+    }
+
     .sectionleftul .menu_list ul li {
         padding-bottom: 24px;
     }
@@ -768,6 +729,10 @@ textarea {
 
     .inner_block h2 {
         font-size: 1.2em
+    }
+
+    .menublock {
+        margin: 10px 0 0;
     }
 
     .nav > li > a {
@@ -876,16 +841,6 @@ textarea {
 
     .filterall.eg-liquid-front-page-wrapper.tp-esg-item.itemtoshow.isvisiblenow {
         width: 100% !important;
-    }
-
-    .location-block {
-        float: none !important;
-        margin-left: 0 !important;
-        width: auto !important;
-    }
-
-    .lqd-header-church-online-btn {
-        margin-right: auto;
     }
 }
 
@@ -1075,15 +1030,9 @@ textarea {
 }
 
 /* Location Dropdown */
-.location-block {
-    float: left;
-   /* margin-left: 177px; */
-   /* width: 32%; */
-}
-
 .location-block .selectric .label {
     font-family: 'Avenir Next LT Pro', sans-serif !important;
-    margin-top: 1px;
+    line-height: 20px; /* Centering Text in Dropdown */
 }
 
 /* Pastor Bios Styling */
@@ -1129,3 +1078,17 @@ textarea {
     font-size: 18px;}
 .group-guides ol li {
     font-size: 18px;}
+
+/* Customize Church Online Header Button
+ * Note: This is mainly so that it matches the Church Locations Dropdown
+ */
+.lqd-header-church-online-btn {
+    border-color: #337ab7;
+    border-width: 2px;
+    color: #14a7e0;
+    white-space: nowrap;
+    margin-top: 6px;
+    line-height: .5rem;
+    font-size: 16px;
+    height: 28px;
+}
