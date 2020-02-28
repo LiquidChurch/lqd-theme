@@ -24,8 +24,8 @@
 .selectric .label {
   color: #14a7e0;
   display: block;
-  font-size:16px;
-  font-weight: bold!important;
+  font-size:1rem; /* 2/26/19 */
+  font-weight: 700; /* 2/26/19 */
   height:38px;
   line-height:16px;
   margin: 0 10px;
@@ -205,5 +205,5 @@
 .social-area.clearfix {
   margin-right: -20px;
   margin-top: 23px !important;
-}	
+}
 }
