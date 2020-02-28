@@ -76,7 +76,8 @@
                         </div>
                     </div>
                     <div class="lqd-header-church-online col-xs-6 col-sm-6 col-md-2 col-md-offset-3 display-flex">
-                        <a class="btn lqd-header-church-online-btn" href="#">Church Online</a>
+                        <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church
+                            Online</a>
                     </div>
                 </div>
             </div>

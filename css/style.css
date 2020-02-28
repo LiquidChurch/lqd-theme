@@ -797,10 +797,6 @@ textarea {
         z-index: 1;
     }
 
-    .menublock {
-        margin: 10px 0 0;
-    }
-
     .nav > li > a {
         padding-left: 20px;
         padding-right: 20px;
