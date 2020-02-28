@@ -52,14 +52,14 @@ get_header(); ?>
 
 						<?php
 							the_content();
-							wp_link_pages( [
+							wp_link_pages( array(
 								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'liquidchurch' ) . '</span>',
 								'after'       => '</div>',
 								'link_before' => '<span>',
 								'link_after'  => '</span>',
 								'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
 								'separator'   => '<span class="screen-reader-text">, </span>',
-                            ] );
+							) );
 						?>
 					</div><!-- .entry-content -->
 
@@ -98,9 +98,9 @@ get_header(); ?>
 					}
 
 					// Parent post navigation.
-					the_post_navigation( [
+					the_post_navigation( array(
 						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
-                    ] );
+					) );
 				// End the loop.
 				endwhile;
 			?>

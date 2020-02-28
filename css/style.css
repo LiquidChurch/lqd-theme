@@ -274,7 +274,47 @@ textarea {
     float: right;
 }
 
-/* Menu */
+.social-icon {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-icon li {
+    float: left;
+    margin: 8px 3px 0;
+}
+
+.social-icon li a {
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+}
+
+.social-icon li a.hyoutube {
+    background: #fff url("../image/LRG_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+
+.social-icon li .hfb {
+    background: #fff url("../image/LRG_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+
+.social-icon li .htwitter {
+    background: #fff url("../image/LRG_Icon_twitter.png") no-repeat scroll center center / 100% auto;
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+
+.social-icon li .hinsta {
+    background: #fff url("../image/LRG_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+
 .menublock {
     margin: 0;
     background-color: #14a7e0
@@ -331,7 +371,7 @@ textarea {
 
 /* Forms */
 .form-group .form-controlinput {
-    /* background: #dcddde; // Made form inputs gray, disabled. */
+    background: #dcddde;
     border: medium none;
     border-radius: 20px;
     box-sizing: border-box;
@@ -433,7 +473,7 @@ textarea {
     padding: 15px 0;
 }
 
-.futr_menublock { /* Remove? */
+.futr_menublock {
     margin: 0 -32px 0 -30px;
 }
 
@@ -500,7 +540,7 @@ textarea {
     padding-left: 0;
 }
 
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 { /* TODO: Combine? */
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
     padding: 0 30px;
     display: inline-block;
 }
@@ -588,6 +628,10 @@ textarea {
     min-width: 205px;
 }
 
+/**
+ * Media Queries (Breakpoints)
+ */
+/* 1024px - 1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
     .nav > li > a {
         padding-left: 28px;
@@ -599,6 +643,10 @@ textarea {
     }
 }
 
+
+/* 768px - 1023 px
+ * Note: 768 is Bootstraps breakpoint between XS and SM devices
+ */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .selected {
         margin: 8px 0 0 50px;
@@ -611,12 +659,16 @@ textarea {
     }
 }
 
+/* 768px - 814px */
 @media only screen and (min-width: 768px) and (max-width: 814px) {
     .menublock li a {
         font-size: 1.34rem;
     }
 }
 
+/* 768px - 991px
+ * Note: 992px is Bootstraps breakpoint between SM and MD devices
+ */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     .sectionleftul .menu_list li {
@@ -624,6 +676,7 @@ textarea {
     }
 }
 
+/* 992px - 1023px */
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
     .sectionleftul .menu_list li {
         min-width: 151px;
@@ -634,6 +687,7 @@ textarea {
     }
 }
 
+/* <=1024px */
 @media (max-width: 1024px) {
     .social-area.clearfix {
         margin-right: 0 !important;
@@ -656,11 +710,12 @@ textarea {
         margin-left: auto;
     }
 
-    .futr_menublock { /* TODO: Remove? */
-        margin: 0;
+    .futr_menublock {
+        margin: 0px;
     }
 }
 
+/* >=768px */
 @media (min-width: 768px) {
     .navbar-collapse {
         padding-left: 0;
@@ -682,6 +737,7 @@ textarea {
     }
 }
 
+/* >=767px */
 @media (max-width: 767px) {
     .social-area.clearfix {
         margin-top: 23px !important;
@@ -752,7 +808,7 @@ textarea {
         font-size: 1.2em
     }
 
-    .social-area { /* TODO: Remove? */
+    .social-area {
         color: #fff;
         float: none;
         margin-top: 17px;
@@ -760,14 +816,11 @@ textarea {
         text-align: center;
     }
 
-  /* Removed 1/27/20:
     .posit {
-
         margin-bottom: -42px;
         position: relative;
         z-index: 1;
     }
-    */
 
     .menublock {
         margin: 10px 0 0;
@@ -892,9 +945,9 @@ textarea {
         margin-left: 0 !important;
         width: auto !important;
     }
-
 }
 
+/* <=479px */
 @media (max-width: 479px) {
 
     .sectionleft li a {
@@ -919,6 +972,7 @@ textarea {
     }
 }
 
+/* <=319px */
 @media (max-width: 319px) {
     .social-icon li a.hyoutube, .social-icon li .hinsta {
         display: none !important;
@@ -1089,12 +1143,14 @@ textarea {
 }
 
 /* Location Dropdown */
-.location-block .selectric .label { /* TODO: Remove? */
-    font-family: 'Avenir Next LT Pro', sans-serif !important;
+.location-block {
+    float: left;
+    margin-left: 177px;
+    width: 32%;
 }
 
-.selectric .label {
-    margin: 3px 0 0 !important;
+.location-block .selectric .label {
+    font-family: 'Avenir Next LT Pro', sans-serif !important;
 }
 
 /* Pastor Bios Styling */
@@ -1152,30 +1208,4 @@ textarea {
 
 .group-guides ol li {
     font-size: 18px;
-}
-
-/* Church Online Styling */
-div.church-online {
-  border: 2px solid #337ab7;
-  border-radius: 15px;
-  height:28px;
-  margin-top:6px;
-  position:relative;
-}
-
-a.church-online-link {
-  color: #14a7e0;
-  display:block;
-  font-size:16px;
-  font-weight:bold;
-  height:38px;
-  line-height:16px;
-  margin-inline-end: 10px;
-  margin-inline-start:10px;
-  margin: 0 10px;
-  padding: 6px 0 0;
-  text-align:center;
-  text-overflow: ellipsis;
-  text-transform:uppercase;
-  white-space: nowrap; /* Keeps Online from moving to a new line. */
 }

@@ -29,9 +29,9 @@
     <div class="header_top">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-4">
-	          <div class="logo">
-		          <?php
+          <div class="col-sm-8 col-md-8">
+	            <div class="logo">
+	                <?php
 	                  if (get_theme_mod( 'm1_logo' )){
 	                    ?>
 	                        <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a>
@@ -50,19 +50,19 @@
 	                  <?php endif; ?>
 	                <?php
 	                       }
-	              ?>
-	          </div>
-          </div>
-            <div class="col-sm-6 col-md-3 col-md-offset-1">
-	          <div class="location-block">
+	                ?>
+	            </div>
+
+
+                    <div class="location-block">
                     <?php if ( has_nav_menu( 'locations' ) ) : ?>
                             <?php
-                             wp_nav_menu( [
+                             wp_nav_menu( array(
                                    'theme_location' => 'locations',
                                   'menu'           => 'Locations Menu',
                                   'walker'         => new Walker_Nav_Menu_Dropdown(),
                                   'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-                             ] );
+                                ) );
                         else :
 
                           ?>
@@ -74,66 +74,66 @@
                               </select>
                             </form>
                           </div>
-                    <?php endif; ?>
+                          <?php endif; ?>
             </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 posit">
+            <div class="social-area clearfix">
+             <ul class="social-icon clearfix">
+                <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
+                <li><a title="Facebook" class="hfb" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" target="_blank"></a></li>
+                <?php }?>
+                <?php if( get_theme_mod( 'twitter_id_theme' ) )  { ?>
+                <li><a title="Twitter" class="htwitter" href="<?php echo get_theme_mod( 'twitter_id_theme' ) ;?>" target="_blank"></a></li>
+                <?php }?>
+                <?php if( get_theme_mod( 'instagram_id_theme' ) )  { ?>
+                <li><a title="Instagram" class="hinsta " href="<?php echo get_theme_mod( 'instagram_id_theme' ) ;?>" target="_blank"></a></li>
+                <?php }?>
+	             <?php if( get_theme_mod( 'youtube_id_theme' ) )  { ?>
+		             <li><a title="Youtube" class="hyoutube" href="<?php echo get_theme_mod( 'youtube_id_theme' ) ;?>" target="_blank"></a></li>
+	             <?php }?>
+              </ul>
+
+              <!--<a target="_self" href="https://liquidchurch.ccbchurch.com/" class="login">Log In</a> -->
+
             </div>
-          <div class="col-sm-6 col-md-3 col-md-offset-1">
-	          <div class="church-online">
-	              <a href="https://live.liquidchurch.com/" class="church-online-link">Church Online</a>
-	          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="menublock">
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button"
-                class="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <?php if ( has_nav_menu( 'primary' ) ) : ?>
             	<?php
-	                /*wp_nav_menu( [
-	                	'theme_location' => 'primary',
-		                'menu_class'     => 'nav navbar-nav',
-                    ] );*/
-	                wp_nav_menu( [
-	                   'theme_location'     => 'primary',
-                       'container'          => 'div',
-                       'container_class'    => 'collapse navbar-collapse',
-                       'menu_class'         => 'nav navbar-nav',
-                       'fallback_cb'        => 'WP_Bootstrap_Navwalker::fallback',
-                       'walker'             => new WP_Bootstrap_Navwalker(),
-                    ]);
+									wp_nav_menu( array(
+										'theme_location' => 'primary',
+										'menu_class'     => 'nav navbar-nav',
+									 ) );
                   else :
-                    wp_nav_menu( [
-                        'theme_location' => 'default',
-                        'menu'  =>  'Default Menu',
-                        'menu_class'     => 'nav navbar-nav',
-                    ] );
-                  ?>
+                  wp_nav_menu( array(
+                    'theme_location' => 'default',
+                    'menu'  =>  'Default Menu',
+                    'menu_class'     => 'nav navbar-nav',
+                   ) );
+								?>
               <?php endif; ?>
 
         <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
           <div class="form-group form-group_new">
-            <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value===&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value===this.defaultValue)this.value=&#39;&#39;;" >
+            <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
             <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
           </div>
         </form>
       </div>
       <!-- /.navbar-collapse -->
-
     </nav>
   </div>
   <!-- Header end -->
