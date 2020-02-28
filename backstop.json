@@ -26,9 +26,9 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Liquid Homepage",
+      "label": "Liquid Church Homepage",
       "url": "https://one.wordpress.test",
-      "referenceUrl": "",
+      "referenceUrl": "https://liquidchurch.com",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,

@@ -23,7 +23,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header style="padding: 20px 20px 0 20px;">
+			<header style="padding-left: 20px; padding-right: 20px; padding-botton: 0px; padding-top: 20px;">
 				<?php
 				// removed class "page-header from header GC 10/12/2018 <header class="page-header" style="padding-left: 10px; padding-right: 10px; padding-botton: 1px;">
 				//  Next 2 lines commented out 10/11/2018 to use blog slider - GC
@@ -38,7 +38,7 @@ get_header(); ?>
             <div class="lqd-blog">
 			<?php
 			// Start the Loop.
-            $my_post_array = [];
+            $my_post_array = array();
             while ( have_posts() ) : the_post();
                 $my_post_array[] = $post->ID;
 			// End the loop.
@@ -46,11 +46,11 @@ get_header(); ?>
 
 			echo do_shortcode('[ess_grid alias="blog_post_grid" posts='.implode(',', $my_post_array). ']' );
 			// Previous/next page navigation.
-			the_posts_pagination( [
+			the_posts_pagination( array(
 				'prev_text'          => __( 'Previous page', 'liquidchurch' ),
 				'next_text'          => __( 'Next page', 'liquidchurch' ),
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
-            ] );
+			) );
 
 				//'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>',
 		// If no content, include the "No posts found" template.

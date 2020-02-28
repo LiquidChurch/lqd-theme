@@ -41,7 +41,7 @@
         <?php if (have_posts()) : ?>
             <?php
 
-            $series = lqd_messages()->taxonomies->series->get(get_queried_object_id());
+            $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
             if ($series->image_id) {
