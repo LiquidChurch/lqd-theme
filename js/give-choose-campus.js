@@ -5,7 +5,7 @@
  */
 
 jQuery( function( $ ) {
-    'use strict';
+    "use strict";
     var url;
     $('#setup-gift-dropdown').on('change', function () {
         url = $(this).val();

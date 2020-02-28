@@ -12,7 +12,7 @@
     <header class="entry-header ">
     </header><!-- .entry-header -->
 
-    <?php lqdm_post_thumbnail(); ?>
+    <?php liquidchurch_post_thumbnail(); ?>
 
     <!-- .entry-content -->
     <div class="entry-content">

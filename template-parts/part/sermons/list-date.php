@@ -4,7 +4,7 @@ global $post;
 if (empty($post->post_date))
     return false;
 ?>
-<div id="lqdm-message-date" class="row">
+<div id="message-date" class="row">
     <div class="col-sm-3">
         <b>Date:</b>
     </div>

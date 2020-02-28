@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Messages Home Page
- *
- * The template for displaying the main messages page.
+ * Template Name: Messages
+ * The template for displaying messages
  *
  * @package WordPress
  * @subpackage Liquid_Church

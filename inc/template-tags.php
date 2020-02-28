@@ -28,7 +28,7 @@ function liquidchurch_entry_meta() {
 		);
 	}
 
-	if ( in_array( get_post_type(), [ 'post', 'attachment' ] ) ) {
+	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
 		liquidchurch_entry_date();
 	}
 
@@ -110,7 +110,7 @@ function liquidchurch_entry_taxonomies() {
 }
 endif;
 
-if ( ! function_exists( 'lqdm_post_thumbnail' ) ) :
+if ( ! function_exists( 'liquidchurch_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
  *
@@ -121,7 +121,7 @@ if ( ! function_exists( 'lqdm_post_thumbnail' ) ) :
  *
  * @since Liquid Church 1.0
  */
-function lqdm_post_thumbnail() {
+function liquidchurch_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -136,7 +136,7 @@ function lqdm_post_thumbnail() {
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', [ 'alt' => the_title_attribute( 'echo=0' ) ] ); ?>
+		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 
 	<?php endif; // End is_singular()
@@ -200,11 +200,11 @@ endif;
 function liquidchurch_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'liquidchurch_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( [
+		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
 			// We only need to know if there is more than one category.
 			'number'     => 2,
-        ] );
+		) );
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );

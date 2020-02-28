@@ -1,3 +1,9 @@
+/*
+	blue_btn  	=	for blue Button
+	orange_btn 	=	for orange Button
+					span inside blue btn class the content will be bigger
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +45,6 @@ img {
     outline: none;
 }
 
-/* Clearfixes */
 .clearfix:after, .clearfix:before {
     display: table;
     content: "";
@@ -88,9 +93,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.2rem 0 1.5rem;
 }
 
-/* Blue Button
-   Use span inside of blue button class to make content larger.
-   */
 .blue_btn {
     color: #0074c8;
     font-size: 16px;
@@ -133,7 +135,6 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(0, 86, 139);
 }
 
-/* Orange Button */
 .orange_btn {
     color: #f08a41;
     font-size: 16px;
@@ -176,7 +177,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #f08a41;
 }
 
-/* Headers */
 h1 {
     font-size: 50px;
 }
@@ -189,7 +189,6 @@ h3 {
     font-size: 30px;
 }
 
-/* Forms */
 input[type="text"], select, textarea {
     display: block;
     width: 100%;
@@ -232,7 +231,6 @@ textarea {
     height: 140px;
 }
 
-/* Overall Page Structure */
 .pagetop {
     margin: 0;
 }
@@ -254,7 +252,7 @@ textarea {
 
 .selected {
     float: left;
-    margin: 0;
+    margin: 0px;
     width: 27%;
 }
 
@@ -353,7 +351,7 @@ textarea {
 }
 
 .menublock nav {
-    margin: 0;
+    margin: 0px;
 }
 
 .menublock ul li:first-child {
@@ -369,7 +367,6 @@ textarea {
     margin-top: -2px;
 }
 
-/* Forms */
 .form-group .form-controlinput {
     background: #dcddde;
     border: medium none;
@@ -397,7 +394,6 @@ textarea {
     cursor: pointer;
 }
 
-/* Footer */
 .footer_section {
     background: #14a7e0;
     padding: 18px 0;
@@ -493,7 +489,6 @@ textarea {
     text-transform: uppercase;
 }
 
-/* Menu */
 .menu_list {
     margin: 0;
 }
@@ -519,7 +514,6 @@ textarea {
     text-decoration: none;
 }
 
-/* Main Content */
 .entry-content {
     padding: 15px;
     font-size: 24px;
@@ -537,7 +531,7 @@ textarea {
 }
 
 .entry-content .body-text p {
-    padding-left: 0;
+    padding-left: 0px;
 }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
@@ -628,10 +622,6 @@ textarea {
     min-width: 205px;
 }
 
-/**
- * Media Queries (Breakpoints)
- */
-/* 1024px - 1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
     .nav > li > a {
         padding-left: 28px;
@@ -643,10 +633,6 @@ textarea {
     }
 }
 
-
-/* 768px - 1023 px
- * Note: 768 is Bootstraps breakpoint between XS and SM devices
- */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .selected {
         margin: 8px 0 0 50px;
@@ -659,16 +645,12 @@ textarea {
     }
 }
 
-/* 768px - 814px */
 @media only screen and (min-width: 768px) and (max-width: 814px) {
     .menublock li a {
         font-size: 1.34rem;
     }
 }
 
-/* 768px - 991px
- * Note: 992px is Bootstraps breakpoint between SM and MD devices
- */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     .sectionleftul .menu_list li {
@@ -676,7 +658,6 @@ textarea {
     }
 }
 
-/* 992px - 1023px */
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
     .sectionleftul .menu_list li {
         min-width: 151px;
@@ -687,10 +668,9 @@ textarea {
     }
 }
 
-/* <=1024px */
 @media (max-width: 1024px) {
     .social-area.clearfix {
-        margin-right: 0 !important;
+        margin-right: 0px !important;
 
     }
 
@@ -715,7 +695,6 @@ textarea {
     }
 }
 
-/* >=768px */
 @media (min-width: 768px) {
     .navbar-collapse {
         padding-left: 0;
@@ -737,7 +716,6 @@ textarea {
     }
 }
 
-/* >=767px */
 @media (max-width: 767px) {
     .social-area.clearfix {
         margin-top: 23px !important;
@@ -758,11 +736,11 @@ textarea {
     .logo {
         text-align: center;
         float: none;
-        margin-left: 0;
+        margin-left: 0px;
     }
 
     .selected {
-        margin: 0;
+        margin: 0px;
         width: 92%;
         text-align: center;
         float: none;
@@ -833,7 +811,7 @@ textarea {
 
     .footer_container {
         background-color: #dcddde;
-        padding: 0 27px 0 18px;
+        padding: 0px 27px 0 18px;
     }
 
     .social-area.clearfix {
@@ -850,7 +828,7 @@ textarea {
 
     .sectionleftul li {
         float: none;
-        padding-right: 0;
+        padding-right: 0px;
     }
 
     .footer_social {
@@ -875,9 +853,9 @@ textarea {
         text-align: center;
     }
 
-    .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 { /* TODO: Duplicate? */
-        padding-left: 0;
-        padding-right: 0;
+    .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
+        padding-left: 0px;
+        padding-right: 0PX;
     }
 
     h1 {
@@ -893,19 +871,19 @@ textarea {
     }
 
     .entry-content p {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 0PX;
         font-size: 18px;
 
     }
 
     .page-content .search-form {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .entry-content table {
-        margin-left: 0;
+        margin-left: 0px;
     }
 
     .search-form .screen-reader-text {
@@ -930,7 +908,6 @@ textarea {
         text-align: center !important;
     }
 
-    /** Essential Grid */
     .esg-grid.esg-layout-even.esg-container {
         margin: 10px 0;
         padding: 0 !important;
@@ -947,7 +924,6 @@ textarea {
     }
 }
 
-/* <=479px */
 @media (max-width: 479px) {
 
     .sectionleft li a {
@@ -972,7 +948,6 @@ textarea {
     }
 }
 
-/* <=319px */
 @media (max-width: 319px) {
     .social-icon li a.hyoutube, .social-icon li .hinsta {
         display: none !important;
@@ -1054,14 +1029,11 @@ textarea {
     font-size: 5rem !important;
 }
 
-/* Campus Pages */
-/* Sunday Services At Formatting */
 .ssat {
     font-size: 3rem;
     padding-bottom: .2rem;
 }
 
-/* Sunday Services Time Formatting */
 .sstime {
     font-size: 4rem;
 }
@@ -1073,13 +1045,12 @@ textarea {
     padding-right: 5%;
 }
 
-/* Remove left padding for campus addresses */
 .campus-addresses h2 {
-    padding-left: 0;
+    padding-left: 0px;
 }
 
 .campus-addresses p {
-    padding-left: 0;
+    padding-left: 0px;
 }
 
 /* Campus GPS Address */
@@ -1161,51 +1132,38 @@ textarea {
 .pastors-bios h3 {
     margin-bottom: 0;
 }
-
-/* Search and Filter Styling */
 .searchandfilter ul li
 {
     float:left;
 }
-
-/* Job Description Styling */
 .job_description ul
 {
     padding-left:40px;
 }
-
-/* No Bullets Styling */
 .lqd-no-bullets li {
     list-style: none;
 }
-
 /* Group Guide styling */
 .group-guides h1.entry-title {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 10px;
-    font-family: "arial", sans-serif;
-    padding-left: 0;
+    font-family: "arial";
+    padding-left: 0px;
     text-transform:capitalize;
 }
-
 .group-guides-template-default h1  {
-    padding-left: 0;
+    padding-left: 0px;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
-    font-family: "arial", sans-serif;
+    font-family: "arial";
 }
-
 .group-guides p {
-    padding-left:0;
+    padding-left:0px;
     font-size: 18px;
 }
-
 .group-guides ul li {
-    font-size: 18px;
-}
-
+    font-size: 18px;}
 .group-guides ol li {
-    font-size: 18px;
-}
+    font-size: 18px;}
