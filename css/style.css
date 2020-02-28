@@ -268,49 +268,30 @@ textarea {
     width: 100%;
 }
 
-.social-area {
-    float: right;
+.row.display-flex {
+ display: flex;
+    flex-wrap: wrap;
 }
 
-.social-icon {
-    float: left;
-    list-style-type: none;
-    padding: 0;
+.row.display-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }
 
-.social-icon li {
-    float: left;
-    margin: 8px 3px 0;
-}
-
-.social-icon li a {
-    display: inline-block;
-    height: 26px;
-    width: 26px;
-}
-
-.social-icon li a.hyoutube {
-    background: #fff url("../image/LRG_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
-    border: 1px solid #fff;
-    border-radius: 50px;
-}
-
-.social-icon li .hfb {
-    background: #fff url("../image/LRG_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
-    border: 1px solid #fff;
-    border-radius: 50px;
-}
-
-.social-icon li .htwitter {
-    background: #fff url("../image/LRG_Icon_twitter.png") no-repeat scroll center center / 100% auto;
-    border: 1px solid #fff;
-    border-radius: 50px;
-}
-
-.social-icon li .hinsta {
-    background: #fff url("../image/LRG_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
-    border: 1px solid #fff;
-    border-radius: 50px;
+.lqd-header-church-online-btn {
+    border-color: #337ab7; /* Match Locations Border */
+    margin-top: 6px; /* Match height of Locations */
+    line-height: 1.3rem; /* Center our text in the button */
+    font-size: 1.6rem; /* Match Locations */
+    border-width: 2px; /* Match Locations */
+    white-space: nowrap; /* Don't allow text to wrap onto second line */
+    height: 28px; /* Match Locations */
+    color: #14a7e0;
+    border-radius: 42px;
+    font-family: 'Avenir Next LT Pro', sans-serif;
+    font-weight:700;
+    text-transform: uppercase;
+    margin-right:-35px;
 }
 
 .menublock {
@@ -669,10 +650,6 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-    .social-area.clearfix {
-        margin-right: 0px !important;
-
-    }
 
     .logo {
         margin-left: auto;
@@ -692,6 +669,25 @@ textarea {
 
     .futr_menublock {
         margin: 0px;
+    }
+
+    .lqd-header-logo {
+        text-align: center;
+        margin-bottom:10px;
+    }
+
+    .lqd-header-church-online-btn {
+        margin-right:auto;
+        width:100%;
+        font-size: 1.3rem;
+    }
+
+    .lqd-header-church-online-btn:hover {
+        color: #14a7e0;
+    }
+
+    .location-block .selectric .label {
+        font-size:1.3rem;
     }
 }
 
@@ -714,6 +710,7 @@ textarea {
     .entry-content p {
         font-size: 20px;
     }
+
 }
 
 @media (max-width: 767px) {
@@ -922,6 +919,10 @@ textarea {
         margin-left: 0 !important;
         width: auto !important;
     }
+
+    .lqd-header-church-online-btn {
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 479px) {
@@ -1116,12 +1117,13 @@ textarea {
 /* Location Dropdown */
 .location-block {
     float: left;
-    margin-left: 177px;
-    width: 32%;
+   /* margin-left: 177px; */
+   /* width: 32%; */
 }
 
 .location-block .selectric .label {
     font-family: 'Avenir Next LT Pro', sans-serif !important;
+    margin-top: 1px;
 }
 
 /* Pastor Bios Styling */
