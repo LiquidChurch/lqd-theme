@@ -222,8 +222,6 @@ function liquidchurch_scripts() {
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
     }
-	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/inc/genericons/genericons.css', array(), '3.4.1' );
 	// Theme stylesheet.
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
 	// Load the Internet Explorer specific stylesheet.
