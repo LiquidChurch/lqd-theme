@@ -1,7 +1,7 @@
 <?php
 global $sermon;
 
-$addtl_resources = do_shortcode('[lqdm_resources resource_display_name="true"]');
+$addtl_resources = do_shortcode('[sermon_resources resource_display_name="true"]');
 
 if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->'))
     return false;

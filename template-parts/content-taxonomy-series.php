@@ -20,7 +20,7 @@
         $sermon = gc_get_sermon_post(get_the_ID());
 
         $message_field_to_display = array();
-        $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_series_view');
+        $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_series_view');
         if (!empty($plugin_option))
             $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
         ?>

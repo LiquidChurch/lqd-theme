@@ -248,58 +248,58 @@ function liquidchurch_get_color_schemes() {
 	 *     }
 	 * }
 	 */
-	return apply_filters( 'liquidchurch_color_schemes', [
-		'default' => [
+	return apply_filters( 'liquidchurch_color_schemes', array(
+		'default' => array(
 			'label'  => __( 'Default', 'liquidchurch' ),
-			'colors' => [
+			'colors' => array(
 				'#1a1a1a',
 				'#ffffff',
 				'#007acc',
 				'#1a1a1a',
 				'#686868',
-            ],
-        ],
-		'dark' => [
+			),
+		),
+		'dark' => array(
 			'label'  => __( 'Dark', 'liquidchurch' ),
-			'colors' => [
+			'colors' => array(
 				'#262626',
 				'#1a1a1a',
 				'#9adffd',
 				'#e5e5e5',
 				'#c1c1c1',
-            ],
-        ],
-		'gray' => [
+			),
+		),
+		'gray' => array(
 			'label'  => __( 'Gray', 'liquidchurch' ),
-			'colors' => [
+			'colors' => array(
 				'#616a73',
 				'#4d545c',
 				'#c7c7c7',
 				'#f2f2f2',
 				'#f2f2f2',
-            ],
-        ],
-		'red' => [
+			),
+		),
+		'red' => array(
 			'label'  => __( 'Red', 'liquidchurch' ),
-			'colors' => [
+			'colors' => array(
 				'#ffffff',
 				'#ff675f',
 				'#640c1f',
 				'#402b30',
 				'#402b30',
-            ],
-        ],
-		'yellow' => [
+			),
+		),
+		'yellow' => array(
 			'label'  => __( 'Yellow', 'liquidchurch' ),
-			'colors' => [
+			'colors' => array(
 				'#3b3721',
 				'#ffef8e',
 				'#774e24',
 				'#3b3721',
 				'#5b4d3e',
-            ],
-        ],
-    ] );
+			),
+		),
+	) );
 }
 
 if ( ! function_exists( 'liquidchurch_get_color_scheme' ) ) :
@@ -312,7 +312,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme' ) ) :
  *
  * @return array An associative array of either the current or default color scheme HEX values.
  */
-    function liquidchurch_get_color_scheme() {
+function liquidchurch_get_color_scheme() {
 	$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
 	$color_schemes       = liquidchurch_get_color_schemes();
 
@@ -337,7 +337,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme_choices' ) ) :
  */
 function liquidchurch_get_color_scheme_choices() {
 	$color_schemes                = liquidchurch_get_color_schemes();
-	$color_scheme_control_options = [];
+	$color_scheme_control_options = array();
 
 	foreach ( $color_schemes as $color_scheme => $value ) {
 		$color_scheme_control_options[ $color_scheme ] = $value['label'];
@@ -397,7 +397,7 @@ function liquidchurch_color_scheme_css() {
 	}
 
 	// If we get this far, we have a custom color scheme.
-	$colors = [
+	$colors = array(
 		'background_color'      => $color_scheme[0],
 		'page_background_color' => $color_scheme[1],
 		'link_color'            => $color_scheme[2],
@@ -405,7 +405,7 @@ function liquidchurch_color_scheme_css() {
 		'secondary_text_color'  => $color_scheme[4],
 		'border_color'          => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $color_textcolor_rgb ),
 
-    ];
+	);
 
 	$color_scheme_css = liquidchurch_get_color_scheme_css( $colors );
 
@@ -421,7 +421,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_color_scheme_css' );
  * @since Liquid Church 1.0
  */
 function liquidchurch_customize_control_js() {
-	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', [ 'customize-controls', 'iris', 'underscore', 'wp-util' ], '20160412', true );
+	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160412', true );
 	wp_localize_script( 'color-scheme-control', 'colorScheme', liquidchurch_get_color_schemes() );
 }
 add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_control_js' );
@@ -432,7 +432,7 @@ add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_contro
  * @since Liquid Church 1.0
  */
 function liquidchurch_customize_preview_js() {
-	wp_enqueue_script( 'liquidchurch-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', [ 'customize-preview' ], '20160412', true );
+	wp_enqueue_script( 'liquidchurch-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160412', true );
 }
 add_action( 'customize_preview_init', 'liquidchurch_customize_preview_js' );
 
@@ -445,14 +445,14 @@ add_action( 'customize_preview_init', 'liquidchurch_customize_preview_js' );
  * @return string Color scheme CSS.
  */
 function liquidchurch_get_color_scheme_css( $colors ) {
-	$colors = wp_parse_args( $colors, [
+	$colors = wp_parse_args( $colors, array(
 		'background_color'      => '',
 		'page_background_color' => '',
 		'link_color'            => '',
 		'main_text_color'       => '',
 		'secondary_text_color'  => '',
 		'border_color'          => '',
-    ] );
+	) );
 
 	return <<<CSS
 	/* Color Scheme */
@@ -758,14 +758,14 @@ CSS;
  * @since Liquid Church 1.0
  */
 function liquidchurch_color_scheme_css_template() {
-	$colors = [
+	$colors = array(
 		'background_color'      => '{{ data.background_color }}',
 		'page_background_color' => '{{ data.page_background_color }}',
 		'link_color'            => '{{ data.link_color }}',
 		'main_text_color'       => '{{ data.main_text_color }}',
 		'secondary_text_color'  => '{{ data.secondary_text_color }}',
 		'border_color'          => '{{ data.border_color }}',
-    ];
+	);
 	?>
 	<script type="text/html" id="tmpl-liquidchurch-color-scheme">
 		<?php echo liquidchurch_get_color_scheme_css( $colors ); ?>

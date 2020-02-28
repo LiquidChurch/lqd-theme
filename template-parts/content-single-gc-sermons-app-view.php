@@ -26,7 +26,7 @@ $sermon = gc_get_sermon_post();
                     // Enqueue fitvids for responsive video.
                     wp_enqueue_script(
                         'fitvids',
-                        Lqd_Messages_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+                        GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
                         array('jquery'),
                         '1.1',
                         true
@@ -41,15 +41,24 @@ $sermon = gc_get_sermon_post();
                         <?php liquidchurch_post_thumbnail(); ?>
                     <?php endif; ?>
                 </div>
-                <div class="row" style="padding-left:55px;padding-right:55px;">
+                <div class="row" style="padding-left:30px;padding-right:30px;">
 
                     <?php
                     $message_field_to_display = array();
-                    $plugin_option = Lqd_Messages_Plugin::get_plugin_settings_options('single_message_view');
+                    $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
                     if (!empty($plugin_option))
                         $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
                     //                    p($message_field_to_display, 0);
                     ?>
+
+                    <div class="col-md-12">
+                        <?php
+                            $series = $sermon->get_series();
+                            if (!empty($series)) {
+                                echo '<center><a href="' . $series->term_link . '" class="blue_btn">Go Back To ' . $series->name . ' Series</a></center>';
+                            }
+                        ?>
+                    </div>
 
                     <div id="single-sermon-content" class="col-md-12">
 
@@ -128,17 +137,17 @@ $sermon = gc_get_sermon_post();
                         }
                         ?>
 
+	                    <?php
+	                    if (in_array('date', $message_field_to_display)) {
+		                    //summary list template part
+		                    get_template_part('template-parts/part/sermons/list', 'date');
+	                    }
+	                    ?>
+
                         <?php
                         if (in_array('description', $message_field_to_display)) {
                             //summary list template part
                             get_template_part('template-parts/part/sermons/list', 'summary');
-                        }
-                        ?>
-
-                        <?php
-                        if (in_array('date', $message_field_to_display)) {
-                            //summary list template part
-                            get_template_part('template-parts/part/sermons/list', 'date');
                         }
                         ?>
 
@@ -159,7 +168,7 @@ $sermon = gc_get_sermon_post();
                         </div>-->
 
                         <?php
-                        $social_share_enable = Lqd_Messages_Plugin::get_plugin_settings_options('social_option', 'social_share');
+                        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
                         if ($social_share_enable == 'yes') {
                             echo '<div class="addthis_sharing_toolbox"></div>';
                         }
@@ -173,9 +182,7 @@ $sermon = gc_get_sermon_post();
             if (!empty($other_msg)) {
                 ?>
                 <div id="message-others" class="row gc-individual-sermon-list">
-                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in
-                        This
-                        Series</h1>
+                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in This Series</h1>
                     <?php
                     echo $other_msg;
                     ?>

@@ -196,7 +196,7 @@
 /* 2/6/2016 */
 .social-area.clearfix {
   margin-right: -20px;
-  margin-top: 0 !important;
+  margin-top: 0px !important;
 }
 
 /* 3/6/2016 */
@@ -205,5 +205,5 @@
 .social-area.clearfix {
   margin-right: -20px;
   margin-top: 23px !important;
-}
+}	
 }

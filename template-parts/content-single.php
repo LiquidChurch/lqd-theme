@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div style="margin:auto; text-align:center; padding-top:10px;">
-	<?php lqdm_post_thumbnail(); ?>
+	<?php liquidchurch_post_thumbnail(); ?>
     </div>
 
     <header class="entry-header" style="margin:auto; max-width:1000px;">
@@ -23,14 +23,14 @@
 		<?php
 			the_content();
 
-			wp_link_pages( [
+			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'liquidchurch' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
-            ] );
+			) );
 		?>
 	</div><!-- .entry-content -->
 
