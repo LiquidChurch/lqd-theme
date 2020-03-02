@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying search results pages
+ * Template Name: Liquid Outreach Search Results Template
+ *
+ * The template for displaying search results pages for the Liquid Outreach Plugin.
  *
  * @package WordPress
  * @subpackage Liquid_Church

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Single Fast Category Template
+ *
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
@@ -50,5 +52,4 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

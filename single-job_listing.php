@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: WP Job Manager Single Job Listing Template
+ *
  * The template for displaying WP Job Manager pages.
  *
  * @package WordPress
@@ -48,10 +50,6 @@ add_theme_support( 'job-manager-templates' );
 		?>
 
 	</main><!-- .site-main -->
-
-	<?php //get_sidebar( 'content-bottom' ); ?>
-
 </div><!-- .content-area -->
 
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

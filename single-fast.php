@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Fast Blog
+ * Template Name: Single Fast Post Template
  * Template Post Type: post
  *
  * @package WordPress
@@ -51,5 +51,4 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

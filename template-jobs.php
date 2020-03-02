@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Jobs
+ * Template Name: Jobs Template
  *
  * The template for displaying pages
  *
@@ -36,14 +36,8 @@ get_header(); ?>
         ?>
 
     </main><!-- .site-main -->
-    <?php if (! is_front_page() ) { ?>
-        <?php //get_sidebar( 'content-bottom' ); ?>
-    <?php } ?>
 
 
 </div><!-- .content-area -->
 
-<?php if (! is_front_page() ) { ?>
-    <?php //get_sidebar(); ?>
-<?php } ?>
 <?php get_footer(); ?>

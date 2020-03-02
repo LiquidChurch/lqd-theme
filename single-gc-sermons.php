@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template: Single Sermon Template
+ *
  * The template for displaying single sermons
  *
  * @package WordPress
