@@ -3,6 +3,11 @@
 # Introduction
 This is a custom WP theme built for/by Liquid Church.
 
+# Other Open Source Code
+We have several other open source projects available on GitHub including a messages, group guides, and fill-in-the
+-blanks notes plugin. You can view all of our open source projects on our [main GitHub
+ page](https://github.com/liquidchurch/).
+
 # Licensing
 This theme  is made available to all under the GPLv2+ licenses with the exclusion of image files containing the Liquid
  logo (please use your own logo :)). No grant is given to the logo, name, or trademarks owned/associated with Liquid Church.
