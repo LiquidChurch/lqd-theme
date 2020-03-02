@@ -4,13 +4,13 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see liquidchurch_header_style()
  */
@@ -22,7 +22,7 @@ function liquidchurch_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-background' support in Liquid Church.
 	 *
-	 * @since Liquid Church 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -37,7 +37,7 @@ function liquidchurch_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-header' support in Liquid Church.
 	 *
-	 * @since Liquid Church 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -66,7 +66,7 @@ if ( ! function_exists( 'liquidchurch_header_style' ) ) :
  *
  * Create your own liquidchurch_header_style() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see liquidchurch_custom_header_and_background().
  */
@@ -96,7 +96,7 @@ endif; // liquidchurch_header_style
 /**
  * Adds postMessage support for site title and description for the Customizer.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
@@ -223,7 +223,7 @@ function liquidchurch_customize_partial_blogdescription() {
  * 4. Main Text Color.
  * 5. Secondary Text Color.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return array An associative array of color scheme options.
  */
@@ -233,7 +233,7 @@ function liquidchurch_get_color_schemes() {
 	 *
 	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'yellow'.
 	 *
-	 * @since Liquid Church 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array $schemes {
 	 *     Associative array of color schemes data.
@@ -308,7 +308,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme' ) ) :
  *
  * Create your own liquidchurch_get_color_scheme() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return array An associative array of either the current or default color scheme HEX values.
  */
@@ -331,7 +331,7 @@ if ( ! function_exists( 'liquidchurch_get_color_scheme_choices' ) ) :
  * Create your own liquidchurch_get_color_scheme_choices() function to override
  * in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return array Array of color schemes.
  */
@@ -355,7 +355,7 @@ if ( ! function_exists( 'liquidchurch_sanitize_color_scheme' ) ) :
  * Create your own liquidchurch_sanitize_color_scheme() function to override
  * in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param string $value Color scheme name value.
  * @return string Color scheme name.
@@ -374,7 +374,7 @@ endif; // liquidchurch_sanitize_color_scheme
 /**
  * Enqueues front-end CSS for color scheme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see wp_add_inline_style()
  */
@@ -418,7 +418,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_color_scheme_css' );
  *
  * Passes color scheme data as colorScheme global.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_customize_control_js() {
 	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160412', true );
@@ -429,7 +429,7 @@ add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_contro
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_customize_preview_js() {
 	wp_enqueue_script( 'liquidchurch-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160412', true );
@@ -439,7 +439,7 @@ add_action( 'customize_preview_init', 'liquidchurch_customize_preview_js' );
 /**
  * Returns CSS for the color schemes.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param array $colors Color scheme colors.
  * @return string Color scheme CSS.
@@ -755,7 +755,7 @@ CSS;
  * The template generates the css dynamically for instant display in the
  * Customizer preview.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_color_scheme_css_template() {
 	$colors = array(
@@ -777,7 +777,7 @@ add_action( 'customize_controls_print_footer_scripts', 'liquidchurch_color_schem
 /**
  * Enqueues front-end CSS for the page background color.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see wp_add_inline_style()
  */
@@ -850,7 +850,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_page_background_color_css', 11 )
 /**
  * Enqueues front-end CSS for the link color.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see wp_add_inline_style()
  */
@@ -946,7 +946,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_link_color_css', 11 );
 /**
  * Enqueues front-end CSS for the main text color.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see wp_add_inline_style()
  */
@@ -1093,7 +1093,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_main_text_color_css', 11 );
 /**
  * Enqueues front-end CSS for the secondary text color.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @see wp_add_inline_style()
  */

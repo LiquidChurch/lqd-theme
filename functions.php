@@ -42,7 +42,7 @@ if ( ! function_exists( 'liquidchurch_setup' ) ) :
  *
  * Create your own liquidchurch_setup() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_setup() {
 
@@ -132,7 +132,7 @@ add_action( 'after_setup_theme', 'liquidchurch_setup' );
  *
  * @global int $content_width
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'liquidchurch_content_width', 840 );
@@ -144,7 +144,7 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  *
  * @link https://developer.wordpress.org/reference/functions/register_sidebar/
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
  require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
@@ -155,7 +155,7 @@ if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
  *
  * Create your own liquidchurch_fonts_url() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return string Google fonts URL for the theme.
  */
@@ -195,7 +195,7 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -205,7 +205,7 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
 /**
  * Enqueues scripts and styles.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_scripts() {
 	// Add custom fonts.
@@ -269,7 +269,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_scripts' );
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param array $classes Classes for the body element.
  * @return array (Maybe) filtered body classes.
@@ -302,7 +302,7 @@ add_filter( 'body_class', 'liquidchurch_body_classes' );
 /**
  * Converts a HEX value to RGB.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param string $color The original color, in 3- or 6-digit hexadecimal form.
  * @return array Array containing RGB (red, green, and blue) values for the given
@@ -340,7 +340,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
@@ -367,7 +367,7 @@ add_filter( 'wp_calculate_image_sizes', 'liquidchurch_content_image_sizes_attr',
  * Add custom image sizes attribute to enhance responsive image functionality
  * for post thumbnails
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param array $attr Attributes for the image markup.
  * @param int $attachment Image attachment ID.
