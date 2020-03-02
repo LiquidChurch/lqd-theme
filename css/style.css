@@ -343,11 +343,6 @@ textarea {
     border-right: 1px solid #fff;
 }
 
-.social-area.clearfix {
-    margin-right: -32px !important;
-    margin-top: -2px;
-}
-
 .form-group .form-controlinput {
     background: #dcddde;
     border: medium none;
@@ -714,10 +709,6 @@ textarea {
 }
 
 @media (max-width: 767px) {
-    .social-area.clearfix {
-        margin-top: 23px !important;
-    }
-
     .sectionleftul .menu_list ul li {
         padding-bottom: 24px;
     }
@@ -745,10 +736,6 @@ textarea {
 
     .selected .custom-select {
         width: 80%;
-    }
-
-    .social-icon {
-        display: inline-block;
     }
 
     .menublock ul li {
@@ -783,20 +770,6 @@ textarea {
         font-size: 1.2em
     }
 
-    .social-area {
-        color: #fff;
-        float: none;
-        margin-top: 17px;
-        position: absolute;
-        text-align: center;
-    }
-
-    .posit {
-        margin-bottom: -42px;
-        position: relative;
-        z-index: 1;
-    }
-
     .nav > li > a {
         padding-left: 20px;
         padding-right: 20px;
@@ -805,11 +778,6 @@ textarea {
     .footer_container {
         background-color: #dcddde;
         padding: 0px 27px 0 18px;
-    }
-
-    .social-area.clearfix {
-        margin-top: 40px;
-        right: 10px;
     }
 
     .sectionleftul {
@@ -946,10 +914,6 @@ textarea {
 }
 
 @media (max-width: 319px) {
-    .social-icon li a.hyoutube, .social-icon li .hinsta {
-        display: none !important;
-    }
-
     h1 {
         font-size: 24px;
     }
@@ -1165,3 +1129,17 @@ textarea {
     font-size: 18px;}
 .group-guides ol li {
     font-size: 18px;}
+
+/* Customize Church Online Header Button
+ * Note: This is mainly so that it matches the Church Locations Dropdown
+ */
+.lqd-header-church-online-btn {
+    border-color: #337ab7;
+    border-width: 2px;
+    color: #14a7e0;
+    white-space: nowrap;
+    margin-top: 6px;
+    line-height: .5rem;
+    font-size: 16px;
+    height: 28px;
+}
