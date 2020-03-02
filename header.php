@@ -6,10 +6,8 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since 1.0
+ * @since 1.0.0
  */
-
-
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
