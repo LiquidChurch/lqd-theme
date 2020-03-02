@@ -1,10 +1,12 @@
 <?php
 /**
+ * Template Name: Fast Archive Pages
+ *
  * The template for displaying fast archive pages
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
