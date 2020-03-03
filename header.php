@@ -81,7 +81,6 @@
             </div>
         </div>
     </div>
-</div>
 <div class="menublock">
     <nav class="navbar navbar-default">
         <!-- Brand and toggle get grouped for better mobile display -->

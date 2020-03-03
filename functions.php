@@ -912,7 +912,7 @@ function gc_series_before_after($content)
 }
 
 // Disable JPEG compression
-add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+add_filter( 'jpeg_quality', function() { return 100; } );
 
 /**
  * Disable comments on media.

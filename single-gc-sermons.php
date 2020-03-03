@@ -2,7 +2,7 @@
 /**
  * Template: Single Sermon Template
  *
- * The template for displaying single sermons
+ * The template for displaying an individual sermon
  *
  * @package WordPress
  * @subpackage Liquid_Church
