@@ -49,12 +49,6 @@ img {
     clear: both;
 }
 
-.clearfix:before {
-    display: table;
-    content: "";
-    clear: both;
-}
-
 .clear {
     clear: both;
 }
