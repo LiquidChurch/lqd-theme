@@ -16,6 +16,29 @@ $sermon = gc_get_sermon_post();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+    <!-- Social Share Modal -->
+    <div class="modal fade" id="socialShare" tabindex="-1" role="dialog" aria-labelledby="socialShareLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align:center">
+                    <h2>Share This Message</h2>
+                </div>
+                <div class="modal-body" style="text-align:center">
+                    <?php $lqd_share_url = get_permalink() ?>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $lqd_share_url ?>"><i class="fa
+                    fa-facebook" style="font-size:6rem; padding-right:2rem;"></i></a>
+                    <a href="https://twitter.com/share?url=<?php echo $lqd_share_url ?>&hashtags=liquidchurch"><i
+                        class="fa fa-twitter"
+                        style="font-size:6rem;padding-right: 2rem;"></i></a>
+                    <a href="mailto:?subject=Watch this message from Liquid Church&body=<?php echo $lqd_share_url ?>"><i
+                            class="fa fa-envelope" style="font-size:6rem;padding-right:2rem;"></i></a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="entry-content">
         <!-- Message Title and Image -->
         <div id="top-row-single-sermon" class="row">
@@ -42,7 +65,17 @@ $sermon = gc_get_sermon_post();
                     <?php else : ?>
                     <center><?php liquidchurch_post_thumbnail(); ?></center>
                     <?php endif; ?>
+
                 </div>
+            <div id="lqd-share-message" class="row" style="margin-top:10px;">
+                <div class="col-sm-1 col-sm-offset-9"></div>
+                <div class="col-sm-2">
+                    <a href="#" class="btn" data-toggle="modal" data-target="#socialShare"><span
+                            style="font-size:4rem;" class="fa
+                            fa-paper-plane"></span>&nbsp;&nbsp;<span
+                            style="float:right;font-size:2rem;line-height:4rem">Share</span></a>
+                </div>
+            </div>
             </div>
             <!--/ Message Title and Image -->
 
@@ -151,7 +184,6 @@ $sermon = gc_get_sermon_post();
             <!--/ Show Other Messages in Series -->
         </div>
     </div>
-
     <footer class="entry-footer">
         <?php liquidchurch_entry_meta(); ?>
         <?php
