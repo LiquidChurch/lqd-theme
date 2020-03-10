@@ -318,6 +318,14 @@ h1.gc-sermon-title {
     padding-right: 5px;
 }
 
+/**
+ * IMPORTANT: This is only necessary when JetPack responsive videos functionality is enabled, it ads 1.6em to bottom
+ * margin of video by default, so we negate most of that. If not present, recommend changing to: margin-top:10px;
+ */
+#lqd-share-message {
+    margin-top: -1.4em;
+}
+
 @media screen and (max-width: 800px) {
     .entry-content ul.gc-sermon-resources-list li.lc-list {
         width: 100%;

@@ -198,3 +198,14 @@
 		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 	} );
 } )( jQuery );
+
+function lqdCopyText() {
+	let copyText = document.getElementById("lqdCopyLinkInput");
+
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+
+	document.execCommand("copy");
+
+	document.getElementById("lqdCopyLinkClick").innerHTML= "Link Copied";
+}

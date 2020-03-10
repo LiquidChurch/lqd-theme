@@ -60,17 +60,6 @@ function liquidchurch_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Liquid Church 1.2
-	 */
-	/*add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-	) );*/
-
-	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -146,8 +135,7 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  *
  * @since 1.0.0
  */
-
- require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
+require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
 
 if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
 /**
@@ -208,6 +196,9 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
  * @since 1.0.0
  */
 function liquidchurch_scripts() {
+    $theme_path = plugin_dir_path( __FILE__ );
+    $lqd_style_css = filemtime( $theme_path . 'css/style.css' );
+    $lqd_messages_css = filemtime( $theme_path . 'css/lqd-messages.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), '0.1');
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
@@ -215,9 +206,9 @@ function liquidchurch_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7' );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
-	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.6.9' );
+	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
 	// Add Liquid Messages (GC-Sermons) CSS
-	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.5.2' );
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), $lqd_messages_css );
     // Only used on text2give page1
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );

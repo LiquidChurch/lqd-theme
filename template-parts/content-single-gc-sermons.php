@@ -25,13 +25,24 @@ $sermon = gc_get_sermon_post();
                 </div>
                 <div class="modal-body" style="text-align:center">
                     <?php $lqd_share_url = get_permalink() ?>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $lqd_share_url ?>"><i class="fa
-                    fa-facebook" style="font-size:6rem; padding-right:2rem;"></i></a>
-                    <a href="https://twitter.com/share?url=<?php echo $lqd_share_url ?>&hashtags=liquidchurch"><i
-                        class="fa fa-twitter"
-                        style="font-size:6rem;padding-right: 2rem;"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $lqd_share_url ?>"
+                       target="_blank"
+                       onclick="window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                        <i class="fa fa-facebook" style="font-size:5rem; margin-left:.5rem; margin-right:2rem;"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=<?php echo $lqd_share_url ?>&hashtags=liquidchurch"
+                       target="_blank"
+                       onclick="window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                        <i class="fa fa-twitter" style="font-size:5rem;margin-right: 2rem;"></i>
+                    </a>
                     <a href="mailto:?subject=Watch this message from Liquid Church&body=<?php echo $lqd_share_url ?>"><i
-                            class="fa fa-envelope" style="font-size:6rem;padding-right:2rem;"></i></a>
+                            class="fa fa-envelope" style="font-size:5rem;margin-right:.75rem;"></i></a>
+                    <br>
+                    <label name="Link to Current Message">
+                        <input id="lqdCopyLinkInput" style="margin-top: 25px;" type="text" value="<?php echo $lqd_share_url ?>">
+                    </label>
+                    <br>
+                    <span id="lqdCopyLinkClick" style="margin-top:15px;"><button class="btn" onclick="lqdCopyText()">Copy Link</button></span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal">Close</button>
@@ -67,13 +78,25 @@ $sermon = gc_get_sermon_post();
                     <?php endif; ?>
 
                 </div>
-            <div id="lqd-share-message" class="row" style="margin-top:10px;">
-                <div class="col-sm-1 col-sm-offset-9"></div>
-                <div class="col-sm-2">
-                    <a href="#" class="btn" data-toggle="modal" data-target="#socialShare"><span
-                            style="font-size:4rem;" class="fa
-                            fa-paper-plane"></span>&nbsp;&nbsp;<span
-                            style="float:right;font-size:2rem;line-height:4rem">Share</span></a>
+            <div id="lqd-share-message" class="row">
+                <div class="col-sm-12" style="text-align:center">
+                    <a href="/campus-communication-sign-up" class="btn">
+                        <span style="font-size:3rem;" class="fa fa-bell"></span>
+                        &nbsp;&nbsp;<span
+                            style="float:right;font-size:1.5rem;line-height:3rem;">Subscribe</span>
+                    </a>
+
+                    <a href="/give" class="btn">
+                        <span style="font-size:3rem;" class="fa fa-usd"></span>
+                        &nbsp;&nbsp;<span
+                            style="float:right;font-size:1.5rem;line-height:3rem;">Give</span>
+                    </a>
+
+                    <a href="#" class="btn" data-toggle="modal" data-target="#socialShare">
+                        <span style="font-size:3rem;" class="fa fa-paper-plane"></span>
+                        &nbsp;&nbsp;<span
+                            style="float:right;font-size:1.5rem;line-height:3rem">Share</span>
+                    </a>
                 </div>
             </div>
             </div>
