@@ -191,7 +191,7 @@ input[type="text"], select, textarea {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #555555;
+    /*color: #555555;*/
     background: #ffffff none;
     border: 1px solid #cccccc;
     border-radius: 4px;
@@ -209,6 +209,7 @@ input[type="text"]:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
+/**
 input[type="text"]::-moz-placeholder {
     color: #999999;
     opacity: 1;
@@ -221,6 +222,7 @@ input[type="text"]:-ms-input-placeholder {
 input[type="text"]::-webkit-input-placeholder {
     color: #999999;
 }
+**/
 
 textarea {
     height: 140px;
@@ -341,8 +343,13 @@ textarea {
     border-right: 1px solid #fff;
 }
 
+/* Override BS margin for Search */
+.menublock #search-form {
+    margin-right: 0;
+}
+
 .form-group .form-controlinput {
-    background: #dcddde;
+    background: #fff; /*#dcddde;*/
     border: medium none;
     border-radius: 20px;
     box-sizing: border-box;
