@@ -206,16 +206,24 @@
  */
 
 /**
- * Listen for Copy Text Click
+ * Add Event Listeners
  *
  * Android does not allow any inline JS, this means the onClick event won't work, use an eventListener to bypass this
  * limitation.
+ *
+ * The first listener handles copying text, the second listener handles refreshing the text to "Copy Link" if someone
+ * opens/closes/opens the modal share window.
  */
 document.addEventListener("DOMContentLoaded", function(event) {
 	document.getElementById("lqdCopyButton").addEventListener('click', lqdCopyText);
+	document.getElementById("lqdShareModalOpen").addEventListener('click', () => {
+		document.getElementById("lqdCopyButton").innerHTML = "Copy Link";
+	});
 });
 
-
+/**
+ * Gets the text to be copied and copies it, then updates the link text.
+ */
 function lqdCopyText() {
 	let copyText = document.getElementById("lqdCopyLinkInput");
 
@@ -224,5 +232,5 @@ function lqdCopyText() {
 
 	document.execCommand("copy");
 
-	document.getElementById("lqdCopyLinkClick").innerHTML= "Link Copied";
+	document.getElementById("lqdCopyButton").innerHTML= "Link Copied";
 }

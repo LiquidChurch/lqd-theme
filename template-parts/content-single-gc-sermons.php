@@ -49,7 +49,7 @@ $sermon = gc_get_sermon_post();
                                 <input id="lqdCopyLinkInput" style="margin-top: 25px;" type="text" value="<?php echo $lqd_share_url ?>">
                             </label>
                             <br>
-                            <span id="lqdCopyLinkClick" style="margin-top:15px;"><button id="lqdCopyButton" class="btn" onclick="lqdCopyText()">Copy Link</button></span>
+                            <span id="lqdCopyLinkClick" style="margin-top:15px;"><button id="lqdCopyButton" class="btn">Copy Link</button></span>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ $sermon = gc_get_sermon_post();
                         &nbsp;&nbsp;<span style="float:right;font-size:1.5rem;line-height:3rem;">Give</span>
                     </a>
 
-                    <a href="#" class="btn" data-toggle="modal" data-target="#socialShare">
+                    <a href="#" class="btn" data-toggle="modal" data-target="#socialShare" id="lqdShareModalOpen">
                         <span style="font-size:3rem;" class="fa fa-paper-plane"></span>
                         &nbsp;&nbsp;<span style="float:right;font-size:1.5rem;line-height:3rem">Share</span>
                     </a>
