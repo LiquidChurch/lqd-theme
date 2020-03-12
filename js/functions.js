@@ -199,6 +199,23 @@
 	} );
 } )( jQuery );
 
+/**
+ * Liquid Church Theme - Single Message: Share: Copy Link
+ *
+ * When a visitor clicks on copy link from the social share modal for an individual message, copy the text.
+ */
+
+/**
+ * Listen for Copy Text Click
+ *
+ * Android does not allow any inline JS, this means the onClick event won't work, use an eventListener to bypass this
+ * limitation.
+ */
+document.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById("lqdCopyButton").addEventListener('click', lqdCopyText);
+});
+
+
 function lqdCopyText() {
 	let copyText = document.getElementById("lqdCopyLinkInput");
 

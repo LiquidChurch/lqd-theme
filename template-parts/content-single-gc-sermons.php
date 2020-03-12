@@ -49,7 +49,7 @@ $sermon = gc_get_sermon_post();
                                 <input id="lqdCopyLinkInput" style="margin-top: 25px;" type="text" value="<?php echo $lqd_share_url ?>">
                             </label>
                             <br>
-                            <span id="lqdCopyLinkClick" style="margin-top:15px;"><button class="btn" onclick="lqdCopyText()">Copy Link</button></span>
+                            <span id="lqdCopyLinkClick" style="margin-top:15px;"><button id="lqdCopyButton" class="btn" onclick="lqdCopyText()">Copy Link</button></span>
                         </div>
                     </div>
                 </div>
