@@ -196,34 +196,37 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
  * @since 1.0.0
  */
 function liquidchurch_scripts() {
+    /** FONTS **/
     $theme_path = plugin_dir_path( __FILE__ );
     $lqd_style_css = filemtime( $theme_path . 'css/style.css' );
     $lqd_style_pages_css = filemtime( $theme_path . 'css/style-pages.css');
     $lqd_messages_css = filemtime( $theme_path . 'css/lqd-messages.css' );
-	// Add custom fonts.
+	// Avenir Fonts
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), '0.1');
+	// Google Fonts
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
     // Bootstrap
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', array(), '3.3.7' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', array(), '3.4.1' );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array() );
+	// Main CSS
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
+	// Page Specific + Button CSS
 	wp_enqueue_style( 'pages-style', get_template_directory_uri() . '/css/style-pages.css', array(), $lqd_style_pages_css );
-	// Add Liquid Messages (GC-Sermons) CSS
+	// Liquid Messages (GC-Sermons) CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), $lqd_messages_css );
-    // Only used on text2give page1
+    // Text2Give CSS
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
     }
-	// Theme stylesheet.
+	// Required WP CSS
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
-	// Load the Selectric stylesheet.
+	// Selectric CSS
 	wp_enqueue_style( 'selectric-css', get_template_directory_uri() . '/css/vendor/selectric.css', array( 'liquidchurch-style' ), '20170802' );
-	wp_style_add_data( 'liquidchurch-ie7', 'conditional', 'lt IE 8' );
-	// Load the html5 shiv.
+    // HTML5 Shiv for IE7 Compatibility
 	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/vendor/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'liquidchurch-html5', 'conditional', 'lt IE 9' );
-    // Load JS
+    // Skip Link Focus Fix
 	wp_enqueue_script( 'liquidchurch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
 	// If Single Page with Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -233,14 +236,14 @@ function liquidchurch_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'liquidchurch-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
-	// Add Script for Landing Page if Text2Give
+	// Text2Give JS
     if ( is_page( array ('give', 'set-new-recurring-gift', 'cancel-old-recurring-gift', 'text2give' ) ) ) {
 	    wp_enqueue_script( 'give-choose-campus-js', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', false );
     }
     // Main Liquid Church JavaScript
-    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
+    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20200313', true );
 	// Bootstrap JavaScript
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20160725', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20190313', true );
 	// Selectric JavaScript
 	wp_enqueue_script( 'selectric', get_template_directory_uri() . '/js/vendor/jquery.selectric.js', array( 'jquery' ), '20170802', true );
     // Localization

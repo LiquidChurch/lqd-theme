@@ -214,11 +214,14 @@
  * The first listener handles copying text, the second listener handles refreshing the text to "Copy Link" if someone
  * opens/closes/opens the modal share window.
  */
-document.addEventListener("DOMContentLoaded", function(event) {
-	document.getElementById("lqdCopyButton").addEventListener('click', lqdCopyText);
-	document.getElementById("lqdShareModalOpen").addEventListener('click', () => {
-		document.getElementById("lqdCopyButton").innerHTML = "Copy Link";
-	});
+document.addEventListener("DOMContentLoaded", function() {
+	let lqdCopyButton = document.getElementById("lqdCopyButton");
+	if (lqdCopyButton) {
+		document.getElementById("lqdCopyButton").addEventListener('click', lqdCopyText);
+		document.getElementById("lqdShareModalOpen").addEventListener('click', () => {
+			document.getElementById("lqdCopyButton").innerHTML = "Copy Link";
+		});
+	}
 });
 
 /**
