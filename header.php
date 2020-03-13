@@ -51,14 +51,15 @@
                 </div>
                     </div>
                     <div class="lqd-header-locations col-xs-6 col-sm-6 col-md-3 display-flex">
-                        <div class="location-block">
                             <?php if ( has_nav_menu( 'locations' ) ) : ?>
                                 <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'locations',
                                     'menu'           => 'Locations Menu',
-                                    'walker'         => new Walker_Nav_Menu_Dropdown(),
-                                    'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
+                                    'container'      => 'div',
+                                    'fallback_cb'    => false,
+                                    'depth'          => 2,
+                                    'walker'         => new WP_Bootstrap_Navwalker(),
                                     ) );
                                 else :
                                     ?>
@@ -71,7 +72,6 @@
                                         </form>
                                     </div>
                                 <?php endif; ?>
-                        </div>
                     </div>
                     <div class="lqd-header-church-online col-xs-6 col-sm-6 col-md-2 col-md-offset-3 display-flex">
                         <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church

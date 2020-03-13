@@ -13,7 +13,7 @@
 <!-- Footer Area start -->
 <div class="container footer_section">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-xs-12 col-md-8">
             <ul class="sectionleftul">
                 <?php
                 if(is_active_sidebar('footer-contact-us')){
@@ -25,7 +25,7 @@
                 } ?>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4">
             <ul class="footer_social">
                 <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
                     <li>
