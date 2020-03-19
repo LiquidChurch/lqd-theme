@@ -8,7 +8,11 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 /**
@@ -16,7 +20,11 @@
  *
  * Switches to the default theme.
  *
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 function liquidchurch_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME, WP_DEFAULT_THEME );
@@ -33,7 +41,11 @@ add_action( 'after_switch_theme', 'liquidchurch_switch_theme' );
  * Prints an update nag after an unsuccessful attempt to switch to
  * Liquid Church on WordPress versions prior to 4.4.
  *
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  *
  * @global string $wp_version WordPress version.
  */
@@ -45,7 +57,11 @@ function liquidchurch_upgrade_notice() {
 /**
  * Prevents the Customizer from being loaded on WordPress versions prior to 4.4.
  *
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  *
  * @global string $wp_version WordPress version.
  */
@@ -59,7 +75,11 @@ add_action( 'load-customize.php', 'liquidchurch_customize' );
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.4.
  *
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  *
  * @global string $wp_version WordPress version.
  */

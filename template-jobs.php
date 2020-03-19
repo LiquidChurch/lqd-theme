@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: Jobs Template
+=======
+ * Template Name: Jobs
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  *
  * The template for displaying pages
  *
@@ -10,7 +14,11 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 get_header(); ?>
@@ -36,8 +44,20 @@ get_header(); ?>
         ?>
 
     </main><!-- .site-main -->
+<<<<<<< HEAD
+=======
+    <?php if (! is_front_page() ) { ?>
+        <?php //get_sidebar( 'content-bottom' ); ?>
+    <?php } ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 
 
 </div><!-- .content-area -->
 
+<<<<<<< HEAD
+=======
+<?php if (! is_front_page() ) { ?>
+    <?php //get_sidebar(); ?>
+<?php } ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <?php get_footer(); ?>

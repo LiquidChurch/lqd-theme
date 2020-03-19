@@ -1,12 +1,19 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: WP Job Manager Single Job Listing Template
  *
+=======
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  * The template for displaying WP Job Manager pages.
  *
  * @package WordPress
  * @subpackage Liquid_Church
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 get_header();
@@ -50,6 +57,15 @@ add_theme_support( 'job-manager-templates' );
 		?>
 
 	</main><!-- .site-main -->
+<<<<<<< HEAD
 </div><!-- .content-area -->
 
+=======
+
+	<?php //get_sidebar( 'content-bottom' ); ?>
+
+</div><!-- .content-area -->
+
+<?php // get_sidebar(); ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <?php get_footer(); ?>

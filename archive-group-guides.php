@@ -4,9 +4,24 @@
  *
  * The template for displaying archive pages
  *
+<<<<<<< HEAD
  * @package WordPress
  * @subpackage Liquid_Church
  * @since 1.0.0
+=======
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (Category archives), author.php (Author archives), etc.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Liquid_Church
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 get_header(); ?>

@@ -1,5 +1,6 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: Search Messages Template
  *
  * The template for displaying search messages
@@ -7,6 +8,18 @@
  * @package WordPress
  * @subpackage Liquid_Church
  * @since 1.0.0
+=======
+ * Template Name: Search Messages
+ * The template for displaying search messages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages and that
+ * other "pages" on your WordPress site will use a different template.
+ *
+ * @package WordPress
+ * @subpackage Liquid_Church
+ * @since Liquid Church 1.4
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 get_header(); ?>
@@ -32,6 +45,19 @@ get_header(); ?>
 		?>
 
 	</main><!-- .site-main -->
+<<<<<<< HEAD
 </div><!-- .content-area -->
 
+=======
+<?php if (! is_front_page() ) { ?>
+	<?php //get_sidebar( 'content-bottom' ); ?>
+<?php } ?>
+
+
+</div><!-- .content-area -->
+
+<?php if (! is_front_page() ) { ?>
+<?php //get_sidebar(); ?>
+<?php } ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <?php get_footer(); ?>

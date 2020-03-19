@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: Series Template
+=======
+ * Template Name: Series
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  * The template for displaying series
  *
  * @package WordPress
@@ -31,6 +35,19 @@ get_header(); ?>
 		?>
 
 	</main><!-- .site-main -->
+<<<<<<< HEAD
 </div><!-- .content-area -->
 
+=======
+<?php if (! is_front_page() ) { ?>
+	<?php //get_sidebar( 'content-bottom' ); ?>
+<?php } ?>
+
+
+</div><!-- .content-area -->
+
+<?php if (! is_front_page() ) { ?>
+<?php //get_sidebar(); ?>
+<?php } ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <?php get_footer(); ?>

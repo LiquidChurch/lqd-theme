@@ -4,7 +4,11 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
+<<<<<<< HEAD
  * @since 1.0.0
+=======
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 
 get_header(); ?>
@@ -51,4 +55,8 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
+<<<<<<< HEAD
+=======
+<?php // get_sidebar(); ?>
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <?php get_footer(); ?>

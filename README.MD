@@ -8,6 +8,7 @@ We have several other open source projects available on GitHub including a messa
 -blanks notes plugin. You can view all of our open source projects on our [main GitHub
  page](https://github.com/liquidchurch/).
 
+<<<<<<< HEAD
 # Fonts
 The primary font used in this theme is Avenir Next. This font is not included with the theme but can be purchased
 from fonts.com.
@@ -20,6 +21,11 @@ This theme  is made available to all under the GPLv2+ licenses with the exclusio
  logo (please use your own logo :)) and those created by a third party with their own licensing.
  No grant is given to the logo, name, or trademarks owned/associated with Liquid Church or any other entity referenced.
 
+=======
+# Licensing
+This theme  is made available to all under the GPLv2+ licenses with the exclusion of image files containing the Liquid
+ logo (please use your own logo :)). No grant is given to the logo, name, or trademarks owned/associated with Liquid Church.
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 
 # Theme History
 We don't have a detailed release history up to this point but will begin providing one going forward. Below are the

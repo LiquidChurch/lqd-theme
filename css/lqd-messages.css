@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 /* Liquid Messages Related Theming */
 
 /* Search */
+=======
+/***** gc sermon search *****/
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 .search-field {
     width: 60%;
     background: #e2e2e2;
@@ -140,7 +144,11 @@ a.home-btn {
     width: 100%;
     display: inline-block;
     margin-right: 20px;
+<<<<<<< HEAD
     margin-bottom: 0;
+=======
+    margin-bottom: 0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 }
 
 .entry-content ul.gc-sermon-resources-list ul.single-item li.gc-sermon-resources-list-item {
@@ -195,9 +203,15 @@ h1.gc-sermon-title {
 }
 
 #mav-entry li.gc-item.gc-thumb {
+<<<<<<< HEAD
     padding-top: 0;
     padding-bottom: 0;
     margin-bottom: 0;
+=======
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 }
 
 .page.mav-body {
@@ -205,7 +219,11 @@ h1.gc-sermon-title {
 }
 
 #mav-entry {
+<<<<<<< HEAD
     padding: 0;
+=======
+    padding: 0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
     font-size: 1.5em;
 }
 
@@ -244,7 +262,11 @@ h1.gc-sermon-title {
 #mav-single #message-tags,
 #mav-single #message-date,
 #mav-single #message-summary {
+<<<<<<< HEAD
     padding-bottom: 0;
+=======
+    padding-bottom: 0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
     margin-bottom: 4px;
 }
 
@@ -265,8 +287,13 @@ h1.gc-sermon-title {
 #mav-single div.row.single-sermon-title {
     padding-bottom: 1px;
     margin-bottom: 1px;
+<<<<<<< HEAD
     padding-top:0;
     margin-top:0;
+=======
+    padding-top:0px;
+    margin-top:0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 }
 
 #mav-single #message-resource div.col-sm-3 {
@@ -284,6 +311,7 @@ h1.gc-sermon-title {
 }
 
 #mav-single #message-summary {
+<<<<<<< HEAD
     padding-bottom:0;
     margin-bottom:0;
 }
@@ -298,6 +326,22 @@ h1.gc-sermon-title {
 
 #mav-single li.lc-list {
     margin-bottom:0;
+=======
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+
+#mav-single #message-others h1 {
+    margin-top:0px;
+}
+
+#mav-single li.lc-head {
+    margin-bottom:0px;
+}
+
+#mav-single li.lc-list {
+    margin-bottom:0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 }
 
 #mav-single .gc-sermon-resources-list-item {
@@ -305,8 +349,13 @@ h1.gc-sermon-title {
 }
 
 #mav-single .gc-item.gc-thumb {
+<<<<<<< HEAD
     padding:0;
     margin-bottom:0;
+=======
+    padding:0px;
+    margin-bottom:0px;
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 }
 
 .entry-content.sermon-series-desc.mav-series > p {
@@ -318,6 +367,7 @@ h1.gc-sermon-title {
     padding-right: 5px;
 }
 
+<<<<<<< HEAD
 #socialShare .fa {
     font-size: 5rem;
 }
@@ -332,8 +382,14 @@ h1.gc-sermon-title {
     padding-right: 0;
 }
 
+=======
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 @media screen and (max-width: 800px) {
     .entry-content ul.gc-sermon-resources-list li.lc-list {
         width: 100%;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461

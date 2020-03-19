@@ -3,8 +3,13 @@
  * The template part for displaying a message that posts cannot be found
   *
  * @package WordPress
+<<<<<<< HEAD
  * @subpackage Liquid_Church
  * @since 1.0.0
+=======
+ * @subpackage Liquid_Churchn
+ * @since Liquid Church 1.0
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 ?>
 <!-- .entry-content -->
@@ -32,4 +37,8 @@
 			<?php endif; ?>
 		</div><!-- .page-content -->
 	</section><!-- .no-results -->
+<<<<<<< HEAD
 </div><!-- .entry-content -->
+=======
+</div><!-- .entry-content -->
+>>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
