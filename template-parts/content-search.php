@@ -3,13 +3,8 @@
  * The template part for displaying results in search pages
  *
  * @package WordPress
-<<<<<<< HEAD
  * @subpackage Liquid_Church
  * @since 1.0.0
-=======
- * @subpackage Liquid_Churchn
- * @since Liquid Church 1.0
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 ?>
 

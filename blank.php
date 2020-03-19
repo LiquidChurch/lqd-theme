@@ -1,6 +1,5 @@
 <?php
 /**
-<<<<<<< HEAD
  * Template Name: Blank Page Template
  *
  * Provides a minimal template that allows the content of a post to be the entire post. This is used for landing pages.
@@ -8,13 +7,6 @@
  * @package WordPress
  * @subpackage Liquid_Church
  * @since 1.0.0
-=======
- * Template Name: Landing
- *
- * @package WordPress
- * @subpackage Liquid_Church
- * @since LiquidChurch 1.0
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 ?>
 <!DOCTYPE html>
@@ -27,10 +19,6 @@
         <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
             <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php endif; ?>
-<<<<<<< HEAD
-=======
-        <!-- faveicon -->
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
         <?php wp_head(); ?>
     </head>
     <!-- End Header -->
@@ -53,8 +41,4 @@
         </div><!-- .content-area -->
      </div>
     </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461

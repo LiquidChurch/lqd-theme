@@ -3,13 +3,8 @@
  * The template part for displaying an Author biography
  *
  * @package WordPress
-<<<<<<< HEAD
  * @subpackage Liquid_Church
  * @since 1.0.0
-=======
- * @subpackage Liquid_Churchn
- * @since Liquid Church 1.0
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 ?>
 
@@ -19,11 +14,7 @@
 		/**
 		 * Filter the Liquid Church author bio avatar size.
 		 *
-<<<<<<< HEAD
 		 * @since 1.0.0
-=======
-		 * @since Liquid Church 1.0
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 		 *
 		 * @param int $size The avatar height and width size in pixels.
 		 */

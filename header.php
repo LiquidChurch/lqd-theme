@@ -6,15 +6,8 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
-<<<<<<< HEAD
  * @since 1.0.0
  */
-=======
- * @since 1.0
- */
-
-
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
@@ -81,21 +74,11 @@
                         </div>
                     </div>
                     <div class="lqd-header-church-online col-xs-6 col-sm-6 col-md-2 col-md-offset-3 display-flex">
-<<<<<<< HEAD
                         <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church Online</a>
-=======
-                        <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church
-                            Online</a>
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-    </div>
-</div>
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <div class="menublock">
     <nav class="navbar navbar-default">
         <!-- Brand and toggle get grouped for better mobile display -->

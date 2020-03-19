@@ -198,7 +198,6 @@
 		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 	} );
 } )( jQuery );
-<<<<<<< HEAD
 
 /**
  * Liquid Church Theme - Single Message: Share: Copy Link
@@ -238,5 +237,3 @@ function lqdCopyText() {
 
 	document.getElementById("lqdCopyButton").innerHTML= "Link Copied";
 }
-=======
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461

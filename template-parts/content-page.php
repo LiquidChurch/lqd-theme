@@ -4,11 +4,7 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
-<<<<<<< HEAD
  * @since 1.0.0
-=======
- * @since Liquid Church 1.0
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
  */
 ?>
 
@@ -18,11 +14,7 @@
 	</header><!-- .entry-header -->
 
 	<?php liquidchurch_post_thumbnail(); ?>
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> b8292e0760874892f13b881e19f3c290e16c6461
 <!-- .entry-content -->
 	<div class="entry-content">
 		<?php
