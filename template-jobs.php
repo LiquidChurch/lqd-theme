@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Jobs
+ * Template Name: Jobs Template
  *
  * The template for displaying pages
  *
@@ -10,7 +10,7 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -36,14 +36,8 @@ get_header(); ?>
         ?>
 
     </main><!-- .site-main -->
-    <?php if (! is_front_page() ) { ?>
-        <?php //get_sidebar( 'content-bottom' ); ?>
-    <?php } ?>
 
 
 </div><!-- .content-area -->
 
-<?php if (! is_front_page() ) { ?>
-    <?php //get_sidebar(); ?>
-<?php } ?>
 <?php get_footer(); ?>

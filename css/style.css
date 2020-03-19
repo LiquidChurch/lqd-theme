@@ -1,9 +1,3 @@
-/*
-	blue_btn  	=	for blue Button
-	orange_btn 	=	for orange Button
-					span inside blue btn class the content will be bigger
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -45,18 +39,13 @@ img {
     outline: none;
 }
 
+/* Clearfixes */
 .clearfix:after, .clearfix:before {
     display: table;
     content: "";
     visibility: hidden;
     font-size: 0;
     height: auto;
-    clear: both;
-}
-
-.clearfix:before {
-    display: table;
-    content: "";
     clear: both;
 }
 
@@ -85,6 +74,7 @@ img {
     vertical-align: middle;
 }
 
+/** HEADERS **/
 h1, h2, h3, h4, h5, h6 {
     font-family: "Avenir Next LT Pro Demi", sans-serif;
     color: #14a7e0;
@@ -93,102 +83,19 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.2rem 0 1.5rem;
 }
 
-.blue_btn {
-    color: #0074c8;
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: bold;
-    font-variant: normal;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    padding: 10px 20px;
-    margin: 10px 0 0 0;
-    border: 4px solid rgb(0, 86, 139);
-    -webkit-border-radius: 42px;
-    -moz-border-radius: 42px;
-    border-radius: 42px;
-    display: inline-block;
-    top: auto;
-    background: #fff;
-    position: relative;
-}
-
-.blue_btn > span {
-    display: block;
-    font-size: 40px;
-    line-height: 40px;
-    color: #f08a41;
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
-}
-
-.blue_btn:hover, .blue_btn:focus {
-    color: #14a7e0;
-    border-color: #f08a41;
-    text-decoration: none;
-    outline: none;
-}
-
-.blue_btn:hover span, .blue_btn:focus span {
-    color: rgb(0, 86, 139);
-}
-
-.orange_btn {
-    color: #f08a41;
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: bold;
-    font-variant: normal;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    padding: 10px 20px;
-    margin: 10px 0 0 0;
-    border: 4px solid #f08a41;
-    -webkit-border-radius: 42px;
-    -moz-border-radius: 42px;
-    border-radius: 42px;
-    display: inline-block;
-    top: auto;
-    background: #fff;
-    position: relative;
-}
-
-.orange_btn > span {
-    display: block;
-    font-size: 40px;
-    line-height: 40px;
-    color: rgb(0, 86, 139);
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
-}
-
-.orange_btn:hover, .orange_btn:focus {
-    color: rgb(0, 86, 139);
-    border-color: rgb(0, 86, 139);
-    text-decoration: none;
-    outline: none;
-}
-
-.orange_btn:hover span, .orange_btn:focus span {
-    color: #f08a41;
-}
-
 h1 {
-    font-size: 50px;
+    font-size: 3.125rem; /* 50 px */
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 2.5rem; /* 40 px */
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 2.4rem; /* 30 px */
 }
 
+/** FORMS **/
 input[type="text"], select, textarea {
     display: block;
     width: 100%;
@@ -196,7 +103,6 @@ input[type="text"], select, textarea {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #555555;
     background: #ffffff none;
     border: 1px solid #cccccc;
     border-radius: 4px;
@@ -212,19 +118,6 @@ input[type="text"]:focus {
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-
-input[type="text"]::-moz-placeholder {
-    color: #999999;
-    opacity: 1;
-}
-
-input[type="text"]:-ms-input-placeholder {
-    color: #999999;
-}
-
-input[type="text"]::-webkit-input-placeholder {
-    color: #999999;
 }
 
 textarea {
@@ -247,12 +140,12 @@ textarea {
 
 .logo {
     float: left;
-    margin-left: -22px;
+    /*margin-left: -22px;*/
 }
 
 .selected {
     float: left;
-    margin: 0px;
+    margin: 0;
     width: 27%;
 }
 
@@ -268,8 +161,9 @@ textarea {
     width: 100%;
 }
 
+/* Add Flexbox to Some Rows */
 .row.display-flex {
- display: flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -278,22 +172,129 @@ textarea {
     flex-direction: column;
 }
 
+.site-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.site-description {
+    margin-top: 15px;
+}
+
+/* Location Dropdown */
+.location-block .selectric {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid #337ab7;
+    border-radius: 15px !important;
+    height: 28px !important;
+    margin-top: 6px !important;
+    z-index: 1;
+}
+
+
+.location-block .selectric .label {
+    color: #14a7e0;
+    font-family: 'Avenir Next LT Pro', sans-serif !important;
+    margin: 0 10px;
+    margin-top: 1px;
+    font-size: 16px;
+    font-weight: bold !important;
+    height: 38px;
+    line-height: 16px;
+    padding: 3px 0 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.location-block .selectric .button {
+    right: 11px;
+    top: 8px;
+    color: #4c9fc7;
+}
+
+.location-block .selectric-hover .selectric {
+    border-color: #337ab7;
+}
+
+.location-block .selectric-hover .selectric .button {
+    color: #0074c8;
+}
+
+.location-block .selectric-hover .selectric .button {
+    border-top-color: #4c9fc7;
+}
+
+.location-block .selectric-open .selectric {
+    border-color: #14a7e0;
+}
+
+.location-block .selectric-hide-select select {
+    display: none;
+}
+
+.location-block .selectric-items {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: -moz-use-text-color #14a7e0 #14a7e0;
+    border-image: none;
+    border-style: none solid solid;
+    border-width: medium 2px 2px;
+    box-shadow: 0 0 10px -6px;
+    left: 0;
+    margin: -11px 0;
+    padding: 10px 0;
+    z-index: 0;
+}
+
+.location-block .selectric-items li {
+    color: #4c9fc7;
+    display: block;
+    font-family: 'Avenir Next LT Pro', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    text-transform: uppercase;
+}
+
+.location-block .selectric-items li.selected {
+    background: #EFEFEF;
+    display: none;
+}
+
+.location-block .selectric-items li:hover {
+    color: #14a7e0;
+}
+
+/* Church Online Button */
 .lqd-header-church-online-btn {
-    border-color: #337ab7; /* Match Locations Border */
+    border: 2px solid red; /* #337ab7; /* Match Locations Border */
+    background: #fff none repeat scroll 0 0;
     margin-top: 6px; /* Match height of Locations */
     line-height: 1.3rem; /* Center our text in the button */
     font-size: 1.6rem; /* Match Locations */
-    border-width: 2px; /* Match Locations */
     white-space: nowrap; /* Don't allow text to wrap onto second line */
     height: 28px; /* Match Locations */
     color: #14a7e0;
     border-radius: 42px;
-    font-family: 'Avenir Next LT Pro', sans-serif;
+    font-family: "Avenir Next LT Pro", sans-serif;
     font-weight:700;
     text-transform: uppercase;
-    margin-right:-35px;
+    z-index: 1;
 }
 
+a.lqd-header-church-online-btn:hover {
+    border-color: #14a7e0 !important;
+    background-color: red;
+    color: white;
+}
+
+/* Header: Bottom: Menu */
 .menublock {
     margin: 0;
     background-color: #14a7e0
@@ -327,14 +328,11 @@ textarea {
     text-transform: uppercase;
 }
 
-.menublock li.current-menu-item a, .menublock li a:hover {
-    background-color: #14a7e0 !important;
-}
-
 .menublock nav {
-    margin: 0px;
+    margin: 0;
 }
 
+/* Menu Item Separators */
 .menublock ul li:first-child {
     border: medium none;
 }
@@ -343,8 +341,14 @@ textarea {
     border-right: 1px solid #fff;
 }
 
+/* Override BS margin for Search */
+.menublock #search-form {
+    margin-right: 0;
+}
+
+/** FORMS **/
 .form-group .form-controlinput {
-    background: #dcddde;
+    background: #fff;
     border: medium none;
     border-radius: 20px;
     box-sizing: border-box;
@@ -362,6 +366,7 @@ textarea {
     margin-top: -2px;
 }
 
+/* Header: Bottom: Menu: Search */
 .fa-searchicon {
     position: absolute;
     right: 10px;
@@ -370,16 +375,13 @@ textarea {
     cursor: pointer;
 }
 
+/* Footer: Top */
 .footer_section {
     background: #14a7e0;
     padding: 18px 0;
 }
 
-.sectionleftul {
-    float: left;
-    margin-left: -22px;
-}
-
+/* Footer: Top: Left */
 .sectionleftul li {
     float: left;
     padding-right: 35px;
@@ -395,9 +397,24 @@ textarea {
     font-weight: normal;
 }
 
+.sectionleftul li ul li a {
+    color: #FFF;
+    margin: 7px 0 0 11px;
+    font-size: 20px;
+}
+
+/* Ensures size of Top: Footer is not too wide */
+.sectionleftul .menu_list ul li {
+    padding: 0;
+}
+
+.sectionleftul .menu_list li {
+    min-width: 10vw;
+}
+
+/* Footer: Top: Right */
 .footer_social {
     float: right;
-    margin: 0 -32px;
     padding: 0;
 }
 
@@ -440,13 +457,10 @@ textarea {
     display: inline-block;
 }
 
+/* Footer: Bottom */
 .footer_container {
     background-color: #dcddde;
-    padding: 15px 0;
-}
-
-.futr_menublock {
-    margin: 0 -32px 0 -30px;
+    padding: 15px .5vw;
 }
 
 .inner_block {
@@ -465,14 +479,12 @@ textarea {
     text-transform: uppercase;
 }
 
-.menu_list {
-    margin: 0;
+.footer_menu_widget_else a {
+    color: #14a7e0;
+    text-decoration: none;
 }
 
-.menu_list ul {
-    margin: 0;
-}
-
+/* General Menus */
 .menu_list ul li {
     display: block;
     padding: 0 0 24px;
@@ -490,15 +502,16 @@ textarea {
     text-decoration: none;
 }
 
+/* Entry Content */
 .entry-content {
     padding: 15px;
-    font-size: 24px;
+    font-size: 2.3rem;
     line-height: 135%;
     color: #333;
 }
 
 .entry-content p {
-    font-size: 24px;
+    font-size: 2.3rem;
     line-height: 135%;
     color: #333;
     margin-bottom: 15px;
@@ -507,16 +520,12 @@ textarea {
 }
 
 .entry-content .body-text p {
-    padding-left: 0px;
-}
-
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
-    padding: 0 30px;
-    display: inline-block;
+    padding-left: 0;
 }
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
     padding: 0 0;
+    display: inline-block;
 }
 
 .entry-content .search-form {
@@ -557,113 +566,26 @@ textarea {
     display: block;
 }
 
-.site-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.site-description {
-    margin-top: 15px;
-}
-
-.footer_menu_widget_else a {
-    color: #14a7e0;
-    text-decoration: none;
-}
-
-.sectionleftul li ul li a {
-    color: #FFF;
-    margin: 7px 0 0 11px;
-    font-size: 20px;
-}
-
-.sectionleftul .menu_list ul li {
-    padding: 0;
-}
-
-.sectionleftul {
-    margin-left: -41px;
-}
-
-.footer_social li:last-child {
-    margin-right: 0;
-}
-
-.logo {
-    margin-left: -31px !important;
-}
-
-.sectionleftul .menu_list li {
-    min-width: 205px;
-}
-
+/* >=1024px and <=1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
     .nav > li > a {
+        /* Controls how far in before the menu starts (e.g. New Here */
         padding-left: 28px;
-        padding-right: 28px;
-    }
-
-    .sectionleftul .menu_list li {
-        min-width: 172px;
     }
 }
 
+/* >=768px and <=1023px */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .selected {
-        margin: 8px 0 0 50px;
-        width: 40%;
-    }
-
     .nav > li > a {
         padding-left: 11px;
         padding-right: 12px;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 814px) {
-    .menublock li a {
-        font-size: 1.34rem;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .sectionleftul .menu_list li {
-        width: auto;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1023px) {
-    .sectionleftul .menu_list li {
-        min-width: 151px;
-    }
-
-    .sectionleftul .menu_list ul li:nth-child(2n) {
-        width: 160px !important;
-    }
-}
-
+/* <=1024px */
 @media (max-width: 1024px) {
-
-    .logo {
-        margin-left: auto;
-    }
-
     .footer_social {
         margin: 0 auto;
-    }
-
-    .footer_social > li:last-child {
-        margin-right: 0 !important;
-    }
-
-    .sectionleftul {
-        margin-left: auto;
-    }
-
-    .futr_menublock {
-        margin: 0px;
     }
 
     .lqd-header-logo {
@@ -674,18 +596,10 @@ textarea {
     .lqd-header-church-online-btn {
         margin-right:auto;
         width:100%;
-        font-size: 1.3rem;
-    }
-
-    .lqd-header-church-online-btn:hover {
-        color: #14a7e0;
-    }
-
-    .location-block .selectric .label {
-        font-size:1.3rem;
     }
 }
 
+/* >=768px */
 @media (min-width: 768px) {
     .navbar-collapse {
         padding-left: 0;
@@ -697,47 +611,21 @@ textarea {
         padding-left: 11px;
         padding-right: 11px;
     }
-
-    h1 {
-        font-size: 44px;
-    }
-
-    .entry-content p {
-        font-size: 20px;
-    }
-
 }
 
+/* <=767px */
 @media (max-width: 767px) {
-    .sectionleftul .menu_list ul li {
-        padding-bottom: 24px;
-    }
-
     .header_top {
         padding: 15px 0 7px;
-    }
-
-    .mid_innerleft {
-        margin-bottom: 10px;
     }
 
     .logo {
         text-align: center;
         float: none;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
-    .selected {
-        margin: 0px;
-        width: 92%;
-        text-align: center;
-        float: none;
-    }
-
-    .selected .custom-select {
-        width: 80%;
-    }
-
+    /* Header: Bottom: Menu */
     .menublock ul li {
         width: 100%;
         border: none;
@@ -748,8 +636,13 @@ textarea {
         box-shadow: none;
     }
 
+    /* Header: Bottom: Menu: Right */
     .form-group .form-controlinput {
         width: 100%;
+    }
+
+    .sectionleftul .menu_list ul li {
+        padding-bottom: 24px;
     }
 
     .navbar-toggle {
@@ -775,11 +668,13 @@ textarea {
         padding-right: 20px;
     }
 
+    /* Footer */
     .footer_container {
         background-color: #dcddde;
-        padding: 0px 27px 0 18px;
+        padding: 0 27px 0 18px;
     }
 
+    /* Footer: Top: Left */
     .sectionleftul {
         text-align: center;
         float: none;
@@ -789,9 +684,10 @@ textarea {
 
     .sectionleftul li {
         float: none;
-        padding-right: 0px;
+        padding-right: 0;
     }
 
+    /* Footer: Top: Right */
     .footer_social {
         display: block;
         float: none;
@@ -802,51 +698,27 @@ textarea {
 
     .footer_social li {
         display: inline;
-        margin-right: 10px;
         float: none;
     }
 
-    .footer_container .futr_menublock .col-xs-6 {
-        width: 100%;
-    }
-
-    .footer_container .futr_menublock {
-        text-align: center;
-    }
-
-    .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
-        padding-left: 0px;
-        padding-right: 0PX;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-
+    /* Entry Content */
     .entry-content p {
-        padding-left: 0px;
-        padding-right: 0PX;
-        font-size: 18px;
-
+        padding-left: 0;
+        padding-right: 0;
     }
 
+    /* Only place this occurs */
     .page-content .search-form {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
+    /* Normally 30px */
     .entry-content table {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
+    /* Only place this occurs */
     .search-form .screen-reader-text {
         font-size: 16px;
     }
@@ -869,6 +741,7 @@ textarea {
         text-align: center !important;
     }
 
+    /* Essential Grid */
     .esg-grid.esg-layout-even.esg-container {
         margin: 10px 0;
         padding: 0 !important;
@@ -878,268 +751,27 @@ textarea {
         width: 100% !important;
     }
 
-    .location-block {
-        float: none !important;
-        margin-left: 0 !important;
-        width: auto !important;
-    }
-
     .lqd-header-church-online-btn {
         margin-right: auto;
     }
 }
 
+/* <=479px */
 @media (max-width: 479px) {
-
     .sectionleft li a {
         padding-right: 15px;
         margin-bottom: 15px;
     }
 
-    .sectionleft .sectionleftul {
-        padding: 0;
-    }
-
-    .sectionleft {
-        width: 55%;
-    }
-
     .sectionleftul li:last-child a {
         margin: 0;
     }
+}
 
-    .sectionright {
-        margin-top: 5px;
+/* >=1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width:1280px;
+        width:1280px;
     }
-}
-
-@media (max-width: 319px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .entry-content p {
-        font-size: 14px;
-    }
-}
-
-.menublock li.current-menu-item a, .menublock li a:hover {
-    background-color: #14a7e0 !important;
-}
-
-.body-text /* For Text Body Content */
-{
-    max-width: 800px !important;
-    margin: auto !important;
-}
-
-/* Responsive Videos, when not using FitVid. */
-
-.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-    overflow: hidden;
-}
-
-.videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Responsive Google Maps */
-.mapWrapper {
-    position: relative;
-    padding-bottom: 90%;
-    height: 0;
-    overflow: hidden;
-}
-
-.mapWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Campus Pages */
-/* Times */
-.service-times {
-    background-color: #e6e8e5;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    padding: 10px 0 10px 0;
-    margin-bottom: 10px;
-}
-
-.service-times:first-child {
-    font-size: 5rem !important;
-}
-
-.ssat {
-    font-size: 3rem;
-    padding-bottom: .2rem;
-}
-
-.sstime {
-    font-size: 4rem;
-}
-
-/* Campus Addresses */
-.campus-addresses {
-    float: right;
-    max-width: 48%;
-    padding-right: 5%;
-}
-
-.campus-addresses h2 {
-    padding-left: 0px;
-}
-
-.campus-addresses p {
-    padding-left: 0px;
-}
-
-/* Campus GPS Address */
-.campus-gps-address {
-    clear: both;
-}
-
-/* Mailing Address */
-.campus-mailing-address {
-    margin-top: 20px;
-}
-
-.campus-get-directions {
-    padding: 0 30px;
-}
-
-/* Get Directions */
-.campus-get-directions input {
-    display: inline;
-    max-width: 60%;
-}
-
-/* Campus Staff Header */
-.campus-staff-header {
-    background-color: #14a7e0;
-    color: #ffffff;
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 20px 0 20px 0;
-    clear: both;
-    margin: 30px 0;
-}
-
-/* Campus Staff Box */
-.campus-staff {
-    display: inline-block;
-    width: 100%;
-}
-
-/* Styling for individual staff box */
-.individual-staff {
-    clear: both;
-    max-width: 80%;
-    margin: auto auto 10px auto;
-}
-
-.individual-staff hr {
-    display: inline-block;
-    width: 100%;
-    margin: 10px auto 0 auto;
-    padding: auto 10px auto 10px;
-}
-
-.individual-staff span {
-    font-size: 2rem;
-    padding-left: 20%;
-}
-
-.individual-staff img {
-    float: left;
-}
-
-/* Location Dropdown */
-.location-block {
-    float: left;
-   /* margin-left: 177px; */
-   /* width: 32%; */
-}
-
-.location-block .selectric .label {
-    font-family: 'Avenir Next LT Pro', sans-serif !important;
-    margin-top: 1px;
-}
-
-/* Pastor Bios Styling */
-.pastors-bios h2 {
-    margin-bottom: 0;
-}
-
-.pastors-bios h3 {
-    margin-bottom: 0;
-}
-.searchandfilter ul li
-{
-    float:left;
-}
-.job_description ul
-{
-    padding-left:40px;
-}
-.lqd-no-bullets li {
-    list-style: none;
-}
-/* Group Guide styling */
-.group-guides h1.entry-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-family: "arial";
-    padding-left: 0px;
-    text-transform:capitalize;
-}
-.group-guides-template-default h1  {
-    padding-left: 0px;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-family: "arial";
-}
-.group-guides p {
-    padding-left:0px;
-    font-size: 18px;
-}
-.group-guides ul li {
-    font-size: 18px;}
-.group-guides ol li {
-    font-size: 18px;}
-
-/* Customize Church Online Header Button
- * Note: This is mainly so that it matches the Church Locations Dropdown
- */
-.lqd-header-church-online-btn {
-    border-color: #337ab7;
-    border-width: 2px;
-    color: #14a7e0;
-    white-space: nowrap;
-    margin-top: 6px;
-    line-height: .5rem;
-    font-size: 16px;
-    height: 28px;
 }

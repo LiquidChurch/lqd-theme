@@ -22,7 +22,7 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 /**
@@ -42,7 +42,7 @@ if ( ! function_exists( 'liquidchurch_setup' ) ) :
  *
  * Create your own liquidchurch_setup() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_setup() {
 
@@ -58,17 +58,6 @@ function liquidchurch_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Liquid Church 1.2
-	 */
-	/*add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
-		'flex-height' => true,
-	) );*/
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -132,7 +121,7 @@ add_action( 'after_setup_theme', 'liquidchurch_setup' );
  *
  * @global int $content_width
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'liquidchurch_content_width', 840 );
@@ -144,10 +133,9 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  *
  * @link https://developer.wordpress.org/reference/functions/register_sidebar/
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
-
- require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
+require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
 
 if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
 /**
@@ -155,7 +143,7 @@ if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
  *
  * Create your own liquidchurch_fonts_url() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return string Google fonts URL for the theme.
  */
@@ -195,7 +183,7 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -205,40 +193,40 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
 /**
  * Enqueues scripts and styles.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_scripts() {
-	// Add custom fonts.
+    /** FONTS **/
+    $theme_path = plugin_dir_path( __FILE__ );
+    $lqd_style_css = filemtime( $theme_path . 'css/style.css' );
+    $lqd_style_pages_css = filemtime( $theme_path . 'css/style-pages.css');
+    $lqd_messages_css = filemtime( $theme_path . 'css/lqd-messages.css' );
+	// Avenir Fonts
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), '0.1');
+	// Google Fonts
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
     // Bootstrap
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', array(), '3.4.1' );
 	// Font Awesome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
-	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.6.8' );
-	// Add Liquid Messages (GC-Sermons) CSS
-	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), '0.2.5.2' );
-    // Only used on text2give page1
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array() );
+	// Main CSS
+	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
+	// Page Specific + Button CSS
+	wp_enqueue_style( 'pages-style', get_template_directory_uri() . '/css/style-pages.css', array(), $lqd_style_pages_css );
+	// Liquid Messages (GC-Sermons) CSS
+	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), $lqd_messages_css );
+    // Text2Give CSS
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
     }
-	// Theme stylesheet.
+	// Required WP CSS
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie', get_template_directory_uri() . '/css/ie.css', array( 'liquidchurch-style' ), '20160412' );
-	wp_style_add_data( 'liquidchurch-ie', 'conditional', 'lt IE 10' );
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'liquidchurch-style' ), '20160412' );
-	wp_style_add_data( 'liquidchurch-ie8', 'conditional', 'lt IE 9' );
-	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'liquidchurch-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'liquidchurch-style' ), '20160412' );
-	// Load the Selectric stylesheet.
-	wp_enqueue_style( 'selectric-css', get_template_directory_uri() . '/css/selectric.css', array( 'liquidchurch-style' ), '20160412' );
-	wp_style_add_data( 'liquidchurch-ie7', 'conditional', 'lt IE 8' );
-	// Load the html5 shiv.
-	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
+	// Selectric CSS
+	wp_enqueue_style( 'selectric-css', get_template_directory_uri() . '/css/vendor/selectric.css', array( 'liquidchurch-style' ), '20170802' );
+    // HTML5 Shiv for IE7 Compatibility
+	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/vendor/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'liquidchurch-html5', 'conditional', 'lt IE 9' );
-    // Load JS
+    // Skip Link Focus Fix
 	wp_enqueue_script( 'liquidchurch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
 	// If Single Page with Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -248,16 +236,16 @@ function liquidchurch_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'liquidchurch-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
-	// Add Script for Landing Page if Text2Give
+	// Text2Give JS
     if ( is_page( array ('give', 'set-new-recurring-gift', 'cancel-old-recurring-gift', 'text2give' ) ) ) {
 	    wp_enqueue_script( 'give-choose-campus-js', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', false );
     }
     // Main Liquid Church JavaScript
-    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160412', true );
+    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20200313', true );
 	// Bootstrap JavaScript
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20160725', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20190313', true );
 	// Selectric JavaScript
-	wp_enqueue_script( 'selectric', get_template_directory_uri() . '/js/jquery.selectric.js', array( 'jquery' ), '20160412', true );
+	wp_enqueue_script( 'selectric', get_template_directory_uri() . '/js/vendor/jquery.selectric.js', array( 'jquery' ), '20170802', true );
     // Localization
 	wp_localize_script( 'liquidchurch-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'liquidchurch' ),
@@ -269,7 +257,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_scripts' );
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param array $classes Classes for the body element.
  * @return array (Maybe) filtered body classes.
@@ -302,7 +290,7 @@ add_filter( 'body_class', 'liquidchurch_body_classes' );
 /**
  * Converts a HEX value to RGB.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param string $color The original color, in 3- or 6-digit hexadecimal form.
  * @return array Array containing RGB (red, green, and blue) values for the given
@@ -340,7 +328,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
@@ -367,7 +355,7 @@ add_filter( 'wp_calculate_image_sizes', 'liquidchurch_content_image_sizes_attr',
  * Add custom image sizes attribute to enhance responsive image functionality
  * for post thumbnails
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @param array $attr Attributes for the image markup.
  * @param int $attachment Image attachment ID.
@@ -729,6 +717,7 @@ function emz_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'emz_customize_register' );
 
+require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
 
 class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ){
@@ -912,7 +901,7 @@ function gc_series_before_after($content)
 }
 
 // Disable JPEG compression
-add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+add_filter( 'jpeg_quality', function() { return 100; } );
 
 /**
  * Disable comments on media.

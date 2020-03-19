@@ -1,10 +1,12 @@
 <?php
 /**
+ * Template Name: WP Job Manager Single Job Listing Template
+ *
  * The template for displaying WP Job Manager pages.
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 get_header();
@@ -48,10 +50,6 @@ add_theme_support( 'job-manager-templates' );
 		?>
 
 	</main><!-- .site-main -->
-
-	<?php //get_sidebar( 'content-bottom' ); ?>
-
 </div><!-- .content-area -->
 
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

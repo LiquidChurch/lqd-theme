@@ -1,13 +1,12 @@
 <?php
 /**
+ * Template Name: Single Sermon Series App View Archive Template
+ *
  * The template for displaying archive pages for a single sermon series.
- *
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.5
+ * @since 1.0.0
  */
 
  ?>
@@ -16,7 +15,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="_globalsign-domain-verification" content="WwzP8bBJbcSX4CjkSpD62GbCIMbAq6JTb7tyv-mRtz" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

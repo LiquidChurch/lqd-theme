@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'liquidchurch_entry_meta' ) ) :
@@ -15,7 +15,7 @@ if ( ! function_exists( 'liquidchurch_entry_meta' ) ) :
  *
  * Create your own liquidchurch_entry_meta() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_entry_meta() {
 	if ( 'post' === get_post_type() ) {
@@ -59,7 +59,7 @@ if ( ! function_exists( 'liquidchurch_entry_date' ) ) :
  *
  * Create your own liquidchurch_entry_date() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_entry_date() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -89,7 +89,7 @@ if ( ! function_exists( 'liquidchurch_entry_taxonomies' ) ) :
  *
  * Create your own liquidchurch_entry_taxonomies() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'liquidchurch' ) );
@@ -119,7 +119,7 @@ if ( ! function_exists( 'liquidchurch_post_thumbnail' ) ) :
  *
  * Create your own liquidchurch_post_thumbnail() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
@@ -151,7 +151,7 @@ if ( ! function_exists( 'liquidchurch_excerpt' ) ) :
 	 *
 	 * Create your own liquidchurch_excerpt() function to override in a child theme.
 	 *
-	 * @since Liquid Church 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
@@ -173,7 +173,7 @@ if ( ! function_exists( 'liquidchurch_excerpt_more' ) && ! is_admin() ) :
  *
  * Create your own liquidchurch_excerpt_more() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
@@ -193,7 +193,7 @@ endif;
  *
  * Create your own liquidchurch_categorized_blog() function to override in a child theme.
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  *
  * @return bool True if there is more than one category, false otherwise.
  */
@@ -224,7 +224,7 @@ function liquidchurch_categorized_blog() {
 /**
  * Flushes out the transients used in liquidchurch_categorized_blog().
  *
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 function liquidchurch_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {

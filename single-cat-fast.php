@@ -1,10 +1,12 @@
 <?php
 /**
+ * Template Name: Single Fast Category Template
+ *
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -50,5 +52,4 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

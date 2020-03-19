@@ -1,4 +1,6 @@
-/***** gc sermon search *****/
+/* Liquid Messages Related Theming */
+
+/* Search */
 .search-field {
     width: 60%;
     background: #e2e2e2;
@@ -138,7 +140,7 @@ a.home-btn {
     width: 100%;
     display: inline-block;
     margin-right: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .entry-content ul.gc-sermon-resources-list ul.single-item li.gc-sermon-resources-list-item {
@@ -193,9 +195,9 @@ h1.gc-sermon-title {
 }
 
 #mav-entry li.gc-item.gc-thumb {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .page.mav-body {
@@ -203,7 +205,7 @@ h1.gc-sermon-title {
 }
 
 #mav-entry {
-    padding: 0px;
+    padding: 0;
     font-size: 1.5em;
 }
 
@@ -242,7 +244,7 @@ h1.gc-sermon-title {
 #mav-single #message-tags,
 #mav-single #message-date,
 #mav-single #message-summary {
-    padding-bottom: 0px;
+    padding-bottom: 0;
     margin-bottom: 4px;
 }
 
@@ -263,8 +265,8 @@ h1.gc-sermon-title {
 #mav-single div.row.single-sermon-title {
     padding-bottom: 1px;
     margin-bottom: 1px;
-    padding-top:0px;
-    margin-top:0px;
+    padding-top:0;
+    margin-top:0;
 }
 
 #mav-single #message-resource div.col-sm-3 {
@@ -282,20 +284,20 @@ h1.gc-sermon-title {
 }
 
 #mav-single #message-summary {
-    padding-bottom:0px;
-    margin-bottom:0px;
+    padding-bottom:0;
+    margin-bottom:0;
 }
 
 #mav-single #message-others h1 {
-    margin-top:0px;
+    margin-top:0;
 }
 
 #mav-single li.lc-head {
-    margin-bottom:0px;
+    margin-bottom:0;
 }
 
 #mav-single li.lc-list {
-    margin-bottom:0px;
+    margin-bottom:0;
 }
 
 #mav-single .gc-sermon-resources-list-item {
@@ -303,8 +305,8 @@ h1.gc-sermon-title {
 }
 
 #mav-single .gc-item.gc-thumb {
-    padding:0px;
-    margin-bottom:0px;
+    padding:0;
+    margin-bottom:0;
 }
 
 .entry-content.sermon-series-desc.mav-series > p {
@@ -314,6 +316,20 @@ h1.gc-sermon-title {
 .entry-content.sermon-series-message.mav-series {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+#socialShare .fa {
+    font-size: 5rem;
+}
+
+.lqd-message-content {
+    padding-left:1vw;
+    padding-right:1vw;
+}
+
+.single-gc-sermons .content .content-area {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media screen and (max-width: 800px) {

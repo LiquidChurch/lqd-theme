@@ -3,8 +3,8 @@
  * The template part for displaying a message that posts cannot be found
   *
  * @package WordPress
- * @subpackage Liquid_Churchn
- * @since Liquid Church 1.0
+ * @subpackage Liquid_Church
+ * @since 1.0.0
  */
 ?>
 <!-- .entry-content -->

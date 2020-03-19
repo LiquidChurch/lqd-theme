@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Liquid_Church
- * @since Liquid Church 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 								/**
 								 * Filter the default liquidchurch image attachment size.
 								 *
-								 * @since Liquid Church 1.0
+								 * @since 1.0.0
 								 *
 								 * @param string $image_size Image size. Default 'large'.
 								 */
