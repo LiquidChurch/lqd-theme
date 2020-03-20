@@ -1,9 +1,9 @@
 <?php
 /**
- * The template part for displaying single posts
+ * Template part for displaying posts
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
  * @subpackage Liquid_Church
  * @since 1.0.0
  */
@@ -21,17 +21,18 @@
 
 	<div class="entry-content" style="margin:auto; max-width:1000px;">
 		<?php
-			the_content();
+        the_content();
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'liquidchurch' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-		?>
+        wp_link_pages( array(
+            'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'liquidchurch' ) . '</span>',
+            'after'       => '</div>',
+            'link_before' => '<span>',
+            'link_after'  => '</span>',
+            'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
+            'separator'   => '<span class="screen-reader-text">, </span>',
+            )
+        );
+        ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer" style="max-width:800px;margin:auto;">
@@ -47,4 +48,4 @@
 			);
 		?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

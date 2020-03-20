@@ -1,25 +1,26 @@
 <?php
 /**
- * The template for displaying the header
+ * The header for our theme
  *
- * Displays all of the head element and everything up until the "site-content" div.
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package WordPress
- * @subpackage Liquid_Church
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Liquid_Church
  * @since 1.0.0
  */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?> >
+?><!doctype html>
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?>>
 <div class="page">
     <!-- Header start -->
     <div class="lqd-header container">

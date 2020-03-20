@@ -16,21 +16,23 @@
 		<?php
 		the_content();
 
-		wp_link_pages( array(
+		wp_link_pages(
+		    array(
 			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'liquidchurch' ) . '</span>',
 			'after'       => '</div>',
 			'link_before' => '<span>',
 			'link_after'  => '</span>',
 			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'liquidchurch' ) . ' </span>%',
 			'separator'   => '<span class="screen-reader-text">, </span>',
-		) );
+            )
+        );
 		?>
 	</div><!-- .entry-content -->
 
 	<?php
 		edit_post_link(
 			sprintf(
-				/* translators: %s: Name of current post */
+				/* translators: %s: Name of current post. Only visible to screen readers */
 				__( 'Edit <span class="screen-reader-text"> "%s"</span>', 'liquidchurch' ),
 				get_the_title()
 			),
