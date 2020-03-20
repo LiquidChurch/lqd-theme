@@ -59,40 +59,45 @@
                         <a class="btn lqd-header-church-online-btn" href="https://liquidchurch.com/give">Give</a>
                 </div>
             </div>
-        </div>
-<div class="menublock">
-    <nav class="navbar navbar-default">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        </div>
+                <div class="row">
+                    <div class="menublock">
+                        <nav class="navbar navbar-default">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'primary',
-                    'menu_class'     => 'nav navbar-nav',
-                ) );
-                else :
-                    wp_nav_menu( array(
-                        'theme_location' => 'default',
-                        'menu'  =>  'Default Menu',
-                        'menu_class'     => 'nav navbar-nav',
-                        ) );
-                ?>
-                <?php endif; ?>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                                    <?php
+                                    wp_nav_menu( array(
+                                        'theme_location' => 'primary',
+                                        'menu_class'     => 'nav navbar-nav',
+                                    ) );
+                                else :
+                                    wp_nav_menu( array(
+                                        'theme_location' => 'default',
+                                        'menu'  =>  'Default Menu',
+                                        'menu_class'     => 'nav navbar-nav',
+                                    ) );
+                                    ?>
+                                <?php endif; ?>
 
-            <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
-                <div class="form-group form-group_new">
-                    <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
-                    <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
+                                <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
+                                    <div class="form-group form-group_new">
+                                        <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
+                                        <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </nav>
+                    </div>
                 </div>
-            </form>
         </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-  </div>
+
   <!-- Header end -->
   <div class="content">
+      <div class="container">
+          <div class="row">

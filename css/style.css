@@ -129,7 +129,7 @@ textarea {
 }
 
 .header_top {
-  /*  padding: 36px 0 25px;  // Not used during COVID */
+    /*  padding: 36px 0 25px;  // Not used during COVID */
     padding-bottom: 25px; /* Only during COVID */
 }
 
@@ -141,25 +141,6 @@ textarea {
 
 .logo {
     float: left;
-    /*margin-left: -22px;*/
-}
-
-.selected {
-    float: left;
-    margin: 0;
-    width: 27%;
-}
-
-.selected .custom-select {
-    background: #fff;
-    border: 2px solid #14a7e0;
-    border-radius: 20px;
-    color: #14a7e0;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
 }
 
 /* Add Flexbox to Some Rows */

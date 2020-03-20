@@ -12,6 +12,8 @@
  */
 
 ?>
+</div>
+</div>
 <!-- Footer Area start -->
 <div class="container footer_section">
     <div class="row">

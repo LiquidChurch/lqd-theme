@@ -41,7 +41,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php //liquidchurch_entry_meta(); ?>
 		<?php
 			edit_post_link(
 				sprintf(
