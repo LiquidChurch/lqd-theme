@@ -1,9 +1,10 @@
 <?php
 /**
- * The template part for displaying results in search pages
+ * Template part for displaying results in search pages
  *
- * @package WordPress
- * @subpackage Liquid_Church
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Liquid_Church
  * @since 1.0.0
  */
 ?>
@@ -33,9 +34,7 @@
 				);
 			?>
 		</footer><!-- .entry-footer -->
-
 	<?php else : ?>
-
 		<?php
 			edit_post_link(
 				sprintf(
