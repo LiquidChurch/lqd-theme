@@ -52,10 +52,10 @@
                             } ?>
                         </div>
                     </div>
-                    <div class="lqd-header-church-online col-xs-8 col-xs-offset-2 col-sm-8 col-md-3 col-md-offset-3 display-flex">
+                    <div class="lqd-header-church-online col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-0 col-md-3 col-md-offset-3 display-flex">
                         <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church Online</a>
                     </div>
-                    <div class="lqd-header-give col-xs-8 col-xs-offset-2 col-sm-4 col-md-2 display-flex">
+                    <div class="lqd-header-give col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-2 display-flex">
                         <a class="btn lqd-header-church-online-btn" href="https://liquidchurch.com/give">Give</a>
                 </div>
             </div>
