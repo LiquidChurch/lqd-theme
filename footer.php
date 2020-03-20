@@ -113,19 +113,6 @@
     </div>
 </div>
 </div>
-<script>
-jQuery(function ($) {
-	$("#country_id").selectric({disableOnMobile: false});
-		 // bind change event to select
-	      $('#country_id').on('change', function () {
-	          var url = $(this).val(); // get selected value
-	          if (url) { // require a URL
-	              window.location = url; // redirect
-	          }
-	          return false;
-	      });
-	});
-</script>
 <?php wp_footer(); ?>
 </body>
 </html>

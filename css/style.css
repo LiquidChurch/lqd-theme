@@ -129,7 +129,8 @@ textarea {
 }
 
 .header_top {
-    padding: 36px 0 25px;
+  /*  padding: 36px 0 25px;  // Not used during COVID */
+    padding-bottom: 25px; /* Only during COVID */
 }
 
 .page {
@@ -182,98 +183,13 @@ textarea {
     margin-top: 15px;
 }
 
-/* Location Dropdown */
-.location-block .selectric {
-    background: #fff none repeat scroll 0 0;
-    border: 2px solid #337ab7;
-    border-radius: 15px !important;
-    height: 28px !important;
-    margin-top: 6px !important;
-    z-index: 1;
-}
-
-
-.location-block .selectric .label {
-    color: #14a7e0;
-    font-family: 'Avenir Next LT Pro', sans-serif !important;
-    margin: 0 10px;
-    margin-top: 1px;
-    font-size: 16px;
-    font-weight: bold !important;
-    height: 38px;
-    line-height: 16px;
-    padding: 3px 0 0;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.location-block .selectric .button {
-    right: 11px;
-    top: 8px;
-    color: #4c9fc7;
-}
-
-.location-block .selectric-hover .selectric {
-    border-color: #337ab7;
-}
-
-.location-block .selectric-hover .selectric .button {
-    color: #0074c8;
-}
-
-.location-block .selectric-hover .selectric .button {
-    border-top-color: #4c9fc7;
-}
-
-.location-block .selectric-open .selectric {
-    border-color: #14a7e0;
-}
-
-.location-block .selectric-hide-select select {
-    display: none;
-}
-
-.location-block .selectric-items {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-color: -moz-use-text-color #14a7e0 #14a7e0;
-    border-image: none;
-    border-style: none solid solid;
-    border-width: medium 2px 2px;
-    box-shadow: 0 0 10px -6px;
-    left: 0;
-    margin: -11px 0;
-    padding: 10px 0;
-    z-index: 0;
-}
-
-.location-block .selectric-items li {
-    color: #4c9fc7;
-    display: block;
-    font-family: 'Avenir Next LT Pro', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px;
-    text-transform: uppercase;
-}
-
-.location-block .selectric-items li.selected {
-    background: #EFEFEF;
-    display: none;
-}
-
-.location-block .selectric-items li:hover {
-    color: #14a7e0;
+.lqd-header-top {
+    margin-bottom:15px;
 }
 
 /* Church Online Button */
 .lqd-header-church-online-btn {
-    border: 2px solid red; /* #337ab7; /* Match Locations Border */
+    border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
     background: #fff none repeat scroll 0 0;
     margin-top: 6px; /* Match height of Locations */
     line-height: 1.3rem; /* Center our text in the button */
@@ -290,8 +206,6 @@ textarea {
 
 a.lqd-header-church-online-btn:hover {
     border-color: #14a7e0 !important;
-    background-color: red;
-    color: white;
 }
 
 /* Header: Bottom: Menu */
@@ -774,4 +688,16 @@ a.lqd-header-church-online-btn:hover {
         max-width:1280px;
         width:1280px;
     }
+}
+
+.lqd-header-church-online-btn {
+    border-radius: 42px;
+    font-family: "Avenir Next LT Pro", sans-serif;
+    font-weight:700;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+a.lqd-header-church-online-btn:hover {
+    filter: brightness(0.9); /* blue, #3030ce */
 }

@@ -25,57 +25,38 @@
     <div class="pagetop">
         <div class="header_top">
             <div class="container">
-                <div class="row display-flex">
+                <div class="lqd-header-covid row">
+                    <div class="col-xs-12 col-lg-9 display-flex">
+                        <p class="lqd-header-covid-text"><strong>We're Meeting Online!</strong> All locations are meeting on Church Online for this weekend.</p>
+                    </div>
+                    <div class="col-xs-12 col-lg-2 col-lg-offset-1 display-flex">
+                        <a class="btn lqd-header-covid-button" href="https://liquidchurch.com/update">COVID-19 UPDATE</a>
+                    </div>
+                </div>
+                <div class="lqd-header-top row display-flex">
                     <div class="lqd-header-logo col-xs-12 col-sm-12 col-md-4 display-flex">
                         <div class="logo">
-                    <?php
-                    if (get_theme_mod( 'm1_logo' )){
-                        ?>
-                        <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a>
-                        <?php
-                    }else{
-                        ?>
-                        <?php if ( is_front_page() && is_home() ) : ?>
-                            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                        <?php else : ?>
-                            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                        <?php endif;
-
-                        $description = get_bloginfo( 'description', 'display' );
-                        if ( $description || is_customize_preview() ) : ?>
-                            <p class="site-description"><?php echo $description; ?></p>
-                        <?php endif; ?>
-                        <?php
-                    }
-                    ?>
-                </div>
-                    </div>
-                    <div class="lqd-header-locations col-xs-6 col-sm-6 col-md-3 display-flex">
-                        <div class="location-block">
-                            <?php if ( has_nav_menu( 'locations' ) ) : ?>
-                                <?php
-                                wp_nav_menu( array(
-                                    'theme_location' => 'locations',
-                                    'menu'           => 'Locations Menu',
-                                    'walker'         => new Walker_Nav_Menu_Dropdown(),
-                                    'items_wrap'     => '<div class="locations"><form><select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-                                    ) );
-                                else :
-                                    ?>
-                                    <div class="locations">
-                                        <form>
-                                            <select style="display: none;" name="country_id" id="country_id" tabindex="1" onchange="if (this.value) window.location.href=this.value">
-                                                <option value="">Location</option>
-                                                <option value="<?php echo home_url('wp-admin/nav-menus.php'); ?> ">Add Location Menus</option>
-                                            </select>
-                                        </form>
-                                    </div>
-                                <?php endif; ?>
+                            <?php if (get_theme_mod( 'm1_logo' )){ ?>
+                                <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a>
+                            <?php
+                            } else {
+                                if ( is_front_page() && is_home() ) : ?>
+                                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                <?php else : ?>
+                                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                <?php endif;
+                                $description = get_bloginfo( 'description', 'display' );
+                                if ( $description || is_customize_preview() ) : ?>
+                                    <p class="site-description"><?php echo $description; ?></p>
+                                <?php endif;
+                            } ?>
                         </div>
                     </div>
-                    <div class="lqd-header-church-online col-xs-6 col-sm-6 col-md-2 col-md-offset-3 display-flex">
+                    <div class="lqd-header-church-online col-xs-8 col-sm-8 col-md-3 col-md-offset-3 display-flex">
                         <a class="btn lqd-header-church-online-btn" href="https://live.liquidchurch.com/">Church Online</a>
                     </div>
+                    <div class="lqd-header-give col-xs-4 col-sm-4 col-md-2 display-flex">
+                        <a class="btn lqd-header-church-online-btn" href="https://liquidchurch.com/give">Give</a>
                 </div>
             </div>
         </div>
