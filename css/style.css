@@ -124,26 +124,7 @@ textarea {
     height: 140px;
 }
 
-.pagetop {
-    margin: 0;
-}
-
-.header_top {
-    /*  padding: 36px 0 25px;  // Not used during COVID */
-    padding-bottom: 25px; /* Only during COVID */
-}
-
-.page {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    margin: auto;
-    max-width: 1280px;
-}
-
-.logo {
-    float: left;
-}
-
-/* Add Flexbox to Some Rows */
+/* Add Flexbox to Rows */
 .row.display-flex {
     display: flex;
     flex-wrap: wrap;
@@ -154,6 +135,26 @@ textarea {
     flex-direction: column;
 }
 
+.page {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 1170px; /* 1280px */
+}
+
+/** HEADER **/
+.lqd-header {
+    /*  padding: 36px 0 25px;  // Not used during COVID */
+}
+
+/* Header: Top */
+.lqd-header-top {
+    margin-bottom:15px;
+}
+
+.lqd-header-logo {
+    float: left;
+}
+
 .site-title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -162,10 +163,6 @@ textarea {
 
 .site-description {
     margin-top: 15px;
-}
-
-.lqd-header-top {
-    margin-bottom:15px;
 }
 
 /* Church Online Button */
@@ -187,12 +184,13 @@ textarea {
 
 a.lqd-header-church-online-btn:hover {
     border-color: #14a7e0 !important;
+    filter: brightness(0.9);
 }
 
 /* Header: Bottom: Menu */
 .menublock {
     margin: 0;
-    background-color: #14a7e0
+    background-color: #14a7e0;
 }
 
 .menublock .navbar-default {
@@ -271,7 +269,7 @@ a.lqd-header-church-online-btn:hover {
 }
 
 /* Footer: Top */
-.footer_section {
+.lqd-footer-top {
     background: #14a7e0;
     padding: 18px 0;
 }
@@ -353,16 +351,16 @@ a.lqd-header-church-online-btn:hover {
 }
 
 /* Footer: Bottom */
-.footer_container {
+.lqd-footer-bottom {
     background-color: #dcddde;
     padding: 15px .5vw;
 }
 
-.inner_block {
+.lqd-footer-inner-block {
     margin: 0;
 }
 
-.inner_block h2 {
+.lqd-footer-inner-block h2 {
     border-bottom: 1px solid #fff;
     color: #14a7e0;
     font-family: "Avenir Next LT Pro Demi", sans-serif;
@@ -510,12 +508,11 @@ a.lqd-header-church-online-btn:hover {
 
 /* <=767px */
 @media (max-width: 767px) {
-    .header_top {
-        padding: 15px 0 7px;
+    .lqd-header {
+        /*padding: 15px 0 7px; // For COVID */
     }
 
-    .logo {
-        text-align: center;
+    .lqd-header-logo {
         float: none;
         margin-left: 0;
     }
@@ -554,7 +551,7 @@ a.lqd-header-church-online-btn:hover {
         font-size: 1.2em
     }
 
-    .inner_block h2 {
+    .lqd-footer-inner-block h2 {
         font-size: 1.2em
     }
 
@@ -564,7 +561,7 @@ a.lqd-header-church-online-btn:hover {
     }
 
     /* Footer */
-    .footer_container {
+    .lqd-footer-bottom {
         background-color: #dcddde;
         padding: 0 27px 0 18px;
     }
@@ -664,21 +661,10 @@ a.lqd-header-church-online-btn:hover {
 }
 
 /* >=1200px */
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     .container {
-        max-width:1280px;
+      /*  max-width:1280px;
         width:1280px;
+
     }
-}
-
-.lqd-header-church-online-btn {
-    border-radius: 42px;
-    font-family: "Avenir Next LT Pro", sans-serif;
-    font-weight:700;
-    text-transform: uppercase;
-    z-index: 1;
-}
-
-a.lqd-header-church-online-btn:hover {
-    filter: brightness(0.9); /* blue, #3030ce */
-}
+}*/

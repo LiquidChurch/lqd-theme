@@ -15,7 +15,7 @@
 </div>
 </div>
 <!-- Footer Area start -->
-<div class="container footer_section">
+<div class="container lqd-footer-top">
     <div class="row">
         <div class="col-xs-12 col-md-8">
             <ul class="sectionleftul">
@@ -61,9 +61,9 @@
     </div>
 </div>
 
-<div class="container footer_container">
+<div class="container lqd-footer-bottom">
     <div class="row">
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-about-us')){
                 dynamic_sidebar('footer-about-us');
@@ -72,7 +72,7 @@
             }
             ?>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-life-events')){
                 dynamic_sidebar('footer-life-events');
@@ -81,7 +81,7 @@
             }
             ?>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-messages')){
                 dynamic_sidebar('footer-messages');
@@ -90,7 +90,7 @@
             }
             ?>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-media')){
                 dynamic_sidebar('footer-media');
@@ -98,7 +98,7 @@
                 echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Media Menu</a></h2></div>';
             } ?>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-give')){
                 dynamic_sidebar('footer-give');
@@ -106,7 +106,7 @@
                 echo '<div class="footer_menu_widget_else"><h2><a href="'.home_url('wp-admin/widgets.php').'">Add Give Menu</a></h2></div>';
             } ?>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 inner_block">
+        <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php
             if(is_active_sidebar('footer-help')){
                 dynamic_sidebar('footer-help');

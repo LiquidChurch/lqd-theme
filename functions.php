@@ -1,24 +1,8 @@
 <?php
 /**
- * Liquid Church Functions and Configurations
+ * Liquid Church Functions and Definitions
  *
- * Set up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * When using a child theme you can override certain functions (those wrapped
- * in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before
- * the parent theme's file, so the child theme functions would be used.
- *
- * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are
- * instead attached to a filter or action hook.
- *
- * For more information on hooks, actions, and filters,
- * {@link https://codex.wordpress.org/Plugin_API}
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -26,9 +10,9 @@
  */
 
 /**
- * Liquid Church only works in WordPress 4.4 or later.
+ * Liquid Church only works in WordPress 4.7 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
@@ -40,11 +24,14 @@ if ( ! function_exists( 'liquidchurch_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * Create your own liquidchurch_setup() function to override in a child theme.
- *
  * @since 1.0.0
  */
 function liquidchurch_setup() {
+    /*
+     * Make theme available for translation
+     *
+     * Translations are field in the /languages/ directory.
+     */
 	load_theme_textdomain( 'liquidchurch', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
@@ -60,6 +47,8 @@ function liquidchurch_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
@@ -74,13 +63,16 @@ function liquidchurch_setup() {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+	add_theme_support(
+	    'html5',
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        )
+    );
 
 	/*
 	 * Enable support for Post Formats.
@@ -114,7 +106,7 @@ add_action( 'after_setup_theme', 'liquidchurch_setup' );
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
- * @global int $content_width
+ * @global int $content_width Content width.
  *
  * @since 1.0.0
  */
@@ -500,7 +492,7 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
  *
  * @param $wp_customize
  */
-function emz_customize_register( $wp_customize ) {
+function lqd_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'lqd_theme', array(
         'title' => 'Liquid Options',
         'description' => 'Settings',
@@ -577,7 +569,7 @@ function emz_customize_register( $wp_customize ) {
 	) );
 
 }
-add_action( 'customize_register', 'emz_customize_register' );
+add_action( 'customize_register', 'lqd_customize_register' );
 
 /**
  * Create a Default Menu
@@ -602,7 +594,6 @@ function createDefaultMenu(){
 	        'menu-item-title' =>  ( 'Custom Page' ),
 	        'menu-item-url' => home_url( '/custom-page/' ),
 	        'menu-item-status' => 'publish'));
-
 	}
 }
 createDefaultMenu();
@@ -706,6 +697,12 @@ function gc_sermon_before_after($content)
 	return $content;
 }
 
+/**
+ * Filtering for Sermons the content
+ *
+ * @param $content
+ * @return string|string[]|null
+ */
 function gc_series_before_after($content)
 {
 	$content = strip_tags($content);
@@ -714,9 +711,6 @@ function gc_series_before_after($content)
 	$content = preg_replace('/<\/p>/', '</p>', $content);
 	return $content;
 }
-
-// Disable JPEG compression
-add_filter( 'jpeg_quality', function() { return 100; } );
 
 /**
  * Disable comments on media.
@@ -733,9 +727,6 @@ function filter_media_comment_status( $open, $post_id ) {
     return $open;
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
-
-// Enable Field Label Visibility Settings in Gravity Forms
-add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 /**
  * Add messages-app-view as rewrite endpoint
@@ -859,3 +850,9 @@ add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
 */
 add_filter('wpseo_premium_term_redirect_slug_change', '__return_true' );
+
+// Disable JPEG compression
+add_filter( 'jpeg_quality', function() { return 100; } );
+
+// Enable Field Label Visibility Settings in Gravity Forms
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );

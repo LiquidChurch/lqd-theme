@@ -24,7 +24,7 @@
 <div class="page">
 <!-- Header start -->
   <div class="pagetop">
-    <div class="header_top">
+    <div class="lqd-header">
       <div class="container">
         <div class="row">
         </div>
