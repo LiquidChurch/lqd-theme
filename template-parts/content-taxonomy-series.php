@@ -9,11 +9,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-
-    <?php
-    ?>
-
     <div class="entry-content sermon-series-message">
         <?php
         global $sermon;
@@ -102,13 +97,9 @@
                     get_template_part('template-parts/part/sermons/list', 'date');
                 }
                 ?>
-
             </div>
         </div>
-
-
     </div><!-- .entry-content -->
-
     <footer class="entry-footer">
         <?php liquidchurch_entry_meta(); ?>
     </footer><!-- .entry-footer -->

@@ -157,23 +157,6 @@ $sermon = gc_get_sermon_post();
                             get_template_part('template-parts/part/sermons/list', 'addtnl-resource');
                         }
                         ?>
-
-                        <!--<div id="message-resources">
-                            <span style="padding-left:15px; font-weight:700;">Downloads and Other Resources:</span>
-                            <?php /*do_action('sermon_resources', array(
-                                'resource_type' => array('files', 'urls'),
-                                'resource_file_type' => array('image', 'video', 'audio', 'pdf', 'zip', 'other'),
-                                'resource_post_id' => get_the_id(),
-                            )); */ ?>
-                        </div>-->
-
-                        <?php
-                        $social_share_enable = LiquidChurch_Functionality::get_plugin_settings_options('social_option', 'social_share');
-                        if ($social_share_enable == 'yes') {
-                            echo '<div class="addthis_sharing_toolbox"></div>';
-                        }
-                        ?>
-
                     </div>
                 </div>
             </div>

@@ -18,20 +18,16 @@ get_header(); ?>
 <div class="body_content">
 	<main id="main" class="site-main" role="main">
 		<?php
-
 			echo do_shortcode( '[SHOW_HEADER_BANNER_SECTION]' );
 				while ( have_posts() ) : the_post();
 
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'template' );
 
-
-
 			// End of the loop.
 		endwhile;
 
 			echo do_shortcode( '[SHOW_PAGE_SECTION]' );
-
 		?>
 
 	</main><!-- .site-main -->
