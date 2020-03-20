@@ -1,9 +1,8 @@
 <?php
 /**
- * Liquid Church Customizer functionality
+ * Liquid Church Theme Customizer
  *
- * @package WordPress
- * @subpackage Liquid_Church
+ * @package Liquid_Church
  * @since 1.0.0
  */
 
@@ -108,12 +107,12 @@ function liquidchurch_customize_register( $wp_customize ) {
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector' => '.site-title a',
+			'selector'        => '.site-title a',
 			'container_inclusive' => false,
 			'render_callback' => 'liquidchurch_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector' => '.site-description',
+			'selector'        => '.site-description',
 			'container_inclusive' => false,
 			'render_callback' => 'liquidchurch_customize_partial_blogdescription',
 		) );
@@ -190,8 +189,7 @@ add_action( 'customize_register', 'liquidchurch_customize_register', 11 );
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Liquid Church 1.2
- * @see liquidchurch_customize_register()
+ * @since 1.0.0
  *
  * @return void
  */
@@ -202,8 +200,7 @@ function liquidchurch_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Liquid Church 1.2
- * @see liquidchurch_customize_register()
+ * @since 1.0.0
  *
  * @return void
  */
@@ -427,7 +424,7 @@ function liquidchurch_customize_control_js() {
 add_action( 'customize_controls_enqueue_scripts', 'liquidchurch_customize_control_js' );
 
 /**
- * Binds JS handlers to make the Customizer preview reload changes asynchronously.
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
  * @since 1.0.0
  */
