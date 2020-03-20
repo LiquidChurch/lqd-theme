@@ -1,6 +1,6 @@
 <?php
 /**
- * Liquid church functions and definitions
+ * Liquid Church Functions and Configurations
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -60,8 +60,6 @@ function liquidchurch_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
@@ -86,8 +84,6 @@ function liquidchurch_setup() {
 
 	/*
 	 * Enable support for Post Formats.
-	 *
-	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
@@ -220,6 +216,8 @@ function liquidchurch_scripts() {
     }
 	// Required WP CSS
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
+
+    /** JS **/
     // HTML5 Shiv for IE7 Compatibility
 	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/vendor/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'liquidchurch-html5', 'conditional', 'lt IE 9' );
@@ -370,7 +368,7 @@ add_filter( 'wp_get_attachment_image_attributes', 'liquidchurch_post_thumbnail_s
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
  *
- * @since Liquid Church 1.1
+ * @since 1.1.0
  *
  * @param array $args Arguments for tag cloud widget.
  * @return array A new modified arguments.
@@ -383,47 +381,59 @@ function liquidchurch_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'liquidchurch_widget_tag_cloud_args' );
 
+/**
+ * Handles Preformatted Text
+ *
+ * @since 1.0.0
+ *
+ * @param $obj
+ */
 function pr($obj){
    echo '<pre>';
     print_r($obj);
    echo '</pre>';
 }
 
-function theme_options(){
-    $data= get_option('option_tree');
-     return $data;
-}
-
-$theme_options= theme_options();
-
+/**
+ * Custom Modifications to the WP Navwalker
+ *
+ * @param $args
+ * @return array
+ */
 function myplugin_custom_walker( $args ) {
-		  if($args['theme_location']=="")
-		  {
-
-		    return array_merge( $args, array(
-
-		        'container_class'=>"menu_list",
-		        'menu_class'=>'',
-		    ) );
-		}else
-		{
-		    return array_merge( $args, array(
-
-		        'theme_location' => 'primary',
-				'menu_class'     => 'nav navbar-nav',
-		    ) );
-
-
-		}
+    if($args['theme_location']=="")
+    {
+        return array_merge( $args, array(
+            'container_class'=>"menu_list",
+            'menu_class'=>'',
+        ) );
+    } else {
+        return array_merge( $args, array(
+            'theme_location' => 'primary',
+            'menu_class'     => 'nav navbar-nav',
+        ) );
+    }
 }
 add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
 
+/**
+ * Sets TinyMCE config option
+ *
+ * @param $in
+ * @return mixed
+ */
 function myformatTinyMCE( $in ) {
     $in['wordpress_adv_hidden'] = FALSE;
     return $in;
 }
 add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
 
+/**
+ * Sets TinyMCE Options
+ *
+ * @param $init
+ * @return mixed
+ */
 function my_mce4_options($init) {
   $default_colours = '"000000", "Black",
                       "993300", "Burnt orange",
@@ -485,7 +495,11 @@ function my_mce4_options($init) {
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
 
-/*Add Theme Customizer Settings*/
+/**
+ * Add Theme Customizer Settings
+ *
+ * @param $wp_customize
+ */
 function emz_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'lqd_theme', array(
         'title' => 'Liquid Options',
@@ -565,6 +579,9 @@ function emz_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'emz_customize_register' );
 
+/**
+ * Create a Default Menu
+ */
 function createDefaultMenu(){
 	// Check if the menu exists
 	$menu_name = 'Default Menu';
@@ -590,6 +607,9 @@ function createDefaultMenu(){
 }
 createDefaultMenu();
 
+/**
+ * Create a Sample Page
+ */
 function createSamplePage(){
 	if(the_slug_exists('custom-page')==false)
 	{
@@ -607,6 +627,12 @@ function createSamplePage(){
 }
 createSamplePage();
 
+/**
+ * Check if Slug Exists for Sample Page
+ *
+ * @param $post_name
+ * @return bool
+ */
 function the_slug_exists($post_name) {
     global $wpdb;
 
@@ -617,6 +643,9 @@ function the_slug_exists($post_name) {
     }
 }
 
+/**
+ * Assign Front Page
+ */
 function assignFrontPage_exists() {
     global $wpdb;
 		$post_name="Home";
@@ -631,7 +660,12 @@ function assignFrontPage_exists() {
 }
 assignFrontPage_exists();
 
-// Control configuration of Vimeo embeds.
+/**
+ * Control Vimeo Embeds
+ *
+ * @param $html
+ * @return string|string[]
+ */
 function modify_wp_vimeo_embeds( $html ) {
 	if ( false !== strpos( $html, 'vimeo' ) ) {
 		preg_match( '/src="([^"]+)"/', $html, $match );
@@ -649,7 +683,8 @@ add_filter( 'embed_handler_html', 'modify_wp_vimeo_embeds' );
 
 /**
  * Add theme support for Responsive Videos via Jetpack.
- * https://jetpack.com/support/responsive-videos/
+ *
+ * @link https://jetpack.com/support/responsive-videos/
  */
 function jetpackme_responsive_videos_setup() {
 	add_theme_support( 'jetpack-responsive-videos' );
@@ -699,6 +734,7 @@ function filter_media_comment_status( $open, $post_id ) {
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
+// Enable Field Label Visibility Settings in Gravity Forms
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 /**
@@ -811,16 +847,14 @@ add_filter('permalink-manager-force-lowercase-uris', '__return_false');
 add_filter( 'gform_submit_button_17', '__return_false' );
 
 /*
-* Yoast SEO Disable Automatic Redirects for
-* Posts And Pages
+* Yoast SEO Disable Automatic Redirects for Posts And Pages
 * Credit: Yoast Development Team
 * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
 */
 add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 
 /*
-* Yoast SEO Disable Automatic Redirects for
-* Taxonomies (Category, Tags, Etc)
+* Yoast SEO Disable Automatic Redirects for Taxonomies (Category, Tags, Etc)
 * Credit: Yoast Development Team
 * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
 */
