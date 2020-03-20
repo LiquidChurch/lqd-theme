@@ -1,30 +1,27 @@
 <?php
 /**
- * Custom Liquid Church template tags
+ * Custom template tags for this theme
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress
- * @subpackage Liquid_Church
+ * @package Liquid_Church
  * @since 1.0.0
  */
 
 if ( ! function_exists( 'liquidchurch_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags.
- *
- * Create your own liquidchurch_entry_meta() function to override in a child theme.
- *
- * @since 1.0.0
- */
-function liquidchurch_entry_meta() {
-	if ( 'post' === get_post_type() ) {
-		$author_avatar_size = apply_filters( 'liquidchurch_author_avatar_size', 49 );
-		printf( '<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
-			get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
-			_x( 'Author', 'Used before post author name.', 'liquidchurch' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			get_the_author()
+    /**
+     * Prints HTML with meta information for the categories, tags.
+     *
+     * @since 1.0.0
+     */
+    function liquidchurch_entry_meta() {
+        if ( 'post' === get_post_type() ) {
+            $author_avatar_size = apply_filters( 'liquidchurch_author_avatar_size', 49 );
+            printf( '<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
+                get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+                _x( 'Author', 'Used before post author name.', 'liquidchurch' ),
+                esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+                get_the_author()
 		);
 	}
 
@@ -70,9 +67,9 @@ function liquidchurch_entry_date() {
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		get_the_date(),
+		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
-		get_the_modified_date()
+		esc_html( get_the_modified_date() )
 	);
 
 	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span><br />',
@@ -111,36 +108,41 @@ function liquidchurch_entry_taxonomies() {
 endif;
 
 if ( ! function_exists( 'liquidchurch_post_thumbnail' ) ) :
-/**
- * Displays an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- *
- * Create your own liquidchurch_post_thumbnail() function to override in a child theme.
- *
- * @since 1.0.0
- */
-function liquidchurch_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
+    /**
+     * Displays an optional post thumbnail.
+     *
+     * Wraps the post thumbnail in an anchor element on index views, or a div
+     * element when on single views.
+     *
+     * @since 1.0.0
+     */
+    function liquidchurch_post_thumbnail() {
+        if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+            return;
+        }
 
-	if ( is_singular() ) :
-	?>
+        if ( is_singular() ) :
+            ?>
 
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
+            <div class="post-thumbnail">
+                <?php the_post_thumbnail(); ?>
+            </div><!-- .post-thumbnail -->
 
-	<?php else : ?>
+        <?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
-	</a>
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+                <?php
+                the_post_thumbnail( 'post-thumbnail', array(
+                    'alt' => the_title_attribute( array(
+                        'echo' => false,
+                        ) ),
+                ) );
+        ?>
+     </a>
 
-	<?php endif; // End is_singular()
-}
+        <?php
+        endif; // End is_singular().
+    }
 endif;
 
 if ( ! function_exists( 'liquidchurch_excerpt' ) ) :
@@ -148,8 +150,6 @@ if ( ! function_exists( 'liquidchurch_excerpt' ) ) :
 	 * Displays the optional excerpt.
 	 *
 	 * Wraps the excerpt in a div element.
-	 *
-	 * Create your own liquidchurch_excerpt() function to override in a child theme.
 	 *
 	 * @since 1.0.0
 	 *
@@ -167,31 +167,26 @@ if ( ! function_exists( 'liquidchurch_excerpt' ) ) :
 endif;
 
 if ( ! function_exists( 'liquidchurch_excerpt_more' ) && ! is_admin() ) :
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- *
- * Create your own liquidchurch_excerpt_more() function to override in a child theme.
- *
- * @since 1.0.0
- *
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-function liquidchurch_excerpt_more() {
-	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'liquidchurch' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
-}
-add_filter( 'excerpt_more', 'liquidchurch_excerpt_more' );
+    /**
+     * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+     * a 'Continue reading' link.
+     *
+     * @since 1.0.0
+     * @return string 'Continue reading' link prepended with an ellipsis.
+     */
+    function liquidchurch_excerpt_more() {
+        $link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+            esc_url( get_permalink( get_the_ID() ) ),
+            /* translators: %s: Name of current post */
+            sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'liquidchurch' ), get_the_title( get_the_ID() ) )
+        );
+        return ' &hellip; ' . $link;
+    }
+    add_filter( 'excerpt_more', 'liquidchurch_excerpt_more' );
 endif;
 
 /**
  * Determines whether blog/site has more than one category.
- *
- * Create your own liquidchurch_categorized_blog() function to override in a child theme.
  *
  * @since 1.0.0
  *
