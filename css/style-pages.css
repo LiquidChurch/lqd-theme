@@ -292,7 +292,13 @@
     }
 
     .lqd-header-covid .col-xs-12:last-child {
-        margin-top:1rem;
         text-align:center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .lqd-header-covid .col-xs-12:last-child {
+        /* Once the button moves below the text it bumps up against the text, so add some space */
+        margin-top:1rem;
     }
 }
