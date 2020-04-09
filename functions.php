@@ -188,14 +188,15 @@ function liquidchurch_scripts() {
     $lqd_style_css = filemtime( $theme_path . 'css/style.css' );
     $lqd_style_pages_css = filemtime( $theme_path . 'css/style-pages.css');
     $lqd_messages_css = filemtime( $theme_path . 'css/lqd-messages.css' );
+    $lqd_fonts_css = filemtime( $theme_path . 'css/lqd-fonts.css' );
 	// Avenir Fonts
-	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), '0.1');
+	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), $lqd_fonts_css);
 	// Google Fonts
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
     // Bootstrap
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', array(), '3.4.1' );
 	// Font Awesome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array() );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array(), $lqd_style_css );
 	// Main CSS
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
 	// Page Specific + Button CSS
