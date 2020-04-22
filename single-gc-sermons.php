@@ -1,8 +1,8 @@
 <?php
 /**
- * Template: Single Sermon Template
+ * Template: Single Message Template
  *
- * The template for displaying an individual sermon
+ * The template for displaying an individual message
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -30,7 +30,6 @@ get_header(); ?>
                 the_post_navigation( array(
                     'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
                 ) );
-            } elseif ( is_singular( 'post' ) ) {
             }
             // End of the loop.
         endwhile;

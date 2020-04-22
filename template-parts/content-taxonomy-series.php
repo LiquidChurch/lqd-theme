@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying content
+ * The template part for displaying the series view
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -9,13 +9,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="entry-content sermon-series-message">
+    <div class="entry-content lqdm-series-each-msg">
         <?php
         global $sermon;
         $sermon = gc_get_sermon_post(get_the_ID());
 
         $message_field_to_display = array();
-        $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_series_view');
+        $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_series_view');
         if (!empty($plugin_option))
             $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
         ?>
@@ -28,7 +28,7 @@
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                            'class' => 'gc-series-list-sermons-img',)); ?>
+                            'class' => 'lqdm-msg-feature-img',)); ?>
                     </a>
                 </div>
                 <?php
@@ -58,42 +58,42 @@
                 if (in_array('part_of_series', $message_field_to_display)
                     && ($exclude_msg != 'on')
                 ) {
-                    //series part list template part
+                    // If Series Part Option Enabled
                     get_template_part('template-parts/part/sermons/list', 'series-part');
                 }
                 ?>
 
                 <?php
                 if (in_array('topics', $message_field_to_display)) {
-                    //topics list template part
+                    // If Topic Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'topics');
                 }
                 ?>
 
                 <?php
                 if (in_array('tags', $message_field_to_display)) {
-                    //tags list template part
+                    // If Tags Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'tags');
                 }
                 ?>
 
                 <?php
                 if (in_array('scripture_reference', $message_field_to_display)) {
-                    //scripture list template part
+                    // If Scripture Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'scripture');
                 }
                 ?>
 
                 <?php
                 if (in_array('description', $message_field_to_display)) {
-                    //summary list template part
+                    // If Summary Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'summary');
                 }
                 ?>
 
                 <?php
                 if (in_array('date', $message_field_to_display)) {
-                    //date template part
+                    // If Date Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'date');
                 }
                 ?>

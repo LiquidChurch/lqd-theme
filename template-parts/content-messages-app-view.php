@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content
+ * The template used for displaying the main message page content
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -10,9 +10,9 @@
 <?php echo do_shortcode("[rev_slider alias=\"messages-header\"]"); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <!-- .entry-content -->
-    <div class="entry-content" ID="mav-entry">
+    <div class="mav-entry entry-content">
         <?php if (isset($_GET['sermon-search'])) : ?>
-            <a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
+            <a class="lqdm-home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
         <?php else: ?>
         <?php endif; ?>
 

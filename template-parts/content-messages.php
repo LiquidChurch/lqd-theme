@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content
+ * Template Name: Main Message Page Content
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -9,16 +9,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header ">
-        <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </header><!-- .entry-header -->
-
     <?php liquidchurch_post_thumbnail(); ?>
-
     <!-- .entry-content -->
     <div class="entry-content">
         <?php if (isset($_GET['sermon-search'])) : ?>
-            <a class="home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
+            <a class="lqdm-home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
         <?php else: ?>
         <?php the_content(); ?>
         <?php endif; ?>
@@ -30,7 +25,7 @@
         <?php endif; ?>
 
         <hr/>
-        <h1>Search for Series and Sermons</h1>
+        <h1>Search for Series and Messages</h1>
         <p><?php do_action('gc_sermons_search', array('separate_results' => false)); ?></p>
 
         <?php if (!isset($_GET['sermon-search'])) : ?>

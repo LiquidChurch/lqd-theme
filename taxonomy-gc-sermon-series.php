@@ -2,7 +2,7 @@
 /**
  * Template Name: Single Series Archive Page Template
  *
- * The template for displaying archive pages for a single sermon series.
+ * The template for displaying archive pages for a single series.
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -22,11 +22,11 @@ get_header(); ?>
 
             if ($series->image_id) {
                 echo wp_get_attachment_image($series->image_id, 'full', false, array(
-                    'class' => 'gc-single-series-sermons-img',
+                    'class' => 'lqdm-series-feature-img',
                 ));
             }
             ?>
-            <div class="entry-content sermon-series-desc">
+            <div class="entry-content lqdm-series-summary">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -61,11 +61,6 @@ get_header(); ?>
                     continue;
                 }
 
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
                 get_template_part('template-parts/content-taxonomy-series', get_post_format());
 
                 // End the loop.
@@ -90,11 +85,7 @@ get_header(); ?>
 
             // Start the Loop.
             while ($the_query->have_posts()) : $the_query->the_post();
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
+
                 get_template_part('template-parts/content-taxonomy-series', get_post_format());
 
                 // End the loop.
@@ -121,11 +112,6 @@ get_header(); ?>
                         continue;
                     }
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
                     get_template_part('template-parts/content-taxonomy-series', get_post_format());
 
                     // End the loop.
@@ -139,7 +125,7 @@ get_header(); ?>
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content sermon-series-resource">
+                    <div class="entry-content lqdm-series-resources">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

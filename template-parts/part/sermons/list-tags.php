@@ -4,7 +4,7 @@ $tags = $sermon->tags();
 if (empty($tags))
     return false;
 ?>
-<div id="message-tags" class="row">
+<div class="lqdm-msg-tags row">
     <div class="col-sm-3">
         <b>Tag:</b>
     </div>

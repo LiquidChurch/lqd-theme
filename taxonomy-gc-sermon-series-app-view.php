@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Single Sermon Series App View Archive Template
+ * Template Name: Series Archive App View Template
  *
- * The template for displaying archive pages for a single sermon series.
+ * The template for displaying archive pages for a single message series.
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -16,26 +16,14 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
 <div class="page">
-<!-- Header start -->
-  <div class="pagetop">
-    <div class="lqd-header">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>
-  </div>
 <!-- Header end -->
 <div class="content">
 <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main mav-series" role="main">
         <?php if (have_posts()) : ?>
             <?php
 
@@ -44,7 +32,7 @@
 
             if ($series->image_id) {
                 echo wp_get_attachment_image($series->image_id, 'full', false, array(
-                    'class' => 'gc-single-series-sermons-img',
+                    'class' => 'lqdm-series-feature-img',
                 ));
             }
             ?>
@@ -53,13 +41,13 @@
             // If we came from elsewhere, return us to the main series archive page (/messages).
             $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
             if (!strpos($url, '-series')) {
-                echo "<center><a href='$url' class='blue_btn'>Go Back To Series Archives</a></center>";
+                echo "<div style='text-align: center;'><a href='$url' class='blue_btn'>Go Back To Series Archives</a></div>";
             }
             else
             {
-                echo "<center><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Message Archives</a></center>";
+                echo "<div style='text-align: center;'><a href='https://liquidchurch.com/messages/messages-app-view/' class='blue_btn'>Go Back to Message Archives</a></div>";
             } ?>
-            <div class="entry-content sermon-series-desc mav-series">
+            <div class="entry-content lqdm-series-summary">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -94,11 +82,6 @@
                     continue;
                 }
 
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
                 get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                 // End the loop.
@@ -123,11 +106,7 @@
 
             // Start the Loop.
             while ($the_query->have_posts()) : $the_query->the_post();
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
+
                 get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                 // End the loop.
@@ -154,11 +133,6 @@
                         continue;
                     }
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
                     get_template_part('template-parts/content-taxonomy-series-app-view', get_post_format());
 
                     // End the loop.
@@ -172,7 +146,7 @@
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content sermon-series-resource">
+                    <div class="entry-content lqdm-series-resources">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

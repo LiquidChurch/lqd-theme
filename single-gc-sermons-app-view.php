@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Single Liquid Messages App View Template
+ * Template Name: Single Message App View Template
  *
- * The template for displaying single sermons
+ * The template for displaying single messages
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -15,28 +15,15 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
 <div class="page">
-<!-- Header start -->
-  <div class="pagetop">
-    <div class="lqd-header">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Header end -->
 <div class="content">
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-        <div id="mav-single">
+        <div class="mav-single">
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
@@ -55,7 +42,6 @@
                 the_post_navigation( array(
                     'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
                 ) );
-            } elseif ( is_singular( 'post' ) ) {
             }
             // End of the loop.
         endwhile;

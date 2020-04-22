@@ -4,7 +4,7 @@ $speakers = $sermon->get_speakers();
 if (empty($speakers))
     return false;
 ?>
-<div id="message-speaker" class="row">
+<div class="lqdm-msg-speaker row">
     <div class="col-sm-3">
         <b>Speaker:</b>
     </div>
