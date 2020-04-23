@@ -18,7 +18,7 @@
 <div class="container lqd-footer-top">
     <div class="row">
         <div class="col-xs-12 col-md-8">
-            <ul class="sectionleftul">
+            <ul class="lqd-footer-top-left">
                 <?php
                 if(is_active_sidebar('footer-contact-us')){
                     echo '<li>';
@@ -30,7 +30,7 @@
             </ul>
         </div>
         <div class="col-xs-12 col-md-4">
-            <ul class="footer_social">
+            <ul class="lqd-footer-top-right">
                 <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
                     <li>
                         <a target="_blank" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" class="ffb" title="Facebook"><i class="ffb"></i></a>

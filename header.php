@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="lqd-header-menu row">
-            <div class="menublock">
+            <div class="header-bottom-menu">
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
