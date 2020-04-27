@@ -22,11 +22,11 @@ get_header(); ?>
 
             if ($series->image_id) {
                 echo wp_get_attachment_image($series->image_id, 'full', false, array(
-                    'class' => 'lqdm-series-feature-img',
+                    'class' => 'lqdt-series-feature-img',
                 ));
             }
             ?>
-            <div class="entry-content lqdm-series-summary">
+            <div class="entry-content lqdt-series-summary">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
@@ -125,7 +125,7 @@ get_header(); ?>
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content lqdm-series-resources">
+                    <div class="entry-content lqdt-series-resources">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

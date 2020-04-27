@@ -4,7 +4,7 @@ $topics = $sermon->topics();
 if (empty($topics))
     return false;
 ?>
-<div class="lqdm-msg-topics row">
+<div class="lqdt-msg-topics row">
     <div class="col-sm-3">
         <b>Topic:</b>
     </div>

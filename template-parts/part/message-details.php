@@ -8,19 +8,24 @@ $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_message_
 if (!empty($plugin_option))
     $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
 ?>
- <div class="lqdm-msg-content col-md-12">
+ <div class="lqdt-msg-content col-md-12">
      <!-- If Title Option is Selected -->
      <?php if (in_array('title', $message_field_to_display)) { ?>
-         <div class="row single-msg-title">
-             <header class="entry-header col-sm-7">
-                 <?php the_title( '<h1 class="lqdm-msg-title">', '</h1>'); ?>
-             </header>
+         <div class="row lqdt-single-msg-title">
+             <div class="col-xs-12 col-md-8">
+                 <header class="entry-header">
+                     <?php the_title( '<h1 class="lqdm-msg-title">', '</h1>'); ?>
+                 </header>
+             </div>
+             <div class="col-xs-12 col-md-4">
+                 <?php get_template_part('template-parts/part/social', 'action-bar'); ?>
+             </div>
 
              <!-- If Message Image Option is Selected -->
              <?php if (in_array('sermon_image', $message_field_to_display)) { ?>
                  <div class="col-sm-5 lqdm-right-col">
                      <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                         'class' => 'lqdm-msg-feature-img',
+                         'class' => 'lqdt-msg-feature-img',
                          'style' => 'width:100%;',
                      )); ?>
                  </div>
@@ -41,7 +46,7 @@ if (!empty($plugin_option))
      <?php // If Part of Series Option Enabled
      $exclude_msg = $sermon->get_meta('gc_exclude_msg');
      if (in_array('part_of_series', $message_field_to_display)
-         && ($exclude_msg != 'on')
+         && ($exclude_msg !== 'on')
      ) {
          get_template_part('template-parts/part/sermons/list', 'series-part');
      } ?>

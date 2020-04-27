@@ -418,8 +418,7 @@ a.lqd-header-church-online-btn:hover {
   line-height: 16px;
 }
 
-.menu_list li a:hover,
-.sectionleft li a:hover {
+.menu_list li a:hover {
   text-decoration: none;
 }
 
@@ -488,6 +487,10 @@ a.lqd-header-church-online-btn:hover {
 .entry-content hr {
   clear: both;
   display: block;
+}
+
+.lqdt-post-thumbnail {
+  text-align: center;
 }
 
 /* >=1024px and <=1200px */
@@ -677,11 +680,6 @@ a.lqd-header-church-online-btn:hover {
 
 /* <=479px */
 @media (max-width: 479px) {
-  .sectionleft li a {
-    padding-right: 15px;
-    margin-bottom: 15px;
-  }
-
   .lqd-footer-top-left li:last-child a {
     margin: 0;
   }

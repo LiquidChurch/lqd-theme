@@ -13,7 +13,7 @@
     <!-- .entry-content -->
     <div class="entry-content">
         <?php if (isset($_GET['sermon-search'])) : ?>
-            <a class="lqdm-home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
+            <a class="lqdt-home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
         <?php else: ?>
         <?php the_content(); ?>
         <?php endif; ?>

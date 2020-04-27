@@ -16,8 +16,7 @@ $sermon = gc_get_sermon_post();
     <?php get_template_part('template-parts/part/social', 'share-modal'); ?>
     <div class="entry-content">
         <?php get_template_part('template-parts/part/message', 'video-image'); ?>
-        <?php get_template_part('template-parts/part/social', 'action-bar'); ?>
-        <div class="lqdm-msg-content row">
+        <div class="lqdt-msg-content row">
             <?php get_template_part( 'template-parts/part/message', 'details'); ?>
             <?php get_template_part( 'template-parts/part/message', 'others-in-series') ?>
         </div>

@@ -6,7 +6,7 @@ $addtl_resources = do_shortcode('[sermon_resources resource_display_name="true"]
 if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->'))
     return false;
 ?>
-<div class="lqdm-msg-resources-row row">
+<div class="lqdt-msg-resources-row row">
     <div class="col-sm-3">
         <b>Resources:</b>
     </div>

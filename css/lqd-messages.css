@@ -1,7 +1,7 @@
 /* Liquid Messages Related Theming */
 
 /* Back Navigation Button on Individual Messages and Series */
-a.lqdm-home-btn {
+a.lqdt-home-btn {
   background: #23527c;
   padding: 8px 18px;
   border-radius: 3px;
@@ -9,13 +9,13 @@ a.lqdm-home-btn {
 }
 
 /** SERIES **/
-.lqdm-series-feature-img {
+.lqdt-series-feature-img {
   display: block;
   margin: 20px auto;
 }
 
-.lqdm-series-each-msg,
-.lqdm-series-resources {
+.lqdt-series-each-msg,
+.lqdt-series-resources {
   padding-left: 60px;
   padding-right: 60px;
 }
@@ -28,12 +28,12 @@ a.lqdm-home-btn {
 }
 
 /** MESSAGE **/
-.lqdm-msg-feature-img {
+.lqdt-msg-feature-img {
   width: 100%;
   overflow: hidden;
 }
 
-.lqdm-msg-content {
+.lqdt-msg-content {
   padding-left: 1vw;
   padding-right: 1vw;
 }
@@ -43,53 +43,18 @@ a.lqdm-home-btn {
   padding-right: 45px;
 }
 
-.lqdm-msg-content .row {
+.lqdt-msg-content .row {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
 /* Ensure Text fills available space */
-.lqdm-msg-summary .lqdm-right-col {
+.lqdt-msg-summary .lqdm-right-col {
   text-align: justify;
 }
 
-/** Container around Resources */
-ul.lqdm-container {
-  padding: 0;
-}
-
-/* For Header Text */
-.lqdm-resources-lang {
-  font-size: 1em;
-  font-weight: 700;
-}
-
-ul.lqdm-msg-resources-list li {
-  list-style-type: none;
-}
-
-ul.lqdm-msg-resources-list li.lqdm-list {
-  width: 45%;
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  vertical-align: top;
-}
-
-ul.lqdm-msg-resources-list li.lqdm-msg-resources-list-item {
-  width: 100%;
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 0;
-}
-
-/** If we only have resources in 1x language, then use 100% of width of row. */
-ul.lqdm-msg-resources-list ul.lqdm-single-lng-resources li.lqdm-msg-resources-list-item {
-  width: 100%;
-}
-
 /* Wraps entire resources including header */
-.lqdm-msg-resources-row {
+.lqdt-msg-resources-row {
   margin-top: 10px;
 }
 
@@ -115,7 +80,7 @@ h1.lqdm-msg-title {
   border: 1px solid #ccc;
 }
 
-.lqdm-msgs-search .second-row {
+.lqdm-msgs-search .lqdt-second-row {
   padding-top: 15px;
 }
 
@@ -123,12 +88,12 @@ h1.lqdm-msg-title {
   width: 100%;
 }
 
-.lqdm-msgs-search .first-row label {
+.lqdm-msgs-search .lqdt-first-row label {
   width: 100%;
   padding-top: 15px;
 }
 
-.lqdm-msgs-search .first-row .form-group {
+.lqdm-msgs-search .lqdt-first-row .form-group {
   width: 100%;
 }
 
@@ -144,11 +109,6 @@ input.search-submit {
   border: none;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-h2.lqdm-search-results-title {
-  display: block;
-  font-size: 28px;
 }
 
 .lqdm-search-results {
@@ -195,25 +155,25 @@ h2.lqdm-search-results-title {
 }
 
 .mav-single .lqdm-msg-series,
-.mav-single .lqdm-msg-speaker,
-.mav-single .lqdm-msg-series-part,
-.mav-single .lqdm-msg-scripture,
-.mav-single .lqdm-msg-topics,
-.mav-single .lqdm-msg-tags,
-.mav-single .lqdm-msg-date,
-.mav-single .lqdm-msg-summary {
+.mav-single .lqdt-msg-speaker,
+.mav-single .lqdt-msg-series-part,
+.mav-single .lqdt-msg-scripture,
+.mav-single .lqdt-msg-topics,
+.mav-single .lqdt-msg-tags,
+.mav-single .lqdt-msg-date,
+.mav-single .lqdt-msg-summary {
   padding-bottom: 0;
   margin-bottom: 4px;
 }
 
 .mav-single .lqdm-msg-series > div:first-of-type,
-.mav-single .lqdm-msg-speaker > div:first-of-type,
-.mav-single .lqdm-msg-series-part > div:first-of-type,
-.mav-single .lqdm-msg-scripture > div:first-of-type,
-.mav-single .lqdm-msg-topics > div:first-of-type,
-.mav-single .lqdm-msg-tags > div:first-of-type,
-.mav-single .lqdm-msg-date > div:first-of-type,
-.mav-single .lqdm-msg-summary > div:first-of-type {
+.mav-single .lqdt-msg-speaker > div:first-of-type,
+.mav-single .lqdt-msg-series-part > div:first-of-type,
+.mav-single .lqdt-msg-scripture > div:first-of-type,
+.mav-single .lqdt-msg-topics > div:first-of-type,
+.mav-single .lqdt-msg-tags > div:first-of-type,
+.mav-single .lqdt-msg-date > div:first-of-type,
+.mav-single .lqdt-msg-summary > div:first-of-type {
   float: left;
   padding-right: 5px;
 }
@@ -225,7 +185,7 @@ h2.lqdm-search-results-title {
   margin-top: 0;
 }
 
-.mav-single .lqdm-msg-resources-row div.col-sm-3 {
+.mav-single .lqdt-msg-resources-row div.col-sm-3 {
   padding-bottom: 5px;
 }
 
@@ -234,11 +194,11 @@ h2.lqdm-search-results-title {
   padding-right: 15px;
 }
 
-.mav-single .lqdm-msg-resources-row div.col-sm-9 {
+.mav-single .lqdt-msg-resources-row div.col-sm-9 {
   padding-left: 25px;
 }
 
-.mav-single .lqdm-msg-summary {
+.mav-single .lqdt-msg-summary {
   padding-bottom: 0;
   margin-bottom: 0;
 }
@@ -264,11 +224,11 @@ h2.lqdm-search-results-title {
   margin-bottom: 0;
 }
 
-.mav-series .lqdm-series-summary > p {
+.mav-series .lqdt-series-summary > p {
   font-size: 1em !important;
 }
 
-.mav-series .lqdm-series-each-msg {
+.mav-series .lqdt-series-each-msg {
   padding-left: 5px;
   padding-right: 5px;
 }

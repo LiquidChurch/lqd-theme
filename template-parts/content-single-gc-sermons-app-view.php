@@ -19,7 +19,7 @@ $sermon = gc_get_sermon_post();
             <div id="top-row-single-msg" class="row">
                 <div id="single-msg-player" class="col-sm-12">
                     <?php if ($video_player = gc_get_sermon_video_player($sermon)) : ?>
-                        <div class="lqdm-video">
+                        <div class="lqdt-video">
                             <?php echo $video_player; ?>
                         </div>
                     <?php // Enqueue fitvids for responsive video.
@@ -33,7 +33,7 @@ $sermon = gc_get_sermon_post();
                     ?>
                         <script type="text/javascript">
                             jQuery(function ($) {
-                                jQuery('.lqdm-video').fitVids();
+                                jQuery('.lqdt-video').fitVids();
                             });
                         </script>
                     <?php else : ?>
@@ -60,7 +60,7 @@ $sermon = gc_get_sermon_post();
                         ?>
                     </div>
 
-                    <div class="lqdm-msg-content col-md-12">
+                    <div class="lqdt-msg-content col-md-12">
                         <!-- If Title Option is Selected -->
                         <?php if (in_array('title', $message_field_to_display)) { ?>
                             <div class="row">
@@ -72,7 +72,7 @@ $sermon = gc_get_sermon_post();
                                 <?php if (in_array('sermon_image', $message_field_to_display)) { ?>
                                     <div class="col-sm-5 lqdm-right-col">
                                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                                            'class' => 'lqdm-msg-feature-img',
+                                            'class' => 'lqdt-msg-feature-img',
                                             'style' => 'width:100%;',
                                         )); ?>
                                     </div>
@@ -138,7 +138,7 @@ $sermon = gc_get_sermon_post();
             if (!empty($other_msg)) { ?>
                 <div class="row lqdm-other-msgs">
                     <div class="col-xs-12" style="text-align:center;">
-                        <h1 class="lqdm-msg-title lqdm-other-msgs-title">Other Messages in This Series</h1>
+                        <h1 class="lqdm-msg-title lqdt-other-msgs-title">Other Messages in This Series</h1>
                     </div>
                     <div class="col-xs-12">
                         <?php echo $other_msg; ?>

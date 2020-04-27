@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="entry-content lqdm-series-each-msg mav-series">
+    <div class="entry-content lqdt-series-each-msg mav-series">
         <?php
         global $sermon;
         $sermon = gc_get_sermon_post(get_the_ID());
@@ -28,7 +28,7 @@
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                            'class' => 'lqdm-msg-feature-img',)); ?>
+                            'class' => 'lqdt-msg-feature-img',)); ?>
                     </a>
                 </div>
                 <?php
@@ -56,7 +56,7 @@
                 <?php
                 $exclude_msg = $sermon->get_meta('gc_exclude_msg');
                 if (in_array('part_of_series', $message_field_to_display)
-                    && ($exclude_msg != 'on')
+                    && ($exclude_msg !== 'on')
                 ) {
                     //series part list template part
                     get_template_part('template-parts/part/sermons/list', 'series-part');
