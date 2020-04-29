@@ -18,26 +18,11 @@
         <?php the_content(); ?>
         <?php endif; ?>
 
-        <?php if (!isset($_GET['sermon-search'])) : ?>
-            <hr/>
-            <h1>Most Recent Messages</h1>
-            <p><?php do_action('gc_sermons', array('per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4)); ?></p>
-        <?php endif; ?>
+        <?php get_template_part( 'template-parts/part/messages', 'recent' ); ?>
 
-        <hr/>
-        <h1>Search for Series and Messages</h1>
-        <p><?php do_action('gc_sermons_search', array('separate_results' => false)); ?></p>
+        <?php get_template_part ( 'template-parts/part/messages', 'search-prompt' ); ?>
 
-        <?php if (!isset($_GET['sermon-search'])) : ?>
-            <hr/>
-            <h1>Browse Message Archive</h1>
-            <p><?php do_action('gc_series', array(
-                    'paging_by' => "per_year",
-                    'show_num_years_first_page' => 2,
-                    'paging_init_year' => date('Y', time()) . ",2016,2015"
-                )); ?>
-            </p>
-        <?php endif; ?>
+        <?php get_template_part ( 'template-parts/part/messages', 'browse' ); ?>
 
         <?php wp_link_pages(array(
             'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'liquidchurch') . '</span>',

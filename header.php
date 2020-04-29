@@ -83,7 +83,8 @@
 
                         <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
                             <div class="form-group form-group_new">
-                                <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
+                                <label class="screen-reader-text">Search Site</label>
+                                <input type="text" class="lqd-header-search-input paddings" placeholder="Search" name="s" onblur="if(this.value==&#39;&#39;)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=&#39;&#39;;" >
                                 <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
                             </div>
                         </form>

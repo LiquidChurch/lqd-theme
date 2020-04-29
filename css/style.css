@@ -80,11 +80,6 @@ img {
   text-align: initial;
 }
 
-.sprite {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 /** HEADERS **/
 h1,
 h2,
@@ -156,6 +151,7 @@ textarea {
   flex-direction: column;
 }
 
+/** Page **/
 .page {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   margin: auto;
@@ -167,11 +163,14 @@ textarea {
   /*  padding: 36px 0 25px;  // Not used during COVID */
 }
 
-/* Header: Top */
+/* Header: Top
+ * Creates spacing between Liquid Church / Buttons and nav menu.
+ */
 .lqd-header-top {
   margin-bottom: 15px;
 }
 
+/* Header: Top: Liquid Church Logo */
 .lqd-header-logo {
   float: left;
 }
@@ -186,7 +185,7 @@ textarea {
   margin-top: 15px;
 }
 
-/* Church Online Button */
+/* Header: Top: Church Online Button */
 .lqd-header-church-online-btn {
   border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
   background: #fff none repeat scroll 0 0;
@@ -257,13 +256,13 @@ a.lqd-header-church-online-btn:hover {
   border-right: 1px solid #fff;
 }
 
-/* Override BS margin for Search */
+/* Override Bootstrap margin for Search */
 .header-bottom-menu #search-form {
   margin-right: 0;
 }
 
 /** FORMS **/
-.form-group .form-controlinput {
+.form-group .lqd-header-search-input {
   background: #fff;
   border: medium none;
   border-radius: 20px;
@@ -493,6 +492,44 @@ a.lqd-header-church-online-btn:hover {
   text-align: center;
 }
 
+/* Screen Reader Text ------------------------ */
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  word-break: normal;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  -webkit-clip-path: none;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
 /* >=1024px and <=1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
   .nav > li > a {
@@ -559,7 +596,7 @@ a.lqd-header-church-online-btn:hover {
   }
 
   /* Header: Bottom: Menu: Right */
-  .form-group .form-controlinput {
+  .form-group .lqd-header-search-input {
     width: 100%;
   }
 

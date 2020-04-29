@@ -12,12 +12,12 @@ if (!empty($plugin_option))
      <!-- If Title Option is Selected -->
      <?php if (in_array('title', $message_field_to_display)) { ?>
          <div class="row lqdt-single-msg-title">
-             <div class="col-xs-12 col-md-8">
+             <div class="col-xs-12 col-md-9">
                  <header class="entry-header">
                      <?php the_title( '<h1 class="lqdm-msg-title">', '</h1>'); ?>
                  </header>
              </div>
-             <div class="col-xs-12 col-md-4">
+             <div class="col-xs-12 col-md-3">
                  <?php get_template_part('template-parts/part/social', 'action-bar'); ?>
              </div>
 

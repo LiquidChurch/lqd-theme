@@ -1,4 +1,6 @@
-/* Liquid Messages Related Theming */
+/**
+ * Liquid Messages Related Theming
+ */
 
 /* Back Navigation Button on Individual Messages and Series */
 a.lqdt-home-btn {
@@ -33,19 +35,24 @@ a.lqdt-home-btn {
   overflow: hidden;
 }
 
+h1.lqdm-msg-title {
+  margin-top: 30px;
+  font-size: 32px;
+}
+
 .lqdt-msg-content {
   padding-left: 1vw;
   padding-right: 1vw;
 }
 
-.lqdm-other-msgs {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
 .lqdt-msg-content .row {
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+
+.lqdm-other-msgs {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 /* Ensure Text fills available space */
@@ -56,11 +63,6 @@ a.lqdt-home-btn {
 /* Wraps entire resources including header */
 .lqdt-msg-resources-row {
   margin-top: 10px;
-}
-
-h1.lqdm-msg-title {
-  margin-top: 30px;
-  font-size: 32px;
 }
 
 .lqdm-other-msgs .lqdm-series-msgs-list {
@@ -80,7 +82,7 @@ h1.lqdm-msg-title {
   border: 1px solid #ccc;
 }
 
-.lqdm-msgs-search .lqdt-second-row {
+.lqdm-msgs-search .lqdm-second-row {
   padding-top: 15px;
 }
 
@@ -88,12 +90,12 @@ h1.lqdm-msg-title {
   width: 100%;
 }
 
-.lqdm-msgs-search .lqdt-first-row label {
+.lqdm-msgs-search .lqdm-first-row label {
   width: 100%;
   padding-top: 15px;
 }
 
-.lqdm-msgs-search .lqdt-first-row .form-group {
+.lqdm-msgs-search .lqdm-first-row .form-group {
   width: 100%;
 }
 
@@ -211,7 +213,7 @@ input.search-submit {
   margin-bottom: 0;
 }
 
-.mav-single li.lqdm-list {
+.mav-single li.lqdm-msg-resources-lang-head {
   margin-bottom: 0;
 }
 
@@ -238,7 +240,7 @@ input.search-submit {
 }
 
 @media screen and (max-width: 800px) {
-  ul.lqdm-msg-resources-list li.lqdm-list {
+  ul.lqdm-msg-resources-list li.lqdm-msg-resources-lang-head {
     width: 100%;
   }
 }

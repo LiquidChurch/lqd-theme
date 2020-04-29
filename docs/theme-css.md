@@ -11,8 +11,8 @@ Just as there are some templates in the Liquid Theme which extend the Liquid Mes
 - .lqdt-series-resources - Theme Only
 - .lqdt-series-each-msg - Used with the div enclosing each message on a series page.
 - .lqdt-other-msgs-title - For the header stating "Other Messages" on individual message page.
-- .lqdt-first-row
-- .lqdt-second-row
+- .lqdm-first-row
+- .lqdm-second-row
 - .search-submit
 - .lqdt-home-btn
 - .lqdt-msg-content
