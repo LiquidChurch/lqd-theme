@@ -1,10 +1,11 @@
 <?php
 global $sermon;
 $topics = $sermon->topics();
-if (empty($topics))
+if (empty($topics)) {
     return false;
+}
 ?>
-<div class="lqdt-msg-topics row">
+<div class="lqdm-single-msg-topics row">
     <div class="col-sm-3">
         <b>Topic:</b>
     </div>

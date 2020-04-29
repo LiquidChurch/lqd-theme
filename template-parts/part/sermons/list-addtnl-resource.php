@@ -1,12 +1,17 @@
 <?php
+/**
+ * Template to List Additional Resources
+ */
 global $sermon;
 
 $addtl_resources = do_shortcode('[sermon_resources resource_display_name="true"]');
 
 if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->'))
+{
     return false;
+}
 ?>
-<div class="lqdt-msg-resources-row row">
+<div class="lqdm-single-msg-resources row">
     <div class="col-sm-3">
         <b>Resources:</b>
     </div>

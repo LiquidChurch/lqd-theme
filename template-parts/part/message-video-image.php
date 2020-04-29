@@ -1,25 +1,13 @@
-<div id="top-row-single-msg" class="row">
-    <div id="single-msg-player">
+<?php
+global $sermon;
+$sermon = gc_get_sermon_post();
+?>
+<div class="lqdm-single-msg-video-image row">
         <?php if ($video_player = gc_get_sermon_video_player($sermon)) : ?>
-            <div class="lqdm-video videoWrapper">
+            <div class="videoWrapper">
                 <?php echo $video_player; ?>
             </div>
-        <?php // Add fitvids for responsive video.
-        wp_enqueue_script(
-            'fitvids',
-            GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery/fitvids.js',
-            array('jquery'),
-            '1.1',
-            true
-        );
-        ?>
-            <script type="text/javascript">
-                jQuery(function ($) {
-                    jQuery('.lqdm-video').fitVids();
-                });
-            </script>
         <?php else : ?>
-            <div style="text-align:center;"><?php liquidchurch_post_thumbnail(); ?></div>
+            <div class="center-block"><?php liquidchurch_post_thumbnail(); ?></div>
         <?php endif; ?>
-    </div>
 </div>

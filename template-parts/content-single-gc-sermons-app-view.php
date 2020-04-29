@@ -60,7 +60,7 @@ $sermon = gc_get_sermon_post();
                         ?>
                     </div>
 
-                    <div class="lqdt-msg-content col-md-12">
+                    <div class="col-md-12">
                         <!-- If Title Option is Selected -->
                         <?php if (in_array('title', $message_field_to_display)) { ?>
                             <div class="row">
@@ -138,7 +138,7 @@ $sermon = gc_get_sermon_post();
             if (!empty($other_msg)) { ?>
                 <div class="row lqdm-other-msgs">
                     <div class="col-xs-12" style="text-align:center;">
-                        <h1 class="lqdm-msg-title lqdt-other-msgs-title">Other Messages in This Series</h1>
+                        <h1 class="lqdt-other-msgs-title">Other Messages in This Series</h1>
                     </div>
                     <div class="col-xs-12">
                         <?php echo $other_msg; ?>

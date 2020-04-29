@@ -1,10 +1,11 @@
 <?php
 global $sermon;
 $tags = $sermon->tags();
-if (empty($tags))
+if (empty($tags)) {
     return false;
+}
 ?>
-<div class="lqdt-msg-tags row">
+<div class="lqdm-single-msg-tags row">
     <div class="col-sm-3">
         <b>Tag:</b>
     </div>

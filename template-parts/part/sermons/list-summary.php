@@ -1,10 +1,11 @@
 <?php
 add_filter('the_content', 'gc_sermon_before_after');
 $content = strip_tags(get_the_content());
-if (empty($content))
+if (empty($content)) {
     return false;
+}
 ?>
-<div class="lqdt-msg-summary row">
+<div class="lqdm-single-msg-summary row">
     <div class="col-sm-3">
         <b>Summary:</b>
     </div>

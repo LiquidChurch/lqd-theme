@@ -11,15 +11,17 @@ a.lqdt-home-btn {
 }
 
 /** SERIES **/
+/** Used with a series image */
 .lqdt-series-feature-img {
   display: block;
   margin: 20px auto;
 }
 
+/** Wraps each message, list of resources when on a series page */
 .lqdt-series-each-msg,
 .lqdt-series-resources {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 .lqdm-series-wrap h4 {
@@ -30,50 +32,133 @@ a.lqdt-home-btn {
 }
 
 /** MESSAGE **/
+/** The featured image for a message */
 .lqdt-msg-feature-img {
   width: 100%;
   overflow: hidden;
 }
 
+/** Probably unneeded, used in app view */
 h1.lqdm-msg-title {
   margin-top: 30px;
   font-size: 32px;
 }
 
-.lqdt-msg-content {
-  padding-left: 1vw;
-  padding-right: 1vw;
+/** Wraps individual resource items */
+.lqdm-resources-list-item {
+
 }
 
-.lqdt-msg-content .row {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+/** Wraps a single message, see content-single-gc-sermons.php */
+.lqdm-single-msg-content {
+
 }
 
+/** Wraps the video/image content for a single message, see message-video-image.php */
+.lqdm-single-msg-video-image {
+
+}
+
+/** Wraps the details of a single message, see message-details.php */
+.lqdm-single-msg-details {
+
+}
+
+/** Adds spacing between each detail item of a single message */
+.lqdm-single-msg-resources,
+.lqdm-single-msg-date,
+.lqdm-single-msg-scriptures,
+.lqdm-single-msg-series,
+.lqdm-single-msg-series-part,
+.lqdm-single-msg-speakers,
+.lqdm-single-msg-summary,
+.lqdm-single-msg-tags,
+.lqdm-single-msg-topics
+{
+  margin-bottom: 1vw;
+}
+
+/** Wrapper for other messages on single message page, see message-others-in-series.php */
 .lqdm-other-msgs {
-  padding-left: 45px;
-  padding-right: 45px;
+
 }
 
-/* Ensure Text fills available space */
-.lqdt-msg-summary .lqdm-right-col {
-  text-align: justify;
+/** Styles header of Other Messages on single messages page, see message-others-in-series.php */
+.lqdm-other-msgs-header {
+  text-align: center;
+  width: 100%;
 }
 
-/* Wraps entire resources including header */
-.lqdt-msg-resources-row {
-  margin-top: 10px;
+/** Wrapper for series containing individual messages */
+.lqdm-series-msgs-list {
+  display: flex;
+  justify-content: center;
 }
 
-.lqdm-other-msgs .lqdm-series-msgs-list {
-  padding-top: 5px;
-  display: table;
-  margin: 0 auto;
-  padding-right: 0;
+/** */
+.lqdm-item {
+
+}
+
+/** */
+.lqdm-item-link {
+
+}
+
+/** */
+.lqdm-list-item-description {
+
+}
+
+/** */
+.lqdm-thumb {
+
+}
+
+/** */
+.lqdm-no-thumb {
+
+}
+
+/** Used to put a slightly darker overlay over a messages image */
+.lqdm-overlay {
+
+}
+
+/** Used if there should not be an overlay */
+.lqdm-hover-opposite {
+
+}
+
+/** Used to display title over message or series image */
+.lqdm-always-show-title {
+
+}
+
+/** Used to structure the text over a message or series image */
+.lqdm-img-table-wrapper {
+
 }
 
 /** SEARCH **/
-.search-field {
+.lqdm-search label {
+  width: 100%;
+}
+
+.lqdm-search span {
+  font-size: 18px;
+}
+
+.lqdm-search-input label {
+  width: 100%;
+  padding-top: 15px;
+}
+
+.lqdm-search-input .form-group {
+  width: 100%;
+}
+
+.lqdm-search-field {
   width: 60%;
   background: #e2e2e2;
   box-shadow: none;
@@ -82,25 +167,8 @@ h1.lqdm-msg-title {
   border: 1px solid #ccc;
 }
 
-.lqdm-msgs-search .lqdm-second-row {
+.lqdm-search-filter {
   padding-top: 15px;
-}
-
-.lqdm-msgs-search label {
-  width: 100%;
-}
-
-.lqdm-msgs-search .lqdm-first-row label {
-  width: 100%;
-  padding-top: 15px;
-}
-
-.lqdm-msgs-search .lqdm-first-row .form-group {
-  width: 100%;
-}
-
-.lqdm-msgs-search span {
-  font-size: 18px;
 }
 
 input.search-submit {

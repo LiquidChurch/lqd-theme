@@ -530,6 +530,12 @@ a.lqd-header-church-online-btn:hover {
   z-index: 100000;
 }
 
+/** Social Share */
+.lqd-share-message img {
+  min-width: 50px;
+  max-width: 80px;
+}
+
 /* >=1024px and <=1200px */
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
   .nav > li > a {
