@@ -20,11 +20,10 @@
                 ?>
             <?php endif; ?>
 
-            <form method="get" id="search-form" action="<?php echo home_url('/')?>" class="navbar-form navbar-right" role="search">
+            <form class="form-inline my-2 my-lg-0" method="get" id="search-form" action="<?php echo home_url('/')?>" role="search">
                 <div class="form-group form-group_new">
-                    <label class="screen-reader-text">Search</label>
-                    <input type="text" class="form-controlinput paddings" placeholder="Search" name="s" placeholder="Search" >
-                    <i class="fa fa-search fa-searchicon" aria-hidden="true"></i>
+                    <label class="sr-only">Search</label>
+                    <input class="form-control mr-sm-2" type="text"  placeholder="Search" name="s">
                 </div>
             </form>
         </div>
