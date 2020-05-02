@@ -194,7 +194,8 @@ function liquidchurch_scripts() {
 	// Google Fonts
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
     // Bootstrap
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap.min.css', array(), '3.4.1' );
+	// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap/bootstrap.min.css', array(), '3.4.1' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap/bootstrap.min.css', array(), '4.4.1' );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array(), $lqd_style_css );
 	// Main CSS
@@ -231,7 +232,7 @@ function liquidchurch_scripts() {
     // Main Liquid Church JavaScript
     wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20200313', true );
 	// Bootstrap JavaScript
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20190313', true );
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20190313', true );
     // Localization
 	wp_localize_script( 'liquidchurch-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'liquidchurch' ),

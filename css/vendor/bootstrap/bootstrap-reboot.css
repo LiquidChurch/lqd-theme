@@ -5,14 +5,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
-/* line 19, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* line 25, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -20,12 +18,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 35, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-/* line 46, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -37,48 +33,43 @@ body {
   background-color: #fff;
 }
 
-/* line 66, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
 
-/* line 76, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
-/* line 92, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-/* line 101, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-/* line 114, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
+  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 
-/* line 123, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
 
-/* line 129, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 ol,
 ul,
 dl {
@@ -86,7 +77,6 @@ dl {
   margin-bottom: 1rem;
 }
 
-/* line 136, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 ol ol,
 ul ul,
 ol ul,
@@ -94,34 +84,28 @@ ul ol {
   margin-bottom: 0;
 }
 
-/* line 143, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 dt {
   font-weight: 700;
 }
 
-/* line 147, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 dd {
   margin-bottom: .5rem;
   margin-left: 0;
 }
 
-/* line 152, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 blockquote {
   margin: 0 0 1rem;
 }
 
-/* line 156, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 b,
 strong {
   font-weight: bolder;
 }
 
-/* line 161, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 small {
   font-size: 80%;
 }
 
-/* line 170, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 sub,
 sup {
   position: relative;
@@ -130,42 +114,35 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 178, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 sub {
   bottom: -.25em;
 }
 
-/* line 179, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 sup {
   top: -.5em;
 }
 
-/* line 186, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 a {
   color: #007bff;
   text-decoration: none;
   background-color: transparent;
 }
 
-/* line 13, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/mixins/_hover.scss */
 a:hover {
   color: #0056b3;
   text-decoration: underline;
 }
 
-/* line 202, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 a:not([href]) {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 13, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/mixins/_hover.scss */
 a:not([href]):hover {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 217, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 pre,
 code,
 kbd,
@@ -174,36 +151,30 @@ samp {
   font-size: 1em;
 }
 
-/* line 225, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
 }
 
-/* line 239, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 figure {
   margin: 0 0 1rem;
 }
 
-/* line 249, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 img {
   vertical-align: middle;
   border-style: none;
 }
 
-/* line 254, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 svg {
   overflow: hidden;
   vertical-align: middle;
 }
 
-/* line 266, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 table {
   border-collapse: collapse;
 }
 
-/* line 270, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -212,29 +183,24 @@ caption {
   caption-side: bottom;
 }
 
-/* line 278, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 th {
   text-align: inherit;
 }
 
-/* line 289, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
 
-/* line 298, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button {
   border-radius: 0;
 }
 
-/* line 307, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-/* line 312, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 input,
 button,
 select,
@@ -246,24 +212,20 @@ textarea {
   line-height: inherit;
 }
 
-/* line 323, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button,
 input {
   overflow: visible;
 }
 
-/* line 328, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 336, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 select {
   word-wrap: normal;
 }
 
-/* line 344, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button,
 [type="button"],
 [type="reset"],
@@ -271,7 +233,6 @@ button,
   -webkit-appearance: button;
 }
 
-/* line 357, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -279,7 +240,6 @@ button:not(:disabled),
   cursor: pointer;
 }
 
-/* line 364, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -288,14 +248,12 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-/* line 372, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 379, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -303,13 +261,11 @@ input[type="month"] {
   -webkit-appearance: listbox;
 }
 
-/* line 391, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 textarea {
   overflow: auto;
   resize: vertical;
 }
 
-/* line 397, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 fieldset {
   min-width: 0;
   padding: 0;
@@ -317,7 +273,6 @@ fieldset {
   border: 0;
 }
 
-/* line 412, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 legend {
   display: block;
   width: 100%;
@@ -330,53 +285,43 @@ legend {
   white-space: normal;
 }
 
-/* line 424, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 progress {
   vertical-align: baseline;
 }
 
-/* line 429, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 434, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 [type="search"] {
   outline-offset: -2px;
   -webkit-appearance: none;
 }
 
-/* line 447, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 456, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 ::-webkit-file-upload-button {
   font: inherit;
   -webkit-appearance: button;
 }
 
-/* line 465, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 output {
   display: inline-block;
 }
 
-/* line 469, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 summary {
   display: list-item;
   cursor: pointer;
 }
 
-/* line 474, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 template {
   display: none;
 }
 
-/* line 480, ../../../Local Sites/liquid/app/public/wp-content/themes/liquidchurch/src/bootstrap/_reboot.scss */
 [hidden] {
   display: none !important;
 }
-
 /*# sourceMappingURL=bootstrap-reboot.css.map */
