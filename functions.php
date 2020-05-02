@@ -184,17 +184,16 @@ add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
  */
 function liquidchurch_scripts() {
     /** FONTS **/
-    $theme_path = plugin_dir_path( __FILE__ );
-    $lqd_style_css = filemtime( $theme_path . 'css/style.css' );
-    $lqd_style_pages_css = filemtime( $theme_path . 'css/style-pages.css');
-    $lqd_messages_css = filemtime( $theme_path . 'css/lqd-messages.css' );
-    $lqd_fonts_css = filemtime( $theme_path . 'css/lqd-fonts.css' );
+    $theme_path = plugin_dir_path(__FILE__);
+    $lqd_style_css = filemtime($theme_path . 'css/style.css');
+    $lqd_style_pages_css = filemtime($theme_path . 'css/style-pages.css');
+    $lqd_messages_css = filemtime($theme_path . 'css/lqd-messages.css');
+    $lqd_fonts_css = filemtime($theme_path . 'css/lqd-fonts.css');
 	// Avenir Fonts
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), $lqd_fonts_css);
 	// Google Fonts
 	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
     // Bootstrap
-	// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap/bootstrap.min.css', array(), '3.4.1' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap/bootstrap.min.css', array(), '4.4.1' );
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array(), $lqd_style_css );
@@ -212,9 +211,6 @@ function liquidchurch_scripts() {
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
 
     /** JS **/
-    // HTML5 Shiv for IE7 Compatibility
-	wp_enqueue_script( 'liquidchurch-html5', get_template_directory_uri() . '/js/vendor/html5.js', array(), '3.7.3' );
-	wp_script_add_data( 'liquidchurch-html5', 'conditional', 'lt IE 9' );
     // Skip Link Focus Fix
 	wp_enqueue_script( 'liquidchurch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
 	// If Single Page with Threaded Comments
