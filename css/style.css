@@ -124,17 +124,7 @@ textarea {
     height: 140px;
 }
 
-/* Add Flexbox to Rows */
-.row.display-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.row.display-flex > [class*='col-'] {
-    display: flex;
-    flex-direction: column;
-}
-
+/** PAGE **/
 .page {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     margin: auto;
@@ -143,16 +133,15 @@ textarea {
 
 /** HEADER **/
 .lqd-header {
-    /*  padding: 36px 0 25px;  // Not used during COVID */
 }
 
 /* Header: Top */
 .lqd-header-top {
-    margin-bottom:15px;
+    margin-bottom: 1vw;
 }
 
 .lqd-header-logo {
-    float: left;
+    margin-left: 1vw;
 }
 
 .site-title {
@@ -166,14 +155,11 @@ textarea {
 }
 
 /* Church Online Button */
-.lqd-header-church-online-btn {
+.lqd-header-btn {
     border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
     background: #fff none repeat scroll 0 0;
     margin-top: 6px; /* Match height of Locations */
-    line-height: 1.3rem; /* Center our text in the button */
-    font-size: 1.6rem; /* Match Locations */
     white-space: nowrap; /* Don't allow text to wrap onto second line */
-    height: 28px; /* Match Locations */
     color: #14a7e0;
     border-radius: 42px;
     font-family: "Avenir Next LT Pro", sans-serif;
@@ -182,61 +168,22 @@ textarea {
     z-index: 1;
 }
 
-a.lqd-header-church-online-btn:hover {
+a.lqd-header-btn:hover {
     border-color: #14a7e0 !important;
     filter: brightness(0.9);
 }
 
-/* Header: Bottom: Menu */
-.menublock {
-    margin: 0;
+/* HEADER MENU */
+.lqd-header-menu {
     background-color: #14a7e0;
 }
 
-.menublock .navbar-default {
-    background-color: #14a7e0;
-    border: none;
-}
-
-.menublock .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    background: none;
-    color: initial;
-}
-
-.menublock ul li {
-    border-left: 1px solid #ffffff;
-    box-sizing: border-box;
-    color: #ffffff;
-    float: left;
-    margin: auto;
-    text-align: center;
-}
-
-.menublock li a {
-    color: #ffffff !important;
-    display: block;
-    font-size: 1.5rem;
+.lqd-header-menu ul li a {
+    color: #fff;
     font-family: 'Avenir Next Cyr W00 Bold', sans-serif;
-    padding: 15px 40px;
     text-transform: uppercase;
-}
-
-.menublock nav {
-    margin: 0;
-}
-
-/* Menu Item Separators */
-.menublock ul li:first-child {
-    border: medium none;
-}
-
-.menublock ul li:last-child {
-    border-right: 1px solid #fff;
-}
-
-/* Override BS margin for Search */
-.menublock #search-form {
-    margin-right: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 /** FORMS **/
@@ -259,7 +206,7 @@ a.lqd-header-church-online-btn:hover {
     margin-top: -2px;
 }
 
-/* Header: Bottom: Menu: Search */
+/* Header Menu: Search */
 .fa-searchicon {
     position: absolute;
     right: 10px;
@@ -486,7 +433,7 @@ a.lqd-header-church-online-btn:hover {
         margin-bottom:10px;
     }
 
-    .lqd-header-church-online-btn {
+    .lqd-header-btn {
         margin-right:auto;
         width:100%;
     }
@@ -643,7 +590,7 @@ a.lqd-header-church-online-btn:hover {
         width: 100% !important;
     }
 
-    .lqd-header-church-online-btn {
+    .lqd-header-btn {
         margin-right: auto;
     }
 }

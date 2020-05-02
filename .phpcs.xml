@@ -46,4 +46,12 @@
 			<property name="blank_line_check" value="true"/>
 		</properties>
 	</rule>
+
+    <!-- Rules: Disable line length check -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="N" />
+            <property name="absoluteLineLimit" value="M" />
+        </properties>
+    </rule>
 </ruleset>
