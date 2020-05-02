@@ -5,26 +5,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                <?php
+            <?php if ( has_nav_menu( 'primary' ) ) :
                 wp_nav_menu( array(
                     'theme_location' => 'primary',
-                    'menu_class'     => 'nav navbar-nav',
+                    'menu_class'     => 'nav mr-auto',
                 ) );
             else :
                 wp_nav_menu( array(
                     'theme_location' => 'default',
                     'menu'  =>  'Default Menu',
-                    'menu_class'     => 'nav navbar-nav',
+                    'menu_class'     => 'nav mr-auto',
                 ) );
-                ?>
-            <?php endif; ?>
+            endif; ?>
 
             <form class="form-inline my-2 my-lg-0" method="get" id="search-form" action="<?php echo home_url('/')?>" role="search">
-                <div class="form-group form-group_new">
                     <label class="sr-only">Search</label>
                     <input class="form-control mr-sm-2" type="text"  placeholder="Search" name="s">
-                </div>
             </form>
         </div>
     </nav>
