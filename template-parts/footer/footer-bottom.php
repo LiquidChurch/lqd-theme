@@ -1,4 +1,4 @@
-<div class="container lqd-footer-bottom">
+<div class="lqd-footer-bottom container-fluid">
     <div class="row">
         <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php

@@ -1,4 +1,4 @@
-<div class="lqd-footer-top container">
+<div class="lqd-footer-top container-fluid">
     <div class="row">
         <div class="col-xs-12 col-md-8">
             <ul class="lqd-footer-top-left">

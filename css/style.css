@@ -22,7 +22,6 @@ div, span, ul, h1, h2, h3, h4, h5, p {
 }
 
 a {
-    text-decoration: none;
     outline: none;
 }
 
@@ -42,11 +41,9 @@ img {
 /* Clearfixes */
 .clearfix:after, .clearfix:before {
     display: table;
-    content: "";
     visibility: hidden;
     font-size: 0;
     height: auto;
-    clear: both;
 }
 
 .clear {
@@ -69,11 +66,6 @@ img {
     text-align: initial;
 }
 
-.sprite {
-    display: inline-block;
-    vertical-align: middle;
-}
-
 /** HEADERS **/
 h1, h2, h3, h4, h5, h6 {
     font-family: "Avenir Next LT Pro Demi", sans-serif;
@@ -93,35 +85,6 @@ h2 {
 
 h3 {
     font-size: 2.4rem; /* 30 px */
-}
-
-/** FORMS **/
-input[type="text"], select, textarea {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    background: #ffffff none;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-
-input[type="text"]:focus {
-    border-color: #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-
-textarea {
-    height: 140px;
 }
 
 /** PAGE **/
@@ -154,7 +117,7 @@ textarea {
     margin-top: 15px;
 }
 
-/* Church Online Button */
+/* Header Buttons */
 .lqd-header-btn {
     border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
     background: #fff none repeat scroll 0 0;
@@ -192,7 +155,7 @@ a.lqd-header-btn:hover {
     padding: 18px 0;
 }
 
-/* Footer: Top: Left */
+/* Footer: Top Left */
 .lqd-footer-top-left li {
     float: left;
     padding-right: 35px;
@@ -214,20 +177,12 @@ a.lqd-header-btn:hover {
     font-size: 20px;
 }
 
-/* Ensures size of Top: Footer is not too wide */
-.lqd-footer-top-left .menu_list ul li {
-    padding: 0;
-}
 
 .lqd-footer-top-left .menu_list li {
     min-width: 10vw;
 }
 
-/* Footer: Top: Right */
-.lqd-footer-top-right {
-    float: right;
-    padding: 0;
-}
+/* Footer: Top Right */
 
 .lqd-footer-top-right:after {
     clear: both;
@@ -377,22 +332,6 @@ a.lqd-header-btn:hover {
     display: block;
 }
 
-/* >=1024px and <=1200px */
-@media only screen and (min-width: 1024px) and (max-width: 1200px) {
-    .nav > li > a {
-        /* Controls how far in before the menu starts (e.g. New Here */
-        padding-left: 28px;
-    }
-}
-
-/* >=768px and <=1023px */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .nav > li > a {
-        padding-left: 11px;
-        padding-right: 12px;
-    }
-}
-
 /* <=1024px */
 @media (max-width: 1024px) {
     .lqd-footer-top-right {
@@ -416,39 +355,16 @@ a.lqd-header-btn:hover {
         padding-left: 0;
         padding-right: 0;
     }
-
-    .navbar-form.navbar-right {
-        margin-right: 25px;
-        padding-left: 11px;
-        padding-right: 11px;
-    }
 }
 
 /* <=767px */
 @media (max-width: 767px) {
     .lqd-header {
-        /*padding: 15px 0 7px; // For COVID */
     }
 
     .lqd-header-logo {
         float: none;
         margin-left: 0;
-    }
-
-    /* Header: Bottom: Menu */
-    .menublock ul li {
-        width: 100%;
-        border: none;
-        text-align: left;
-    }
-
-    .menublock .navbar-form {
-        box-shadow: none;
-    }
-
-    /* Header: Bottom: Menu: Right */
-    .form-group .form-controlinput {
-        width: 100%;
     }
 
     .lqd-footer-top-left .menu_list ul li {
@@ -497,7 +413,7 @@ a.lqd-header-btn:hover {
         padding-right: 0;
     }
 
-    /* Footer: Top: Right */
+    /* Footer: Top Right */
     .lqd-footer-top-right {
         display: block;
         float: none;
@@ -517,72 +433,8 @@ a.lqd-header-btn:hover {
         padding-right: 0;
     }
 
-    /* Only place this occurs */
-    .page-content .search-form {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     /* Normally 30px */
     .entry-content table {
         margin-left: 0;
     }
-
-    /* Only place this occurs */
-    .search-form .screen-reader-text {
-        font-size: 16px;
-    }
-
-    .search-form .search-field {
-        font-size: 16px;
-        height: 24px;
-    }
-
-    .search-form label {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .search-submit {
-        display: block !important;
-        margin: 5px auto 10px;
-        padding: 0 29px;
-        text-align: center !important;
-    }
-
-    /* Essential Grid */
-    .esg-grid.esg-layout-even.esg-container {
-        margin: 10px 0;
-        padding: 0 !important;
-    }
-
-    .filterall.eg-liquid-front-page-wrapper.tp-esg-item.itemtoshow.isvisiblenow {
-        width: 100% !important;
-    }
-
-    .lqd-header-btn {
-        margin-right: auto;
-    }
 }
-
-/* <=479px */
-@media (max-width: 479px) {
-    .sectionleft li a {
-        padding-right: 15px;
-        margin-bottom: 15px;
-    }
-
-    .lqd-footer-top-left li:last-child a {
-        margin: 0;
-    }
-}
-
-/* >=1200px */
-/*@media (min-width: 1200px) {
-    .container {
-      /*  max-width:1280px;
-        width:1280px;
-
-    }
-}*/
