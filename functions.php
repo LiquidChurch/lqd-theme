@@ -394,7 +394,7 @@ function myplugin_custom_walker( $args ) {
     if($args['theme_location']=="")
     {
         return array_merge( $args, array(
-            'container_class'=>"menu_list",
+            'container_class'=>"lqd-footer-menu",
             'menu_class'=>'',
         ) );
     } else {

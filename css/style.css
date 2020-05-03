@@ -1,34 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background: #ffffff;
-    color: #000;
     font-family: "Avenir Next LT Pro", sans-serif;
-    font-weight: normal;
-    line-height: 1rem;
-}
-
-div, span, ul, h1, h2, h3, h4, h5, p {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    outline: none;
-}
-
-ol, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
 }
 
 img {
@@ -38,64 +9,59 @@ img {
     outline: none;
 }
 
-/* Clearfixes */
-.clearfix:after, .clearfix:before {
-    display: table;
-    visibility: hidden;
-    font-size: 0;
-    height: auto;
-}
-
 .clear {
     clear: both;
 }
 
+/**
+ * WordPress Classes
+ *
+ * These have generally been pulled from _s's styling.
+ *
+ * BS4 styling is strongly preferred when available, this is kept mainly
+ * for the use of third party code which may expect these classes.
+ */
+
+/*
+ # Alignments
+ */
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
 .aligncenter {
-    text-align: center !important;
-}
-
-.wp-caption {
-    text-align: initial;
-}
-
-.wp-caption-text {
-    text-align: initial;
-}
-
-.gallery-caption {
-    text-align: initial;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
 }
 
 /** HEADERS **/
 h1, h2, h3, h4, h5, h6 {
     font-family: "Avenir Next LT Pro Demi", sans-serif;
     color: #14a7e0;
-    line-height: 110%;
     text-transform: uppercase;
-    margin: 1.2rem 0 1.5rem;
-}
-
-h1 {
-    font-size: 3.125rem; /* 50 px */
-}
-
-h2 {
-    font-size: 2.5rem; /* 40 px */
-}
-
-h3 {
-    font-size: 2.4rem; /* 30 px */
 }
 
 /** PAGE **/
 .page {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     margin: auto;
-    max-width: 1170px; /* 1280px */
+    max-width: 1170px;
 }
 
 /** HEADER **/
 .lqd-header {
+
 }
 
 /* Header: Top */
@@ -105,16 +71,6 @@ h3 {
 
 .lqd-header-logo {
     margin-left: 1vw;
-}
-
-.site-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-.site-description {
-    margin-top: 15px;
 }
 
 /* Header Buttons */
@@ -149,6 +105,8 @@ a.lqd-header-btn:hover {
     padding-right: 1vw;
 }
 
+/** FOOTER **/
+
 /* Footer: Top */
 .lqd-footer-top {
     background: #14a7e0;
@@ -178,12 +136,11 @@ a.lqd-header-btn:hover {
 }
 
 
-.lqd-footer-top-left .menu_list li {
+.lqd-footer-top-left .lqd-footer-menu li {
     min-width: 10vw;
 }
 
 /* Footer: Top Right */
-
 .lqd-footer-top-right:after {
     clear: both;
     display: block;
@@ -195,6 +152,7 @@ a.lqd-header-btn:hover {
     margin-right: 10px;
 }
 
+/* Footer: Top Right: Facebook */
 .lqd-footer-top-right li i.ffb {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
     height: 30px;
@@ -202,6 +160,7 @@ a.lqd-header-btn:hover {
     display: inline-block;
 }
 
+/* Footer: Top Right: Twitter */
 .lqd-footer-top-right li i.ftwitter {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_twitter.png") no-repeat scroll center center / 100% auto;
     height: 30px;
@@ -209,6 +168,7 @@ a.lqd-header-btn:hover {
     display: inline-block;
 }
 
+/* Footer: Top Right: Instagram */
 .lqd-footer-top-right li i.finsta {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
     height: 30px;
@@ -216,6 +176,7 @@ a.lqd-header-btn:hover {
     display: inline-block;
 }
 
+/* Footer: Top Right: YouTube */
 .lqd-footer-top-right li i.fyoutube {
     background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
     height: 30px;
@@ -250,13 +211,12 @@ a.lqd-header-btn:hover {
     text-decoration: none;
 }
 
-/* General Menus */
-.menu_list ul li {
+.lqd-footer-menu ul li {
     display: block;
     padding: 0 0 24px;
 }
 
-.menu_list li a {
+.lqd-footer-menu li a {
     color: #0074c8;
     display: block;
     font-family: "Avenir Next LT Pro Demi", sans-serif;
@@ -264,21 +224,13 @@ a.lqd-header-btn:hover {
     line-height: 16px;
 }
 
-.menu_list li a:hover, .sectionleft li a:hover {
-    text-decoration: none;
-}
-
 /* Entry Content */
 .entry-content {
     padding: 15px;
-    font-size: 2.3rem;
-    line-height: 135%;
     color: #333;
 }
 
 .entry-content p {
-    font-size: 2.3rem;
-    line-height: 135%;
     color: #333;
     margin-bottom: 15px;
     padding-left: 30px;
@@ -334,10 +286,6 @@ a.lqd-header-btn:hover {
 
 /* <=1024px */
 @media (max-width: 1024px) {
-    .lqd-footer-top-right {
-        margin: 0 auto;
-    }
-
     .lqd-header-logo {
         text-align: center;
         margin-bottom:10px;
@@ -346,6 +294,10 @@ a.lqd-header-btn:hover {
     .lqd-header-btn {
         margin-right:auto;
         width:100%;
+    }
+
+    .lqd-footer-top-right {
+        margin: 0 auto;
     }
 }
 
@@ -359,16 +311,9 @@ a.lqd-header-btn:hover {
 
 /* <=767px */
 @media (max-width: 767px) {
-    .lqd-header {
-    }
-
     .lqd-header-logo {
         float: none;
         margin-left: 0;
-    }
-
-    .lqd-footer-top-left .menu_list ul li {
-        padding-bottom: 24px;
     }
 
     .navbar-toggle {
@@ -377,11 +322,13 @@ a.lqd-header-btn:hover {
         margin-left: 10px;
     }
 
-    .navbar-default .navbar-toggle .icon-bar {
-        background-color: #fff;
+    .nav > li > a {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .menu_list li a {
+    /* Footer */
+    .lqd-footer-menu li a {
         font-size: 1.2em
     }
 
@@ -389,12 +336,6 @@ a.lqd-header-btn:hover {
         font-size: 1.2em
     }
 
-    .nav > li > a {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Footer */
     .lqd-footer-bottom {
         background-color: #dcddde;
         padding: 0 27px 0 18px;
@@ -406,6 +347,10 @@ a.lqd-header-btn:hover {
         float: none;
         margin-left: 0;
         width: 100%;
+    }
+
+    .lqd-footer-top-left .lqd-footer-menu ul li {
+        padding-bottom: 24px;
     }
 
     .lqd-footer-top-left li {

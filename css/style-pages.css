@@ -60,6 +60,7 @@
 .orange_btn:hover span, .orange_btn:focus span {
     color: #f08a41;
 }
+
 /* For Text Body Content */
 .body-text
 {
@@ -218,6 +219,7 @@
 .lqd-no-bullets li {
     list-style: none;
 }
+
 /* Group Guide styling */
 .group-guides h1.entry-title {
     font-size: 28px;
@@ -227,6 +229,7 @@
     padding-left: 0;
     text-transform:capitalize;
 }
+
 .group-guides-template-default h1  {
     padding-left: 0;
     font-size: 20px;
@@ -234,13 +237,16 @@
     margin-bottom: 5px;
     font-family: "arial", sans-serif;
 }
+
 .group-guides p {
     padding-left:0;
     font-size: 18px;
 }
+
 .group-guides ul li {
     font-size: 18px;
 }
+
 .group-guides ol li {
     font-size: 18px;
 }
