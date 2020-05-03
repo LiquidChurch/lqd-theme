@@ -497,10 +497,8 @@ function lqd_customize_register( $wp_customize ) {
         'sanitize_callback' == 'esc_url_raw',
     ) );
 
-    // Add setting for logo uploader
+    // Add setting and control for logo uploader
     $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' );
-
-    // Add control for logo uploader (actual uploader)
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm1_logo', array(
         'label'    => __( 'Header Logo', 'liquidchurch' ),
         'section'  => 'lqd_theme',
@@ -509,8 +507,42 @@ function lqd_customize_register( $wp_customize ) {
         'sanitize_callback' == 'esc_url_raw',
     ) ) );
 
+    // Add setting and control for Contact Us
+    $wp_customize->add_setting( 'lqd_contact_us', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_control( 'lqd_contact_us', array(
+        'label'     => __('Contact Us Link', 'liquidchurch'),
+        'section'   => 'lqd_theme',
+        'type'      => 'text',
+        'settings'  => 'lqd_contact_us',
+        'priority'  => '3',
+        'sanitize_callback' == 'esc_url_raw',
+    ) );
+
+    // Add setting and control for Phone Number
+    $wp_customize->add_setting( 'lqd_phone_number', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_control( 'lqd_phone_number', array(
+        'label'     => __('Phone Number', 'liquidchurch'),
+        'section'   => 'lqd_theme',
+        'type'      => 'text',
+        'settings'  => 'lqd_phone_number',
+        'priority'  => '3',
+        'sanitize_callback' == 'esc_url_raw',
+    ) );
+
+    // Add setting and control for Contact Us
+    $wp_customize->add_setting( 'lqd_email', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_control( 'lqd_email', array(
+        'label'     => __('Email', 'liquidchurch'),
+        'section'   => 'lqd_theme',
+        'type'      => 'text',
+        'settings'  => 'lqd_email',
+        'priority'  => '3',
+        'sanitize_callback' == 'esc_url_raw',
+    ) );
+
+
     /* Social Icons */
-    /* Facebook */
+    /* Add Setting/Control for Facebook */
     $wp_customize->add_setting( 'facebook_id_theme', 'sanitize_callback' == 'esc_url_raw' );
     $wp_customize->add_control( 'facebook_id', array(
         'label'    => __( 'Facebook Link', 'liquidchurch' ),
@@ -521,8 +553,8 @@ function lqd_customize_register( $wp_customize ) {
 		'sanitize_callback' == 'esc_url_raw',
     ) );
 
-    /* Twitter */
-    $wp_customize->add_setting( 'twitter_id_theme', 'sanitize_callback' == 'esc_url_raw' ); // Twiiter
+    /* Add Setting/Control for Twitter */
+    $wp_customize->add_setting( 'twitter_id_theme', 'sanitize_callback' == 'esc_url_raw' );
     $wp_customize->add_control( 'twitter_id', array(
 		'label'    => __( 'Twitter Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -532,8 +564,8 @@ function lqd_customize_register( $wp_customize ) {
 		'sanitize_callback' == 'esc_url_raw',
 	) );
 
-    /* YouTube */
-    $wp_customize->add_setting( 'youtube_id_theme','sanitize_callback' == 'esc_url_raw' ); // youtube
+    /* Add Setting/Control for YouTube */
+    $wp_customize->add_setting( 'youtube_id_theme','sanitize_callback' == 'esc_url_raw' );
     $wp_customize->add_control( 'youtube_id', array(
         'label'    => __( 'Youtube Link', 'liquidchurch' ),
         'section'  => 'lqd_theme',
@@ -543,8 +575,8 @@ function lqd_customize_register( $wp_customize ) {
         'sanitize_callback' == 'esc_url_raw',
 	) );
 
-    /* Instagram */
-    $wp_customize->add_setting( 'instagram_id_theme','sanitize_callback' == 'esc_url_raw' ); // nstagram
+    /* Add Setting/Control for nstagram */
+    $wp_customize->add_setting( 'instagram_id_theme','sanitize_callback' == 'esc_url_raw' );
     $wp_customize->add_control( 'instagram_id', array(
         'label'    => __( 'Instagram Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
@@ -553,18 +585,6 @@ function lqd_customize_register( $wp_customize ) {
 		'priority' => 6,
 		'sanitize_callback' == 'esc_url_raw',
 	) );
-
-    /* Vimeo */
-    $wp_customize->add_setting( 'vimeo_id_theme','sanitize_callback' == 'esc_url_raw' ); // vimeo
-    $wp_customize->add_control( 'vimeo_id', array(
-        'label'    => __( 'Vimeo Link', 'liquidchurch' ),
-		'section'  => 'lqd_theme',
-		'type'     => 'text',
-		'settings'  => 'vimeo_id_theme',
-		'priority' => 7,
-		'sanitize_callback' == 'esc_url_raw',
-	) );
-
 }
 add_action( 'customize_register', 'lqd_customize_register' );
 

@@ -1,19 +1,30 @@
 <div class="lqd-footer-top container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-md-8">
-            <ul class="lqd-footer-top-left">
-                <?php
-                if(is_active_sidebar('footer-contact-us')){
-                    echo '<li>';
-                    dynamic_sidebar('footer-contact-us');
-                    echo '</li>';
-                } else {
-                    echo ' <li><a href="'.home_url('wp-admin/customize.php').'">Add Contact Number</a></li>';
-                } ?>
+    <div class="row d-flex p-4">
+        <div class="col-xs-12 col-md-8 d-flex">
+            <ul class="lqd-footer-top-left my-auto">
+                <?php if ( get_theme_mod( 'lqd_contact_us' ) ) { ?>
+                    <li>
+                        <a href="<?php echo get_theme_mod( 'lqd_contact_us' ); ?>" title="Contact Us">Contact Us</a>
+                    </li>
+                <?php } ?>
+                <?php if ( get_theme_mod( 'lqd_phone_number' ) ) { ?>
+                    <li>
+                        <a href="<?php echo get_theme_mod( 'lqd_phone_number' ); ?>" title="Contact Phone Number">
+                            <?php echo get_theme_mod( 'lqd_phone_number' ); ?>
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if ( get_theme_mod( 'lqd_email' ) ) { ?>
+                    <li>
+                        <a href="<?php echo get_theme_mod( 'lqd_email' ); ?>" title="Contact Email">
+                            <?php echo get_theme_mod( 'lqd_email' ); ?>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
-        <div class="col-xs-12 col-md-4">
-            <ul class="lqd-footer-top-right">
+        <div class="col-xs-12 col-md-4 d-flex flex-row-reverse">
+            <ul class="lqd-footer-top-right my-auto">
                 <?php if( get_theme_mod( 'facebook_id_theme' ) )  { ?>
                     <li>
                         <a target="_blank" href="<?php echo get_theme_mod( 'facebook_id_theme' ) ;?>" class="ffb" title="Facebook"><i class="ffb"></i></a>
