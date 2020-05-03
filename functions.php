@@ -646,9 +646,9 @@ function the_slug_exists($post_name) {
 
     if($wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_name like '%" . $post_name . "%'", 'ARRAY_A')) {
         return true;
-    } else {
-        return false;
     }
+
+    return false;
 }
 
 /**
@@ -709,7 +709,7 @@ function gc_sermon_before_after($content)
 {
 	$content = strip_tags($content);
 	$content = str_replace("\xc2\xa0", ' ', $content);
-	$content = preg_replace('/<p>/', '<span class="gc-right-col">', $content);
+	$content = preg_replace('/<p>/', '<span class="lqdm-right-col">', $content);
 	$content = preg_replace('/<\/p>/', '</span>', $content);
 	return $content;
 }
@@ -777,7 +777,7 @@ add_filter( 'page_template', 'lqd_app_view_message_page_template' );
  */
 function lqd_app_view_taxonomy_series_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermon-series'] ) ) {
+	if( isset( $wp_query->query_vars['messages-app-view'], $wp_query->query_vars['gc-sermon-series'] ) ) {
 		$template = locate_template( array( 'taxonomy-gc-sermon-series-app-view.php' ) );
 	}
 	return $template;
@@ -792,7 +792,7 @@ add_filter( 'taxonomy_template', 'lqd_app_view_taxonomy_series_template' );
  */
 function lqd_app_view_message_template( $template ) {
 	global $wp_query;
-	if( isset( $wp_query->query_vars['messages-app-view'] ) && isset( $wp_query->query_vars['gc-sermons'] ) ) {
+	if( isset( $wp_query->query_vars['messages-app-view'], $wp_query->query_vars['gc-sermons'] ) ) {
 		$template = locate_template( array( 'single-gc-sermons-app-view.php' ) );
 	}
 	return $template;

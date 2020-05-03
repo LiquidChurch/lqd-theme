@@ -46,9 +46,11 @@ $sermon = gc_get_sermon_post();
                     <?php
                     $message_field_to_display = array();
                     $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
-                    if (!empty($plugin_option))
-                        $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
-                    //                    p($message_field_to_display, 0);
+                    if (!empty($plugin_option)) {
+                        {
+                            $message_field_to_display = ! empty( $plugin_option['message_field_to_display'] ) ? $plugin_option['message_field_to_display'] : array();
+                        }
+                    }
                     ?>
 
                     <div class="col-md-12">
@@ -69,7 +71,7 @@ $sermon = gc_get_sermon_post();
                                 <header class="entry-header col-sm-7" style="margin-top: 20px;">
 
                                     <?php
-                                    the_title('<h1 class="gc-sermon-title">', '</h1>');
+                                    the_title( '<h1 class="lqm-msg-title">', '</h1>');
                                     ?>
 
                                 </header><!-- .entry-header -->
@@ -77,7 +79,7 @@ $sermon = gc_get_sermon_post();
                                 <?php
                                 if (in_array('sermon_image', $message_field_to_display)) {
                                     ?>
-                                    <div class="col-sm-5 gc-right-col">
+                                    <div class="col-sm-5 lqdm-right-col">
                                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
                                             'class' => 'gc-series-list-sermons-img',
                                             'style' => 'width:100%;',
@@ -165,7 +167,7 @@ $sermon = gc_get_sermon_post();
             if (!empty($other_msg)) {
                 ?>
                 <div id="message-others" class="row gc-individual-sermon-list">
-                    <h1 class="gc-sermon-title other-msg-title" style="padding-left: 8px !important;">Other Messages in This Series</h1>
+                    <h1 class="lqm-msg-title other-msg-title" style="padding-left: 8px !important;">Other Messages in This Series</h1>
                     <?php
                     echo $other_msg;
                     ?>

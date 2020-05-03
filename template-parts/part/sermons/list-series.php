@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $series = $sermon->get_series();
-if (empty($series))
+if (empty($series)) {
     return false;
+}
 ?>
 <div id="message-series" class="row">
     <div class="col-sm-3">

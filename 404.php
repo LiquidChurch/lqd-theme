@@ -15,7 +15,7 @@ get_header(); ?>
 			<div class="entry-content">
 				<section class="error-404 not-found">
 					<header class="page-header">
-						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/image/404-page-not-found.jpg" />
+						<img src="<?php echo esc_url( get_template_directory_uri() ); alt="404 Image Not Found" ?>/image/404-page-not-found.jpg" />
 					</header><!-- .page-header -->
 
 					<div class="page-content">

@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $scriptures = $sermon->get_scriptures();
-if (empty($scriptures))
+if (empty($scriptures)) {
     return false;
+}
 ?>
 <div id="message-scripture" class="row">
     <div class="col-sm-3">

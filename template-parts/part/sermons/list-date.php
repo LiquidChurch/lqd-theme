@@ -1,8 +1,11 @@
 <?php
 global $sermon;
 global $post;
-if (empty($post->post_date))
-    return false;
+if (empty($post->post_date)) {
+    {
+        return false;
+    }
+}
 ?>
 <div id="message-date" class="row">
     <div class="col-sm-3">

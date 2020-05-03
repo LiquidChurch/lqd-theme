@@ -119,8 +119,11 @@ $sermon = gc_get_sermon_post();
             // Get Configure Options for Liquid Messages Plugin
             $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
             // Get a list of the message fields to display TODO: Add documentation
-            if (!empty($plugin_option))
-                $message_field_to_display = !empty($plugin_option['message_field_to_display']) ? $plugin_option['message_field_to_display'] : array();
+            if (!empty($plugin_option)) {
+                {
+                    $message_field_to_display = ! empty( $plugin_option['message_field_to_display'] ) ? $plugin_option['message_field_to_display'] : array();
+                }
+            }
             ?>
 
             <div id="single-sermon-content" class="col-md-12">
@@ -128,12 +131,12 @@ $sermon = gc_get_sermon_post();
                 <?php if (in_array('title', $message_field_to_display)) { ?>
                     <div class="row single-sermon-title">
                         <header class="entry-header col-sm-7" style="margin-top: 20px;">
-                            <?php the_title('<h1 class="gc-sermon-title">', '</h1>'); ?>
+                            <?php the_title( '<h1 class="lqm-msg-title">', '</h1>'); ?>
                         </header>
 
                         <!-- If Sermon Image Option is Selected -->
                         <?php if (in_array('sermon_image', $message_field_to_display)) { ?>
-                            <div class="col-sm-5 gc-right-col">
+                            <div class="col-sm-5 lqdm-right-col">
                                 <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
                                     'class' => 'gc-series-list-sermons-img',
                                     'style' => 'width:100%;',
@@ -200,7 +203,7 @@ $sermon = gc_get_sermon_post();
             ?>
                 <div id="message-others" class="row gc-individual-sermon-list">
                     <div class="col-sm-12" style="text-align:center;">
-                        <h1 class="gc-sermon-title other-msg-title">Other Messages in This Series</h1>
+                        <h1 class="lqm-msg-title other-msg-title">Other Messages in This Series</h1>
                     </div>
                     <div class="col-sm-12">
                         <?php echo $other_msg; ?>

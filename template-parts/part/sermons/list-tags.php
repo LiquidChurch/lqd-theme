@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $tags = $sermon->tags();
-if (empty($tags))
+if (empty($tags)) {
     return false;
+}
 ?>
 <div id="message-tags" class="row">
     <div class="col-sm-3">

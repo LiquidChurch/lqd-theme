@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $speakers = $sermon->get_speakers();
-if (empty($speakers))
+if (empty($speakers)) {
     return false;
+}
 ?>
 <div id="message-speaker" class="row">
     <div class="col-sm-3">

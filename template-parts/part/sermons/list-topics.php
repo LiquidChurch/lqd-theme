@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $topics = $sermon->topics();
-if (empty($topics))
+if (empty($topics)) {
     return false;
+}
 ?>
 <div id="message-topics" class="row">
     <div class="col-sm-3">

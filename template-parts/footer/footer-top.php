@@ -9,14 +9,14 @@
                 <?php } ?>
                 <?php if ( get_theme_mod( 'lqd_phone_number' ) ) { ?>
                     <li>
-                        <a href="<?php echo get_theme_mod( 'lqd_phone_number' ); ?>" title="Contact Phone Number">
+                        <a href="<?php echo 'tel:' . get_theme_mod( 'lqd_phone_number' ); ?>" title="Contact Phone Number">
                             <?php echo get_theme_mod( 'lqd_phone_number' ); ?>
                         </a>
                     </li>
                 <?php } ?>
                 <?php if ( get_theme_mod( 'lqd_email' ) ) { ?>
                     <li>
-                        <a href="<?php echo get_theme_mod( 'lqd_email' ); ?>" title="Contact Email">
+                        <a href="<?php echo 'mailto:' . get_theme_mod( 'lqd_email' ); ?>" title="Contact Email">
                             <?php echo get_theme_mod( 'lqd_email' ); ?>
                         </a>
                     </li>

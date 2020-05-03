@@ -1,8 +1,9 @@
 <?php
 global $sermon;
 $display_order = $sermon->get_meta('gc_display_order');
-if (empty($display_order))
+if (empty($display_order)) {
     return false;
+}
 ?>
 <div id="message-series-part" class="row">
     <div class="col-sm-3">

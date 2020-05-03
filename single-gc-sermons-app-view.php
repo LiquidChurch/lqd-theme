@@ -55,7 +55,6 @@
                 the_post_navigation( array(
                     'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'liquidchurch' ),
                 ) );
-            } elseif ( is_singular( 'post' ) ) {
             }
             // End of the loop.
         endwhile;

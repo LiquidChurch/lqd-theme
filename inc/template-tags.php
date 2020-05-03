@@ -207,13 +207,7 @@ function liquidchurch_categorized_blog() {
 		set_transient( 'liquidchurch_categories', $all_the_cool_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so liquidchurch_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so liquidchurch_categorized_blog should return false.
-		return false;
-	}
+    return $all_the_cool_cats > 1;
 }
 
 /**

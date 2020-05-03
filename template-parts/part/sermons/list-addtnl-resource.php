@@ -3,8 +3,11 @@ global $sermon;
 
 $addtl_resources = do_shortcode('[sermon_resources resource_display_name="true"]');
 
-if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->'))
-    return false;
+if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->')) {
+    {
+        return false;
+    }
+}
 ?>
 <div id="message-resource" class="row">
     <div class="col-sm-3">
