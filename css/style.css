@@ -114,9 +114,9 @@ a.lqd-header-btn:hover {
 }
 
 /* Footer: Top Left */
-.lqd-footer-top-left li {
-    float: left;
-    padding-right: 35px;
+ul.lqd-footer-top-left,
+ul.lqd-footer-top-right {
+    list-style-type: none;
 }
 
 .lqd-footer-top-left li a {
@@ -192,6 +192,9 @@ a.lqd-header-btn:hover {
 
 .lqd-footer-inner-block {
     margin: 0;
+    color: #0074c8;
+    display: block;
+    padding: 0 0 24px;
 }
 
 .lqd-footer-inner-block h2 {
@@ -206,22 +209,14 @@ a.lqd-header-btn:hover {
     text-transform: uppercase;
 }
 
-.footer_menu_widget_else a {
-    color: #14a7e0;
-    text-decoration: none;
-}
-
-.lqd-footer-menu ul li {
+.lqd-footer-inner-block ul li {
     display: block;
     padding: 0 0 24px;
 }
 
-.lqd-footer-menu li a {
-    color: #0074c8;
-    display: block;
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
-    font-size: 16px;
-    line-height: 16px;
+.footer_menu_widget_else a {
+    color: #14a7e0;
+    text-decoration: none;
 }
 
 /* Entry Content */

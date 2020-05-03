@@ -55,7 +55,7 @@ function liquidchurch_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'liquidchurch' ),
+		'primary'    => __( 'Primary Menu', 'liquidchurch' ),
 		'locations'  => __( 'Locations Menu', 'liquidchurch' ),
 	) );
 
@@ -280,7 +280,7 @@ add_filter( 'body_class', 'liquidchurch_body_classes' );
  *               HEX code, empty array otherwise.
  */
 function liquidchurch_hex2rgb( $color ) {
-	$color = trim( $color, '#' );
+    $color = trim( $color, '#' );
 
 	if ( strlen( $color ) === 3 ) {
 		$r = hexdec( substr( $color, 0, 1 ).substr( $color, 0, 1 ) );
@@ -394,7 +394,6 @@ function myplugin_custom_walker( $args ) {
     if($args['theme_location']=="")
     {
         return array_merge( $args, array(
-            'container_class'=>"lqd-footer-menu",
             'menu_class'=>'',
         ) );
     } else {
