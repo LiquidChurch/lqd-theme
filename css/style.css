@@ -154,7 +154,7 @@ a.lqd-header-btn:hover {
 
 /* Footer: Top Right: Facebook */
 .lqd-footer-top-right li i.ffb {
-    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Facebook.png") no-repeat scroll center center / 100% auto;
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-fb.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
@@ -162,7 +162,7 @@ a.lqd-header-btn:hover {
 
 /* Footer: Top Right: Twitter */
 .lqd-footer-top-right li i.ftwitter {
-    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_twitter.png") no-repeat scroll center center / 100% auto;
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-twitter.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
@@ -170,7 +170,7 @@ a.lqd-header-btn:hover {
 
 /* Footer: Top Right: Instagram */
 .lqd-footer-top-right li i.finsta {
-    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_Instagram.png") no-repeat scroll center center / 100% auto;
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-instagram.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
@@ -178,7 +178,7 @@ a.lqd-header-btn:hover {
 
 /* Footer: Top Right: YouTube */
 .lqd-footer-top-right li i.fyoutube {
-    background: rgba(0, 0, 0, 0) url("../image/LRGwhite_Icon_YouTube01.png") no-repeat scroll center center / 100% auto;
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-youtube.png") no-repeat scroll center center / 100% auto;
     height: 30px;
     width: 30px;
     display: inline-block;
