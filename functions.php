@@ -396,12 +396,12 @@ function myplugin_custom_walker( $args ) {
         return array_merge( $args, array(
             'menu_class'=>'',
         ) );
-    } else {
-        return array_merge( $args, array(
-            'theme_location' => 'primary',
-            'menu_class'     => 'nav navbar-nav',
-        ) );
     }
+
+    return array_merge( $args, array(
+        'theme_location' => 'primary',
+        'menu_class'     => 'nav navbar-nav',
+    ) );
 }
 add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
 
@@ -869,7 +869,7 @@ add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 add_filter('wpseo_premium_term_redirect_slug_change', '__return_true' );
 
 // Disable JPEG compression
-add_filter( 'jpeg_quality', function() { return 100; } );
+add_filter( 'jpeg_quality', static function() { return 100; } );
 
 // Enable Field Label Visibility Settings in Gravity Forms
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
