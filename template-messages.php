@@ -2,7 +2,7 @@
 /**
  * Template Name: Messages Template
  *
- * The template for displaying messages
+ * The template for displaying the main messages page, e.g. /messages.
  *
  * @package WordPress
  * @subpackage Liquid_Church

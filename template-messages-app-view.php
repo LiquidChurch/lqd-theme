@@ -2,11 +2,7 @@
 /**
  * Template Name: Messages App View Template
  *
- * The template for displaying messages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
+ * The template for displaying the main messages page, e.g. /messages.
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -18,9 +14,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class( 'mav-body' ); ?> >
@@ -35,13 +28,6 @@
 
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'messages-app-view' );
-
-			 //If comments are open or we have at least one comment, load up the comment template.
-		if (! is_front_page() ) {
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
-		}
 
 			// End of the loop.
 		endwhile;

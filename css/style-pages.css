@@ -1,269 +1,276 @@
 /* Buttons - Using a <span> within the button will cause the font size to increase */
-.blue_btn, .orange_btn {
-    color: #0074c8;
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: bold;
-    font-variant: normal;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
-    padding: 10px 20px;
-    margin: 10px 0 0 0;
-    border: 4px solid rgb(0, 86, 139);
-    -webkit-border-radius: 42px;
-    -moz-border-radius: 42px;
-    border-radius: 42px;
-    display: inline-block;
-    top: auto;
-    background: #fff;
-    position: relative;
+.blue_btn,
+.orange_btn {
+  color: #0074c8;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  font-variant: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  padding: 10px 20px;
+  margin: 10px 0 0 0;
+  border: 4px solid rgb(0, 86, 139);
+  -webkit-border-radius: 42px;
+  -moz-border-radius: 42px;
+  border-radius: 42px;
+  display: inline-block;
+  top: auto;
+  background: #fff;
+  position: relative;
 }
 
-.blue_btn > span, .orange_btn > span {
-    display: block;
-    font-size: 40px;
-    line-height: 40px;
-    color: #f08a41;
-    font-family: "Avenir Next LT Pro Demi", sans-serif;
+.blue_btn > span,
+.orange_btn > span {
+  display: block;
+  font-size: 40px;
+  line-height: 40px;
+  color: #f08a41;
+  font-family: "Avenir Next LT Pro Demi", sans-serif;
 }
 
-.blue_btn:hover, .blue_btn:focus {
-    color: #14a7e0;
-    border-color: #f08a41;
-    text-decoration: none;
-    outline: none;
+.blue_btn:hover,
+.blue_btn:focus {
+  color: #14a7e0;
+  border-color: #f08a41;
+  text-decoration: none;
+  outline: none;
 }
 
-.blue_btn:hover span, .blue_btn:focus span {
-    color: rgb(0, 86, 139);
+.blue_btn:hover span,
+.blue_btn:focus span {
+  color: rgb(0, 86, 139);
 }
 
 .orange_btn {
-    color: #f08a41;
-    border: 4px solid #f08a41;
+  color: #f08a41;
+  border: 4px solid #f08a41;
 }
 
 .orange_btn > span {
-    color: rgb(0, 86, 139);
+  color: rgb(0, 86, 139);
 }
 
-.orange_btn:hover, .orange_btn:focus {
-    color: rgb(0, 86, 139);
-    border-color: rgb(0, 86, 139);
-    text-decoration: none;
-    outline: none;
+.orange_btn:hover,
+.orange_btn:focus {
+  color: rgb(0, 86, 139);
+  border-color: rgb(0, 86, 139);
+  text-decoration: none;
+  outline: none;
 }
 
-.orange_btn:hover span, .orange_btn:focus span {
-    color: #f08a41;
+.orange_btn:hover span,
+.orange_btn:focus span {
+  color: #f08a41;
 }
 
 /* For Text Body Content */
-.body-text
-{
-    max-width: 800px !important;
-    margin: auto !important;
+.body-text {
+  max-width: 800px !important;
+  margin: auto !important;
 }
 
 /* Responsive Videos, when not using FitVid. */
 .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  overflow: hidden;
 }
 
 .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Responsive Google Maps */
 .mapWrapper {
-    position: relative;
-    padding-bottom: 90%;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 90%;
+  height: 0;
+  overflow: hidden;
 }
 
 .mapWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Campus Pages */
+
 /* Times */
 .service-times {
-    background-color: #e6e8e5;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    padding: 10px 0 10px 0;
-    margin-bottom: 10px;
+  background-color: #e6e8e5;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  padding: 10px 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .service-times:first-child {
-    font-size: 5rem !important;
+  font-size: 5rem !important;
 }
 
 .ssat {
-    font-size: 3rem;
-    padding-bottom: .2rem;
+  font-size: 3rem;
+  padding-bottom: 0.2rem;
 }
 
 .sstime {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 /* Campus Addresses */
 .campus-addresses {
-    float: right;
-    max-width: 48%;
-    padding-right: 5%;
+  float: right;
+  max-width: 48%;
+  padding-right: 5%;
 }
 
 .campus-addresses h2 {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .campus-addresses p {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 /* Campus GPS Address */
 .campus-gps-address {
-    clear: both;
+  clear: both;
 }
 
 /* Mailing Address */
 .campus-mailing-address {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .campus-get-directions {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 /* Get Directions */
 .campus-get-directions input {
-    display: inline;
-    max-width: 60%;
+  display: inline;
+  max-width: 60%;
 }
 
 /* Campus Staff Header */
 .campus-staff-header {
-    background-color: #14a7e0;
-    color: #ffffff;
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 20px 0 20px 0;
-    clear: both;
-    margin: 30px 0;
+  background-color: #14a7e0;
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 20px 0 20px 0;
+  clear: both;
+  margin: 30px 0;
 }
 
 /* Campus Staff Box */
 .campus-staff {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 /* Styling for individual staff box */
 .individual-staff {
-    clear: both;
-    max-width: 80%;
-    margin: auto auto 10px auto;
+  clear: both;
+  max-width: 80%;
+  margin: auto auto 10px auto;
 }
 
 .individual-staff hr {
-    display: inline-block;
-    width: 100%;
-    margin: 10px auto 0 auto;
-    padding: auto 10px auto 10px;
+  display: inline-block;
+  width: 100%;
+  margin: 10px auto 0 auto;
+  padding: auto 10px auto 10px;
 }
 
 .individual-staff span {
-    font-size: 2rem;
-    padding-left: 20%;
+  font-size: 2rem;
+  padding-left: 20%;
 }
 
 .individual-staff img {
-    float: left;
+  float: left;
 }
 
 /* Pastor Bios Styling */
 .pastors-bios h2 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .pastors-bios h3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-.searchandfilter ul li
-{
-    float:left;
+
+.searchandfilter ul li {
+  float: left;
 }
-.job_description ul
-{
-    padding-left:40px;
+
+.job_description ul {
+  padding-left: 40px;
 }
+
 .lqd-no-bullets li {
-    list-style: none;
+  list-style: none;
 }
 
 /* Group Guide styling */
 .group-guides h1.entry-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-family: "arial", sans-serif;
-    padding-left: 0;
-    text-transform:capitalize;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "arial", sans-serif;
+  padding-left: 0;
+  text-transform: capitalize;
 }
 
-.group-guides-template-default h1  {
-    padding-left: 0;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-family: "arial", sans-serif;
+.group-guides-template-default h1 {
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-family: "arial", sans-serif;
 }
 
 .group-guides p {
-    padding-left:0;
-    font-size: 18px;
+  padding-left: 0;
+  font-size: 18px;
 }
 
 .group-guides ul li {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .group-guides ol li {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 /* COVID */
 .lqd-header-covid {
-    background-color: lightgrey;
-    padding-top: 2vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-bottom: 1.5vw;
-    margin-bottom: 1vw;
+  background-color: lightgrey;
+  padding-top: 2vw;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 1.5vw;
+  margin-bottom: 1vw;
 }
 
 .lqd-header-covid-text {
-    font-size: 1.6rem;
-    line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 .lqd-header-covid-btn {
@@ -279,27 +286,27 @@
 }
 
 @media (min-width: 1200px) {
-    .lqd-header-covid-btn {
-        line-height: 1rem;
-        text-align: center;
-        margin-left: -15px;
-    }
+  .lqd-header-covid-btn {
+    line-height: 1rem;
+    text-align: center;
+    margin-left: -15px;
+  }
 }
 
 @media (max-width: 1200px) {
-    .lqd-header-covid {
-        padding-bottom: 1rem;
-        margin-bottom: 2rem;
-    }
+  .lqd-header-covid {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
 
-    .lqd-header-covid .col-xs-12:last-child {
-        text-align:center;
-    }
+  .lqd-header-covid .col-xs-12:last-child {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1000px) {
-    .lqd-header-covid .col-xs-12:last-child {
-        /* Once the button moves below the text it bumps up against the text, so add some space */
-        margin-top:1rem;
-    }
+  .lqd-header-covid .col-xs-12:last-child {
+    /* Once the button moves below the text it bumps up against the text, so add some space */
+    margin-top: 1rem;
+  }
 }

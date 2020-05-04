@@ -1,15 +1,14 @@
 <?php
 /**
- * Template Name: Single Sermon Content Template
+ * Template Name: Single Message Content Template
  *
- * The template part for displaying single sermon
+ * The template part for displaying single message
  *
  * @package WordPress
  * @subpackage Liquid_Church
  * @since 1.0.0
  */
 
-// Get Sermon object
 global $sermon;
 $sermon = gc_get_sermon_post();
 ?>
@@ -117,7 +116,7 @@ $sermon = gc_get_sermon_post();
             <?php
             $message_field_to_display = array();
             // Get Configure Options for Liquid Messages Plugin
-            $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_message_view');
+            $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_message_view');
             // Get a list of the message fields to display TODO: Add documentation
             if (!empty($plugin_option)) {
                 {
@@ -131,14 +130,14 @@ $sermon = gc_get_sermon_post();
                 <?php if (in_array('title', $message_field_to_display)) { ?>
                     <div class="row single-sermon-title">
                         <header class="entry-header col-sm-7" style="margin-top: 20px;">
-                            <?php the_title( '<h1 class="lqm-msg-title">', '</h1>'); ?>
+                            <?php the_title( '<h1 class="lqdm-msg-title">', '</h1>'); ?>
                         </header>
 
                         <!-- If Sermon Image Option is Selected -->
                         <?php if (in_array('sermon_image', $message_field_to_display)) { ?>
                             <div class="col-sm-5 lqdm-right-col">
                                 <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                                    'class' => 'gc-series-list-sermons-img',
+                                    'class' => 'lqd-series-list-msgs-img',
                                     'style' => 'width:100%;',
                                     )); ?>
                             </div>
@@ -201,9 +200,9 @@ $sermon = gc_get_sermon_post();
             $other_msg = do_shortcode('[gc_sermons per_page="5" related_series="this" thumbnail_size="medium" number_columns="4"]');
             if (!empty($other_msg)) {
             ?>
-                <div id="message-others" class="row gc-individual-sermon-list">
+                <div id="message-others" class="row lqd-individual-msg-list">
                     <div class="col-sm-12" style="text-align:center;">
-                        <h1 class="lqm-msg-title other-msg-title">Other Messages in This Series</h1>
+                        <h1 class="lqdm-msg-title other-msg-title">Other Messages in This Series</h1>
                     </div>
                     <div class="col-sm-12">
                         <?php echo $other_msg; ?>

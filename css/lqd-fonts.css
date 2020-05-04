@@ -1,64 +1,106 @@
-/* Liquid Avenir Fonts */
+/**
+ * Liquid Theme Fonts
+ *
+ * This theme uses the Avenir font.
+ */
 @font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../fonts/Avenir/AvenirNextLTPro-Regular.eot');
-    src: url('../fonts/Avenir/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir/AvenirNextLTPro-Regular.woff2') format('woff2'), url('../fonts/Avenir/AvenirNextLTPro-Regular.woff') format('woff'), url('../fonts/Avenir/AvenirNextLTPro-Regular.ttf') format('truetype'), url('../fonts/Avenir/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir Next LT Pro";
+  src: url("../fonts/Avenir/AvenirNextLTPro-Regular.eot");
+  src: url("../fonts/Avenir/AvenirNextLTPro-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Regular.woff2") format("woff2"),
+    url("../fonts/Avenir/AvenirNextLTPro-Regular.woff") format("woff"),
+    url("../fonts/Avenir/AvenirNextLTPro-Regular.ttf") format("truetype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Avenir Next LT Pro Demi';
-    src: url('../fonts/Avenir/AvenirNextLTPro-Demi.eot');
-    src: url('../fonts/Avenir/AvenirNextLTPro-Demi.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir/AvenirNextLTPro-Demi.woff2') format('woff2'), url('../fonts/Avenir/AvenirNextLTPro-Demi.woff') format('woff'), url('../fonts/Avenir/AvenirNextLTPro-Demi.ttf') format('truetype'), url('../fonts/Avenir/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir Next LT Pro Demi";
+  src: url("../fonts/Avenir/AvenirNextLTPro-Demi.eot");
+  src: url("../fonts/Avenir/AvenirNextLTPro-Demi.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Demi.woff2") format("woff2"),
+    url("../fonts/Avenir/AvenirNextLTPro-Demi.woff") format("woff"),
+    url("../fonts/Avenir/AvenirNextLTPro-Demi.ttf") format("truetype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Avenir Next LT Pro Cn';
-    src: url('../fonts/Avenir/AvenirNextLTPro-Cn.eot');
-    src: url('../fonts/Avenir/AvenirNextLTPro-Cn.eot?#iefix') format('embedded-opentype'), url('../fonts/Avenir/AvenirNextLTPro-Cn.woff2') format('woff2'), url('../fonts/Avenir/AvenirNextLTPro-Cn.woff') format('woff'), url('../fonts/Avenir/AvenirNextLTPro-Cn.ttf') format('truetype'), url('../fonts/Avenir/AvenirNextLTPro-Cn.svg#AvenirNextLTPro-Cn') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir Next LT Pro Cn";
+  src: url("../fonts/Avenir/AvenirNextLTPro-Cn.eot");
+  src: url("../fonts/Avenir/AvenirNextLTPro-Cn.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Cn.woff2") format("woff2"),
+    url("../fonts/Avenir/AvenirNextLTPro-Cn.woff") format("woff"),
+    url("../fonts/Avenir/AvenirNextLTPro-Cn.ttf") format("truetype"),
+    url("../fonts/Avenir/AvenirNextLTPro-Cn.svg#AvenirNextLTPro-Cn")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Avenir Next Cyr W00 Light";
-    src: url("../fonts/Avenir/5db267f9-3612-485c-ae18-5698d2692816.eot?#iefix");
-    src: url("../fonts/Avenir/5db267f9-3612-485c-ae18-5698d2692816.eot?#iefix") format("eot"),
-    url("../fonts/Avenir/174d458a-81e0-4174-9473-35e3bf0a613c.woff2") format("woff2"),
-    url("../fonts/Avenir/57a79aa3-9b06-4ba7-a9a4-2b766d826ecf.woff") format("woff"),
-    url("../fonts/Avenir/733cb7bd-50e1-4dee-893a-0b40ef382b02.ttf") format("truetype"),
-    url("../fonts/Avenir/594135c6-6c4f-4880-a0d2-ba923b5ef38e.svg#594135c6-6c4f-4880-a0d2-ba923b5ef38e") format("svg");
+  font-family: "Avenir Next Cyr W00 Light";
+  src: url("../fonts/Avenir/5db267f9-3612-485c-ae18-5698d2692816.eot?#iefix");
+  src: url("../fonts/Avenir/5db267f9-3612-485c-ae18-5698d2692816.eot?#iefix")
+      format("eot"),
+    url("../fonts/Avenir/174d458a-81e0-4174-9473-35e3bf0a613c.woff2")
+      format("woff2"),
+    url("../fonts/Avenir/57a79aa3-9b06-4ba7-a9a4-2b766d826ecf.woff")
+      format("woff"),
+    url("../fonts/Avenir/733cb7bd-50e1-4dee-893a-0b40ef382b02.ttf")
+      format("truetype"),
+    url("../fonts/Avenir/594135c6-6c4f-4880-a0d2-ba923b5ef38e.svg#594135c6-6c4f-4880-a0d2-ba923b5ef38e")
+      format("svg");
 }
 
 @font-face {
-    font-family: "Avenir Next Cyr W00 Regular";
-    src: url("../fonts/Avenir/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot?#iefix");
-    src: url("../fonts/Avenir/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot?#iefix") format("eot"),
-    url("../fonts/Avenir/7db1f672-3a8f-4d19-9c49-7f61aed450b5.woff2") format("woff2"),
-    url("../fonts/Avenir/4ab86b35-c0c2-42b5-98ad-4b6eba66b197.woff") format("woff"),
-    url("../fonts/Avenir/276b3566-1c3b-4bc1-8915-15314f091f29.ttf") format("truetype"),
-    url("../fonts/Avenir/5d02f5f4-46e7-453a-aef9-3e7106d7bb68.svg#5d02f5f4-46e7-453a-aef9-3e7106d7bb68") format("svg");
+  font-family: "Avenir Next Cyr W00 Regular";
+  src: url("../fonts/Avenir/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot?#iefix");
+  src: url("../fonts/Avenir/069faa0e-9913-48c4-9ef7-89a4bc080b65.eot?#iefix")
+      format("eot"),
+    url("../fonts/Avenir/7db1f672-3a8f-4d19-9c49-7f61aed450b5.woff2")
+      format("woff2"),
+    url("../fonts/Avenir/4ab86b35-c0c2-42b5-98ad-4b6eba66b197.woff")
+      format("woff"),
+    url("../fonts/Avenir/276b3566-1c3b-4bc1-8915-15314f091f29.ttf")
+      format("truetype"),
+    url("../fonts/Avenir/5d02f5f4-46e7-453a-aef9-3e7106d7bb68.svg#5d02f5f4-46e7-453a-aef9-3e7106d7bb68")
+      format("svg");
 }
 
 @font-face {
-    font-family: "Avenir Next Cyr W00 Medium";
-    src: url("../fonts/Avenir/c6970a14-8b0f-4629-9072-71c7e123908f.eot?#iefix");
-    src: url("../fonts/Avenir/c6970a14-8b0f-4629-9072-71c7e123908f.eot?#iefix") format("eot"),
-    url("../fonts/Avenir/b0b84e4d-2164-45c7-a674-1662f19f3ba6.woff2") format("woff2"),
-    url("../fonts/Avenir/e91d1bbf-3fea-45e2-b003-a22b12ce6e5f.woff") format("woff"),
-    url("../fonts/Avenir/ead8b64b-1abd-4d5b-a642-a21dfe2f463b.ttf") format("truetype"),
-    url("../fonts/Avenir/e536e1c2-92a4-4db4-8a41-1c55354d11b7.svg#e536e1c2-92a4-4db4-8a41-1c55354d11b7") format("svg");
+  font-family: "Avenir Next Cyr W00 Medium";
+  src: url("../fonts/Avenir/c6970a14-8b0f-4629-9072-71c7e123908f.eot?#iefix");
+  src: url("../fonts/Avenir/c6970a14-8b0f-4629-9072-71c7e123908f.eot?#iefix")
+      format("eot"),
+    url("../fonts/Avenir/b0b84e4d-2164-45c7-a674-1662f19f3ba6.woff2")
+      format("woff2"),
+    url("../fonts/Avenir/e91d1bbf-3fea-45e2-b003-a22b12ce6e5f.woff")
+      format("woff"),
+    url("../fonts/Avenir/ead8b64b-1abd-4d5b-a642-a21dfe2f463b.ttf")
+      format("truetype"),
+    url("../fonts/Avenir/e536e1c2-92a4-4db4-8a41-1c55354d11b7.svg#e536e1c2-92a4-4db4-8a41-1c55354d11b7")
+      format("svg");
 }
 
 @font-face {
-    font-family: "Avenir Next Cyr W00 Bold";
-    src: url("../fonts/Avenir/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot?#iefix");
-    src: url("../fonts/Avenir/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot?#iefix") format("eot"),
-    url("../fonts/Avenir/4c04fb14-abdb-4f93-82bb-734d1b84307b.woff2") format("woff2"),
-    url("../fonts/Avenir/04d2f223-2786-40c9-8481-be9dd47d8e7f.woff") format("woff"),
-    url("../fonts/Avenir/bce3274e-f498-48ae-b269-a6930df496e7.ttf") format("truetype"),
-    url("../fonts/Avenir/68f0375d-f66f-4f88-822a-5a0b61d2efc0.svg#68f0375d-f66f-4f88-822a-5a0b61d2efc0") format("svg");
+  font-family: "Avenir Next Cyr W00 Bold";
+  src: url("../fonts/Avenir/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot?#iefix");
+  src: url("../fonts/Avenir/fb4117a5-14ee-4035-8692-935bfff7fc2e.eot?#iefix")
+      format("eot"),
+    url("../fonts/Avenir/4c04fb14-abdb-4f93-82bb-734d1b84307b.woff2")
+      format("woff2"),
+    url("../fonts/Avenir/04d2f223-2786-40c9-8481-be9dd47d8e7f.woff")
+      format("woff"),
+    url("../fonts/Avenir/bce3274e-f498-48ae-b269-a6930df496e7.ttf")
+      format("truetype"),
+    url("../fonts/Avenir/68f0375d-f66f-4f88-822a-5a0b61d2efc0.svg#68f0375d-f66f-4f88-822a-5a0b61d2efc0")
+      format("svg");
 }

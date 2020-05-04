@@ -201,7 +201,7 @@ function liquidchurch_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
 	// Page Specific + Button CSS
 	wp_enqueue_style( 'pages-style', get_template_directory_uri() . '/css/style-pages.css', array(), $lqd_style_pages_css );
-	// Liquid Messages (GC-Sermons) CSS
+	// Liquid Messages CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), $lqd_messages_css );
     // Text2Give CSS
     if ( is_page( 'text2give' ) ) {
@@ -700,7 +700,7 @@ function jetpackme_responsive_videos_setup() {
 add_action( 'after_setup_theme', 'jetpackme_responsive_videos_setup' );
 
 /**
- * Filtering for sermons the_content.
+ * Filtering for messages the_content.
  *
  * @param $content
  * @return string $content
@@ -715,7 +715,7 @@ function gc_sermon_before_after($content)
 }
 
 /**
- * Filtering for Sermons the content
+ * Filtering for messages the content
  *
  * @param $content
  * @return string|string[]|null
@@ -816,7 +816,7 @@ function lqd_page_link( $link, $post_id ) {
 add_filter( 'page_link', 'lqd_page_link', 1000, 2 );
 
 /**
- * When messages-app-view is present, modify links to add messages-app-view to permalink on sermon series taxonomy.
+ * When messages-app-view is present, modify links to add messages-app-view to permalink on series taxonomy.
  *
  * @param $url
  * @param $term

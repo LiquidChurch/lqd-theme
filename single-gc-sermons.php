@@ -1,8 +1,8 @@
 <?php
 /**
- * Template: Single Sermon Template
+ * Template: Single Message Template
  *
- * The template for displaying an individual sermon
+ * The template for displaying an individual message
  *
  * @package WordPress
  * @subpackage Liquid_Church

@@ -15,7 +15,7 @@
         $sermon = gc_get_sermon_post(get_the_ID());
 
         $message_field_to_display = array();
-        $plugin_option = LiquidChurch_Functionality::get_plugin_settings_options('single_series_view');
+        $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_series_view');
         if (!empty($plugin_option)) {
             {
                 $message_field_to_display = ! empty( $plugin_option['message_field_to_display'] ) ? $plugin_option['message_field_to_display'] : array();
@@ -31,7 +31,7 @@
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
-                            'class' => 'gc-series-list-sermons-img',)); ?>
+                            'class' => 'lqd-series-list-msgs-img',)); ?>
                     </a>
                 </div>
                 <?php
@@ -103,7 +103,6 @@
             </div>
         </div>
     </div><!-- .entry-content -->
-
     <footer class="entry-footer">
         <?php liquidchurch_entry_meta(); ?>
     </footer><!-- .entry-footer -->

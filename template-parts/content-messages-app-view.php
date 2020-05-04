@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content
+ * The template used for displaying the main message page content
  *
  * @package WordPress
  * @subpackage Liquid_Church
@@ -20,7 +20,7 @@
             <p><?php do_action('gc_series', array(
                     'paging_by' => "per_year",
                     'show_num_years_first_page' => 2,
-                    'paging_init_year' => date('Y' ) . ",2016,2015"
+                    'paging_init_year' => date('Y') . ",2016,2015"
                 )); ?>
             </p>
         <?php endif; ?>
