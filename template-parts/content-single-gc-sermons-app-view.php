@@ -68,7 +68,7 @@ $sermon = gc_get_sermon_post();
                         <?php
                         if (in_array('title', $message_field_to_display)) {
                             ?>
-                            <div class="row single-sermon-title">
+                            <div class="row lqdm-single-msg-title">
                                 <header class="entry-header col-sm-7" style="margin-top: 20px;">
 
                                     <?php

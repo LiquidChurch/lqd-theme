@@ -1,14 +1,20 @@
 <div class="lqd-header-menu row">
-    <nav class="navbar navbar-expand-lg">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle Navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <?php if ( has_nav_menu( 'primary' ) ) :
-                wp_nav_menu( array(
+               /* wp_nav_menu( array(
                     'theme_location' => 'primary',
                     'menu_class'     => 'nav mr-auto',
+                ) ); */
+                wp_nav_menu( array(
+                  'theme_location'      => 'primary',
+                  'menu_class'          => 'navbar-nav',
+                  'fallback_cb'         => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'              => new WP_Bootstrap_Navwalker(),
                 ) );
             else :
                 wp_nav_menu( array(

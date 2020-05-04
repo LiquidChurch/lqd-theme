@@ -99,10 +99,8 @@ a.home-btn {
     color: #fff;
 }
 
-#single-sermon-content .row {
-    padding-bottom: 10px;
-    /*border-bottom: 1px solid #e2e2e2;*/
-    margin-bottom: 10px;
+.lqdm-single-msg-details .row {
+    padding-bottom: 1vw;
 }
 
 #message-summary .lqdm-right-col {
@@ -262,7 +260,7 @@ h1.lqdm-msg-title {
     /*width:30%;*/
 }
 
-#mav-single div.row.single-sermon-title {
+#mav-single div.row.lqdm-single-msg-title {
     padding-bottom: 1px;
     margin-bottom: 1px;
     padding-top:0;

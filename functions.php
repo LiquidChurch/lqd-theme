@@ -390,7 +390,7 @@ function pr($obj){
  * @param $args
  * @return array
  */
-function myplugin_custom_walker( $args ) {
+/*function myplugin_custom_walker( $args ) {
     if($args['theme_location']=="")
     {
         return array_merge( $args, array(
@@ -400,10 +400,18 @@ function myplugin_custom_walker( $args ) {
 
     return array_merge( $args, array(
         'theme_location' => 'primary',
-        'menu_class'     => 'nav navbar-nav',
+        'menu_class'     => 'navbar-nav mr-auto',
     ) );
 }
-add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );
+add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );*/
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
 
 /**
  * Sets TinyMCE config option
