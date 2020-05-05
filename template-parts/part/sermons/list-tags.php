@@ -5,7 +5,7 @@ if (empty($tags)) {
     return false;
 }
 ?>
-<div id="message-tags" class="row">
+<div id="message-tags">
     <div class="col-sm-3">
         <b>Tag:</b>
     </div>

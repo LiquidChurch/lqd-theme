@@ -7,7 +7,7 @@ if (empty($post->post_date)) {
     }
 }
 ?>
-<div id="message-date" class="row">
+<div id="message-date">
     <div class="col-sm-3">
         <b>Date:</b>
     </div>

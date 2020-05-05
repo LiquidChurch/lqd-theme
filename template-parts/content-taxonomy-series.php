@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="entry-content sermon-series-message">
+    <div class="lqdm-series-individual-msg">
         <?php
         global $sermon;
         $sermon = gc_get_sermon_post(get_the_ID());
@@ -43,7 +43,7 @@
                 if (in_array('title', $message_field_to_display)) {
                     ?>
                     <header class="entry-header">
-                        <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
+                        <?php the_title(sprintf('<h2><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                     </header><!-- .entry-header -->
                     <?php
                 }

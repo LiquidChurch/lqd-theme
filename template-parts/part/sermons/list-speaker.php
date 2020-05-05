@@ -5,7 +5,7 @@ if (empty($speakers)) {
     return false;
 }
 ?>
-<div id="message-speaker" class="row">
+<div id="message-speaker">
     <div class="col-sm-3">
         <b>Speaker:</b>
     </div>

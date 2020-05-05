@@ -5,7 +5,7 @@ if (empty($content)) {
     return false;
 }
 ?>
-<div id="message-summary" class="row">
+<div id="message-summary">
     <div class="col-sm-3">
         <b>Summary:</b>
     </div>

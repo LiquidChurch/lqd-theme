@@ -5,7 +5,7 @@ if (empty($scriptures)) {
     return false;
 }
 ?>
-<div id="message-scripture" class="row">
+<div id="message-scripture">
     <div class="col-sm-3">
         <b>Scriptures:</b>
     </div>

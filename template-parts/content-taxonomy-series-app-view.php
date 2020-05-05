@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="entry-content sermon-series-message mav-series">
+    <div class="entry-content lqdm-series-individual-msg mav-series">
         <?php
         global $sermon;
         $sermon = gc_get_sermon_post(get_the_ID());

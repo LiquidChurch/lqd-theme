@@ -146,7 +146,7 @@
             if (!preg_match('<!-- no resources found -->', $sermon_resources)):
                 ?>
                 <article>
-                    <div class="entry-content sermon-series-resource">
+                    <div class="lqdm-series-resources-wrapper">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">

@@ -11,13 +11,13 @@
      }
  }
  ?>
- <header>
+ <header class="py-3">
      <?php // If Title Option is Enabled
      if (in_array('title', $message_field_to_display)) { ?>
          <div class="lqdm-single-msg-title col-xs-12 col-md-9 d-flex float-left">
              <?php the_title( '<h1 class="lqdm-msg-title">', '</h1>'); ?>
          </div>
-         <div class="lqd-social-share col-xs-12 col-md-3 d-flex">
+         <div class="lqd-social-share col-xs-12 col-md-3 d-flex justify-content-center">
              <?php get_template_part( 'template-parts/part/social', 'action-bar'); ?>
          </div>
          <?php // If Message Image Option is Selected

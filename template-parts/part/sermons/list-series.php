@@ -5,7 +5,7 @@ if (empty($series)) {
     return false;
 }
 ?>
-<div id="message-series" class="row">
+<div id="message-series">
     <div class="col-sm-3">
         <b>Series:</b>
     </div>

@@ -5,7 +5,7 @@ if (empty($display_order)) {
     return false;
 }
 ?>
-<div id="message-series-part" class="row">
+<div id="message-series-part">
     <div class="col-sm-3">
         <b>Part:</b>
     </div>

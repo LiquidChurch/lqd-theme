@@ -51,6 +51,26 @@ img {
     margin-bottom: 1.5em;
 }
 
+/* Search */
+.search-field {
+    width: 60%;
+    background: #e2e2e2;
+    box-shadow: none;
+    height: 60px;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+}
+
+input.search-submit {
+    margin-right: 20px;
+    background: #14a7e0;
+    height: 60px;
+    color: #fff;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /**
  * Liquid Theme Specific
  */

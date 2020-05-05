@@ -9,7 +9,7 @@ if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->
     }
 }
 ?>
-<div id="message-resource" class="row">
+<div id="message-resource">
     <div class="col-sm-3">
         <b>Resources:</b>
     </div>
