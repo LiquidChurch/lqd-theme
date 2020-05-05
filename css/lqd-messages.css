@@ -46,6 +46,7 @@ a.lqd-home-btn {
 
 /* Header Before Other Messages in Series on Single Message Page */
 .lqdm-other-msg-header {
+    text-align: center;
 }
 
 /** Resources List */

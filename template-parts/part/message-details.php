@@ -83,4 +83,3 @@
             get_template_part('template-parts/part/sermons/list', 'addtnl-resource');
         } ?>
     </div>
-</div>
