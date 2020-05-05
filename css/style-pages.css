@@ -67,12 +67,6 @@
   color: #f08a41;
 }
 
-/* For Text Body Content */
-.body-text {
-  max-width: 800px !important;
-  margin: auto !important;
-}
-
 /* Responsive Videos, when not using FitVid. */
 .videoWrapper {
   position: relative;

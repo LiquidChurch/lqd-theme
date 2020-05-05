@@ -16,7 +16,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'liquidchurch_setup' ) ) :
+if ( ! function_exists( 'lqd_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -26,34 +26,21 @@ if ( ! function_exists( 'liquidchurch_setup' ) ) :
  *
  * @since 1.0.0
  */
-function liquidchurch_setup() {
-    /*
-     * Make theme available for translation
-     *
-     * Translations are field in the /languages/ directory.
-     */
+function lqd_setup() {
+    // Make theme available for translation
 	load_theme_textdomain( 'liquidchurch', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
-	// This theme uses wp_nav_menu() in two locations.
+	// Register nav menus
 	register_nav_menus( array(
 		'primary'    => __( 'Primary Menu', 'liquidchurch' ),
 		'locations'  => __( 'Locations Menu', 'liquidchurch' ),
@@ -74,9 +61,7 @@ function liquidchurch_setup() {
         )
     );
 
-	/*
-	 * Enable support for Post Formats.
-	 */
+	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array(
 		'aside',
 		'image',
@@ -89,17 +74,14 @@ function liquidchurch_setup() {
 		'chat',
 	) );
 
-	/*
-	 * This theme DOESN'T style the visual editor to resemble the theme style, but it should,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'css/editor-style.css', liquidchurch_fonts_url() ) );
+	// This theme DOESN'T style the visual editor to resemble the theme style, but it should,
+	add_editor_style( array( 'css/editor-style.css', lqd_fonts_url() ) );
 
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
-endif; // liquidchurch_setup
-add_action( 'after_setup_theme', 'liquidchurch_setup' );
+endif; // lqd_setup
+add_action( 'after_setup_theme', 'lqd_setup' );
 
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
@@ -110,10 +92,10 @@ add_action( 'after_setup_theme', 'liquidchurch_setup' );
  *
  * @since 1.0.0
  */
-function liquidchurch_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'liquidchurch_content_width', 840 );
+function lqd_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'lqd_content_width', 840 );
 }
-add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
+add_action( 'after_setup_theme', 'lqd_content_width', 0 );
 
 /**
  * Registers a widget area.
@@ -124,17 +106,17 @@ add_action( 'after_setup_theme', 'liquidchurch_content_width', 0 );
  */
 require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
 
-if ( ! function_exists( 'liquidchurch_fonts_url' ) ) :
+if ( ! function_exists( 'lqd_fonts_url' ) ) :
 /**
  * Register Google fonts for Liquid Church.
  *
- * Create your own liquidchurch_fonts_url() function to override in a child theme.
+ * Create your own lqd_fonts_url() function to override in a child theme.
  *
  * @since 1.0.0
  *
  * @return string Google fonts URL for the theme.
  */
-function liquidchurch_fonts_url() {
+function lqd_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -172,70 +154,82 @@ endif;
  *
  * @since 1.0.0
  */
-function liquidchurch_javascript_detection() {
+function lqd_js_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'liquidchurch_javascript_detection', 0 );
+add_action( 'wp_head', 'lqd_js_detection', 0 );
 
 /**
  * Enqueues scripts and styles.
  *
  * @since 1.0.0
  */
-function liquidchurch_scripts() {
-    /** FONTS **/
+function lqd_scripts() {
     $theme_path = plugin_dir_path(__FILE__);
     $lqd_style_css = filemtime($theme_path . 'css/style.css');
     $lqd_style_pages_css = filemtime($theme_path . 'css/style-pages.css');
     $lqd_messages_css = filemtime($theme_path . 'css/lqd-messages.css');
     $lqd_fonts_css = filemtime($theme_path . 'css/lqd-fonts.css');
+
 	// Avenir Fonts
 	wp_enqueue_style( 'lqd-fonts',  get_template_directory_uri() . '/css/lqd-fonts.css', array(), $lqd_fonts_css);
 	// Google Fonts
-	wp_enqueue_style( 'liquidchurch-fonts', liquidchurch_fonts_url(), array(), null );
+	wp_enqueue_style( 'liquidchurch-fonts', lqd_fonts_url(), array(), null );
+
     // Bootstrap
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/vendor/bootstrap/bootstrap.min.css', array(), '4.4.1' );
+
 	// Font Awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/vendor/font-awesome.min.css', array(), $lqd_style_css );
+
 	// Main CSS
 	wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), $lqd_style_css );
+
 	// Page Specific + Button CSS
 	wp_enqueue_style( 'pages-style', get_template_directory_uri() . '/css/style-pages.css', array(), $lqd_style_pages_css );
+
 	// Liquid Messages CSS
 	wp_enqueue_style( 'lqd-messages', get_template_directory_uri() . '/css/lqd-messages.css', array(), $lqd_messages_css );
+
     // Text2Give CSS
     if ( is_page( 'text2give' ) ) {
         wp_enqueue_style( 'text2give', get_template_directory_uri() . '/css/text2give.css', array(), '1.5' );
     }
+
 	// Required WP CSS
     wp_enqueue_style( 'liquidchurch-style', get_stylesheet_uri() );
 
     /** JS **/
     // Skip Link Focus Fix
-	wp_enqueue_script( 'liquidchurch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
+	wp_enqueue_script( 'lqd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160412', true );
+
 	// If Single Page with Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 	// If Single Page Where Attachment Is Image
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'liquidchurch-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
+		wp_enqueue_script( 'lqd-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160412' );
 	}
 	// Text2Give JS
     if ( is_page( array ('give', 'set-new-recurring-gift', 'cancel-old-recurring-gift', 'text2give' ) ) ) {
-	    wp_enqueue_script( 'give-choose-campus-js', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', false );
+	    wp_enqueue_script( 'lqd-give-campus', get_template_directory_uri() . '/js/give-choose-campus.js', array( 'jquery' ), '2017061601', false );
     }
+
     // Main Liquid Church JavaScript
-    wp_enqueue_script( 'liquidchurch-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20200313', true );
+    wp_enqueue_script( 'lqd-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20200313', true );
+
 	// Bootstrap JavaScript
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '20190313', true );
+
     // Localization
-	wp_localize_script( 'liquidchurch-script', 'screenReaderText', array(
+	wp_localize_script( 'lqd-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'liquidchurch' ),
 		'collapse' => __( 'collapse child menu', 'liquidchurch' ),
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'liquidchurch_scripts' );
+add_action( 'wp_enqueue_scripts', 'lqd_scripts' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -245,7 +239,7 @@ add_action( 'wp_enqueue_scripts', 'liquidchurch_scripts' );
  * @param array $classes Classes for the body element.
  * @return array (Maybe) filtered body classes.
  */
-function liquidchurch_body_classes( $classes ) {
+function lqd_body_classes( $classes ) {
 	// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
@@ -268,7 +262,7 @@ function liquidchurch_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'liquidchurch_body_classes' );
+add_filter( 'body_class', 'lqd_body_classes' );
 
 /**
  * Converts a HEX value to RGB.
@@ -279,7 +273,7 @@ add_filter( 'body_class', 'liquidchurch_body_classes' );
  * @return array Array containing RGB (red, green, and blue) values for the given
  *               HEX code, empty array otherwise.
  */
-function liquidchurch_hex2rgb( $color ) {
+function lqd_hex2rgb( $color ) {
     $color = trim( $color, '#' );
 
 	if ( strlen( $color ) === 3 ) {
@@ -318,7 +312,7 @@ require get_template_directory() . '/inc/customizer.php';
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function liquidchurch_content_image_sizes_attr( $sizes, $size ) {
+function lqd_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
 	840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
@@ -332,7 +326,7 @@ function liquidchurch_content_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'liquidchurch_content_image_sizes_attr', 10 , 2 );
+add_filter( 'wp_calculate_image_sizes', 'lqd_content_image_sizes_attr', 10 , 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -346,14 +340,14 @@ add_filter( 'wp_calculate_image_sizes', 'liquidchurch_content_image_sizes_attr',
  *
  * @return array A source size value for use in a post thumbnail 'sizes' attribute.
  */
-function liquidchurch_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function lqd_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {
 		is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
 		! is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
 	}
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'liquidchurch_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'lqd_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.
@@ -363,13 +357,13 @@ add_filter( 'wp_get_attachment_image_attributes', 'liquidchurch_post_thumbnail_s
  * @param array $args Arguments for tag cloud widget.
  * @return array A new modified arguments.
  */
-function liquidchurch_widget_tag_cloud_args( $args ) {
+function lqd_widget_tag_cloud_args( $args ) {
 	$args['largest'] = 1;
 	$args['smallest'] = 1;
 	$args['unit'] = 'em';
 	return $args;
 }
-add_filter( 'widget_tag_cloud_args', 'liquidchurch_widget_tag_cloud_args' );
+add_filter( 'widget_tag_cloud_args', 'lqd_widget_tag_cloud_args' );
 
 /**
  * Handles Preformatted Text
@@ -385,33 +379,12 @@ function pr($obj){
 }
 
 /**
- * Custom Modifications to the WP Navwalker
- *
- * @param $args
- * @return array
- */
-/*function myplugin_custom_walker( $args ) {
-    if($args['theme_location']=="")
-    {
-        return array_merge( $args, array(
-            'menu_class'=>'',
-        ) );
-    }
-
-    return array_merge( $args, array(
-        'theme_location' => 'primary',
-        'menu_class'     => 'navbar-nav mr-auto',
-    ) );
-}
-add_filter( 'wp_nav_menu_args', 'myplugin_custom_walker' );*/
-
-/**
  * Register Custom Navigation Walker
  */
-function register_navwalker(){
+function lqd_register_navwalker(){
     require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
-add_action( 'after_setup_theme', 'register_navwalker' );
+add_action( 'after_setup_theme', 'lqd_register_navwalker' );
 
 /**
  * Sets TinyMCE config option
@@ -419,11 +392,11 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  * @param $in
  * @return mixed
  */
-function myformatTinyMCE( $in ) {
+function lqd_format_tinyMCE( $in ) {
     $in['wordpress_adv_hidden'] = FALSE;
     return $in;
 }
-add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
+add_filter( 'tiny_mce_before_init', 'lqd_format_tinyMCE' );
 
 /**
  * Sets TinyMCE Options
@@ -431,7 +404,7 @@ add_filter( 'tiny_mce_before_init', 'myformatTinyMCE' );
  * @param $init
  * @return mixed
  */
-function my_mce4_options($init) {
+function lqd_mce4_options($init) {
   $default_colours = '"000000", "Black",
                       "993300", "Burnt orange",
                       "333300", "Dark olive",
@@ -490,7 +463,7 @@ function my_mce4_options($init) {
 
   return $init;
 }
-add_filter('tiny_mce_before_init', 'my_mce4_options');
+add_filter('tiny_mce_before_init', 'lqd_mce4_options');
 
 /**
  * Add Theme Customizer Settings
@@ -502,96 +475,96 @@ function lqd_customize_register( $wp_customize ) {
         'title' => 'Liquid Options',
         'description' => 'Settings',
         'priority' => 1,
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 
     // Add setting and control for logo uploader
-    $wp_customize->add_setting( 'm1_logo', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'm1_logo', array('sanitize_callback' =>'esc_url_raw') );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm1_logo', array(
         'label'    => __( 'Header Logo', 'liquidchurch' ),
         'section'  => 'lqd_theme',
         'settings' => 'm1_logo',
         'priority' => 1,
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
     ) ) );
 
     // Add setting and control for Contact Us
-    $wp_customize->add_setting( 'lqd_contact_us', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'lqd_contact_us', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'lqd_contact_us', array(
         'label'     => __('Contact Us Link', 'liquidchurch'),
         'section'   => 'lqd_theme',
         'type'      => 'text',
         'settings'  => 'lqd_contact_us',
         'priority'  => '3',
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 
     // Add setting and control for Phone Number
-    $wp_customize->add_setting( 'lqd_phone_number', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'lqd_phone_number', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'lqd_phone_number', array(
         'label'     => __('Phone Number', 'liquidchurch'),
         'section'   => 'lqd_theme',
         'type'      => 'text',
         'settings'  => 'lqd_phone_number',
         'priority'  => '3',
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 
     // Add setting and control for Contact Us
-    $wp_customize->add_setting( 'lqd_email', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'lqd_email', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'lqd_email', array(
         'label'     => __('Email', 'liquidchurch'),
         'section'   => 'lqd_theme',
         'type'      => 'text',
         'settings'  => 'lqd_email',
         'priority'  => '3',
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
     ) );
 
 
     /* Social Icons */
     /* Add Setting/Control for Facebook */
-    $wp_customize->add_setting( 'facebook_id_theme', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'facebook_id_theme', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'facebook_id', array(
         'label'    => __( 'Facebook Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
 		'type'     => 'text',
 		'settings'  => 'facebook_id_theme',
 		'priority' => 3,
-		'sanitize_callback' == 'esc_url_raw',
+		'sanitize_callback' => 'esc_url_raw',
     ) );
 
     /* Add Setting/Control for Twitter */
-    $wp_customize->add_setting( 'twitter_id_theme', 'sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'twitter_id_theme', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'twitter_id', array(
 		'label'    => __( 'Twitter Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
 		'type'     => 'text',
 		'settings'  => 'twitter_id_theme',
 		'priority' => 4,
-		'sanitize_callback' == 'esc_url_raw',
+		'sanitize_callback' => 'esc_url_raw',
 	) );
 
     /* Add Setting/Control for YouTube */
-    $wp_customize->add_setting( 'youtube_id_theme','sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'youtube_id_theme', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'youtube_id', array(
         'label'    => __( 'Youtube Link', 'liquidchurch' ),
         'section'  => 'lqd_theme',
         'type'     => 'text',
         'settings'  => 'youtube_id_theme',
         'priority' => 5,
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
 	) );
 
     /* Add Setting/Control for nstagram */
-    $wp_customize->add_setting( 'instagram_id_theme','sanitize_callback' == 'esc_url_raw' );
+    $wp_customize->add_setting( 'instagram_id_theme', array('sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'instagram_id', array(
         'label'    => __( 'Instagram Link', 'liquidchurch' ),
 		'section'  => 'lqd_theme',
 		'type'     => 'text',
 		'settings'  => 'instagram_id_theme',
 		'priority' => 6,
-		'sanitize_callback' == 'esc_url_raw',
+		'sanitize_callback' => 'esc_url_raw',
 	) );
 }
 add_action( 'customize_register', 'lqd_customize_register' );
@@ -599,7 +572,7 @@ add_action( 'customize_register', 'lqd_customize_register' );
 /**
  * Create a Default Menu
  */
-function createDefaultMenu(){
+function lqd_create_default_menu(){
 	// Check if the menu exists
 	$menu_name = 'Default Menu';
 	$menu_exists = wp_get_nav_menu_object( $menu_name );
@@ -621,12 +594,12 @@ function createDefaultMenu(){
 	        'menu-item-status' => 'publish'));
 	}
 }
-createDefaultMenu();
+lqd_create_default_menu();
 
 /**
  * Create a Sample Page
  */
-function createSamplePage(){
+function lqd_create_sample_page(){
 	if(the_slug_exists('custom-page')==false)
 	{
 		global $user_ID;
@@ -641,7 +614,7 @@ function createSamplePage(){
         $post_id = wp_insert_post($new_post);
 	}
 }
-createSamplePage();
+lqd_create_sample_page();
 
 /**
  * Check if Slug Exists for Sample Page
@@ -719,21 +692,6 @@ function gc_sermon_before_after($content)
 	$content = str_replace("\xc2\xa0", ' ', $content);
 	$content = preg_replace('/<p>/', '<span class="lqdm-right-col">', $content);
 	$content = preg_replace('/<\/p>/', '</span>', $content);
-	return $content;
-}
-
-/**
- * Filtering for messages the content
- *
- * @param $content
- * @return string|string[]|null
- */
-function gc_series_before_after($content)
-{
-	$content = strip_tags($content);
-	$content = str_replace("\xc2\xa0", ' ', $content);
-	$content = preg_replace('/<p>/', '<p style="padding-left:30px; padding-right:30px;">', $content);
-	$content = preg_replace('/<\/p>/', '</p>', $content);
 	return $content;
 }
 
@@ -862,18 +820,18 @@ add_filter('permalink-manager-force-lowercase-uris', '__return_false');
 // Disable submit button on Campus Groups Serve page.
 add_filter( 'gform_submit_button_17', '__return_false' );
 
-/*
-* Yoast SEO Disable Automatic Redirects for Posts And Pages
-* Credit: Yoast Development Team
-* Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
-*/
+/**
+ * Yoast SEO Disable Automatic Redirects for Posts And Pages
+ * Credit: Yoast Development Team
+ * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
+ */
 add_filter('wpseo_premium_post_redirect_slug_change', '__return_true' );
 
-/*
-* Yoast SEO Disable Automatic Redirects for Taxonomies (Category, Tags, Etc)
-* Credit: Yoast Development Team
-* Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
-*/
+/**
+ * Yoast SEO Disable Automatic Redirects for Taxonomies (Category, Tags, Etc)
+ * Credit: Yoast Development Team
+ * Last Tested: May 09 2017 using Yoast SEO Premium 4.7.1 on WordPress 4.7.4
+ */
 add_filter('wpseo_premium_term_redirect_slug_change', '__return_true' );
 
 // Disable JPEG compression

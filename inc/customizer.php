@@ -386,7 +386,7 @@ function liquidchurch_color_scheme_css() {
 	$color_scheme = liquidchurch_get_color_scheme();
 
 	// Convert main text hex color to rgba.
-	$color_textcolor_rgb = liquidchurch_hex2rgb( $color_scheme[3] );
+	$color_textcolor_rgb = lqd_hex2rgb( $color_scheme[3] );
 
 	// If the rgba values are empty return early.
 	if ( empty( $color_textcolor_rgb ) ) {
@@ -958,7 +958,7 @@ function liquidchurch_main_text_color_css() {
 	}
 
 	// Convert main text hex color to rgba.
-	$main_text_color_rgb = liquidchurch_hex2rgb( $main_text_color );
+	$main_text_color_rgb = lqd_hex2rgb( $main_text_color );
 
 	// If the rgba values are empty return early.
 	if ( empty( $main_text_color_rgb ) ) {

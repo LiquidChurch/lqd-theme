@@ -71,9 +71,7 @@ input.search-submit {
     padding-right: 10px;
 }
 
-/**
- * Liquid Theme Specific
- */
+/** Liquid Theme Specific */
 
 /** PAGE **/
 .page {
@@ -217,6 +215,7 @@ ul.lqd-footer-top-right {
 /* Entry Content */
 .entry-content {
     color: #333;
+    font-size: 1.25rem;
 }
 
 .entry-content p {
@@ -226,12 +225,9 @@ ul.lqd-footer-top-right {
     padding-right: 30px;
 }
 
-.entry-content .body-text p {
-    padding-left: 0;
-}
-
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
-    padding: 0 0;
+    padding-left: 30px;
+    padding-right: 30px;
     display: inline-block;
 }
 
