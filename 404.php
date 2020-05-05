@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<!-- .entry-content -->
-			<div class="entry-content">
+			<div class="entry-content py-3">
 				<section class="error-404 not-found">
 					<header class="page-header">
 						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/image/404-page-not-found.jpg"  alt="404 Image Not Found" />

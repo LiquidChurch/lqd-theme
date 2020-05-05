@@ -14,9 +14,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-        <?php if (have_posts()) : ?>
-            <?php
-
+        <?php if (have_posts()) :
             $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
@@ -26,14 +24,12 @@ get_header(); ?>
                 ));
             }
             ?>
-            <div class="entry-content sermon-series-desc">
+            <div class="entry-content py-3 sermon-series-desc">
                 <p><?php echo $series->description ?></p>
             </div>
             <?php
 
-            /**
-             * for video messages
-             */
+            // For Video Messages
             global $wp_query;
             $video_query_args = array_merge($wp_query->query_vars, array(
                 'posts_per_page' => '99',
@@ -69,9 +65,7 @@ get_header(); ?>
             /* Restore original Post Data */
             wp_reset_postdata();
 
-            /**
-             * for normal messages
-             */
+            // For normal messages
             global $wp_query;
             $query_args = array_merge($wp_query->query_vars, array(
                 'meta_key' => 'gc_display_order',
@@ -85,10 +79,8 @@ get_header(); ?>
 
             // Start the Loop.
             while ($the_query->have_posts()) : $the_query->the_post();
-
                 get_template_part('template-parts/content-taxonomy-series', get_post_format());
-
-                // End the loop.
+            // End the loop.
             endwhile;
 
             /* Restore original Post Data */
@@ -114,7 +106,7 @@ get_header(); ?>
 
                     get_template_part('template-parts/content-taxonomy-series', get_post_format());
 
-                    // End the loop.
+                // End the loop.
                 endwhile;
 
                 /* Restore original Post Data */
@@ -122,16 +114,13 @@ get_header(); ?>
             }
 
             $sermon_resources = do_shortcode('[sermon_resources data_type="series" resource_display_name="true" resource_post_id="' . $series->term_id . '"]');
-            if (!preg_match('<!-- no resources found -->', $sermon_resources)):
-                ?>
+            if (!preg_match('<!-- no resources found -->', $sermon_resources)): ?>
                 <article>
                     <div class="lqdm-series-resources-wrapper">
                         <div class="row">
                             <div class="col-md-12">
                                 <header class="entry-header">
-                                    <h2 class="entry-title">
-                                        Resources
-                                    </h2>
+                                    <h2 class="entry-title">Resources</h2>
                                 </header>
                                 <?php
                                 echo $sermon_resources;
@@ -147,8 +136,7 @@ get_header(); ?>
         else :
             get_template_part('template-parts/content', 'none');
 
-        endif;
-        ?>
+        endif; ?>
 
     </main><!-- .site-main -->
 </div><!-- .content-area -->
