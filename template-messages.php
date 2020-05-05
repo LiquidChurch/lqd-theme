@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Messages Template
+ * Template Name: Main Messages Page Template
  *
  * The template for displaying the main messages page, e.g. /messages.
  *
@@ -20,17 +20,8 @@ get_header(); ?>
 			// Include the page content template.
 			get_template_part( 'template-parts/content', 'messages' );
 
-			 //If comments are open or we have at least one comment, load up the comment template.
-		if (! is_front_page() ) {
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
-			}
-		}
-
-			// End of the loop.
-		endwhile;
-		?>
-
+		// End of the loop.
+		endwhile; ?>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
