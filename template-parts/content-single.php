@@ -19,7 +19,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </header><!-- .entry-header -->
 
-	<div class="entry-content" style="margin:auto; max-width:1000px;">
+	<div class="entry-content py-3" style="margin:auto; max-width:1000px;">
 		<?php
         the_content();
 

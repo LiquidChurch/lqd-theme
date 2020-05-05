@@ -15,7 +15,7 @@
 		<?php liquidchurch_post_thumbnail(); ?>
 
         <!-- .entry-content -->
-		<div class="entry-content">
+		<div class="entry-content py-3">
 			<?php
 			the_content();
 

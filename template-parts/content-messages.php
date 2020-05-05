@@ -10,18 +10,23 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php liquidchurch_post_thumbnail(); ?>
-    <!-- .entry-content -->
-    <div class="entry-content">
+    <div class="entry-content py-3">
         <?php if (isset($_GET['sermon-search'])) : ?>
             <a class="lqd-home-btn" href="<?php echo home_url('/messages/') ?>">Return to Messages Home</a>
-        <?php else: ?>
-        <?php the_content(); ?>
-        <?php endif; ?>
+        <?php else:
+           the_content();
+        endif; ?>
 
         <?php if (!isset($_GET['sermon-search'])) : ?>
             <hr/>
             <h1>Most Recent Messages</h1>
-            <p><?php do_action('gc_sermons', array('per_page' => '4', 'remove_pagination' => true, 'content' => 'excerpt', 'thumbnail_size' => 'medium', 'number_columns' => 4)); ?></p>
+            <p><?php do_action('gc_sermons', array(
+                'per_page' => '4',
+                'remove_pagination' => true,
+                'content' => 'excerpt',
+                'thumbnail_size' => 'medium',
+                'number_columns' => 4
+                )); ?></p>
         <?php endif; ?>
 
         <hr/>

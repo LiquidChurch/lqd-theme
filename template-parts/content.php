@@ -23,7 +23,7 @@
 
 	<?php liquidchurch_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content py-3">
 		<?php
         the_content( sprintf(
             /* translators: %s: Name of current post. Only visible to screen readers */

@@ -27,79 +27,59 @@
             $second_col = 'col-md-12';
             if (in_array('sermon_image', $message_field_to_display)) {
                 $second_col = 'col-md-7';
-                ?>
+            ?>
                 <div class="col-md-5">
                     <a href="<?php echo $sermon->permalink(); ?>">
                         <?php echo wp_get_attachment_image($sermon->featured_image_id(), 'full', false, array(
                             'class' => 'lqd-series-list-msgs-img',)); ?>
                     </a>
                 </div>
-                <?php
-            }
-            ?>
+            <?php } ?>
             <div class="<?php echo $second_col ?>">
 
-                <?php
-                if (in_array('title', $message_field_to_display)) {
-                    ?>
+                <?php if (in_array('title', $message_field_to_display)) { ?>
                     <header class="entry-header">
                         <?php the_title(sprintf('<h2><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                     </header><!-- .entry-header -->
-                    <?php
-                }
-                ?>
+                <?php } ?>
 
-                <?php
+                <?php // If Speaker Option Enabled
                 if (in_array('speakers', $message_field_to_display)) {
-                    //speaker list template part
                     get_template_part('template-parts/part/sermons/list', 'speaker');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Series Part Option Enabled
                 $exclude_msg = $sermon->get_meta('gc_exclude_msg');
                 if (in_array('part_of_series', $message_field_to_display)
                     && ($exclude_msg != 'on')
                 ) {
-                    // If Series Part Option Enabled
                     get_template_part('template-parts/part/sermons/list', 'series-part');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Topic Option is Enabled
                 if (in_array('topics', $message_field_to_display)) {
-                    // If Topic Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'topics');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Tags Option is Enabled
                 if (in_array('tags', $message_field_to_display)) {
-                    // If Tags Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'tags');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Scripture Option is Enabled
                 if (in_array('scripture_reference', $message_field_to_display)) {
-                    // If Scripture Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'scripture');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Summary Option is Enabled
                 if (in_array('description', $message_field_to_display)) {
-                    // If Summary Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'summary');
-                }
-                ?>
+                } ?>
 
-                <?php
+                <?php // If Date Option is Enabled
                 if (in_array('date', $message_field_to_display)) {
-                    // If Date Option is Enabled
                     get_template_part('template-parts/part/sermons/list', 'date');
-                }
-                ?>
+                } ?>
             </div>
         </div>
     </div><!-- .entry-content -->

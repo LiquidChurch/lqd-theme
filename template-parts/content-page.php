@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php liquidchurch_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content py-3">
 		<?php
 		the_content();
 

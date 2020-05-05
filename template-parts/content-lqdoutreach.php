@@ -17,7 +17,7 @@
 		<?php // endif; ?>
 		<?php the_title( sprintf( '<h3 class="page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>   ' ); ?>
 	</header><!-- .entry-header -->
-	<div class="entry-content">
+	<div class="entry-content py-3">
 		<?php /*
 			/* translators: %s: Name of current post */
 		?>

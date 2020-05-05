@@ -12,7 +12,7 @@
     <?php liquidchurch_post_thumbnail(); ?>
 
     <!-- .entry-content -->
-    <div class="entry-content">
+    <div class="entry-content py-3">
         <?php if (isset($_GET['sermon_search'])) : ?>
             <p><a href="/messages/">Return to Messages Home</a></p>
         <?php endif; ?>

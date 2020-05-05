@@ -31,8 +31,6 @@
          <?php } ?>
  </header>
  <div class="lqdm-single-msg-details col-xs-12">
-
- </div>
  <?php } ?>
 
         <?php // If Show Series Option Enabled
