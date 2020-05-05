@@ -96,23 +96,9 @@ input.search-submit {
     padding-left: 1vw;
 }
 
-/* Header: Buttons */
+/* Header: Top Buttons */
 .lqd-header-btn {
-    border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
-    background: #fff none repeat scroll 0 0;
-    margin-top: 6px; /* Match height of Locations */
-    white-space: nowrap; /* Don't allow text to wrap onto second line */
-    color: #14a7e0;
-    border-radius: 42px;
-    font-family: "Avenir Next LT Pro", sans-serif;
-    font-weight:700;
-    text-transform: uppercase;
-    z-index: 1;
-}
-
-a.lqd-header-btn:hover {
-    border-color: #14a7e0 !important;
-    filter: brightness(0.9);
+    background-color: #14a7e0;
 }
 
 /* Header: Menu */
