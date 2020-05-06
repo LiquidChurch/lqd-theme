@@ -1,0 +1,357 @@
+body {
+    font-family: "Avenir Next LT Pro", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Avenir Next LT Pro Demi", sans-serif;
+    color: #14a7e0;
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+}
+
+.clear {
+    clear: both;
+}
+
+/**
+ * WordPress Classes
+ *
+ * These have generally been pulled from _s's styling.
+ *
+ * BS4 styling is strongly preferred when available, this is kept mainly
+ * for the use of third party code which may expect these classes.
+ */
+
+/*
+ # Alignments
+ */
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+}
+
+/* Search */
+.search-field {
+    width: 60%;
+    background: #e2e2e2;
+    box-shadow: none;
+    height: 60px;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+}
+
+input.search-submit {
+    margin-right: 20px;
+    background: #14a7e0;
+    height: 60px;
+    color: #fff;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/** Liquid Theme Specific */
+
+/** PAGE **/
+.page {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    max-width: 1170px;
+}
+
+/** HEADER **/
+.lqd-header {
+
+}
+
+/* Header: Top */
+.lqd-header-top {
+    margin-bottom: 1vw;
+}
+
+.lqd-header-logo {
+    padding-left: 1vw;
+}
+
+/* Header: Top Buttons */
+.lqd-header-btn {
+    background-color: #14a7e0;
+}
+
+/* Header: Menu */
+.lqd-header-menu {
+    background-color: #14a7e0;
+}
+
+.lqd-header-menu ul li a {
+    color: #fff;
+    font-family: 'Avenir Next Cyr W00 Bold', sans-serif;
+    text-transform: uppercase;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+/** FOOTER **/
+
+/* Footer: Top */
+.lqd-footer-top {
+    background: #14a7e0;
+}
+
+ul.lqd-footer-top-left,
+ul.lqd-footer-top-right {
+    list-style-type: none;
+}
+
+/* Footer: Top Left */
+.lqd-footer-top-left li {
+    float: left;
+    margin-right: 4vw;
+    text-transform: uppercase
+}
+
+.lqd-footer-top-left a {
+    color: white;
+    font-family: "Avenir Next LT Pro Demi", sans-serif;
+    min-width: 10vw;
+}
+
+/* Footer: Top Right */
+.lqd-footer-top-right li {
+    float: left;
+    margin-right: 0.5vw;
+}
+
+/* Footer: Top Right: Facebook */
+.lqd-footer-top-right li i.ffb {
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-fb.png") no-repeat scroll center center / 100% auto;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+/* Footer: Top Right: Twitter */
+.lqd-footer-top-right li i.ftwitter {
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-twitter.png") no-repeat scroll center center / 100% auto;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+/* Footer: Top Right: Instagram */
+.lqd-footer-top-right li i.finsta {
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-instagram.png") no-repeat scroll center center / 100% auto;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+/* Footer: Top Right: YouTube */
+.lqd-footer-top-right li i.fyoutube {
+    background: rgba(0, 0, 0, 0) url("../image/lqd-footer-youtube.png") no-repeat scroll center center / 100% auto;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+/* Footer: Bottom */
+.lqd-footer-bottom {
+    background-color: #dcddde;
+}
+
+.lqd-footer-inner-block {
+    color: #0074c8;
+    display: block;
+}
+
+.lqd-footer-inner-block h2 {
+    border-bottom: 1px solid #fff;
+    color: #14a7e0;
+    font-family: "Avenir Next LT Pro Demi", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    padding-bottom: 1.2vh;
+    text-transform: uppercase;
+}
+
+.lqd-footer-inner-block ul {
+    padding-inline-start: 0;
+}
+
+.lqd-footer-inner-block ul li {
+    display: block;
+    padding: 0 0 1.5vh;
+}
+
+/** If no menus have been configured for footer inner blocks */
+.lqd-footer-menu-setup a {
+    color: #14a7e0;
+    text-decoration: none;
+}
+
+/* Entry Content */
+.entry-content {
+    color: #333;
+    font-size: 1.25rem;
+}
+
+.entry-content p {
+    color: #333;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4 {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: inline-block;
+}
+
+.entry-content .search-form {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.entry-content table {
+    margin-left: 30px;
+}
+
+.entry-content ul {
+    padding: 0 0 0 0;
+}
+
+.entry-content ul li {
+    color: #333333;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    list-style: inside;
+}
+
+.entry-content ol {
+    padding: 0 30px;
+}
+
+.entry-content ol li {
+    color: #333333;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    list-style: decimal inside;
+}
+
+.entry-content hr {
+    clear: both;
+    display: block;
+}
+
+/* <=1024px */
+@media (max-width: 1024px) {
+    .lqd-header-logo {
+        text-align: center;
+        margin-bottom:10px;
+    }
+
+    .lqd-header-btn {
+        margin-right:auto;
+        width:100%;
+    }
+
+    .lqd-footer-top-right {
+        margin: 0 auto;
+    }
+}
+
+/* >=768px */
+@media (min-width: 768px) {
+    .navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* <=767px */
+@media (max-width: 767px) {
+    .lqd-header-logo {
+        float: none;
+        margin-left: 0;
+    }
+
+    .navbar-toggle {
+        border-radius: 0;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .nav > li > a {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Footer */
+    .lqd-footer-menu li a {
+        font-size: 1.2em
+    }
+
+    .lqd-footer-inner-block h2 {
+        font-size: 1.2em
+    }
+
+    .lqd-footer-bottom {
+        background-color: #dcddde;
+        padding: 0 27px 0 18px;
+    }
+
+    /* Footer: Top: Left */
+    .lqd-footer-top-left {
+    }
+
+    /* Footer: Top Right */
+    .lqd-footer-top-right {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    .lqd-footer-top-right li {
+        display: inline;
+        float: none;
+    }
+
+    /* Entry Content */
+    .entry-content p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Normally 30px */
+    .entry-content table {
+        margin-left: 0;
+    }
+}

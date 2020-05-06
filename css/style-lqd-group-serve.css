@@ -1,0 +1,31 @@
+/**
+ * Search and Filter Styles for Liquid Group Serve Plugin
+ * Version: 0.9.4
+ */
+.entry-content .searchandfilter ul li {
+  float: left;
+  padding: 20px 10px;
+}
+
+#search-filter-form-484874 > ul > li.sf-field-submit > input[type="submit"] {
+  color: #0074c8;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+  font-variant: normal;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  box-shadow: 0 0 0 0 rgba(247, 245, 245, 0);
+  padding: 7px 7px;
+  margin: 0;
+  border: 4px solid rgb(0, 86, 139);
+  -webkit-border-radius: 42px;
+  -moz-border-radius: 42px;
+  border-radius: 42px;
+  display: block;
+  top: auto;
+  background: #fff;
+  position: relative;
+}

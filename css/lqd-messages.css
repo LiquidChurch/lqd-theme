@@ -1,0 +1,142 @@
+/** Liquid Messages Related Theming */
+
+/** Navigation */
+a.lqd-home-btn {
+    background: #23527c;
+    padding: 8px 18px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+/** SERIES **/
+
+/** Header for Series Page */
+.lqdm-series-wrap h4 {
+}
+
+/** Series Page Individual Messages Feature Images */
+.lqd-single-series-msgs-img {
+}
+
+/** Series Feature Image */
+.lqd-series-list-msgs-img {
+}
+
+/** Wraps Series Resources on Series Page */
+.lqdm-series-resources-wrapper {
+}
+
+/* Wraps Each Message on a Series Page */
+.lqdm-series-individual-msg {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 3vw;
+}
+
+/** INDIVIDUAL MESSAGE */
+
+.lqdm-msg-title {
+    font-size: 3rem;
+}
+
+/* Wraps Details Section of Individual Messages Page */
+.lqdm-single-msg-details .row {
+    padding-bottom: 1vw;
+}
+
+/* Header Before Other Messages in Series on Single Message Page */
+.lqdm-other-msg-header {
+    text-align: center;
+}
+
+/** Resources List */
+ul.lqdm-resources-list, ul.lqdm-resources-wrapper {
+}
+
+li.lqdm-resources-list-item {
+    display: list-item !important;
+    list-style-type: disc !important;
+    padding-left: 15px;
+}
+
+.lqdm-resources-language {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+ul.lqdm-resources-list li {
+    list-style-type: none;
+}
+
+ul.lqdm-resources-list li.lc-list {
+    width: 45%;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+ul.lqdm-resources-list li.lqdm-resources-list-item {
+    width: 100%;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+/** SEARCH */
+
+/* Messages/Series Search Page */
+.lqdm-search .first-row label {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.lqdm-search label {
+    width: 100%;
+}
+
+.lqdm-search span {
+    font-size: 18px;
+}
+
+.lqdm-search .first-row .form-group {
+    width: 100%;
+}
+
+.lqdm-search .second-row {
+    padding-top: 15px;
+}
+
+h2.lqdm-series-search-results-title, h2.lqdm-search-results-title {
+    display: block;
+    font-size: 28px;
+}
+
+.lqdm-search-results, .lqdm-series-search-results {
+    padding-left: 20px;
+}
+
+/** Social Share Modal */
+#socialShare .fa {
+    font-size: 5rem;
+}
+
+/** Breakpoints */
+@media screen and (max-width: 800px) {
+    /** Series */
+    .lqdm-series-individual-msg h2 {
+        font-size: 1.5rem;
+    }
+
+    /** Individual Message */
+    .lqdm-msg-title {
+        font-size: 1.2rem;
+    }
+
+    .lqdm-other-msg-header {
+        font-size: 1.2rem;
+    }
+
+    ul.lqdm-resources-list li.lc-list {
+        width: 100%;
+    }
+}
