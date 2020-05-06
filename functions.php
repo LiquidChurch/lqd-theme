@@ -1,11 +1,10 @@
 <?php
 /**
- * Liquid Church Functions and Definitions
+ * Liquid Church Theme Functions and Definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Liquid_Church
+ * @package lqd-theme
  * @since 1.0.0
  */
 
@@ -16,7 +15,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'lqd_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -38,6 +36,8 @@ function lqd_setup() {
 
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
+
+	// Register image size for post thumbnail.
 	set_post_thumbnail_size( 1200, 9999 );
 
 	// Register nav menus
@@ -80,7 +80,6 @@ function lqd_setup() {
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
-endif; // lqd_setup
 add_action( 'after_setup_theme', 'lqd_setup' );
 
 /**
@@ -106,7 +105,6 @@ add_action( 'after_setup_theme', 'lqd_content_width', 0 );
  */
 require_once( get_stylesheet_directory() . '/theme-functions/theme-widget.php' );
 
-if ( ! function_exists( 'lqd_fonts_url' ) ) :
 /**
  * Register Google fonts for Liquid Church.
  *
@@ -145,7 +143,6 @@ function lqd_fonts_url() {
 
 	return $fonts_url;
 }
-endif;
 
 /**
  * Handles JavaScript detection.

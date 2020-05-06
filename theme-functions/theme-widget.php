@@ -3,9 +3,9 @@
 function liquidchurch_widgets_init() {
 	register_sidebar(
 	    array(
-	        'name'          => __( 'Sidebar', 'liquidchurch' ),
+	        'name'          => __( 'Sidebar', 'lqd' ),
             'id'            => 'sidebar-1',
-            'description'   => __( 'Add widgets here to appear in your sidebar.', 'liquidchurch' ),
+            'description'   => __( 'Add widgets here to appear in your sidebar.', 'lqd' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -15,20 +15,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Top Left',
-            'id' => 'footer-contact-us',
-            'description' => 'Appears in upper left side of footer area',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h2 class="widget-title">',
-            'after_title' => '</h2>',
-            )
-    );
-
-	register_sidebar(
-	    array(
-	        'name' => 'Footer Bottom Inner 1',
-            'id' => 'footer-about-us',
+	        'name' => 'Footer Left 1',
+            'id' => 'footer-left-1',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
@@ -39,8 +27,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Bottom Inner 2',
-            'id' => 'footer-life-events',
+	        'name' => 'Footer Left 2',
+            'id' => 'footer-left-2',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
@@ -51,8 +39,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Bottom Inner 3',
-            'id' => 'footer-messages',
+	        'name' => 'Footer Left 3',
+            'id' => 'footer-left-3',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
@@ -63,8 +51,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Bottom Inner 4',
-            'id' => 'footer-media',
+	        'name' => 'Footer Right 3',
+            'id' => 'footer-right-3',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
@@ -75,8 +63,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Bottom Inner 5',
-            'id' => 'footer-give',
+	        'name' => 'Footer Right 2',
+            'id' => 'footer-right-2',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
@@ -87,8 +75,8 @@ function liquidchurch_widgets_init() {
 
 	register_sidebar(
 	    array(
-	        'name' => 'Footer Bottom Inner 6',
-            'id' => 'footer-help',
+	        'name' => 'Footer Right 1',
+            'id' => 'footer-right-1',
             'description' => 'Appears in the footer area',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget' => '</aside>',
