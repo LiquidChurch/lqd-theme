@@ -13,10 +13,8 @@
 
 ?>
 </div>
-</div>
 <!-- Footer Area start -->
-<div class="container lqd-footer-top">
-    <div class="row">
+<div class="lqd-footer-top">
         <div class="col-xs-12 col-md-8">
             <ul class="lqd-footer-top-left">
                 <?php
@@ -58,10 +56,9 @@
                 <?php }?>
             </ul>
         </div>
-    </div>
 </div>
 
-<div class="container lqd-footer-bottom">
+<div class="lqd-footer-bottom">
     <div class="row">
         <div class="col-md-2 col-xs-6 col-sm-6 lqd-footer-inner-block">
             <?php

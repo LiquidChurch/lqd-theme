@@ -696,7 +696,7 @@ function gc_sermon_before_after($content)
 }
 
 /**
- * Filtering for Messages the content
+ * Filtering for messages the content
  *
  * @param $content
  * @return string|string[]|null

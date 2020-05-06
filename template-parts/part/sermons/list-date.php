@@ -6,7 +6,7 @@ if (empty($post->post_date))
     return false;
 }
 ?>
-<div class="lqdm-single-msg-date row">
+<div class="lqdm-single-msg-date">
     <div class="col-sm-3">
         <b>Date:</b>
     </div>

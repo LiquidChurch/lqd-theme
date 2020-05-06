@@ -5,7 +5,7 @@ if (empty($series)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-series row">
+<div class="lqdm-single-msg-series">
     <div class="col-sm-3">
         <b>Series:</b>
     </div>

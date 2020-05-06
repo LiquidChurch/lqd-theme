@@ -5,7 +5,7 @@ if (empty($display_order)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-series-part row">
+<div class="lqdm-single-msg-series-part">
     <div class="col-sm-3">
         <b>Part:</b>
     </div>

@@ -5,7 +5,7 @@ if (empty($tags)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-tags row">
+<div class="lqdm-single-msg-tags">
     <div class="col-sm-3">
         <b>Tag:</b>
     </div>

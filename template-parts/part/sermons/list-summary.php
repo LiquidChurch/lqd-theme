@@ -5,7 +5,7 @@ if (empty($content)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-summary row">
+<div class="lqdm-single-msg-summary">
     <div class="col-sm-3">
         <b>Summary:</b>
     </div>

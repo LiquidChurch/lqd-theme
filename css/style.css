@@ -140,6 +140,12 @@ textarea {
   height: 140px;
 }
 
+
+.container-fluid.page {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Add Flexbox to Rows */
 .row.display-flex {
   display: flex;
@@ -149,6 +155,17 @@ textarea {
 .row.display-flex > [class*="col-"] {
   display: flex;
   flex-direction: column;
+}
+
+/** Utility Classes */
+.lqd-pad-it {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.lqd-padding-off {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /** Page **/
@@ -186,7 +203,7 @@ textarea {
 }
 
 /* Header: Top: Church Online Button */
-.lqd-header-church-online-btn {
+.lqd-header-btn {
   border: 2px solid #14a7e0; /* #337ab7; /* Match Locations Border */
   background: #fff none repeat scroll 0 0;
   margin-top: 6px; /* Match height of Locations */
@@ -200,25 +217,25 @@ textarea {
   font-weight: 700;
   text-transform: uppercase;
   z-index: 1;
+  min-width: 150px;
 }
 
-a.lqd-header-church-online-btn:hover {
+a.lqd-header-btn:hover {
   border-color: #14a7e0 !important;
   filter: brightness(0.9);
 }
 
 /* Header: Bottom: Menu */
-.header-bottom-menu {
-  margin: 0;
-  background-color: #14a7e0;
+.lqd-header-menu {
+  margin-top: 10px;
 }
 
-.header-bottom-menu .navbar-default {
+.lqd-header-menu .navbar-default {
   background-color: #14a7e0;
   border: none;
 }
 
-.header-bottom-menu li a {
+.lqd-header-menu li a {
   color: #fff !important;
   display: block;
   font-size: 1.5rem;
@@ -227,14 +244,14 @@ a.lqd-header-church-online-btn:hover {
   text-transform: uppercase;
 }
 
-.header-bottom-menu .navbar-default .navbar-nav > .active > a,
+.lqd-header-menu .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
   background: none;
   color: initial;
 }
 
-.header-bottom-menu ul li {
+.lqd-header-menu ul li {
   border-left: 1px solid #fff;
   box-sizing: border-box;
   color: #fff;
@@ -243,21 +260,21 @@ a.lqd-header-church-online-btn:hover {
   text-align: center;
 }
 
-.header-bottom-menu nav {
+.lqd-header-menu nav {
   margin: 0;
 }
 
 /* Menu Item Separators */
-.header-bottom-menu ul li:first-child {
+.lqd-header-menu ul li:first-child {
   border: medium none;
 }
 
-.header-bottom-menu ul li:last-child {
+.lqd-header-menu ul li:last-child {
   border-right: 1px solid #fff;
 }
 
 /* Override Bootstrap margin for Search */
-.header-bottom-menu #search-form {
+.lqd-header-menu #search-form {
   margin-right: 0;
 }
 
@@ -534,6 +551,7 @@ a.lqd-header-church-online-btn:hover {
 .lqd-share-message img {
   min-width: 50px;
   max-width: 80px;
+  text-align: center; /** TODO: Not the right way */
 }
 
 /* >=1024px and <=1200px */
@@ -563,7 +581,7 @@ a.lqd-header-church-online-btn:hover {
     margin-bottom: 10px;
   }
 
-  .lqd-header-church-online-btn {
+  .lqd-header-btn {
     margin-right: auto;
     width: 100%;
   }
@@ -591,13 +609,13 @@ a.lqd-header-church-online-btn:hover {
   }
 
   /* Header: Bottom: Menu */
-  .header-bottom-menu ul li {
+  .lqd-header-menu ul li {
     width: 100%;
     border: none;
     text-align: left;
   }
 
-  .header-bottom-menu .navbar-form {
+  .lqd-header-menu .navbar-form {
     box-shadow: none;
   }
 
@@ -716,7 +734,7 @@ a.lqd-header-church-online-btn:hover {
     width: 100% !important;
   }
 
-  .lqd-header-church-online-btn {
+  .lqd-header-btn {
     margin-right: auto;
   }
 }

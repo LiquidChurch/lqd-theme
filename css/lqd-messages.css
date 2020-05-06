@@ -1,8 +1,6 @@
-/**
- * Liquid Messages Related Theming
- */
+/** Liquid Messages Related Theming */
 
-/* Back Navigation Button on Individual Messages and Series */
+/* Navigation - Back Button on Individual Messages and Series */
 a.lqdt-home-btn {
   background: #23527c;
   padding: 8px 18px;
@@ -24,6 +22,7 @@ a.lqdt-home-btn {
   padding-right: 3vw;
 }
 
+/** For text centered over each message under other messages on single message page */
 .lqdm-series-wrap h4 {
   margin-left: 30px;
   border-bottom: none !important;
@@ -89,7 +88,7 @@ h1.lqdm-msg-title {
   width: 100%;
 }
 
-/** Wrapper for series containing individual messages */
+/** Wrapper for series view containing individual messages */
 .lqdm-series-msgs-list {
   display: flex;
   justify-content: center;
@@ -142,20 +141,20 @@ h1.lqdm-msg-title {
 
 /** SEARCH **/
 .lqdm-search label {
-  width: 100%;
+ /* width: 100%; */
 }
 
 .lqdm-search span {
-  font-size: 18px;
+  /*font-size: 18px;*/
 }
 
 .lqdm-search-input label {
-  width: 100%;
-  padding-top: 15px;
+ /* width: 100%;
+  padding-top: 15px;*/
 }
 
 .lqdm-search-input .form-group {
-  width: 100%;
+ /* width: 100%; */
 }
 
 .lqdm-search-field {
@@ -171,7 +170,7 @@ h1.lqdm-msg-title {
   padding-top: 15px;
 }
 
-input.search-submit {
+input.lqdm-search-submit {
   margin-right: 20px;
   background: #14a7e0;
   height: 60px;
@@ -310,5 +309,42 @@ input.search-submit {
 @media screen and (max-width: 800px) {
   ul.lqdm-msg-resources-list li.lqdm-msg-resources-lang-head {
     width: 100%;
+  }
+
+  /** On smaller displays, other messages should be vertically stacked */
+  .lqdm-series-msgs-list {
+    display: block;
+  }
+
+  .lqdm-single-msg-details {
+  }
+
+  .lqdm-single-msg-title {
+    display: block;
+    text-align: center;
+  }
+
+  /** On smaller displays, remove padding and refine typography */
+  .gc-sermons .entry-content {
+    padding-left:0;
+    padding-right:0;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  /** Force blue button to center */
+  .blue_btn {
+    margin: 10px 0 10px 10px;
+  }
+
+  /** Center Share Icons */
+  .lqd-share-message {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  /** Reduce Max Icon Size */
+  .lqd-share-message img {
+    max-width: 60%;
   }
 }

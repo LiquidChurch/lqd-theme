@@ -12,7 +12,7 @@
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $lqd_share_url ?>"
                            target="_blank"
                            onclick="window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-facebook"></i>-
                         </a>
                     </div>
                     <div class="col-xs-4">

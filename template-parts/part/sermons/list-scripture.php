@@ -5,7 +5,7 @@ if (empty($scriptures)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-scriptures row">
+<div class="lqdm-single-msg-scriptures">
     <div class="col-sm-3">
         <b>Scriptures:</b>
     </div>

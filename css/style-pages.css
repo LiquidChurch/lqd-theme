@@ -262,13 +262,10 @@
 .lqd-header-covid {
   background-color: lightgrey;
   padding-top: 2vw;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 1.5vw;
   margin-bottom: 1vw;
-}
-
-.lqd-header-covid .row {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .lqd-header-covid-text {

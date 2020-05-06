@@ -5,7 +5,7 @@ if (empty($topics)) {
     return false;
 }
 ?>
-<div class="lqdm-single-msg-topics row">
+<div class="lqdm-single-msg-topics">
     <div class="col-sm-3">
         <b>Topic:</b>
     </div>

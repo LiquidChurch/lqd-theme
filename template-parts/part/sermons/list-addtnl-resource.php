@@ -11,7 +11,7 @@ if (empty($addtl_resources) || ($addtl_resources == '<!-- no resources found -->
     return false;
 }
 ?>
-<div class="lqdm-single-msg-resources row">
+<div class="lqdm-single-msg-resources">
     <div class="col-sm-3">
         <b>Resources:</b>
     </div>

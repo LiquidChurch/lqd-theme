@@ -12,13 +12,12 @@ if (!empty($plugin_option)) {
  <div class="lqdm-single-msg-details col-xs-12">
      <?php // If Title Option is Enabled
      if (in_array('title', $message_field_to_display)) { ?>
-         <div class="row">
-             <div class="col-xs-12 col-md-9">
-                 <header class="entry-header">
+             <div class="lqdm-single-msg-title col-xs-12 col-md-9">
+                 <header>
                      <?php the_title( '<h1>', '</h1>'); ?>
                  </header>
              </div>
-             <div class="col-xs-12 col-md-3">
+             <div class="lqdm-social-share col-xs-12 col-md-3">
                  <?php get_template_part('template-parts/part/social', 'action-bar'); ?>
              </div>
 
@@ -29,7 +28,6 @@ if (!empty($plugin_option)) {
                      )); ?>
                  </div>
              <?php } ?>
-         </div>
      <?php } ?>
 
      <?php // If Show Series Option is Enabled
