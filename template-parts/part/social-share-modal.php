@@ -2,10 +2,10 @@
 <div class="modal fade" id="socialShare" tabindex="-1" role="dialog" aria-labelledby="socialShareLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header" style="text-align:center">
+            <div class="modal-header" style="text-align:center;">
                 <h2>Share This Message</h2>
             </div>
-            <div class="modal-body" style="text-align:center">
+            <div class="modal-body" style="text-align:center;">
                 <div class="row">
                     <div class="col-xs-4">
                         <?php $lqd_share_url = get_permalink() ?>

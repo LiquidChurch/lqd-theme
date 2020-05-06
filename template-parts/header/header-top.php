@@ -1,5 +1,5 @@
 <div class="lqd-header-top row">
-    <div class="lqd-header-logo col-xs-12 col-md-8">
+    <div class="lqd-header-logo col-xs-12 col-md-7">
         <?php if (get_theme_mod( 'm1_logo' )){ ?>
             <a href="<?php echo home_url('/')?>"><img src="<?php echo get_theme_mod( 'm1_logo' ) ;?>" width="220" height="40" alt=""></a>
         <?php } else if ( is_front_page() && is_home() ) : ?>
@@ -11,7 +11,7 @@
     <div class="lqd-header-church-online col-xs-8 mb-2 col-md-3 mb-md-0">
         <a class="lqd-header-btn btn btn-primary btn-lg" href="https://liquidchurchonline.com/">Church Online</a>
     </div>
-    <div class="lqd-header-give col-xs-4 mb-2 col-md-1 mb-md-0">
+    <div class="lqd-header-give col-xs-4 mb-2 col-md-2 mb-md-0 d-flex justify-content-end">
         <a class="lqd-header-btn btn btn-primary btn-lg" href="/give">Give</a>
     </div>
 </div>

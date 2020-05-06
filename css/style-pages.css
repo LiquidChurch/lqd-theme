@@ -263,20 +263,20 @@
 }
 
 .lqd-header-covid-text {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 2rem;
 }
 
 .lqd-header-covid-btn {
-    border: 2px solid black;
-    background-color: lightgrey !important;
-    margin-top: auto;
-    white-space: nowrap;
-    color: black;
-    border-radius: 42px;
-    font-family: "Avenir Next LT Pro", sans-serif;
-    text-transform: uppercase;
-    z-index: 1;
+  border: 2px solid black;
+  background-color: lightgrey !important;
+  margin-top: auto;
+  white-space: nowrap;
+  color: black;
+  border-radius: 42px;
+  font-family: "Avenir Next LT Pro", sans-serif;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 @media (min-width: 1200px) {

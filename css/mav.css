@@ -1,53 +1,53 @@
 #mav-entry .lqdm-2-cols h4 {
-    text-align: center;
-    margin: auto;
-    width: 100%;
-    text-decoration: none;
-    font-size: 3rem;
-    padding-top: 5px;
-    padding-bottom:5px;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  text-decoration: none;
+  font-size: 3rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #mav-entry li.lqdm-item.lqdm-thumb {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .page.mav-body {
-    box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
 }
 
 #mav-entry {
-    padding: 0;
-    font-size: 1.5em;
+  padding: 0;
+  font-size: 1.5em;
 }
 
 .mav-series {
-    padding: 5px;
+  padding: 5px;
 }
 
 .mav-series {
-    font-size: 1.3em;
-    padding-top: 10px;
+  font-size: 1.3em;
+  padding-top: 10px;
 }
 
 .mav-series #message-speaker > div:first-of-type {
-    float: left;
+  float: left;
 }
 
 .mav-series #message-series-part > div:first-of-type {
-    float: left;
+  float: left;
 }
 
 #mav-single .entry-content {
-    font-size: 1.3em;
-    line-height: 110%;
+  font-size: 1.3em;
+  line-height: 110%;
 }
 
 #mav-single .col-md-12 {
-    padding-left: 5px;
-    padding-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #mav-single #message-series,
@@ -58,8 +58,8 @@
 #mav-single #message-tags,
 #mav-single #message-date,
 #mav-single #message-summary {
-    padding-bottom: 0;
-    margin-bottom: 4px;
+  padding-bottom: 0;
+  margin-bottom: 4px;
 }
 
 #mav-single #message-series > div:first-of-type,
@@ -69,65 +69,64 @@
 #mav-single #message-topics > div:first-of-type,
 #mav-single #message-tags > div:first-of-type,
 #mav-single #message-date > div:first-of-type,
-#mav-single #message-summary > div:first-of-type
-{
-    float: left;
-    padding-right:5px;
-    /*width:30%;*/
+#mav-single #message-summary > div:first-of-type {
+  float: left;
+  padding-right: 5px;
+  /*width:30%;*/
 }
 
 #mav-single div.row.lqdm-single-msg-title {
-    padding-bottom: 1px;
-    margin-bottom: 1px;
-    padding-top:0;
-    margin-top:0;
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 #mav-single #message-resource div.col-sm-3 {
-    font-size:1.5em;
-    padding-bottom:5px;
+  font-size: 1.5em;
+  padding-bottom: 5px;
 }
 
 #mav-single #message-others {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #mav-single #message-resource div.col-sm-9 {
-    padding-left:25px;
+  padding-left: 25px;
 }
 
 #mav-single #message-summary {
-    padding-bottom:0;
-    margin-bottom:0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 #mav-single #message-others h1 {
-    margin-top:0;
+  margin-top: 0;
 }
 
 #mav-single li.lqdm-resources-language {
-    margin-bottom:0;
+  margin-bottom: 0;
 }
 
 #mav-single li.lc-list {
-    margin-bottom:0;
+  margin-bottom: 0;
 }
 
 #mav-single .lqdm-resources-list-item {
-    line-height:.9em;
+  line-height: 0.9em;
 }
 
 #mav-single .lqdm-item.lqdm-thumb {
-    padding:0;
-    margin-bottom:0;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .lqdm-series-individual-msg.mav-series {
-    padding-left: 5px;
-    padding-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .sermon-series-desc.mav-series > p {
-    font-size: 1em !important;
+  font-size: 1em !important;
 }

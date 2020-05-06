@@ -58,7 +58,7 @@ $sermon = gc_get_sermon_post();
                         <?php
                             $series = $sermon->get_series();
                             if (!empty($series)) {
-                                echo '<center><a href="' . $series->term_link . '" class="blue_btn">Go Back To ' . $series->name . ' Series</a></center>';
+                                echo '<span class="text-align:center"><a href="' . $series->term_link . '" class="blue_btn">Go Back To ' . $series->name . ' Series</a></span>';
                             }
                         ?>
                     </div>
