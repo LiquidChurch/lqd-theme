@@ -26,7 +26,7 @@ $sermon = gc_get_sermon_post();
                     // Enqueue fitvids for responsive video.
                     wp_enqueue_script(
                         'fitvids',
-                        GC_Sermons_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
+                        LQDM_Plugin::$url . 'assets/js/vendor/jquery.fitvids.js',
                         array('jquery'),
                         '1.1',
                         true
@@ -46,7 +46,7 @@ $sermon = gc_get_sermon_post();
                     <?php
                     $message_field_to_display = array();
                     // Get Configure Options for Liquid Messages Plugin
-                    $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_message_view');
+                    $plugin_option = LQDM_Plugin::get_plugin_settings_options('single_message_view');
                     if (!empty($plugin_option)) {
                         {
                             $message_field_to_display = ! empty( $plugin_option['message_field_to_display'] ) ? $plugin_option['message_field_to_display'] : array();

@@ -3,7 +3,7 @@
  $sermon = gc_get_sermon_post();
  $message_field_to_display = array();
  // Get Configure Options for Liquid Messages Plugin
- $plugin_option = GC_Sermons_Plugin::get_plugin_settings_options('single_message_view');
+ $plugin_option = LQDM_Plugin::get_plugin_settings_options('single_message_view');
  // Get a list of the message fields to display TODO: Add documentation
  if (!empty($plugin_option)) {
      {

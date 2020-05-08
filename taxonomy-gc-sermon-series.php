@@ -15,7 +15,7 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
         <?php if (have_posts()) :
-            $series = gc_sermons()->taxonomies->series->get(get_queried_object_id());
+            $series = lqdm()->taxonomies->series->get(get_queried_object_id());
             $post__not_in = array();
 
             if ($series->image_id) {
