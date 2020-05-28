@@ -18,7 +18,7 @@
 
 	<?php liquidchurch_excerpt(); ?>
 
-	<?php if ( 'post' === get_post_type() ) : ?>
+	<?php if ( get_post_type() === 'post' ) : ?>
 
 		<footer class="entry-footer">
 			<?php liquidchurch_entry_meta(); ?>
